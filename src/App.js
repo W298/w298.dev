@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { Text, IconButton, Avatar, Badge } from "@chakra-ui/react";
+import { Text, IconButton, Avatar, Badge, Button } from "@chakra-ui/react";
 import { Box, Flex } from "@chakra-ui/react";
 import { SimpleGrid } from "@chakra-ui/react";
 import {
@@ -12,6 +12,82 @@ import {
   MenuDivider,
 } from "@chakra-ui/react";
 import { FiGithub, FiMoon, FiMenu, FiList, FiColumns } from "react-icons/fi";
+import { GoRepo } from "react-icons/go";
+import { SiNotion } from "react-icons/si";
+
+import thum01 from "./imgs/intersection_thumnail.png";
+
+function Card() {
+  return (
+    <Box bg='white' maxW='17rem' borderRadius='0.5rem' p={4}>
+      <Flex direction='column' gap='0.5rem'>
+        <Flex direction='row' gap='1rem'>
+          <Flex flex={1} alignItems='center'>
+            <Avatar size='md' name='Intersection' src={thum01} />
+          </Flex>
+          <Flex direction='column' flex={4}>
+            <Flex direction='row' gap='0.25rem'>
+              <Badge
+                width='fit-content'
+                colorScheme='purple'
+                fontSize='0.5rem'
+                py={0.5}
+              >
+                Game DEV
+              </Badge>
+              <Badge
+                width='fit-content'
+                colorScheme='blackAlpha'
+                fontSize='0.5rem'
+                py={0.5}
+              >
+                Unity
+              </Badge>
+            </Flex>
+            <Text fontSize='1.4rem' fontWeight='extrabold'>
+              Intersection
+            </Text>
+          </Flex>
+        </Flex>
+        <Box bgColor="gray.100" borderRadius="0.5rem" py={1} px={2}>
+          <Text fontWeight='medium' fontSize='0.8rem'>
+            Traffic Management Game 🚘
+            <br />
+            Develop with Unity Engine
+          </Text>
+        </Box>
+        <Flex gap='0.5rem' mt={1}>
+          <Button
+            width='fit-content'
+            variant='outline'
+            colorScheme='teal'
+            size='xs'
+            display='flex'
+            gap='0.25rem'
+            fontWeight='bold'
+            _hover={{ transform: "translateY(-2px)" }}
+            transition='0.2s'
+          >
+            <GoRepo /> Github repo
+          </Button>
+          <Button
+            width='fit-content'
+            variant='outline'
+            colorScheme=''
+            size='xs'
+            display='flex'
+            gap='0.25rem'
+            fontWeight='bold'
+            _hover={{ transform: "translateY(-2px)" }}
+            transition='0.2s'
+          >
+            <SiNotion /> Notion
+          </Button>
+        </Flex>
+      </Flex>
+    </Box>
+  );
+}
 
 export default function App() {
   return (
@@ -50,7 +126,6 @@ export default function App() {
                 fontFamily='Raleway'
                 letterSpacing='-1px'
                 p={1}
-                mr={8}
               >
                 tuttoMaker.dev
               </Text>
@@ -82,24 +157,7 @@ export default function App() {
               PROJECT LIST
             </Text>
             <SimpleGrid minChildWidth='15rem' spacing='2rem'>
-              <Box bg='white' maxW='17rem' borderRadius='0.5rem' p={5}>
-                <Flex direction='column' gap="1rem">
-                  <Flex direction='row' gap="1rem">
-                    <Flex flex={1} alignItems="center">
-                      <Avatar size='md' name='Intersection' src='...' />
-                    </Flex>
-                    <Flex direction='column' flex={4}>
-                      <Badge width='fit-content'>Game DEV</Badge>
-                      <Text fontSize='xl' fontWeight='extrabold'>
-                        Intersection
-                      </Text>
-                    </Flex>
-                  </Flex>
-                  <Flex direction='column'>
-                    <Text fontWeight='medium'>Traffic Management Game 🚘</Text>
-                  </Flex>
-                </Flex>
-              </Box>
+              <Card />
             </SimpleGrid>
           </Box>
         </Box>
