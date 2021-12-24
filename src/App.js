@@ -44,7 +44,7 @@ export default function App() {
             </Flex>
             <Flex flex="1" justifyContent="center">
               <Text
-                bgGradient="linear(to-l, #fe8c00, #f83600)"
+                bgGradient="linear(to-r, #7474BF, #348AC7)"
                 bgClip="text"
                 fontSize="3xl"
                 fontWeight="black"
@@ -52,7 +52,7 @@ export default function App() {
                 letterSpacing="-1px"
                 p={1}
               >
-                tuttoMaker.dev
+                descendStar.dev
               </Text>
             </Flex>
             <Flex flex="1" justifyContent="flex-end">
