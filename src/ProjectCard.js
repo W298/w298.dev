@@ -10,7 +10,16 @@ import {
 import { GoRepo } from "react-icons/go";
 import { SiNotion } from "react-icons/si";
 
-export default function ProjectCard({ name, img, tagList, descList, btnList }) {
+export default function ProjectCard({
+  name,
+  img = undefined,
+  bgColor = "#9a9bdb",
+  icon = undefined,
+  iconSize = "1.5rem",
+  tagList,
+  descList,
+  btnList
+}) {
   const BtnProp = ({ color, children }) => {
     return (
       <Button
@@ -52,13 +61,14 @@ export default function ProjectCard({ name, img, tagList, descList, btnList }) {
 
   const tagData = {
     "GAME DEV": <TagProp name="GAME DEV" color="purple" />,
-    UNITY: <TagProp name="UNITY" color="blackAlpha" />
+    UNITY: <TagProp name="UNITY" color="blackAlpha" />,
+    REACT: <TagProp name="REACT.JS" color="blue" />
   };
 
   return (
     <Box
       bg="white"
-      maxW="17rem"
+      height="fit-content"
       borderRadius="0.5rem"
       p={4}
       boxShadow="0 0 15px 0 rgba(0, 0, 0, 0.05)"
@@ -66,7 +76,13 @@ export default function ProjectCard({ name, img, tagList, descList, btnList }) {
       <Flex direction="column" gap="0.6rem">
         <Flex direction="row" gap="1rem">
           <Flex flex={1} alignItems="center">
-            <Avatar size="md" name={name} src={img} />
+            <Avatar
+              size="md"
+              src={img}
+              bgColor={bgColor}
+              icon={icon}
+              fontSize={iconSize}
+            />
           </Flex>
           <Flex direction="column" flex={4}>
             <Flex direction="row" gap="0.25rem">
