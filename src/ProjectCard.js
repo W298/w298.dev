@@ -5,10 +5,11 @@ import {
   Divider,
   Box,
   Flex,
-  Text
+  Text,
 } from "@chakra-ui/react";
 import { GoRepo } from "react-icons/go";
 import { SiNotion } from "react-icons/si";
+import { FiPlay } from "react-icons/fi";
 
 export default function ProjectCard({
   name,
@@ -18,7 +19,7 @@ export default function ProjectCard({
   iconSize = "1.5rem",
   tagList,
   descList,
-  btnList
+  btnList,
 }) {
   const BtnProp = ({ color, children }) => {
     return (
@@ -56,13 +57,19 @@ export default function ProjectCard({
       <BtnProp color="">
         <SiNotion /> Notion
       </BtnProp>
-    )
+    ),
+    "Play Now": (
+      <BtnProp color="">
+        <FiPlay />
+        Play Now
+      </BtnProp>
+    ),
   };
 
   const tagData = {
     "GAME DEV": <TagProp name="GAME DEV" color="purple" />,
     UNITY: <TagProp name="UNITY" color="blackAlpha" />,
-    REACT: <TagProp name="REACT.JS" color="blue" />
+    REACT: <TagProp name="REACT.JS" color="blue" />,
   };
 
   return (
