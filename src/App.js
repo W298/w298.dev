@@ -105,7 +105,14 @@ export default function App() {
           </Flex>
         </Flex>
       </Box>
-      <Box p={8} pt="6rem">
+      <Box
+        bgColor="white"
+        position="fixed"
+        width="18rem"
+        height="100%"
+        boxShadow="0 0 15px 0 rgba(0, 0, 0, 0.05)"
+      ></Box>
+      <Box p={8} pt="6rem" ml="18rem">
         <Box py={2}>
           <Text fontSize="3xl" fontWeight="extrabold" mb={8} textAlign="center">
             PROJECT LIST
@@ -148,6 +155,24 @@ export default function App() {
                 {
                   name: "Github repo",
                   href: "https://github.com/descendStar/todays-genshin",
+                },
+              ]}
+            />
+            <ProjectCard
+              name="Pixel Reversi"
+              tagList={["GAME DEV", "UNITY"]}
+              descList={[
+                "Reversi (Othello) game with pixel graphic",
+                "Develop with Unity Engine + WebGL",
+              ]}
+              btnList={[
+                {
+                  name: "Github repo",
+                  href: "https://github.com/descendStar/Pixel-Reversi",
+                },
+                {
+                  name: "Play Now",
+                  href: "https://pixel-reversi.netlify.app",
                 },
               ]}
             />
