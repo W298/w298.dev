@@ -76,7 +76,7 @@ export default function App() {
         position="fixed"
         width="100vw"
         height="100vh"
-        bgColor="rgb(245, 245, 245)"
+        bgColor="gray.50"
         zIndex="-1"
       ></Box>
       <Box
@@ -93,7 +93,7 @@ export default function App() {
             <IconButton
               size="md"
               fontSize="20px"
-              color="darkgrey"
+              color="gray.400"
               _hover={{ color: "black" }}
               icon={<FiGithub />}
               onClick={() => {
@@ -103,7 +103,7 @@ export default function App() {
             <IconButton
               size="md"
               fontSize="20px"
-              color="darkgrey"
+              color="gray.400"
               _hover={{ color: "black" }}
               icon={<FiMoon />}
               onClick={() => {
@@ -178,7 +178,7 @@ export default function App() {
                 color={
                   pointList.find((p) => p.id === focusedPoint).category === cate
                     ? "black"
-                    : "grey"
+                    : "gray.400"
                 }
               >
                 {cate}
@@ -189,12 +189,12 @@ export default function App() {
                   return (
                     <Text
                       fontWeight="medium"
-                      color={focusedPoint === id ? "black" : "grey"}
+                      color={focusedPoint === id ? "black" : "gray.400"}
                       cursor="pointer"
                       p="0.5rem 2rem"
                       transition="0.1s ease-in-out"
                       _hover={{
-                        bgColor: "var(--chakra-colors-gray-100)",
+                        bgColor: "gray.100",
                       }}
                       onClick={() => {
                         scrollToTarget(id);
