@@ -121,7 +121,7 @@ export default function App() {
               letterSpacing="-1px"
               p={1}
             >
-              descendStar.dev
+              stellarPudding.dev
             </Text>
           </Flex>
           <Flex flex="1" justifyContent="flex-end">
