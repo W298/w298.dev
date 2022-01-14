@@ -121,7 +121,7 @@ export default function App() {
               letterSpacing="-1px"
               p={1}
             >
-              stellarPudding.dev
+              riruna.dev
             </Text>
           </Flex>
           <Flex flex="1" justifyContent="flex-end">
