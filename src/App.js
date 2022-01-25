@@ -4,6 +4,11 @@ import { useState, useEffect } from "react";
 
 import intersection from "./imgs/intersection.png";
 import todaysgenshin from "./imgs/todaysgenshin.png";
+import pixelreversi from "./imgs/pixelreversi.jpg";
+import together from "./imgs/together.jpg";
+import reflect from "./imgs/reflect.jpg";
+import pixelreversi_intro from "./imgs/pixelreversi_intro.gif";
+
 import ProjectCard from "./ProjectCard";
 
 import { Text, IconButton, Box, Flex, Divider } from "@chakra-ui/react";
@@ -36,9 +41,9 @@ export default function App() {
   ];
 
   const getScrollPos = (id) => {
-    var element = document.getElementById(id);
-    var headerOffset = 180;
-    var elementPosition = element.getBoundingClientRect().top;
+    let element = document.getElementById(id);
+    let headerOffset = 180;
+    let elementPosition = element.getBoundingClientRect().top;
     return Math.floor(elementPosition + window.pageYOffset - headerOffset);
   };
 
@@ -60,6 +65,7 @@ export default function App() {
     }
   };
 
+  let [language, setLanguage] = useState("kr");
   let [focusedPoint, setFocusedPoint] = useState(pointList[0].id);
 
   useEffect(() => {
@@ -118,7 +124,6 @@ export default function App() {
               fontSize="3xl"
               fontWeight="black"
               fontFamily="Raleway"
-              letterSpacing="-1px"
               p={1}
             >
               riruna.dev
@@ -137,6 +142,11 @@ export default function App() {
                   </MenuItem>
                 </MenuGroup>
                 <MenuDivider />
+                <MenuGroup title="Etc" fontWeight="bold">
+                  <MenuItem fontWeight="medium">Blog Posts</MenuItem>
+                  <MenuItem fontWeight="medium">About Me</MenuItem>
+                </MenuGroup>
+                <MenuDivider />
                 <MenuGroup title="Shortcut" fontWeight="bold">
                   <MenuItem
                     icon={<FiGithub />}
@@ -152,8 +162,24 @@ export default function App() {
                   </MenuItem>
                 </MenuGroup>
                 <MenuDivider />
-                <MenuItem fontWeight="medium">Blog</MenuItem>
-                <MenuItem fontWeight="medium">About Me</MenuItem>
+                <MenuGroup title="Language" fontWeight="bold">
+                  <MenuItem
+                    fontWeight="medium"
+                    onClick={() => {
+                      setLanguage("kr");
+                    }}
+                  >
+                    🇰🇷 lang = KR
+                  </MenuItem>
+                  <MenuItem
+                    fontWeight="medium"
+                    onClick={() => {
+                      setLanguage("en");
+                    }}
+                  >
+                    🇬🇧 lang = EN
+                  </MenuItem>
+                </MenuGroup>
               </MenuList>
             </Menu>
           </Flex>
@@ -223,11 +249,17 @@ export default function App() {
             fontWeight="extrabold"
             mb={8}
             textAlign="center"
+            color={
+              pointList.find((p) => p.id === focusedPoint).id ===
+              "project-list-point"
+                ? "black"
+                : "gray.400"
+            }
           >
             PROJECT LIST
           </Text>
           <Box
-            display="grid"
+            display={language === "en" ? "grid" : "none"}
             gridTemplateColumns="repeat(auto-fill, minmax(15rem, 18rem))"
             gap="1rem"
             justifyContent="center"
@@ -239,25 +271,6 @@ export default function App() {
               descList={[
                 "Traffic Management Game 🚘",
                 "Develop with Unity Engine",
-              ]}
-              btnList={[
-                {
-                  name: "Github repo",
-                  href: "https://github.com/tuttoMaker/Intersection",
-                },
-                {
-                  name: "Notion",
-                  href: "https://www.notion.so/rukasp/Project-Intersection-b17815fa8fb54fafb60bf39df80ccb74",
-                },
-              ]}
-            />
-            <ProjectCard
-              name="Intersection"
-              img={intersection}
-              tagList={["GAME DEV", "UNITY"]}
-              descList={[
-                "도로를 배치해서 도시의 교통량 조절하는 게임 🚘",
-                "유니티 엔진을 이용해 Build 했습니다.",
               ]}
               btnList={[
                 {
@@ -287,22 +300,6 @@ export default function App() {
               ]}
             />
             <ProjectCard
-              name="오늘의 원신"
-              img={todaysgenshin}
-              bgColor="white"
-              tagList={["REACT"]}
-              descList={[
-                "원신에서 매일 할 일을 알려주는 웹앱 📝",
-                "리액트로 Build 했습니다.",
-              ]}
-              btnList={[
-                {
-                  name: "Github repo",
-                  href: "https://github.com/descendStar/todays-genshin",
-                },
-              ]}
-            />
-            <ProjectCard
               name="Pixel Reversi"
               tagList={["GAME DEV", "UNITY"]}
               descList={[
@@ -320,11 +317,55 @@ export default function App() {
                 },
               ]}
             />
+          </Box>
+          <Box
+            display={language === "kr" ? "grid" : "none"}
+            gridTemplateColumns="repeat(auto-fill, minmax(15rem, 18rem))"
+            gap="1rem"
+            justifyContent="center"
+          >
             <ProjectCard
-              name="Pixel Reversi"
+              name="Intersection"
+              img={intersection}
               tagList={["GAME DEV", "UNITY"]}
               descList={[
-                "Pixel 그래픽을 사용한 리버시 게임입니다.",
+                "도로를 배치해서 도시의 교통량 조절하는 게임 🚘",
+                "유니티 엔진을 이용해 Build 했습니다.",
+              ]}
+              btnList={[
+                {
+                  name: "Github repo",
+                  href: "https://github.com/tuttoMaker/Intersection",
+                },
+                {
+                  name: "Notion",
+                  href: "https://www.notion.so/rukasp/Project-Intersection-b17815fa8fb54fafb60bf39df80ccb74",
+                },
+              ]}
+            />
+            <ProjectCard
+              name="오늘의 원신"
+              img={todaysgenshin}
+              bgColor="white"
+              tagList={["REACT"]}
+              descList={[
+                "원신에서 매일 할 일을 알려주는 웹앱 📝",
+                "리액트로 Build 했습니다.",
+              ]}
+              btnList={[
+                {
+                  name: "Github repo",
+                  href: "https://github.com/descendStar/todays-genshin",
+                },
+              ]}
+            />
+            <ProjectCard
+              name="Pixel Reversi"
+              img={pixelreversi}
+              moreImg={pixelreversi_intro}
+              tagList={["GAME DEV", "UNITY"]}
+              descList={[
+                "Pixel 그래픽으로 개발한 리버시 게임",
                 "Unity 로 개발했고, WebGL 로 Build 했습니다.",
               ]}
               btnList={[
@@ -338,6 +379,26 @@ export default function App() {
                 },
               ]}
             />
+            <ProjectCard
+              name="Together"
+              img={together}
+              tagList={["GAME DEV"]}
+              descList={[
+                "Unreal Engine 4로 개발한 1인칭 공포 게임",
+                "숲속에 있는 구 소련 건물을 탈출해야 합니다.",
+              ]}
+              btnList={[{ name: "Github repo" }]}
+            />
+            <ProjectCard
+              name="Reflect"
+              img={reflect}
+              tagList={["GAME DEV"]}
+              descList={[
+                "거울과 레이저를 이용한 퍼즐 게임 🧩",
+                "Python Cocos 엔진을 이용해 개발했습니다.",
+              ]}
+              btnList={[{ name: "Github repo" }]}
+            />
           </Box>
         </Box>
         <Divider my={12} />
@@ -348,6 +409,12 @@ export default function App() {
             fontWeight="extrabold"
             mb={8}
             textAlign="center"
+            color={
+              pointList.find((p) => p.id === focusedPoint).id ===
+              "screenshot-point"
+                ? "black"
+                : "gray.400"
+            }
           >
             PROJECT SCREENSHOT
           </Text>
@@ -360,8 +427,13 @@ export default function App() {
             fontWeight="extrabold"
             mb={8}
             textAlign="center"
+            color={
+              pointList.find((p) => p.id === focusedPoint).id === "blog-point"
+                ? "black"
+                : "gray.400"
+            }
           >
-            BLOG
+            POSTS
           </Text>
         </Box>
       </Box>

@@ -6,10 +6,12 @@ import {
   Box,
   Flex,
   Text,
+  Image,
 } from "@chakra-ui/react";
 import { GoRepo } from "react-icons/go";
 import { SiNotion } from "react-icons/si";
 import { FiPlay } from "react-icons/fi";
+import { useState } from "react";
 
 export default function ProjectCard({
   name,
@@ -20,6 +22,7 @@ export default function ProjectCard({
   tagList,
   descList,
   btnList,
+  moreImg = undefined,
 }) {
   const BtnProp = ({ color, children }) => {
     return (
@@ -72,15 +75,22 @@ export default function ProjectCard({
     REACT: <TagProp name="REACT.JS" color="blue" />,
   };
 
+  let [expanded, setExpanded] = useState(false);
+
   return (
     <Box
       bg="white"
-      height="fit-content"
+      height={expanded ? "30rem" : "10rem"}
       borderRadius="0.5rem"
       p={4}
       boxShadow="0 0 15px 0 rgba(0, 0, 0, 0.05)"
+      onClick={() => {
+        setExpanded(!expanded);
+      }}
+      _hover={{ transform: "scale(1.02)" }}
+      transition="0.2s ease-in-out"
     >
-      <Flex direction="column" gap="0.6rem">
+      <Flex direction="column" justifyContent="space-between" height="100%">
         <Flex direction="row" gap="1rem">
           <Flex flex={1} alignItems="center">
             <Avatar
@@ -102,21 +112,24 @@ export default function ProjectCard({
             </Text>
           </Flex>
         </Flex>
-        <Text fontWeight="medium" fontSize="0.8rem">
-          {descList.map((desc) => {
-            return <Text>{desc}</Text>;
-          })}
-        </Text>
-        <Divider />
-        <Flex gap="0.5rem" mt={1}>
-          {btnList.map(({ name, href }) => {
-            return (
-              <a href={href} target="_blank" rel="noreferrer">
-                {btnData[name]}
-              </a>
-            );
-          })}
-        </Flex>
+        {moreImg && expanded && <Image src={moreImg} />}
+        <Box>
+          <Text fontWeight="medium" fontSize="0.8rem">
+            {descList.map((desc) => {
+              return <Text>{desc}</Text>;
+            })}
+          </Text>
+          <Divider />
+          <Flex gap="0.5rem" mt={1}>
+            {btnList.map(({ name, href }) => {
+              return (
+                <a href={href} target="_blank" rel="noreferrer">
+                  {btnData[name]}
+                </a>
+              );
+            })}
+          </Flex>
+        </Box>
       </Flex>
     </Box>
   );
