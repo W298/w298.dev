@@ -128,7 +128,7 @@ export default function ProjectCard({
           </Flex>
         </Flex>
         <Collapse in={moreImg && expanded} animateOpacity>
-          <Image src={moreImg} />
+          <Image src={moreImg} borderRadius="0.5rem" />
         </Collapse>
         <Flex direction="column" gap="0.4rem">
           <Text fontWeight="medium" fontSize="0.8rem">
