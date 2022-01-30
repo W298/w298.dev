@@ -260,7 +260,7 @@ export default function App() {
             PROJECT LIST
           </Text>
           <Box
-            display={language === "en" ? "grid" : "none"}
+            display="grid"
             gridTemplateColumns="repeat(auto-fill, minmax(15rem, 18rem))"
             gap="1rem"
             justifyContent="center"
@@ -269,10 +269,14 @@ export default function App() {
               name="Intersection"
               img={intersection}
               tagList={["GAME DEV", "UNITY"]}
-              descList={[
-                "Traffic Management Game 🚘",
-                "Develop with Unity Engine",
-              ]}
+              descList={
+                language === "kr"
+                  ? [
+                      "도로를 배치해서 도시의 교통량 조절하는 게임 🚘",
+                      "유니티 엔진을 이용해 Build 했습니다.",
+                    ]
+                  : ["Traffic Management Game 🚘", "Develop with Unity Engine"]
+              }
               btnList={[
                 {
                   name: "Github repo",
@@ -285,75 +289,19 @@ export default function App() {
               ]}
             />
             <ProjectCard
-              name="Today's Genshin"
-              img={todaysgenshin}
-              bgColor="white"
-              tagList={["REACT"]}
-              descList={[
-                "Genshin Impact Todo Web-app 📝",
-                "Built with React.js",
-              ]}
-              btnList={[
-                {
-                  name: "Github repo",
-                  href: "https://github.com/descendStar/todays-genshin",
-                },
-              ]}
-            />
-            <ProjectCard
-              name="Pixel Reversi"
-              tagList={["GAME DEV", "UNITY"]}
-              descList={[
-                "Reversi (Othello) game with pixel graphic",
-                "Develop with Unity Engine + WebGL",
-              ]}
-              btnList={[
-                {
-                  name: "Github repo",
-                  href: "https://github.com/descendStar/Pixel-Reversi",
-                },
-                {
-                  name: "Play Now",
-                  href: "https://pixel-reversi.netlify.app",
-                },
-              ]}
-            />
-          </Box>
-          <Box
-            display={language === "kr" ? "grid" : "none"}
-            gridTemplateColumns="repeat(auto-fill, minmax(15rem, 18rem))"
-            gap="1rem"
-            justifyContent="center"
-          >
-            <ProjectCard
-              name="Intersection"
-              img={intersection}
-              tagList={["GAME DEV", "UNITY"]}
-              descList={[
-                "도로를 배치해서 도시의 교통량 조절하는 게임 🚘",
-                "유니티 엔진을 이용해 Build 했습니다.",
-              ]}
-              btnList={[
-                {
-                  name: "Github repo",
-                  href: "https://github.com/tuttoMaker/Intersection",
-                },
-                {
-                  name: "Notion",
-                  href: "https://www.notion.so/rukasp/Project-Intersection-b17815fa8fb54fafb60bf39df80ccb74",
-                },
-              ]}
-            />
-            <ProjectCard
-              name="오늘의 원신"
+              name={language === "kr" ? "오늘의 원신" : "Today's Genshin"}
               img={todaysgenshin}
               moreImg={todaysgenshin_more}
               bgColor="white"
               tagList={["WEB APP", "REACT"]}
-              descList={[
-                "원신에서 매일 할 일을 알려주는 웹앱 📝",
-                "리액트로 Build 했습니다.",
-              ]}
+              descList={
+                language === "kr"
+                  ? [
+                      "원신에서 매일 할 일을 알려주는 웹앱 📝",
+                      "리액트로 Build 했습니다.",
+                    ]
+                  : ["Genshin Impact Todo Web-app 📝", "Built with React.js"]
+              }
               btnList={[
                 {
                   name: "Github repo",
@@ -370,10 +318,17 @@ export default function App() {
               img={pixelreversi}
               moreImg={pixelreversi_intro}
               tagList={["GAME DEV", "UNITY"]}
-              descList={[
-                "Pixel 그래픽으로 개발한 리버시 게임",
-                "Unity 로 개발했고, WebGL 로 Build 했습니다.",
-              ]}
+              descList={
+                language === "kr"
+                  ? [
+                      "Pixel 그래픽으로 개발한 리버시 게임",
+                      "Unity 로 개발했고, WebGL 로 Build 했습니다.",
+                    ]
+                  : [
+                      "Reversi (Othello) game with pixel graphic",
+                      "Develop with Unity Engine + WebGL",
+                    ]
+              }
               btnList={[
                 {
                   name: "Github repo",
