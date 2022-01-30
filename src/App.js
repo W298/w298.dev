@@ -8,6 +8,7 @@ import pixelreversi from "./imgs/pixelreversi.jpg";
 import together from "./imgs/together.jpg";
 import reflect from "./imgs/reflect.jpg";
 import pixelreversi_intro from "./imgs/pixelreversi_intro.gif";
+import todaysgenshin_more from "./imgs/todaysgenshin_more.png";
 
 import ProjectCard from "./ProjectCard";
 
@@ -346,8 +347,9 @@ export default function App() {
             <ProjectCard
               name="오늘의 원신"
               img={todaysgenshin}
+              moreImg={todaysgenshin_more}
               bgColor="white"
-              tagList={["REACT"]}
+              tagList={["WEB APP", "REACT"]}
               descList={[
                 "원신에서 매일 할 일을 알려주는 웹앱 📝",
                 "리액트로 Build 했습니다.",
@@ -356,6 +358,10 @@ export default function App() {
                 {
                   name: "Github repo",
                   href: "https://github.com/descendStar/todays-genshin",
+                },
+                {
+                  name: "Link",
+                  href: "https://todays-genshin.netlify.app",
                 },
               ]}
             />
@@ -382,7 +388,7 @@ export default function App() {
             <ProjectCard
               name="Together"
               img={together}
-              tagList={["GAME DEV"]}
+              tagList={["GAME DEV", "UNREAL4"]}
               descList={[
                 "Unreal Engine 4로 개발한 1인칭 공포 게임",
                 "숲속에 있는 구 소련 건물을 탈출해야 합니다.",
@@ -392,9 +398,9 @@ export default function App() {
             <ProjectCard
               name="Reflect"
               img={reflect}
-              tagList={["GAME DEV"]}
+              tagList={["GAME DEV", "PYTHON"]}
               descList={[
-                "거울과 레이저를 이용한 퍼즐 게임 🧩",
+                "거울과 레이저를 이용한 퍼즐 게임",
                 "Python Cocos 엔진을 이용해 개발했습니다.",
               ]}
               btnList={[{ name: "Github repo" }]}
