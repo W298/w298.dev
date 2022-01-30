@@ -89,11 +89,12 @@ export default function App() {
       <Box
         px={5}
         py={2}
-        bgColor="white"
+        background="hsla(0,0%,100%,.8)"
         position="fixed"
         width="100vw"
         zIndex="1"
         boxShadow="0 0 15px 0 rgba(0, 0, 0, 0.05)"
+        backdropFilter="blur(8px) saturate(180%)"
       >
         <Flex justifyContent="center" alignItems="center" gap={5}>
           <Flex flex="1" gap={2} display={{ base: "none", sm: "flex" }}>
