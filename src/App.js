@@ -11,6 +11,7 @@ import pixelreversi_intro from "./imgs/pixelreversi_intro.gif";
 import todaysgenshin_more from "./imgs/todaysgenshin_more.png";
 
 import ProjectCard from "./ProjectCard";
+import DashBoard from "./DashBoard";
 
 import { Text, IconButton, Box, Flex, Divider } from "@chakra-ui/react";
 import {
@@ -70,11 +71,11 @@ export default function App() {
   let [focusedPoint, setFocusedPoint] = useState(pointList[0].id);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (focusedPoint !== getCurrnetPoint()) {
-        setFocusedPoint(getCurrnetPoint());
-      }
-    });
+    // window.addEventListener("scroll", () => {
+    //   if (focusedPoint !== getCurrnetPoint()) {
+    //     setFocusedPoint(getCurrnetPoint());
+    //   }
+    // });
   });
 
   return (
@@ -240,10 +241,14 @@ export default function App() {
       </Box>
       <Box
         p={8}
-        pt="6rem"
+        pt={32}
+        pb={16}
         ml={{ base: "0", sm: "0", md: "0", lg: "18rem" }}
-        pb="50rem"
       >
+        <DashBoard />
+      </Box>
+      <Divider />
+      <Box p={8} ml={{ base: "0", sm: "0", md: "0", lg: "18rem" }} pb="50rem">
         <Box py={2}>
           <Text
             id="project-list-point"
