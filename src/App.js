@@ -26,18 +26,33 @@ import { FiGithub, FiMoon, FiMenu, FiList, FiImage } from "react-icons/fi";
 
 export default function App() {
   const pointList = [
-    { id: "about-me-code", title: 'spawnDeveloper("riruna")' },
+    {
+      id: "about-me-code",
+      title: 'spawnDeveloper("riruna")',
+      front: "spawnDeveloper",
+      back: '"riruna"',
+    },
     {
       id: "project-list-point",
       title: "render(p.list)",
       category: "Project",
+      front: "render",
+      back: "p.list",
     },
     {
       id: "screenshot-point",
       title: "render(p.screenshot)",
       category: "Project",
+      front: "render",
+      back: "p.screenshot",
     },
-    { id: "blog-point", title: "render(b.post)", category: "Blog" },
+    {
+      id: "blog-point",
+      title: "render(b.post)",
+      category: "Blog",
+      front: "render",
+      back: "b.post",
+    },
   ];
   const categoryList = [
     ...new Set(
@@ -238,16 +253,11 @@ export default function App() {
                 </Flex>
               )}
               <Flex flexDirection="column">
-                {pointList.map(({ id, title, category }) => {
+                {pointList.map(({ id, front, back, category }) => {
                   if (cate !== category) return null;
                   return (
-                    <Text
-                      fontFamily="Source Code Pro"
-                      fontWeight="bold"
-                      color={focusedPoint === id ? "black" : "gray.400"}
-                      cursor="pointer"
+                    <Flex
                       p="0.5rem 1.5rem"
-                      transition="0.1s ease-in-out"
                       _hover={{
                         bgColor: "gray.100",
                       }}
@@ -255,8 +265,52 @@ export default function App() {
                         scrollToTarget(id);
                       }}
                     >
-                      {title}
-                    </Text>
+                      <Text
+                        fontFamily="Source Code Pro"
+                        fontWeight="bold"
+                        color={focusedPoint === id ? "#6f42c1" : "gray.400"}
+                        cursor="pointer"
+                        transition="0.1s ease-in-out"
+                      >
+                        {front}
+                      </Text>
+                      <Text
+                        fontFamily="Source Code Pro"
+                        fontWeight="bold"
+                        color={focusedPoint === id ? "black" : "gray.400"}
+                        cursor="pointer"
+                        transition="0.1s ease-in-out"
+                      >
+                        {"("}
+                      </Text>
+                      <Text
+                        fontFamily="Source Code Pro"
+                        fontWeight="bold"
+                        color={
+                          focusedPoint !== id
+                            ? "gray.400"
+                            : id === "about-me-code"
+                            ? "#005cc5"
+                            : "black"
+                        }
+                        cursor="pointer"
+                        transition="0.1s ease-in-out"
+                        _hover={{
+                          bgColor: "gray.100",
+                        }}
+                      >
+                        {back}
+                      </Text>
+                      <Text
+                        fontFamily="Source Code Pro"
+                        fontWeight="bold"
+                        color={focusedPoint === id ? "black" : "gray.400"}
+                        cursor="pointer"
+                        transition="0.1s ease-in-out"
+                      >
+                        {")"}
+                      </Text>
+                    </Flex>
                   );
                 })}
               </Flex>
@@ -276,13 +330,21 @@ export default function App() {
       <Divider />
       <Box ml={{ base: "0", sm: "0", md: "0", lg: "18rem" }} pb="50rem">
         <Box p={8} py={12}>
-          <Flex justifyContent="center">
+          <Flex
+            justifyContent="center"
+            bgColor="white"
+            mb={10}
+            boxShadow="0 0 15px 0 rgba(0, 0, 0, 0.05)"
+            width="fit-content"
+            p={2}
+            px={4}
+            borderRadius="0.5rem"
+          >
             <Text
               id="project-list-point"
               fontSize={{ base: "2xl", sm: "2xl", md: "3xl" }}
               fontFamily="Source Code Pro"
               fontWeight="extrabold"
-              mb={8}
               textAlign="center"
               color={
                 pointList.find((p) => p.id === focusedPoint).id ===
@@ -297,7 +359,6 @@ export default function App() {
               fontSize={{ base: "2xl", sm: "2xl", md: "3xl" }}
               fontFamily="Source Code Pro"
               fontWeight="extrabold"
-              mb={8}
               textAlign="center"
               color={
                 pointList.find((p) => p.id === focusedPoint).id ===
@@ -414,13 +475,21 @@ export default function App() {
         </Box>
         <Divider />
         <Box p={8} py={12}>
-          <Flex justifyContent="center">
+          <Flex
+            justifyContent="center"
+            bgColor="white"
+            mb={10}
+            boxShadow="0 0 15px 0 rgba(0, 0, 0, 0.05)"
+            width="fit-content"
+            p={2}
+            px={4}
+            borderRadius="0.5rem"
+          >
             <Text
               id="screenshot-point"
               fontSize={{ base: "2xl", sm: "2xl", md: "3xl" }}
               fontFamily="Source Code Pro"
               fontWeight="extrabold"
-              mb={8}
               textAlign="center"
               color={
                 pointList.find((p) => p.id === focusedPoint).id ===
@@ -435,7 +504,6 @@ export default function App() {
               fontSize={{ base: "2xl", sm: "2xl", md: "3xl" }}
               fontFamily="Source Code Pro"
               fontWeight="extrabold"
-              mb={8}
               textAlign="center"
               color={
                 pointList.find((p) => p.id === focusedPoint).id ===
@@ -450,13 +518,21 @@ export default function App() {
         </Box>
         <Divider />
         <Box p={8} py={12}>
-          <Flex justifyContent="center">
+          <Flex
+            justifyContent="center"
+            bgColor="white"
+            mb={10}
+            boxShadow="0 0 15px 0 rgba(0, 0, 0, 0.05)"
+            width="fit-content"
+            p={2}
+            px={4}
+            borderRadius="0.5rem"
+          >
             <Text
               id="blog-point"
               fontSize={{ base: "2xl", sm: "2xl", md: "3xl" }}
               fontFamily="Source Code Pro"
               fontWeight="extrabold"
-              mb={8}
               textAlign="center"
               color={
                 pointList.find((p) => p.id === focusedPoint).id === "blog-point"
@@ -470,7 +546,6 @@ export default function App() {
               fontSize={{ base: "2xl", sm: "2xl", md: "3xl" }}
               fontFamily="Source Code Pro"
               fontWeight="extrabold"
-              mb={8}
               textAlign="center"
               color={
                 pointList.find((p) => p.id === focusedPoint).id === "blog-point"

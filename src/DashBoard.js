@@ -207,7 +207,9 @@ export default function DashBoard() {
             setExpanded(!expanded);
           }}
         />
-        <Text fontSize="sm">{expanded ? "view less" : "view more"}</Text>
+        <Text fontSize="sm" fontWeight="bold">
+          {expanded ? "view less" : "view more"}
+        </Text>
       </Flex>
     </Flex>
   );
