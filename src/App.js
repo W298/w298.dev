@@ -128,7 +128,7 @@ export default function App() {
               _hover={{ color: "black" }}
               icon={<FiGithub />}
               onClick={() => {
-                window.open("https://github.com/descendStar", "_blank");
+                window.open("https://github.com/riruna", "_blank");
               }}
             />
             <IconButton
@@ -177,7 +177,7 @@ export default function App() {
                     icon={<FiGithub />}
                     fontWeight="medium"
                     onClick={() => {
-                      window.open("https://github.com/descendStar", "_blank");
+                      window.open("https://github.com/riruna", "_blank");
                     }}
                   >
                     Github Profile
@@ -391,7 +391,7 @@ export default function App() {
               btnList={[
                 {
                   name: "Github repo",
-                  href: "https://github.com/tuttoMaker/Intersection",
+                  href: "https://github.com/riruna/Intersection",
                 },
                 {
                   name: "Notion",
@@ -416,7 +416,7 @@ export default function App() {
               btnList={[
                 {
                   name: "Github repo",
-                  href: "https://github.com/descendStar/todays-genshin",
+                  href: "https://github.com/riruna/todays-genshin",
                 },
                 {
                   name: "Link",
@@ -443,7 +443,7 @@ export default function App() {
               btnList={[
                 {
                   name: "Github repo",
-                  href: "https://github.com/descendStar/Pixel-Reversi",
+                  href: "https://github.com/riruna/Pixel-Reversi",
                 },
                 {
                   name: "Play Now",

@@ -87,10 +87,10 @@ export default function DashBoard() {
         bgColor="white"
         boxShadow="0 0 15px 0 rgba(0, 0, 0, 0.05)"
         width="100%"
-        height={expanded ? "33rem" : "15rem"}
+        height={expanded ? "29rem" : "15rem"}
         transition="0.2s ease-in-out"
         overflowY="hidden"
-        maxWidth="35rem"
+        maxWidth="40rem"
       >
         <Text
           fontSize={{ base: "sm", sm: "sm", md: "md" }}
