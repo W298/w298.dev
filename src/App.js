@@ -26,13 +26,18 @@ import { FiGithub, FiMoon, FiMenu, FiList, FiImage } from "react-icons/fi";
 
 export default function App() {
   const pointList = [
-    { id: "project-list-point", title: "Project List", category: "Project" },
+    { id: "about-me-code", title: 'spawnDeveloper("riruna")' },
     {
-      id: "screenshot-point",
-      title: "Project Screenshot",
+      id: "project-list-point",
+      title: "render(p.list)",
       category: "Project",
     },
-    { id: "blog-point", title: "Posts", category: "Blog" },
+    {
+      id: "screenshot-point",
+      title: "render(p.screenshot)",
+      category: "Project",
+    },
+    { id: "blog-point", title: "render(b.post)", category: "Blog" },
   ];
   const categoryList = [
     ...new Set(
@@ -44,6 +49,7 @@ export default function App() {
 
   const getScrollPos = (id) => {
     let element = document.getElementById(id);
+    if (!element) return null;
     let headerOffset = 180;
     let elementPosition = element.getBoundingClientRect().top;
     return Math.floor(elementPosition + window.pageYOffset - headerOffset);
@@ -71,11 +77,12 @@ export default function App() {
   let [focusedPoint, setFocusedPoint] = useState(pointList[0].id);
 
   useEffect(() => {
-    // window.addEventListener("scroll", () => {
-    //   if (focusedPoint !== getCurrnetPoint()) {
-    //     setFocusedPoint(getCurrnetPoint());
-    //   }
-    // });
+    window.addEventListener("scroll", () => {
+      let curPoint = getCurrnetPoint();
+      if (curPoint && focusedPoint !== curPoint) {
+        setFocusedPoint(getCurrnetPoint());
+      }
+    });
   });
 
   return (
@@ -138,15 +145,15 @@ export default function App() {
               <MenuList>
                 <MenuGroup title="Project" fontWeight="bold">
                   <MenuItem icon={<FiList />} fontWeight="medium">
-                    Project List
+                    render(p.list)
                   </MenuItem>
                   <MenuItem icon={<FiImage />} fontWeight="medium">
-                    Project Screenshot
+                    render(p.screenshot)
                   </MenuItem>
                 </MenuGroup>
                 <MenuDivider />
                 <MenuGroup title="Etc" fontWeight="bold">
-                  <MenuItem fontWeight="medium">Blog Posts</MenuItem>
+                  <MenuItem fontWeight="medium">render(b.post)</MenuItem>
                   <MenuItem fontWeight="medium">About Me</MenuItem>
                 </MenuGroup>
                 <MenuDivider />
@@ -200,27 +207,46 @@ export default function App() {
         {categoryList.map((cate) => {
           return (
             <>
-              <Text
-                fontWeight="extrabold"
-                p="0.5rem 2rem"
-                fontSize="1.1rem"
-                color={
-                  pointList.find((p) => p.id === focusedPoint).category === cate
-                    ? "black"
-                    : "gray.400"
-                }
-              >
-                {cate}
-              </Text>
+              {cate && (
+                <Flex p="0.5rem 1.25rem" gap="0.6rem">
+                  <Text
+                    fontFamily="Source Code Pro"
+                    fontWeight="extrabold"
+                    fontSize="1.1rem"
+                    color={
+                      pointList.find((p) => p.id === focusedPoint).category ===
+                      cate
+                        ? "#d73a49"
+                        : "gray.400"
+                    }
+                  >
+                    {"class"}
+                  </Text>
+                  <Text
+                    fontFamily="Source Code Pro"
+                    fontWeight="extrabold"
+                    fontSize="1.1rem"
+                    color={
+                      pointList.find((p) => p.id === focusedPoint).category ===
+                      cate
+                        ? "black"
+                        : "gray.400"
+                    }
+                  >
+                    {cate}
+                  </Text>
+                </Flex>
+              )}
               <Flex flexDirection="column">
                 {pointList.map(({ id, title, category }) => {
                   if (cate !== category) return null;
                   return (
                     <Text
-                      fontWeight="medium"
+                      fontFamily="Source Code Pro"
+                      fontWeight="bold"
                       color={focusedPoint === id ? "black" : "gray.400"}
                       cursor="pointer"
-                      p="0.5rem 2rem"
+                      p="0.5rem 1.5rem"
                       transition="0.1s ease-in-out"
                       _hover={{
                         bgColor: "gray.100",
@@ -241,30 +267,48 @@ export default function App() {
       </Box>
       <Box
         p={8}
-        pt={32}
-        pb={16}
+        pt={28}
+        pb={12}
         ml={{ base: "0", sm: "0", md: "0", lg: "18rem" }}
       >
-        <DashBoard />
+        <DashBoard id="about-me-code" />
       </Box>
       <Divider />
-      <Box p={8} ml={{ base: "0", sm: "0", md: "0", lg: "18rem" }} pb="50rem">
-        <Box py={2}>
-          <Text
-            id="project-list-point"
-            fontSize="3xl"
-            fontWeight="extrabold"
-            mb={8}
-            textAlign="center"
-            color={
-              pointList.find((p) => p.id === focusedPoint).id ===
-              "project-list-point"
-                ? "black"
-                : "gray.400"
-            }
-          >
-            PROJECT LIST
-          </Text>
+      <Box ml={{ base: "0", sm: "0", md: "0", lg: "18rem" }} pb="50rem">
+        <Box p={8} py={12}>
+          <Flex justifyContent="center">
+            <Text
+              id="project-list-point"
+              fontSize={{ base: "2xl", sm: "2xl", md: "3xl" }}
+              fontFamily="Source Code Pro"
+              fontWeight="extrabold"
+              mb={8}
+              textAlign="center"
+              color={
+                pointList.find((p) => p.id === focusedPoint).id ===
+                "project-list-point"
+                  ? "#6f42c1"
+                  : "gray.400"
+              }
+            >
+              render
+            </Text>
+            <Text
+              fontSize={{ base: "2xl", sm: "2xl", md: "3xl" }}
+              fontFamily="Source Code Pro"
+              fontWeight="extrabold"
+              mb={8}
+              textAlign="center"
+              color={
+                pointList.find((p) => p.id === focusedPoint).id ===
+                "project-list-point"
+                  ? "black"
+                  : "gray.400"
+              }
+            >
+              (p.list)
+            </Text>
+          </Flex>
           <Box
             display="grid"
             gridTemplateColumns="repeat(auto-fill, minmax(15rem, 18rem))"
@@ -368,40 +412,75 @@ export default function App() {
             />
           </Box>
         </Box>
-        <Divider my={12} />
-        <Box py={2}>
-          <Text
-            id="screenshot-point"
-            fontSize="3xl"
-            fontWeight="extrabold"
-            mb={8}
-            textAlign="center"
-            color={
-              pointList.find((p) => p.id === focusedPoint).id ===
-              "screenshot-point"
-                ? "black"
-                : "gray.400"
-            }
-          >
-            PROJECT SCREENSHOT
-          </Text>
+        <Divider />
+        <Box p={8} py={12}>
+          <Flex justifyContent="center">
+            <Text
+              id="screenshot-point"
+              fontSize={{ base: "2xl", sm: "2xl", md: "3xl" }}
+              fontFamily="Source Code Pro"
+              fontWeight="extrabold"
+              mb={8}
+              textAlign="center"
+              color={
+                pointList.find((p) => p.id === focusedPoint).id ===
+                "screenshot-point"
+                  ? "#6f42c1"
+                  : "gray.400"
+              }
+            >
+              render
+            </Text>
+            <Text
+              fontSize={{ base: "2xl", sm: "2xl", md: "3xl" }}
+              fontFamily="Source Code Pro"
+              fontWeight="extrabold"
+              mb={8}
+              textAlign="center"
+              color={
+                pointList.find((p) => p.id === focusedPoint).id ===
+                "screenshot-point"
+                  ? "black"
+                  : "gray.400"
+              }
+            >
+              (p.screenshot)
+            </Text>
+          </Flex>
         </Box>
-        <Divider my={12} />
-        <Box py={2}>
-          <Text
-            id="blog-point"
-            fontSize="3xl"
-            fontWeight="extrabold"
-            mb={8}
-            textAlign="center"
-            color={
-              pointList.find((p) => p.id === focusedPoint).id === "blog-point"
-                ? "black"
-                : "gray.400"
-            }
-          >
-            POSTS
-          </Text>
+        <Divider />
+        <Box p={8} py={12}>
+          <Flex justifyContent="center">
+            <Text
+              id="blog-point"
+              fontSize={{ base: "2xl", sm: "2xl", md: "3xl" }}
+              fontFamily="Source Code Pro"
+              fontWeight="extrabold"
+              mb={8}
+              textAlign="center"
+              color={
+                pointList.find((p) => p.id === focusedPoint).id === "blog-point"
+                  ? "#6f42c1"
+                  : "gray.400"
+              }
+            >
+              render
+            </Text>
+            <Text
+              fontSize={{ base: "2xl", sm: "2xl", md: "3xl" }}
+              fontFamily="Source Code Pro"
+              fontWeight="extrabold"
+              mb={8}
+              textAlign="center"
+              color={
+                pointList.find((p) => p.id === focusedPoint).id === "blog-point"
+                  ? "black"
+                  : "gray.400"
+              }
+            >
+              (b.post)
+            </Text>
+          </Flex>
         </Box>
       </Box>
     </div>

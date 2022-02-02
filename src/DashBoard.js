@@ -9,7 +9,7 @@ import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 function Front({ text, space = true }) {
   return (
     <Text
-      fontSize={{ sm: "md", md: "md" }}
+      fontSize={{ base: "sm", sm: "sm", md: "md" }}
       fontWeight="medium"
       fontFamily="Source Code Pro"
       display="inline"
@@ -23,7 +23,7 @@ function Front({ text, space = true }) {
 function Parameter({ text, space = true }) {
   return (
     <Text
-      fontSize={{ sm: "md", md: "md" }}
+      fontSize={{ base: "sm", sm: "sm", md: "md" }}
       fontWeight="medium"
       fontFamily="Source Code Pro"
       display="inline"
@@ -37,7 +37,7 @@ function Parameter({ text, space = true }) {
 function Function({ text, space = true }) {
   return (
     <Text
-      fontSize={{ sm: "md", md: "md" }}
+      fontSize={{ base: "sm", sm: "sm", md: "md" }}
       fontWeight="medium"
       fontFamily="Source Code Pro"
       display="inline"
@@ -51,7 +51,7 @@ function Function({ text, space = true }) {
 function String({ text, space = true }) {
   return (
     <Text
-      fontSize={{ sm: "md", md: "md" }}
+      fontSize={{ base: "sm", sm: "sm", md: "md" }}
       fontWeight="medium"
       fontFamily="Source Code Pro"
       display="inline"
@@ -93,7 +93,7 @@ export default function DashBoard() {
         maxWidth="35rem"
       >
         <Text
-          fontSize={{ sm: "md", md: "md" }}
+          fontSize={{ base: "sm", sm: "sm", md: "md" }}
           fontWeight="medium"
           fontFamily="Source Code Pro"
           display="inline"
@@ -130,7 +130,7 @@ export default function DashBoard() {
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
             alt="python"
           />
-          {"]"}
+          {"],"}
           <br />
           <pre>{"    engine: ["}</pre>
           <Icon src={uesvg} alt="unreal" />
@@ -153,7 +153,7 @@ export default function DashBoard() {
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
             alt="ts"
           />
-          {"]"}
+          {"],"}
           <br />
           <pre>{"    lib: ["}</pre>
           <Icon
