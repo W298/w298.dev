@@ -23,7 +23,14 @@ import {
   MenuGroup,
   MenuDivider,
 } from "@chakra-ui/react";
-import { FiGithub, FiMoon, FiMenu, FiList, FiImage } from "react-icons/fi";
+import {
+  FiGithub,
+  FiMoon,
+  FiMenu,
+  FiList,
+  FiImage,
+  FiFileText,
+} from "react-icons/fi";
 
 export default function App() {
   const pointList = [
@@ -165,43 +172,97 @@ export default function App() {
             <Menu>
               <MenuButton as={IconButton} icon={<FiMenu />}></MenuButton>
               <MenuList>
-                <MenuGroup title="Project" fontWeight="bold">
-                  <MenuItem icon={<FiList />} fontWeight="medium">
-                    render(p.list)
+                <MenuItem>
+                  <Text fontFamily="Source Code Pro" fontSize="sm">
+                    spawnDeveloper("riruna")
+                  </Text>
+                </MenuItem>
+                <MenuDivider />
+                <MenuGroup
+                  title="class Project"
+                  fontWeight="bold"
+                  fontFamily="Source Code Pro"
+                >
+                  <MenuItem icon={<FiList />}>
+                    <Text fontFamily="Source Code Pro" fontSize="sm">
+                      render(p.list)
+                    </Text>
                   </MenuItem>
-                  <MenuItem icon={<FiImage />} fontWeight="medium">
-                    render(p.screenshot)
+                  <MenuItem icon={<FiImage />}>
+                    <Text
+                      fontFamily="Source Code Pro"
+                      fontWeight="medium"
+                      fontSize="sm"
+                    >
+                      render(p.screenshot)
+                    </Text>
                   </MenuItem>
                 </MenuGroup>
                 <MenuDivider />
-                <MenuGroup title="Etc" fontWeight="bold">
-                  <MenuItem fontWeight="medium">render(b.post)</MenuItem>
-                  <MenuItem fontWeight="medium">About Me</MenuItem>
+                <MenuGroup
+                  title="class Blog"
+                  fontWeight="bold"
+                  fontFamily="Source Code Pro"
+                >
+                  <MenuItem icon={<FiFileText />}>
+                    <Text
+                      fontFamily="Source Code Pro"
+                      fontWeight="medium"
+                      fontSize="sm"
+                    >
+                      render(b.post)
+                    </Text>
+                  </MenuItem>
                 </MenuGroup>
                 <MenuDivider />
-                <MenuGroup title="Shortcut" fontWeight="bold">
+                <MenuGroup
+                  title="function link()"
+                  fontWeight="bold"
+                  fontFamily="Source Code Pro"
+                >
                   <MenuItem
                     icon={<FiGithub />}
-                    fontWeight="medium"
                     onClick={() => {
                       window.open("https://github.com/riruna", "_blank");
                     }}
                   >
-                    Github Profile
+                    <Text
+                      fontFamily="Source Code Pro"
+                      fontWeight="medium"
+                      fontSize="sm"
+                    >
+                      open(dev.github.url)
+                    </Text>
                   </MenuItem>
-                  <MenuItem icon={<FiMoon />} fontWeight="medium">
-                    Toggle Dark Mode
+                  <MenuItem icon={<FiMoon />}>
+                    <Text
+                      fontFamily="Source Code Pro"
+                      fontWeight="medium"
+                      fontSize="sm"
+                    >
+                      toggleDarkMode()
+                    </Text>
                   </MenuItem>
                 </MenuGroup>
                 <MenuDivider />
-                <MenuGroup title="Language" fontWeight="bold">
+                <MenuGroup
+                  title="function setLang()"
+                  fontWeight="bold"
+                  fontFamily="Source Code Pro"
+                >
                   <MenuItem
                     fontWeight="medium"
                     onClick={() => {
                       setLanguage("kr");
                     }}
                   >
-                    🇰🇷 lang = KR
+                    <Text
+                      fontFamily="Source Code Pro"
+                      fontWeight="medium"
+                      fontSize="sm"
+                    >
+                      🇰🇷 setLang("KR")
+                    </Text>
                   </MenuItem>
                   <MenuItem
                     fontWeight="medium"
@@ -209,7 +270,13 @@ export default function App() {
                       setLanguage("en");
                     }}
                   >
-                    🇬🇧 lang = EN
+                    <Text
+                      fontFamily="Source Code Pro"
+                      fontWeight="medium"
+                      fontSize="sm"
+                    >
+                      🇬🇧 setLang("EN")
+                    </Text>
                   </MenuItem>
                 </MenuGroup>
               </MenuList>
