@@ -1,6 +1,7 @@
 import "./App.css";
 
 import { useState, useEffect } from "react";
+import { useColorMode, useColorModeValue } from "@chakra-ui/react";
 
 import intersection from "./imgs/intersection.png";
 import todaysgenshin from "./imgs/todaysgenshin.png";
@@ -91,6 +92,14 @@ export default function App() {
   let [language, setLanguage] = useState("kr");
   let [focusedPoint, setFocusedPoint] = useState(pointList[0].id);
 
+  const { toggleColorMode } = useColorMode();
+  const appBg = useColorModeValue("gray.50", "gray.900");
+  const topnavBg = useColorModeValue(
+    "rgba(255, 255, 255, 0.8)",
+    "rgba(45, 55, 72, 0.8)"
+  );
+  const sidebarBg = useColorModeValue("white", "gray.800");
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       let curPoint = getCurrnetPoint();
@@ -106,13 +115,13 @@ export default function App() {
         position="fixed"
         width="100vw"
         height="100vh"
-        bgColor="gray.50"
+        bgColor={appBg}
         zIndex="-1"
       ></Box>
       <Box
         px={5}
         py={2}
-        background="hsla(0,0%,100%,.8)"
+        background={topnavBg}
         position="fixed"
         width="100vw"
         zIndex="1"
@@ -137,9 +146,7 @@ export default function App() {
               color="gray.400"
               _hover={{ color: "black" }}
               icon={<FiMoon />}
-              onClick={() => {
-                console.log("dark mode enabled");
-              }}
+              onClick={toggleColorMode}
             />
           </Flex>
           <Flex flex="1" justifyContent="center">
@@ -211,7 +218,7 @@ export default function App() {
         </Flex>
       </Box>
       <Box
-        bgColor="white"
+        bgColor={sidebarBg}
         position="fixed"
         width="18rem"
         pt="5rem"
