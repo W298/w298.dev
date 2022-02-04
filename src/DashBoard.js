@@ -175,10 +175,10 @@ export default function DashBoard() {
           <pre>{"  };"}</pre>
           <br />
           <String text="d" />
-          {".mainFocus = { gameDev, webApp };"}
+          {".main = { gameDev, webApp };"}
           <br />
           <String text="d" />
-          {".favorite.editor = ["}
+          {".fav.editor = ["}
           <Icon
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
             alt="vscode"
