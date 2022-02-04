@@ -173,7 +173,11 @@ export default function App() {
               <MenuButton as={IconButton} icon={<FiMenu />}></MenuButton>
               <MenuList>
                 <MenuItem>
-                  <Text fontFamily="Source Code Pro" fontSize="sm">
+                  <Text
+                    fontFamily="Fira Code"
+                    fontSize="sm"
+                    fontWeight="semibold"
+                  >
                     spawnDeveloper("riruna")
                   </Text>
                 </MenuItem>
@@ -181,17 +185,21 @@ export default function App() {
                 <MenuGroup
                   title="class Project"
                   fontWeight="bold"
-                  fontFamily="Source Code Pro"
+                  fontFamily="Fira Code"
                 >
                   <MenuItem icon={<FiList />}>
-                    <Text fontFamily="Source Code Pro" fontSize="sm">
+                    <Text
+                      fontFamily="Fira Code"
+                      fontSize="sm"
+                      fontWeight="semibold"
+                    >
                       render(p.list)
                     </Text>
                   </MenuItem>
                   <MenuItem icon={<FiImage />}>
                     <Text
-                      fontFamily="Source Code Pro"
-                      fontWeight="medium"
+                      fontFamily="Fira Code"
+                      fontWeight="semibold"
                       fontSize="sm"
                     >
                       render(p.screenshot)
@@ -202,12 +210,12 @@ export default function App() {
                 <MenuGroup
                   title="class Blog"
                   fontWeight="bold"
-                  fontFamily="Source Code Pro"
+                  fontFamily="Fira Code"
                 >
                   <MenuItem icon={<FiFileText />}>
                     <Text
-                      fontFamily="Source Code Pro"
-                      fontWeight="medium"
+                      fontFamily="Fira Code"
+                      fontWeight="semibold"
                       fontSize="sm"
                     >
                       render(b.post)
@@ -218,7 +226,7 @@ export default function App() {
                 <MenuGroup
                   title="function link()"
                   fontWeight="bold"
-                  fontFamily="Source Code Pro"
+                  fontFamily="Fira Code"
                 >
                   <MenuItem
                     icon={<FiGithub />}
@@ -227,8 +235,8 @@ export default function App() {
                     }}
                   >
                     <Text
-                      fontFamily="Source Code Pro"
-                      fontWeight="medium"
+                      fontFamily="Fira Code"
+                      fontWeight="semibold"
                       fontSize="sm"
                     >
                       open(dev.github.url)
@@ -236,8 +244,8 @@ export default function App() {
                   </MenuItem>
                   <MenuItem icon={<FiMoon />}>
                     <Text
-                      fontFamily="Source Code Pro"
-                      fontWeight="medium"
+                      fontFamily="Fira Code"
+                      fontWeight="semibold"
                       fontSize="sm"
                     >
                       toggleDarkMode()
@@ -248,31 +256,31 @@ export default function App() {
                 <MenuGroup
                   title="function setLang()"
                   fontWeight="bold"
-                  fontFamily="Source Code Pro"
+                  fontFamily="Fira Code"
                 >
                   <MenuItem
-                    fontWeight="medium"
+                    fontWeight="semibold"
                     onClick={() => {
                       setLanguage("kr");
                     }}
                   >
                     <Text
-                      fontFamily="Source Code Pro"
-                      fontWeight="medium"
+                      fontFamily="Fira Code"
+                      fontWeight="semibold"
                       fontSize="sm"
                     >
                       🇰🇷 setLang("KR")
                     </Text>
                   </MenuItem>
                   <MenuItem
-                    fontWeight="medium"
+                    fontWeight="semibold"
                     onClick={() => {
                       setLanguage("en");
                     }}
                   >
                     <Text
-                      fontFamily="Source Code Pro"
-                      fontWeight="medium"
+                      fontFamily="Fira Code"
+                      fontWeight="semibold"
                       fontSize="sm"
                     >
                       🇬🇧 setLang("EN")
@@ -299,7 +307,7 @@ export default function App() {
               {cate && (
                 <Flex p="0.5rem 1.25rem" gap="0.6rem">
                   <Text
-                    fontFamily="Source Code Pro"
+                    fontFamily="Fira Code"
                     fontWeight="extrabold"
                     fontSize="1.1rem"
                     color={
@@ -312,7 +320,7 @@ export default function App() {
                     {"class"}
                   </Text>
                   <Text
-                    fontFamily="Source Code Pro"
+                    fontFamily="Fira Code"
                     fontWeight="extrabold"
                     fontSize="1.1rem"
                     color={
@@ -340,8 +348,8 @@ export default function App() {
                       }}
                     >
                       <Text
-                        fontFamily="Source Code Pro"
-                        fontWeight="bold"
+                        fontFamily="Fira Code"
+                        fontWeight="semibold"
                         color={focusedPoint === id ? "#6f42c1" : "gray.400"}
                         cursor="pointer"
                         transition="0.1s ease-in-out"
@@ -349,8 +357,8 @@ export default function App() {
                         {front}
                       </Text>
                       <Text
-                        fontFamily="Source Code Pro"
-                        fontWeight="bold"
+                        fontFamily="Fira Code"
+                        fontWeight="semibold"
                         color={focusedPoint === id ? "black" : "gray.400"}
                         cursor="pointer"
                         transition="0.1s ease-in-out"
@@ -358,8 +366,8 @@ export default function App() {
                         {"("}
                       </Text>
                       <Text
-                        fontFamily="Source Code Pro"
-                        fontWeight="bold"
+                        fontFamily="Fira Code"
+                        fontWeight="semibold"
                         color={
                           focusedPoint !== id
                             ? "gray.400"
@@ -376,8 +384,8 @@ export default function App() {
                         {back}
                       </Text>
                       <Text
-                        fontFamily="Source Code Pro"
-                        fontWeight="bold"
+                        fontFamily="Fira Code"
+                        fontWeight="semibold"
                         color={focusedPoint === id ? "black" : "gray.400"}
                         cursor="pointer"
                         transition="0.1s ease-in-out"
@@ -403,47 +411,7 @@ export default function App() {
       </Box>
       <Divider />
       <Box ml={{ base: "0", sm: "0", md: "0", lg: "18rem" }} pb="50rem">
-        <Box p={8} py={12}>
-          <Flex
-            justifyContent="center"
-            bgColor="white"
-            mb={10}
-            boxShadow="0 0 15px 0 rgba(0, 0, 0, 0.05)"
-            width="fit-content"
-            p={2}
-            px={4}
-            borderRadius="0.5rem"
-          >
-            <Text
-              id="project-list-point"
-              fontSize={{ base: "2xl", sm: "2xl", md: "3xl" }}
-              fontFamily="Source Code Pro"
-              fontWeight="extrabold"
-              textAlign="center"
-              color={
-                pointList.find((p) => p.id === focusedPoint).id ===
-                "project-list-point"
-                  ? "#6f42c1"
-                  : "gray.400"
-              }
-            >
-              render
-            </Text>
-            <Text
-              fontSize={{ base: "2xl", sm: "2xl", md: "3xl" }}
-              fontFamily="Source Code Pro"
-              fontWeight="extrabold"
-              textAlign="center"
-              color={
-                pointList.find((p) => p.id === focusedPoint).id ===
-                "project-list-point"
-                  ? "black"
-                  : "gray.400"
-              }
-            >
-              (p.list)
-            </Text>
-          </Flex>
+        <Box p={8} py={12} id="project-list-point">
           <Box
             display="grid"
             gridTemplateColumns="repeat(auto-fill, minmax(15rem, 18rem))"
@@ -548,89 +516,9 @@ export default function App() {
           </Box>
         </Box>
         <Divider />
-        <Box p={8} py={12}>
-          <Flex
-            justifyContent="center"
-            bgColor="white"
-            mb={10}
-            boxShadow="0 0 15px 0 rgba(0, 0, 0, 0.05)"
-            width="fit-content"
-            p={2}
-            px={4}
-            borderRadius="0.5rem"
-          >
-            <Text
-              id="screenshot-point"
-              fontSize={{ base: "2xl", sm: "2xl", md: "3xl" }}
-              fontFamily="Source Code Pro"
-              fontWeight="extrabold"
-              textAlign="center"
-              color={
-                pointList.find((p) => p.id === focusedPoint).id ===
-                "screenshot-point"
-                  ? "#6f42c1"
-                  : "gray.400"
-              }
-            >
-              render
-            </Text>
-            <Text
-              fontSize={{ base: "2xl", sm: "2xl", md: "3xl" }}
-              fontFamily="Source Code Pro"
-              fontWeight="extrabold"
-              textAlign="center"
-              color={
-                pointList.find((p) => p.id === focusedPoint).id ===
-                "screenshot-point"
-                  ? "black"
-                  : "gray.400"
-              }
-            >
-              (p.screenshot)
-            </Text>
-          </Flex>
-        </Box>
+        <Box p={8} py={12} id="screenshot-point"></Box>
         <Divider />
-        <Box p={8} py={12}>
-          <Flex
-            justifyContent="center"
-            bgColor="white"
-            mb={10}
-            boxShadow="0 0 15px 0 rgba(0, 0, 0, 0.05)"
-            width="fit-content"
-            p={2}
-            px={4}
-            borderRadius="0.5rem"
-          >
-            <Text
-              id="blog-point"
-              fontSize={{ base: "2xl", sm: "2xl", md: "3xl" }}
-              fontFamily="Source Code Pro"
-              fontWeight="extrabold"
-              textAlign="center"
-              color={
-                pointList.find((p) => p.id === focusedPoint).id === "blog-point"
-                  ? "#6f42c1"
-                  : "gray.400"
-              }
-            >
-              render
-            </Text>
-            <Text
-              fontSize={{ base: "2xl", sm: "2xl", md: "3xl" }}
-              fontFamily="Source Code Pro"
-              fontWeight="extrabold"
-              textAlign="center"
-              color={
-                pointList.find((p) => p.id === focusedPoint).id === "blog-point"
-                  ? "black"
-                  : "gray.400"
-              }
-            >
-              (b.post)
-            </Text>
-          </Flex>
-        </Box>
+        <Box p={8} py={12} id="blog-point"></Box>
       </Box>
     </div>
   );

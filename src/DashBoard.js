@@ -11,7 +11,7 @@ function Front({ text, space = true }) {
     <Text
       fontSize={{ base: "sm", sm: "sm", md: "md" }}
       fontWeight="medium"
-      fontFamily="Source Code Pro"
+      fontFamily="Fira Code"
       display="inline"
       color="#d73a49"
     >
@@ -25,7 +25,7 @@ function Parameter({ text, space = true }) {
     <Text
       fontSize={{ base: "sm", sm: "sm", md: "md" }}
       fontWeight="medium"
-      fontFamily="Source Code Pro"
+      fontFamily="Fira Code"
       display="inline"
       color="#e36209"
     >
@@ -39,7 +39,7 @@ function Function({ text, space = true }) {
     <Text
       fontSize={{ base: "sm", sm: "sm", md: "md" }}
       fontWeight="medium"
-      fontFamily="Source Code Pro"
+      fontFamily="Fira Code"
       display="inline"
       color="#6f42c1"
     >
@@ -53,7 +53,7 @@ function String({ text, space = true }) {
     <Text
       fontSize={{ base: "sm", sm: "sm", md: "md" }}
       fontWeight="medium"
-      fontFamily="Source Code Pro"
+      fontFamily="Fira Code"
       display="inline"
       color="#005cc5"
     >
@@ -87,7 +87,7 @@ export default function DashBoard() {
         bgColor="white"
         boxShadow="0 0 15px 0 rgba(0, 0, 0, 0.05)"
         width="100%"
-        height={expanded ? "29rem" : "15rem"}
+        height={expanded ? "27rem" : "15rem"}
         transition="0.2s ease-in-out"
         overflowY="hidden"
         maxWidth="40rem"
@@ -95,13 +95,13 @@ export default function DashBoard() {
         <Text
           fontSize={{ base: "sm", sm: "sm", md: "md" }}
           fontWeight="medium"
-          fontFamily="Source Code Pro"
+          fontFamily="Fira Code"
           display="inline"
         >
           <Front text="let" space={false} />
           <Function text=" onLoad" space={false} />
           {" = ("}
-          <Parameter text="id" space={false} />
+          <Parameter text="event" space={false} />
           {") => {"}
           <br />
           <Function text="shakingHand" />
@@ -109,7 +109,7 @@ export default function DashBoard() {
           <br />
           <br />
           <Front text="let" />
-          <String text=" developer" space={false} />
+          <String text=" d" space={false} />
           {' = { name: "riruna" };'}
           <br />
           <Front text="let" />
@@ -174,10 +174,10 @@ export default function DashBoard() {
           <br />
           <pre>{"  };"}</pre>
           <br />
-          <String text="developer" />
+          <String text="d" />
           {".mainFocus = { gameDev, webApp };"}
           <br />
-          <String text="developer" />
+          <String text="d" />
           {".favorite.editor = ["}
           <Icon
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
@@ -190,11 +190,12 @@ export default function DashBoard() {
           />
           {","}
           <Icon src={stsvg} alt="st" />
-          {"]"}
+          {"];"}
           <br />
           <br />
-          <Function text="createDeveloper" />
-          {"(developer);"}
+          <Front text="return new" />
+          <Function text=" Developer" space={false} />
+          {"(d);"}
           <br />
           {"};"}
         </Text>
