@@ -31,7 +31,6 @@ import {
   FiFileText,
   FiGlobe,
 } from "react-icons/fi";
-import AboutMe from "./AboutMe";
 
 export default function App() {
   const pointList = [
@@ -323,7 +322,6 @@ export default function App() {
         })}
       </Box>
       <Box ml={{ base: "0", sm: "0", md: "0", lg: "18rem" }} pb="50rem" pt={16}>
-        <AboutMe id="about-me-code" />
         <Divider />
         <Box p={8} py={12} id="project-list-point">
           <Box
