@@ -12,7 +12,6 @@ import pixelreversi_intro from "./imgs/pixelreversi_intro.gif";
 import todaysgenshin_more from "./imgs/todaysgenshin_more.png";
 
 import ProjectCard from "./ProjectCard";
-import DashBoard from "./DashBoard";
 
 import { Text, IconButton, Box, Flex, Divider } from "@chakra-ui/react";
 import {
@@ -30,36 +29,30 @@ import {
   FiList,
   FiImage,
   FiFileText,
+  FiGlobe,
 } from "react-icons/fi";
+import AboutMe from "./AboutMe";
 
 export default function App() {
   const pointList = [
     {
       id: "about-me-code",
-      title: 'spawnDeveloper("riruna")',
-      front: "spawnDeveloper",
-      back: '"riruna"',
+      title: "About Me",
     },
     {
       id: "project-list-point",
-      title: "render(p.list)",
+      title: "Project List",
       category: "Project",
-      front: "render",
-      back: "p.list",
     },
     {
       id: "screenshot-point",
-      title: "render(p.screenshot)",
+      title: "Screenshots",
       category: "Project",
-      front: "render",
-      back: "p.screenshot",
     },
     {
       id: "blog-point",
-      title: "render(b.post)",
+      title: "Posts",
       category: "Blog",
-      front: "render",
-      back: "b.post",
     },
   ];
   const categoryList = [
@@ -68,6 +61,73 @@ export default function App() {
         return p.category;
       })
     ),
+  ];
+
+  const menuList = [
+    {
+      list: [
+        {
+          name: "About Me",
+        },
+      ],
+    },
+    {
+      header: "Project",
+      list: [
+        {
+          name: "Project List",
+          icon: <FiList />,
+          callback: () => {
+            console.log("asdf");
+          },
+        },
+        {
+          name: "Screenshots",
+          icon: <FiImage />,
+        },
+      ],
+    },
+    {
+      header: "Blog",
+      list: [
+        {
+          name: "Posts",
+          icon: <FiFileText />,
+        },
+      ],
+    },
+    {
+      header: "Links",
+      list: [
+        {
+          name: "Github Profile",
+          icon: <FiGithub />,
+        },
+      ],
+    },
+    {
+      header: "Settings",
+      list: [
+        {
+          name: `Toggle Dark Mode`,
+          icon: <FiMoon />,
+        },
+        {
+          name: "Change Lang to KR",
+          icon: <FiGlobe />,
+          callback: () => {
+            setLanguage("kr");
+          },
+        },
+        {
+          name: "Change Lang to EN",
+          icon: <FiGlobe />,
+          callback: () => {
+            setLanguage("en");
+          },
+        },
+      ],
+    },
   ];
 
   const getScrollPos = (id) => {
@@ -131,7 +191,7 @@ export default function App() {
         background={topnavBg}
         position="fixed"
         width="100vw"
-        zIndex="1"
+        zIndex="2"
         boxShadow="0 0 15px 0 rgba(0, 0, 0, 0.05)"
         backdropFilter="blur(8px) saturate(180%)"
       >
@@ -161,132 +221,40 @@ export default function App() {
               bgGradient="linear(to-r, #7474BF, #348AC7)"
               bgClip="text"
               fontSize="3xl"
-              fontWeight="black"
-              fontFamily="Raleway"
+              fontWeight="extrabold"
+              fontFamily="Kanit"
               p={1}
             >
-              riruna.dev
+              W298.dev
             </Text>
           </Flex>
           <Flex flex="1" justifyContent="flex-end">
             <Menu>
               <MenuButton as={IconButton} icon={<FiMenu />}></MenuButton>
               <MenuList>
-                <MenuItem>
-                  <Text
-                    fontFamily="Fira Code"
-                    fontSize="sm"
-                    fontWeight="semibold"
-                  >
-                    spawnDeveloper("riruna")
-                  </Text>
-                </MenuItem>
-                <MenuDivider />
-                <MenuGroup
-                  title="class Project"
-                  fontWeight="bold"
-                  fontFamily="Fira Code"
-                >
-                  <MenuItem icon={<FiList />}>
-                    <Text
-                      fontFamily="Fira Code"
-                      fontSize="sm"
-                      fontWeight="semibold"
-                    >
-                      render(p.list)
-                    </Text>
-                  </MenuItem>
-                  <MenuItem icon={<FiImage />}>
-                    <Text
-                      fontFamily="Fira Code"
-                      fontWeight="semibold"
-                      fontSize="sm"
-                    >
-                      render(p.screenshot)
-                    </Text>
-                  </MenuItem>
-                </MenuGroup>
-                <MenuDivider />
-                <MenuGroup
-                  title="class Blog"
-                  fontWeight="bold"
-                  fontFamily="Fira Code"
-                >
-                  <MenuItem icon={<FiFileText />}>
-                    <Text
-                      fontFamily="Fira Code"
-                      fontWeight="semibold"
-                      fontSize="sm"
-                    >
-                      render(b.post)
-                    </Text>
-                  </MenuItem>
-                </MenuGroup>
-                <MenuDivider />
-                <MenuGroup
-                  title="function link()"
-                  fontWeight="bold"
-                  fontFamily="Fira Code"
-                >
-                  <MenuItem
-                    icon={<FiGithub />}
-                    onClick={() => {
-                      window.open("https://github.com/riruna", "_blank");
-                    }}
-                  >
-                    <Text
-                      fontFamily="Fira Code"
-                      fontWeight="semibold"
-                      fontSize="sm"
-                    >
-                      open(dev.github.url)
-                    </Text>
-                  </MenuItem>
-                  <MenuItem icon={<FiMoon />}>
-                    <Text
-                      fontFamily="Fira Code"
-                      fontWeight="semibold"
-                      fontSize="sm"
-                    >
-                      toggleDarkMode()
-                    </Text>
-                  </MenuItem>
-                </MenuGroup>
-                <MenuDivider />
-                <MenuGroup
-                  title="function setLang()"
-                  fontWeight="bold"
-                  fontFamily="Fira Code"
-                >
-                  <MenuItem
-                    fontWeight="semibold"
-                    onClick={() => {
-                      setLanguage("kr");
-                    }}
-                  >
-                    <Text
-                      fontFamily="Fira Code"
-                      fontWeight="semibold"
-                      fontSize="sm"
-                    >
-                      🇰🇷 setLang("KR")
-                    </Text>
-                  </MenuItem>
-                  <MenuItem
-                    fontWeight="semibold"
-                    onClick={() => {
-                      setLanguage("en");
-                    }}
-                  >
-                    <Text
-                      fontFamily="Fira Code"
-                      fontWeight="semibold"
-                      fontSize="sm"
-                    >
-                      🇬🇧 setLang("EN")
-                    </Text>
-                  </MenuItem>
-                </MenuGroup>
+                {menuList.map(({ header, list }, index) => {
+                  return (
+                    <>
+                      <MenuGroup
+                        title={header}
+                        fontWeight="medium"
+                        fontFamily="Kanit"
+                        fontSize="md"
+                      >
+                        {list.map(({ name, icon, callback }) => {
+                          return (
+                            <MenuItem icon={icon} onClick={callback}>
+                              <Text fontFamily="Kanit" fontSize="md">
+                                {name}
+                              </Text>
+                            </MenuItem>
+                          );
+                        })}
+                      </MenuGroup>
+                      {index !== menuList.length - 1 && <MenuDivider />}
+                    </>
+                  );
+                })}
               </MenuList>
             </Menu>
           </Flex>
@@ -295,6 +263,7 @@ export default function App() {
       <Box
         bgColor={sidebarBg}
         position="fixed"
+        zIndex="1"
         width="18rem"
         pt="5rem"
         height="100%"
@@ -305,28 +274,15 @@ export default function App() {
           return (
             <>
               {cate && (
-                <Flex p="0.5rem 1.25rem" gap="0.6rem">
+                <Flex p="0.5rem 1.5rem" gap="0.6rem">
                   <Text
-                    fontFamily="Fira Code"
-                    fontWeight="extrabold"
-                    fontSize="1.1rem"
+                    fontFamily="Kanit"
+                    fontWeight="semibold"
+                    fontSize="1.3rem"
                     color={
                       pointList.find((p) => p.id === focusedPoint).category ===
                       cate
-                        ? "#d73a49"
-                        : "gray.400"
-                    }
-                  >
-                    {"class"}
-                  </Text>
-                  <Text
-                    fontFamily="Fira Code"
-                    fontWeight="extrabold"
-                    fontSize="1.1rem"
-                    color={
-                      pointList.find((p) => p.id === focusedPoint).category ===
-                      cate
-                        ? "black"
+                        ? "#7474BF"
                         : "gray.400"
                     }
                   >
@@ -335,7 +291,7 @@ export default function App() {
                 </Flex>
               )}
               <Flex flexDirection="column">
-                {pointList.map(({ id, front, back, category }) => {
+                {pointList.map(({ id, title, category }) => {
                   if (cate !== category) return null;
                   return (
                     <Flex
@@ -348,49 +304,14 @@ export default function App() {
                       }}
                     >
                       <Text
-                        fontFamily="Fira Code"
+                        fontFamily="Kanit"
                         fontWeight="semibold"
-                        color={focusedPoint === id ? "#6f42c1" : "gray.400"}
+                        color={focusedPoint === id ? "#7474BF" : "gray.400"}
                         cursor="pointer"
                         transition="0.1s ease-in-out"
+                        fontSize="1.1rem"
                       >
-                        {front}
-                      </Text>
-                      <Text
-                        fontFamily="Fira Code"
-                        fontWeight="semibold"
-                        color={focusedPoint === id ? "black" : "gray.400"}
-                        cursor="pointer"
-                        transition="0.1s ease-in-out"
-                      >
-                        {"("}
-                      </Text>
-                      <Text
-                        fontFamily="Fira Code"
-                        fontWeight="semibold"
-                        color={
-                          focusedPoint !== id
-                            ? "gray.400"
-                            : id === "about-me-code"
-                            ? "#005cc5"
-                            : "black"
-                        }
-                        cursor="pointer"
-                        transition="0.1s ease-in-out"
-                        _hover={{
-                          bgColor: "gray.100",
-                        }}
-                      >
-                        {back}
-                      </Text>
-                      <Text
-                        fontFamily="Fira Code"
-                        fontWeight="semibold"
-                        color={focusedPoint === id ? "black" : "gray.400"}
-                        cursor="pointer"
-                        transition="0.1s ease-in-out"
-                      >
-                        {")"}
+                        {title}
                       </Text>
                     </Flex>
                   );
@@ -401,16 +322,9 @@ export default function App() {
           );
         })}
       </Box>
-      <Box
-        p={8}
-        pt={28}
-        pb={12}
-        ml={{ base: "0", sm: "0", md: "0", lg: "18rem" }}
-      >
-        <DashBoard id="about-me-code" />
-      </Box>
-      <Divider />
-      <Box ml={{ base: "0", sm: "0", md: "0", lg: "18rem" }} pb="50rem">
+      <Box ml={{ base: "0", sm: "0", md: "0", lg: "18rem" }} pb="50rem" pt={16}>
+        <AboutMe id="about-me-code" />
+        <Divider />
         <Box p={8} py={12} id="project-list-point">
           <Box
             display="grid"
