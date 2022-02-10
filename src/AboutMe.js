@@ -1,4 +1,4 @@
-import { Flex, Text, Icon, Box } from "@chakra-ui/react";
+import { Flex, Text, Icon } from "@chakra-ui/react";
 
 import { BiWindowAlt } from "react-icons/bi";
 import { IoGameController } from "react-icons/io5";
