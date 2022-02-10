@@ -31,6 +31,7 @@ import {
   FiFileText,
   FiGlobe,
 } from "react-icons/fi";
+import AboutMe from "./AboutMe";
 
 export default function App() {
   const pointList = [
@@ -203,7 +204,7 @@ export default function App() {
               _hover={{ color: "black" }}
               icon={<FiGithub />}
               onClick={() => {
-                window.open("https://github.com/riruna", "_blank");
+                window.open("https://github.com/w298", "_blank");
               }}
             />
             <IconButton
@@ -322,6 +323,7 @@ export default function App() {
         })}
       </Box>
       <Box ml={{ base: "0", sm: "0", md: "0", lg: "18rem" }} pb="50rem" pt={16}>
+        <AboutMe />
         <Divider />
         <Box p={8} py={12} id="project-list-point">
           <Box
@@ -345,7 +347,7 @@ export default function App() {
               btnList={[
                 {
                   name: "Github repo",
-                  href: "https://github.com/riruna/Intersection",
+                  href: "https://github.com/w298/Intersection",
                 },
                 {
                   name: "Notion",
@@ -370,7 +372,7 @@ export default function App() {
               btnList={[
                 {
                   name: "Github repo",
-                  href: "https://github.com/riruna/todays-genshin",
+                  href: "https://github.com/w298/todays-genshin",
                 },
                 {
                   name: "Link",
@@ -397,7 +399,7 @@ export default function App() {
               btnList={[
                 {
                   name: "Github repo",
-                  href: "https://github.com/riruna/Pixel-Reversi",
+                  href: "https://github.com/w298/Pixel-Reversi",
                 },
                 {
                   name: "Play Now",
