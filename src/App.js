@@ -360,7 +360,7 @@ export default function App() {
               img={todaysgenshin}
               moreImg={todaysgenshin_more}
               bgColor="white"
-              tagList={["WEB APP", "REACT"]}
+              tagList={["WEB APP", "REACT", "MATERIAL"]}
               descList={
                 language === "kr"
                   ? [

@@ -1,6 +1,5 @@
 import {
   Avatar,
-  Badge,
   Button,
   Divider,
   Box,
@@ -8,11 +7,42 @@ import {
   Text,
   Image,
   Collapse,
+  Icon,
 } from "@chakra-ui/react";
 import { GoRepo } from "react-icons/go";
 import { SiNotion } from "react-icons/si";
 import { FiPlay, FiExternalLink } from "react-icons/fi";
 import { useState } from "react";
+
+import { ReactComponent as Unity } from "./svgs/unity.svg";
+import { ReactComponent as Unreal } from "./svgs/unreal-engine.svg";
+import { ReactComponent as React } from "./svgs/react.svg";
+import { ReactComponent as Python } from "./svgs/python.svg";
+import { ReactComponent as Material } from "./svgs/material.svg";
+import { BiWindowAlt } from "react-icons/bi";
+import { IoGameController } from "react-icons/io5";
+
+function CircleIcon({ bgColor, icon, iconSize = 1, fill = "white" }) {
+  return (
+    <Flex
+      bgColor={bgColor}
+      p={1}
+      width="1.5rem"
+      height="1.5rem"
+      borderRadius="1.5rem"
+      justifyContent="center"
+      alignItems="center"
+      transition="0.2s ease-in-out"
+    >
+      <Icon
+        as={icon}
+        fill={fill}
+        width={iconSize * 1 + "rem"}
+        height={iconSize * 1 + "rem"}
+      />
+    </Flex>
+  );
+}
 
 export default function ProjectCard({
   name,
@@ -43,14 +73,6 @@ export default function ProjectCard({
     );
   };
 
-  const TagProp = ({ name, color }) => {
-    return (
-      <Badge width="fit-content" colorScheme={color} fontSize="0.5rem" py={0.5}>
-        {name}
-      </Badge>
-    );
-  };
-
   const btnData = {
     "Github repo": (
       <BtnProp color="teal">
@@ -77,12 +99,27 @@ export default function ProjectCard({
   };
 
   const tagData = {
-    "GAME DEV": <TagProp name="GAME DEV" color="purple" />,
-    "WEB APP": <TagProp name="WEB APP" color="teal" />,
-    UNITY: <TagProp name="UNITY" color="blackAlpha" />,
-    REACT: <TagProp name="REACT" color="blue" />,
-    UNREAL4: <TagProp name="UE4" color="blackAlpha" />,
-    PYTHON: <TagProp name="PYTHON" color="orange" />,
+    "GAME DEV": (
+      <CircleIcon
+        icon={IoGameController}
+        bgColor="transparent"
+        fill="black"
+        iconSize={1.1}
+      />
+    ),
+    "WEB APP": (
+      <CircleIcon
+        icon={BiWindowAlt}
+        bgColor="transparent"
+        fill="black"
+        iconSize={1.1}
+      />
+    ),
+    UNITY: <CircleIcon icon={Unity} bgColor="black" />,
+    REACT: <CircleIcon icon={React} bgColor="#61DAFB" />,
+    UNREAL4: <CircleIcon icon={Unreal} bgColor="black" />,
+    PYTHON: <CircleIcon icon={Python} bgColor="#3776AB" iconSize={0.9} />,
+    MATERIAL: <CircleIcon icon={Material} bgColor="#2196F3" iconSize={0.9} />,
   };
 
   let [expanded, setExpanded] = useState(false);
@@ -106,7 +143,7 @@ export default function ProjectCard({
         height="100%"
         gap="0.8rem"
       >
-        <Flex direction="row" gap="1rem">
+        <Flex direction="row" gap="0.8rem">
           <Flex flex={1} alignItems="center">
             <Avatar
               size="md"

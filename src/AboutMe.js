@@ -172,7 +172,7 @@ export default function AboutMe() {
               </Flex>
               <Flex gap={{ base: "0.2rem", sm: "0.2rem", md: "0.5rem" }}>
                 <CircleIcon bgColor="#00599C" icon={SiCplusplus} />
-                <CircleIcon bgColor="#68217A" icon={CSharp} />
+                <CircleIcon bgColor="#68217A" icon={CSharp} iconSize={0.9} />
                 <CircleIcon
                   bgColor="#F7DF1E"
                   icon={DiJavascript1}
