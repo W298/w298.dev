@@ -19,8 +19,6 @@ import { ReactComponent as Unreal } from "./svgs/unreal-engine.svg";
 import { ReactComponent as React } from "./svgs/react.svg";
 import { ReactComponent as Python } from "./svgs/python.svg";
 import { ReactComponent as Material } from "./svgs/material.svg";
-import { BiWindowAlt } from "react-icons/bi";
-import { IoGameController } from "react-icons/io5";
 
 function CircleIcon({ bgColor, icon, iconSize = 1, fill = "white" }) {
   return (
@@ -99,22 +97,6 @@ export default function ProjectCard({
   };
 
   const tagData = {
-    "GAME DEV": (
-      <CircleIcon
-        icon={IoGameController}
-        bgColor="transparent"
-        fill="black"
-        iconSize={1.1}
-      />
-    ),
-    "WEB APP": (
-      <CircleIcon
-        icon={BiWindowAlt}
-        bgColor="transparent"
-        fill="black"
-        iconSize={1.1}
-      />
-    ),
     UNITY: <CircleIcon icon={Unity} bgColor="black" />,
     REACT: <CircleIcon icon={React} bgColor="#61DAFB" />,
     UNREAL4: <CircleIcon icon={Unreal} bgColor="black" />,

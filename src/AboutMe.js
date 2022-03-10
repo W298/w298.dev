@@ -2,10 +2,7 @@ import { Flex, Text, Icon } from "@chakra-ui/react";
 
 import { BiWindowAlt } from "react-icons/bi";
 import { IoGameController } from "react-icons/io5";
-import { FiCode } from "react-icons/fi";
-import { DiJavascript1 } from "react-icons/di";
 import {
-  SiCplusplus,
   SiVisualstudiocode,
   SiSublimetext,
   SiVisualstudio,
@@ -18,8 +15,6 @@ import { ReactComponent as React } from "./svgs/react.svg";
 import { ReactComponent as Unreal } from "./svgs/unreal-engine.svg";
 import { ReactComponent as Unity } from "./svgs/unity.svg";
 import { ReactComponent as Threejs } from "./svgs/threedotjs.svg";
-import { ReactComponent as CSharp } from "./svgs/csharp.svg";
-import { ReactComponent as Typescript } from "./svgs/typescript.svg";
 
 function CircleIcon({ bgColor, icon, iconSize = 1, fill = "white" }) {
   return (
@@ -84,35 +79,7 @@ export default function AboutMe() {
     <Flex p={8} py={12} justifyContent="center">
       <Flex width={{ base: "100%", sm: "100%", md: "45rem" }}>
         <DemonCardContainer>
-          <Flex alignItems="flex-end">
-            <Text
-              fontSize={{ base: "1rem", sm: "1rem", md: "1.25rem" }}
-              fontWeight="semibold"
-              fontFamily="Kanit"
-              lineHeight={{ base: "1.8rem", sm: "1.8rem", md: "2.15rem" }}
-              pl={2}
-              pr={1}
-            >
-              Developer.
-            </Text>
-            <Text
-              fontSize={{ base: "1.3rem", sm: "1.3rem", md: "1.5rem" }}
-              fontWeight="bold"
-              fontFamily="Kanit"
-            >
-              W298
-            </Text>
-          </Flex>
-          <Flex
-            display="grid"
-            gridTemplateColumns={{
-              base: "repeat(auto-fill, minmax(8rem, auto))",
-              sm: "repeat(auto-fill, minmax(8rem, auto))",
-              md: "repeat(auto-fill, minmax(10rem, auto))",
-            }}
-            justifyContent="space-evenly"
-            width="100%"
-          >
+          <Flex flexWrap="wrap" justifyContent="space-evenly" zIndex="1">
             <DemonCard>
               <Flex
                 justifyContent="center"
@@ -161,32 +128,6 @@ export default function AboutMe() {
                 alignItems="center"
                 gap={{ base: "0.5rem", sm: "0.5rem", md: "0.75rem" }}
               >
-                <FiCode fontSize="1.1rem" />
-                <Text
-                  fontFamily="Kanit"
-                  fontWeight="semibold"
-                  fontSize={{ base: "0.9rem", sm: "0.9rem", md: "1.1rem" }}
-                >
-                  MAIN LANG
-                </Text>
-              </Flex>
-              <Flex gap={{ base: "0.2rem", sm: "0.2rem", md: "0.5rem" }}>
-                <CircleIcon bgColor="#00599C" icon={SiCplusplus} />
-                <CircleIcon bgColor="#68217A" icon={CSharp} iconSize={0.9} />
-                <CircleIcon
-                  bgColor="#F7DF1E"
-                  icon={DiJavascript1}
-                  fill="black"
-                />
-                <CircleIcon bgColor="#3178C6" icon={Typescript} />
-              </Flex>
-            </DemonCard>
-            <DemonCard>
-              <Flex
-                justifyContent="center"
-                alignItems="center"
-                gap={{ base: "0.5rem", sm: "0.5rem", md: "0.75rem" }}
-              >
                 <DiTerminal fontSize="1.4rem" />
                 <Text
                   fontFamily="Kanit"
@@ -214,6 +155,31 @@ export default function AboutMe() {
                 />
               </Flex>
             </DemonCard>
+          </Flex>
+          <Flex
+            zIndex="0"
+            position="relative"
+            bottom="2.5rem"
+            right="-0.5rem"
+            opacity="0.8"
+            gap="0.6rem"
+            justifyContent="flex-end"
+            fontFamily="Kanit"
+            fontWeight="semibold"
+            fontSize="2.75rem"
+            color="gray.300"
+            height="0"
+            userSelect="none"
+          >
+            <Text
+              fontFamily="inherit"
+              fontSize="2rem"
+              position="relative"
+              bottom="-0.8rem"
+            >
+              developer.
+            </Text>
+            <Text fontFamily="inherit">W298</Text>
           </Flex>
         </DemonCardContainer>
       </Flex>

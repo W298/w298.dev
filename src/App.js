@@ -335,7 +335,7 @@ export default function App() {
             <ProjectCard
               name="Intersection"
               img={intersection}
-              tagList={["GAME DEV", "UNITY"]}
+              tagList={["UNITY"]}
               descList={
                 language === "kr"
                   ? [
@@ -360,7 +360,7 @@ export default function App() {
               img={todaysgenshin}
               moreImg={todaysgenshin_more}
               bgColor="white"
-              tagList={["WEB APP", "REACT", "MATERIAL"]}
+              tagList={["REACT", "MATERIAL"]}
               descList={
                 language === "kr"
                   ? [
@@ -384,7 +384,7 @@ export default function App() {
               name="Pixel Reversi"
               img={pixelreversi}
               moreImg={pixelreversi_intro}
-              tagList={["GAME DEV", "UNITY"]}
+              tagList={["UNITY"]}
               descList={
                 language === "kr"
                   ? [
@@ -410,7 +410,7 @@ export default function App() {
             <ProjectCard
               name="Together"
               img={together}
-              tagList={["GAME DEV", "UNREAL4"]}
+              tagList={["UNREAL4"]}
               descList={[
                 "Unreal Engine 4로 개발한 1인칭 공포 게임",
                 "숲속에 있는 구 소련 건물을 탈출해야 합니다.",
@@ -420,7 +420,7 @@ export default function App() {
             <ProjectCard
               name="Reflect"
               img={reflect}
-              tagList={["GAME DEV", "PYTHON"]}
+              tagList={["PYTHON"]}
               descList={[
                 "거울과 레이저를 이용한 퍼즐 게임",
                 "Python Cocos 엔진을 이용해 개발했습니다.",
