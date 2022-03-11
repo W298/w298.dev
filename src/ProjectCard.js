@@ -113,8 +113,14 @@ export default function ProjectCard({
       borderRadius="0.5rem"
       p={4}
       boxShadow="0 0 15px 0 rgba(0, 0, 0, 0.05)"
-      onClick={() => {
-        setExpanded(!expanded);
+      onClick={{
+        base: () => {
+          setExpanded(!expanded);
+        },
+        sm: () => {
+          setExpanded(!expanded);
+        },
+        md: () => {},
       }}
       _hover={{ transform: "scale(1.02)" }}
       transition="0.2s ease-in-out"

@@ -160,22 +160,22 @@ export default function AboutMe() {
             zIndex="0"
             position="relative"
             bottom="2.5rem"
-            right="-0.5rem"
+            right={{ base: "0", sm: "0", md: "-0.5rem" }}
             opacity="0.8"
-            gap="0.6rem"
+            gap={{ base: "0.4rem", sm: "0.4rem", md: "0.6rem" }}
             justifyContent="flex-end"
             fontFamily="Kanit"
             fontWeight="semibold"
-            fontSize="2.75rem"
+            fontSize={{ base: "2.25rem", sm: "2.25rem", md: "2.75rem" }}
             color="gray.300"
             height="0"
             userSelect="none"
           >
             <Text
               fontFamily="inherit"
-              fontSize="2rem"
+              fontSize={{ base: "1.75rem", sm: "1.75rem", md: "2rem" }}
               position="relative"
-              bottom="-0.8rem"
+              bottom={{ base: "-0.5rem", sm: "-0.5rem", md: "-0.8rem" }}
             >
               developer.
             </Text>
