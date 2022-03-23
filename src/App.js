@@ -278,7 +278,7 @@ export default function App() {
                   <Text
                     fontFamily="Kanit"
                     fontWeight="semibold"
-                    fontSize="1.3rem"
+                    fontSize="1.4rem"
                     color={
                       pointList.find((p) => p.id === focusedPoint).category ===
                       cate
@@ -305,7 +305,7 @@ export default function App() {
                     >
                       <Text
                         fontFamily="Kanit"
-                        fontWeight="semibold"
+                        fontWeight="normal"
                         color={focusedPoint === id ? "#7474BF" : "gray.400"}
                         cursor="pointer"
                         transition="0.1s ease-in-out"
