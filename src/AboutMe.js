@@ -1,5 +1,32 @@
-import { Avatar, Flex, Box, Text } from "@chakra-ui/react";
-import { useState } from "react";
+import { Avatar, Flex, Box, Text, Icon } from "@chakra-ui/react";
+
+import { ReactComponent as Vuejs } from "./svgs/vuejs.svg";
+import { ReactComponent as Svelte } from "./svgs/svelte.svg";
+import { ReactComponent as React } from "./svgs/react.svg";
+import { ReactComponent as Unreal } from "./svgs/unreal-engine.svg";
+import { ReactComponent as Unity } from "./svgs/unity.svg";
+import { ReactComponent as Threejs } from "./svgs/threedotjs.svg";
+
+function CircleIcon({ bgColor, icon, iconSize = 1, fill = "white" }) {
+  return (
+    <Flex
+      bgColor={bgColor}
+      p={1}
+      width="1.75rem"
+      height="1.75rem"
+      borderRadius="1.75rem"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <Icon
+        as={icon}
+        fill={fill}
+        width={iconSize + "rem"}
+        height={iconSize + "rem"}
+      />
+    </Flex>
+  );
+}
 
 function Window() {
   const border = "1px #d1d1d169 solid";
@@ -16,35 +43,6 @@ function Window() {
       ></Box>
     );
   };
-
-  // const url = "https://www.uistore.design/items/macos-bigsur-free-ui-kit/";
-
-  const TabButton = ({
-    children,
-    selected = false,
-    fontSize = "0.8rem",
-    onClick,
-  }) => {
-    return (
-      <Flex
-        fontSize={fontSize}
-        color={selected ? "#545454" : "#D5D5D5"}
-        boxShadow={selected ? "0px 3px 3px -1px #58585826" : ""}
-        px="0.6rem"
-        py="0.2rem"
-        borderRadius="0.2rem"
-        userSelect="none"
-        cursor="pointer"
-        onClick={onClick}
-        transition="color 0.2s ease-in-out"
-      >
-        {children}
-      </Flex>
-    );
-  };
-
-  const tabs = ["Overview", "Web Dev", "Game Dev", "Favorites"];
-  const [curTab, setCurTab] = useState("Overview");
 
   return (
     <Flex
@@ -68,20 +66,7 @@ function Window() {
           <CircleButton color="#FFBE2F" />
           <CircleButton color="#2AC940" disabled />
         </Flex>
-        <Flex gap="0.5rem" alignItems="center" justifySelf="center">
-          {tabs.map((id) => {
-            return (
-              <TabButton
-                selected={curTab === id}
-                onClick={() => {
-                  setCurTab(id);
-                }}
-              >
-                {id}
-              </TabButton>
-            );
-          })}
-        </Flex>
+        <Flex gap="0.5rem" alignItems="center" justifySelf="center"></Flex>
         <Flex gap="0.5rem" alignItems="center" visibility="hidden">
           <CircleButton color="#FF5F58" />
           <CircleButton color="#FFBE2F" />
@@ -89,59 +74,95 @@ function Window() {
         </Flex>
       </Flex>
       <Flex
-        justifyContent="center"
-        alignItems="center"
         width="100%"
         height="100%"
-        gap="4rem"
+        justifyContent="center"
+        alignItems="center"
+        gap="1rem"
+        p="1rem"
       >
-        <Avatar
-          width="8.5rem"
-          height="8.5rem"
-          marginBottom="1rem"
-          src="https://i.pinimg.com/originals/a8/cb/bb/a8cbbbdb73615f16068de2cb077bb143.jpg"
-        />
-        <Flex flexDir="column" gap="1.1rem" width="20rem">
-          <Flex flexDir="column">
-            <Flex lineHeight="2rem">
-              <Text fontWeight="normal" fontSize="1.6rem" marginRight="0.6rem">
-                developer.
-              </Text>
-              <Text fontWeight="extrabold" fontSize="1.6rem">
-                W298
-              </Text>
-            </Flex>
-            <Text fontSize="0.7rem" marginLeft="0.2rem">
-              Version 1.0
+        <Flex flex="1" justifyContent="center">
+          <Flex width="10rem" lineHeight="1.6rem" flexDir="column">
+            <Text fontSize="1.3rem" fontWeight="normal">
+              developer.
+            </Text>
+            <Text fontSize="1.5rem" fontWeight="extrabold">
+              W298
+            </Text>
+            <Text fontSize="0.9rem" marginTop="1rem" fontWeight="bold">
+              Develop Web & Game
             </Text>
           </Flex>
-          <Flex flexDir="column" marginLeft="0.2rem" gap="0.15rem">
-            <Text fontSize="0.7rem" fontWeight="bold">
-              Game & Web Developer
-            </Text>
-            <Flex gap="0.6rem">
-              <Text fontSize="0.7rem" fontWeight="bold">
-                Game Dev
-              </Text>
-              <Text fontSize="0.7rem">Unreal Engine, Unity Engine</Text>
+        </Flex>
+        <Flex flex="1" justifyContent="center">
+          <Avatar
+            width="8.5rem"
+            height="8.5rem"
+            src="https://i.pinimg.com/originals/a8/cb/bb/a8cbbbdb73615f16068de2cb077bb143.jpg"
+          />
+        </Flex>
+        <Flex flex="1" justifyContent="center" textAlign="end">
+          <Flex
+            width="10rem"
+            flexDir="column"
+            gap="0.5rem"
+            lineHeight="1.2rem"
+            fontSize="0.9rem"
+          >
+            <Flex flexDir="column">
+              <Text fontWeight="extrabold">Web Dev.</Text>
+              <Flex
+                columnGap="0.4rem"
+                justifyContent="flex-end"
+                flexWrap="wrap"
+              >
+                <Flex justifyContent="center" alignItems="center">
+                  <CircleIcon bgColor="transparent" fill="black" icon={React} />
+                  <Text>React</Text>
+                </Flex>
+                <Flex justifyContent="center" alignItems="center">
+                  <CircleIcon bgColor="transparent" fill="black" icon={Vuejs} />
+                  <Text>Vue</Text>
+                </Flex>
+                <Flex justifyContent="center" alignItems="center">
+                  <CircleIcon
+                    bgColor="transparent"
+                    fill="black"
+                    icon={Svelte}
+                  />
+                  <Text>Svelte</Text>
+                </Flex>
+              </Flex>
             </Flex>
-            <Flex gap="0.6rem">
-              <Text fontSize="0.7rem" fontWeight="bold">
-                Web Dev
-              </Text>
-              <Text fontSize="0.7rem">React, Vue, Svelte</Text>
+            <Flex flexDir="column">
+              <Text fontWeight="extrabold">Game Dev.</Text>
+              <Flex
+                columnGap="0.4rem"
+                justifyContent="flex-end"
+                flexWrap="wrap"
+              >
+                <Flex justifyContent="center" alignItems="center">
+                  <CircleIcon
+                    bgColor="transparent"
+                    fill="black"
+                    icon={Unreal}
+                  />
+                  <Text>Unreal</Text>
+                </Flex>
+                <Flex justifyContent="center" alignItems="center">
+                  <CircleIcon bgColor="transparent" fill="black" icon={Unity} />
+                  <Text>Unity</Text>
+                </Flex>
+                <Flex justifyContent="center" alignItems="center">
+                  <CircleIcon
+                    bgColor="transparent"
+                    fill="black"
+                    icon={Threejs}
+                  />
+                  <Text>Threejs</Text>
+                </Flex>
+              </Flex>
             </Flex>
-            <Flex gap="0.6rem">
-              <Text fontSize="0.7rem" fontWeight="bold">
-                Main Language
-              </Text>
-              <Text fontSize="0.7rem">C++, C#, Javscript, Python</Text>
-            </Flex>
-          </Flex>
-          <Flex>
-            <TabButton selected fontSize="0.7rem">
-              Github Profile
-            </TabButton>
           </Flex>
         </Flex>
       </Flex>
