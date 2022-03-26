@@ -278,7 +278,7 @@ export default function App() {
                   <Text
                     fontFamily="Kanit"
                     fontWeight="semibold"
-                    fontSize="1.3rem"
+                    fontSize="1.4rem"
                     color={
                       pointList.find((p) => p.id === focusedPoint).category ===
                       cate
@@ -305,7 +305,7 @@ export default function App() {
                     >
                       <Text
                         fontFamily="Kanit"
-                        fontWeight="semibold"
+                        fontWeight="normal"
                         color={focusedPoint === id ? "#7474BF" : "gray.400"}
                         cursor="pointer"
                         transition="0.1s ease-in-out"
@@ -339,7 +339,7 @@ export default function App() {
               descList={
                 language === "kr"
                   ? [
-                      "도로를 배치해서 도시의 교통량 조절하는 게임 🚘",
+                      "도로 배치해서 도시의 교통량 조절하는 게임 🚘",
                       "유니티 엔진을 이용해 Build 했습니다.",
                     ]
                   : ["Traffic Management Game 🚘", "Develop with Unity Engine"]

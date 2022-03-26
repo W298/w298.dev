@@ -20,27 +20,7 @@ import { ReactComponent as React } from "./svgs/react.svg";
 import { ReactComponent as Python } from "./svgs/python.svg";
 import { ReactComponent as Material } from "./svgs/material.svg";
 
-function CircleIcon({ bgColor, icon, iconSize = 1, fill = "white" }) {
-  return (
-    <Flex
-      bgColor={bgColor}
-      p={1}
-      width="1.5rem"
-      height="1.5rem"
-      borderRadius="1.5rem"
-      justifyContent="center"
-      alignItems="center"
-      transition="0.2s ease-in-out"
-    >
-      <Icon
-        as={icon}
-        fill={fill}
-        width={iconSize * 1 + "rem"}
-        height={iconSize * 1 + "rem"}
-      />
-    </Flex>
-  );
-}
+import { CircleIcon } from "./CircleIcon";
 
 export default function ProjectCard({
   name,
@@ -112,7 +92,7 @@ export default function ProjectCard({
       height="fit-content"
       borderRadius="0.5rem"
       p={4}
-      boxShadow="0 0 15px 0 rgba(0, 0, 0, 0.05)"
+      boxShadow="0 0 15px 5px rgb(0 0 0 / 5%)"
       onClick={{
         base: () => {
           setExpanded(!expanded);
