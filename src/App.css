@@ -10,9 +10,3 @@
 ::-webkit-scrollbar {
   display: none;
 }
-
-pre {
-  font-weight: medium;
-  font-family: "Fira Code" !important;
-  display: inline;
-}

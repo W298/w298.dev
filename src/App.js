@@ -339,7 +339,7 @@ export default function App() {
               descList={
                 language === "kr"
                   ? [
-                      "도로를 배치해서 도시의 교통량 조절하는 게임 🚘",
+                      "도로 배치해서 도시의 교통량 조절하는 게임 🚘",
                       "유니티 엔진을 이용해 Build 했습니다.",
                     ]
                   : ["Traffic Management Game 🚘", "Develop with Unity Engine"]
