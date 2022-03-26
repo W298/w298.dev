@@ -7,7 +7,6 @@ import {
   Text,
   Image,
   Collapse,
-  Icon,
 } from "@chakra-ui/react";
 import { GoRepo } from "react-icons/go";
 import { SiNotion } from "react-icons/si";
