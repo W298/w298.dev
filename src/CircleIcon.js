@@ -1,6 +1,12 @@
 import { Flex, Icon } from "@chakra-ui/react";
 
-export function CircleIcon({ bgColor, icon, iconSize = 1, fill = "white" }) {
+export function CircleIcon({
+  bgColor,
+  icon,
+  iconSize = 1,
+  fill = "white",
+  size = 1,
+}) {
   return (
     <Flex
       bgColor={bgColor}
@@ -10,6 +16,7 @@ export function CircleIcon({ bgColor, icon, iconSize = 1, fill = "white" }) {
       borderRadius="1.75rem"
       justifyContent="center"
       alignItems="center"
+      transform={`scale(${size})`}
     >
       <Icon
         as={icon}

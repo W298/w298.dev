@@ -6,6 +6,8 @@ import { ReactComponent as React } from "./svgs/react.svg";
 import { ReactComponent as Unreal } from "./svgs/unreal-engine.svg";
 import { ReactComponent as Unity } from "./svgs/unity.svg";
 import { ReactComponent as Threejs } from "./svgs/threedotjs.svg";
+import { ReactComponent as Nodejs } from "./svgs/nodedotjs.svg";
+import { ReactComponent as Redux } from "./svgs/redux.svg";
 
 import { Window } from "./Window.js";
 import { CircleIcon } from "./CircleIcon.js";
@@ -44,7 +46,7 @@ export default function AboutMe() {
           textAlign={["center", "center", "end"]}
         >
           <Flex
-            width="10rem"
+            width="12rem"
             flexDir="column"
             gap="0.5rem"
             lineHeight="1.2rem"
@@ -59,9 +61,11 @@ export default function AboutMe() {
                 justifyContent={["center", "center", "flex-end"]}
                 flexWrap="wrap"
               >
-                <CircleIcon bgColor="#61DAFB" icon={React} />
+                <CircleIcon bgColor="#5ab7d1" icon={React} />
                 <CircleIcon bgColor="#4FC08D" icon={Vuejs} />
                 <CircleIcon bgColor="#FF3E00" icon={Svelte} />
+                <CircleIcon bgColor="#764ABC" icon={Redux} />
+                <CircleIcon bgColor="#339933" icon={Nodejs} />
               </Flex>
             </Flex>
             <Flex flexDir="column" gap="0.3rem">

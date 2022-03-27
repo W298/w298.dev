@@ -3,13 +3,7 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import { useColorMode, useColorModeValue } from "@chakra-ui/react";
 
-import intersection from "./imgs/intersection.png";
-import todaysgenshin from "./imgs/todaysgenshin.png";
-import pixelreversi from "./imgs/pixelreversi.jpg";
-import together from "./imgs/together.jpg";
-import reflect from "./imgs/reflect.jpg";
-import pixelreversi_intro from "./imgs/pixelreversi_intro.gif";
-import todaysgenshin_more from "./imgs/todaysgenshin_more.png";
+import bgImg_Intersection from "./imgs/bgImg_Intersection.png";
 
 import ProjectCard from "./ProjectCard";
 
@@ -325,17 +319,21 @@ export default function App() {
       <Box ml={{ base: "0", sm: "0", md: "0", lg: "18rem" }} pb="50rem" pt={16}>
         <AboutMe />
         <Divider />
-        <Box p={8} py={12} id="project-list-point">
+        <Box px={10} py={12} id="project-list-point">
           <Box
             display="grid"
-            gridTemplateColumns="repeat(auto-fill, minmax(15rem, 18rem))"
+            gridTemplateColumns={[
+              "repeat(auto-fill, minmax(19rem, 19rem))",
+              "repeat(auto-fill, minmax(19rem, 19rem))",
+              "repeat(auto-fill, minmax(20rem, 20rem))",
+            ]}
             gap="1rem"
             justifyContent="center"
           >
             <ProjectCard
-              name="Intersection"
-              img={intersection}
-              tagList={["UNITY"]}
+              title="Intersection"
+              bgImg={bgImg_Intersection}
+              tagList={["UNITY", "BLENDER"]}
               descList={
                 language === "kr"
                   ? [
@@ -356,10 +354,7 @@ export default function App() {
               ]}
             />
             <ProjectCard
-              name={language === "kr" ? "오늘의 원신" : "Today's Genshin"}
-              img={todaysgenshin}
-              moreImg={todaysgenshin_more}
-              bgColor="white"
+              title={language === "kr" ? "오늘의 원신" : "Today's Genshin"}
               tagList={["REACT", "MATERIAL"]}
               descList={
                 language === "kr"
@@ -381,15 +376,13 @@ export default function App() {
               ]}
             />
             <ProjectCard
-              name="Pixel Reversi"
-              img={pixelreversi}
-              moreImg={pixelreversi_intro}
+              title="Pixel Reversi"
               tagList={["UNITY"]}
               descList={
                 language === "kr"
                   ? [
                       "Pixel 그래픽으로 개발한 리버시 게임",
-                      "Unity 로 개발했고, WebGL 로 Build 했습니다.",
+                      "Unity WebGL 로 Build 했습니다.",
                     ]
                   : [
                       "Reversi (Othello) game with pixel graphic",
@@ -408,8 +401,7 @@ export default function App() {
               ]}
             />
             <ProjectCard
-              name="Together"
-              img={together}
+              title="Together"
               tagList={["UNREAL4"]}
               descList={[
                 "Unreal Engine 4로 개발한 1인칭 공포 게임",
@@ -418,8 +410,7 @@ export default function App() {
               btnList={[{ name: "Github repo" }]}
             />
             <ProjectCard
-              name="Reflect"
-              img={reflect}
+              title="Reflect"
               tagList={["PYTHON"]}
               descList={[
                 "거울과 레이저를 이용한 퍼즐 게임",
