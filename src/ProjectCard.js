@@ -82,14 +82,14 @@ export default function ProjectCard({
       transition="0.2s ease-in-out"
     >
       <Image src={bgImg} borderTopRadius="0.5rem" height="6rem" fit="cover" />
-      <Flex p={4} pb={3} flexDir="column" gap="0.4rem">
+      <Flex p={4} pb={2} flexDir="column" gap="0.4rem">
         <Flex gap="0.4rem">{tagList.map((tag) => tagData[tag])}</Flex>
-        <Text fontWeight="extrabold" fontSize="1.8rem" lineHeight="100%">
+        <Text fontWeight="900" fontSize="1.6rem" lineHeight="100%">
           {title}
         </Text>
       </Flex>
       <hr borderColor="#d1d1d169" />
-      <Flex px={4} py={3} flexDir="column">
+      <Flex px={4} py={2} flexDir="column">
         {descList.map((desc) => (
           <Text fontWeight="bold" fontSize="0.9rem">
             {desc}

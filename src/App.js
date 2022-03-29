@@ -229,16 +229,11 @@ export default function App() {
                 {menuList.map(({ header, list }, index) => {
                   return (
                     <>
-                      <MenuGroup
-                        title={header}
-                        fontWeight="medium"
-                        fontFamily="Kanit"
-                        fontSize="md"
-                      >
+                      <MenuGroup title={header} fontWeight="bold" fontSize="md">
                         {list.map(({ name, icon, callback }) => {
                           return (
                             <MenuItem icon={icon} onClick={callback}>
-                              <Text fontFamily="Kanit" fontSize="md">
+                              <Text fontWeight="semibold" fontSize="md">
                                 {name}
                               </Text>
                             </MenuItem>
@@ -270,9 +265,8 @@ export default function App() {
               {cate && (
                 <Flex p="0.5rem 1.5rem" gap="0.6rem">
                   <Text
-                    fontFamily="Kanit"
-                    fontWeight="semibold"
-                    fontSize="1.4rem"
+                    fontWeight="bold"
+                    fontSize="1.2rem"
                     color={
                       pointList.find((p) => p.id === focusedPoint).category ===
                       cate
@@ -298,8 +292,7 @@ export default function App() {
                       }}
                     >
                       <Text
-                        fontFamily="Kanit"
-                        fontWeight="normal"
+                        fontWeight="bold"
                         color={focusedPoint === id ? "#7474BF" : "gray.400"}
                         cursor="pointer"
                         transition="0.1s ease-in-out"

@@ -13,6 +13,19 @@ import { Window } from "./Window.js";
 import { CircleIcon } from "./CircleIcon.js";
 
 export default function AboutMe() {
+  const txtShadow = {
+    color: "#7474BF",
+    repeat: 5,
+    get style() {
+      let str = "";
+      for (let i = 1; i <= this.repeat; i++) {
+        str += `0px ${i}px ${this.color}`;
+        str += i !== this.repeat ? ", " : "";
+      }
+      return str;
+    },
+  };
+
   return (
     <Flex p={[10, 10, 12]} width="100%" justifyContent="center">
       <Window w={["100%", "100%", "40rem"]} h={["100%", "100%", "16rem"]}>
@@ -21,15 +34,24 @@ export default function AboutMe() {
           justifyContent="center"
           textAlign={["center", "center", "start"]}
         >
-          <Flex width="10rem" lineHeight="1.5rem" flexDir="column">
-            <Text fontSize="1.2rem" fontFamily="Kanit">
+          <Flex width="10rem" lineHeight="1.4rem" flexDir="column">
+            <Text fontSize="1.1rem" fontWeight="semibold">
               developer.
             </Text>
-            <Text fontSize="2rem" fontWeight="extrabold" fontFamily="Kanit">
+            <Text
+              fontSize="1.8rem"
+              fontWeight="extrabold"
+              color="white"
+              textShadow={txtShadow.style}
+              style={{ "-webkit-text-stroke": "1px black" }}
+            >
               W298
             </Text>
-            <Text fontSize="1rem" marginTop="1rem" fontFamily="Kanit">
-              Develop Web & Game
+            <Text fontSize="0.9rem" fontWeight="bold" marginTop="1.1rem">
+              develop Web & Game
+            </Text>
+            <Text fontSize="0.9rem" fontWeight="bold" marginTop="-0.2rem">
+              {"t(>.<t)"}
             </Text>
           </Flex>
         </Flex>
@@ -53,7 +75,7 @@ export default function AboutMe() {
             fontSize="0.9rem"
           >
             <Flex flexDir="column" gap="0.3rem">
-              <Text fontWeight="bold" fontFamily="Kanit" fontSize="1rem">
+              <Text fontWeight="extrabold" fontSize="0.9rem">
                 WEB DEV.
               </Text>
               <Flex
@@ -69,7 +91,7 @@ export default function AboutMe() {
               </Flex>
             </Flex>
             <Flex flexDir="column" gap="0.3rem">
-              <Text fontWeight="bold" fontFamily="Kanit" fontSize="1rem">
+              <Text fontWeight="extrabold" fontSize="0.9rem">
                 GAME DEV.
               </Text>
               <Flex
