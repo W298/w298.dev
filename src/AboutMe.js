@@ -43,12 +43,12 @@ export default function AboutMe() {
               fontWeight="extrabold"
               color="white"
               textShadow={txtShadow.style}
-              style={{ "-webkit-text-stroke": "1px black" }}
+              style={{ "-webkit-text-stroke": "1.2px black" }}
             >
               W298
             </Text>
             <Text fontSize="0.9rem" fontWeight="bold" marginTop="1.1rem">
-              develop Web & Game
+              develop web & game
             </Text>
             <Text fontSize="0.9rem" fontWeight="bold" marginTop="-0.2rem">
               {"t(>.<t)"}

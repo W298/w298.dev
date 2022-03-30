@@ -266,7 +266,7 @@ export default function App() {
                 <Flex p="0.5rem 1.5rem" gap="0.6rem">
                   <Text
                     fontWeight="bold"
-                    fontSize="1.2rem"
+                    fontSize="1.1rem"
                     color={
                       pointList.find((p) => p.id === focusedPoint).category ===
                       cate
@@ -284,6 +284,8 @@ export default function App() {
                   return (
                     <Flex
                       p="0.5rem 1.5rem"
+                      gap="0.8rem"
+                      alignItems="center"
                       _hover={{
                         bgColor: "gray.100",
                       }}
@@ -291,6 +293,15 @@ export default function App() {
                         scrollToTarget(id);
                       }}
                     >
+                      <Box
+                        display={focusedPoint === id ? "block" : "none"}
+                        width="0.6rem"
+                        height="0.6rem"
+                        transform="rotate(45deg)"
+                        border="1px black solid"
+                        boxShadow="1px 1px #7474bf, 2px 2px #7474bf"
+                        transition="0.1s ease-in-out"
+                      ></Box>
                       <Text
                         fontWeight="bold"
                         color={focusedPoint === id ? "#7474BF" : "gray.400"}
@@ -313,6 +324,17 @@ export default function App() {
         <AboutMe />
         <Divider />
         <Box px={10} py={12} id="project-list-point">
+          <Text
+            textAlign="center"
+            pb="2rem"
+            fontWeight="extrabold"
+            fontSize="1.8rem"
+            color="white"
+            style={{ "-webkit-text-stroke": "1.3px black" }}
+            textShadow="0px 1px #7474bf, 0px 2px #7474bf, 0px 3px #7474bf, 0px 4px #7474bf, 0px 5px #7474bf"
+          >
+            PROJECT LIST
+          </Text>
           <Box
             display="grid"
             gridTemplateColumns={[
@@ -320,7 +342,7 @@ export default function App() {
               "repeat(auto-fill, minmax(19rem, 19rem))",
               "repeat(auto-fill, minmax(20rem, 20rem))",
             ]}
-            gap="1rem"
+            gap="1.5rem"
             justifyContent="center"
           >
             <ProjectCard

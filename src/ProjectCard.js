@@ -77,9 +77,12 @@ export default function ProjectCard({
       height="fit-content"
       borderRadius="0.5rem"
       boxShadow="0 0 15px 5px rgb(0 0 0 / 5%)"
-      border="1px #d1d1d169 solid"
-      _hover={{ transform: "scale(1.02)" }}
-      transition="0.2s ease-in-out"
+      _hover={{
+        transform: "translate(-8px, -8px)",
+        boxShadow:
+          "0 0 15px 5px rgb(0 0 0 / 5%), 1px 1px #7474bf, 2px 2px #7474bf, 3px 3px #7474bf, 4px 4px #7474bf, 5px 5px #7474bf, 6px 6px #7474bf, 7px 7px #7474bf, 8px 8px #7474bf",
+      }}
+      transition="all 0.2s ease-in-out"
     >
       <Image src={bgImg} borderTopRadius="0.5rem" height="6rem" fit="cover" />
       <Flex p={4} pb={2} flexDir="column" gap="0.4rem">
