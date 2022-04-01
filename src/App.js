@@ -213,11 +213,11 @@ export default function App() {
           <Flex flex="1" justifyContent="center">
             <Text
               transform="scaleY(0.95)"
+              letterSpacing="-1px"
               bgGradient="linear(to-r, #7474BF, #348AC7)"
               bgClip="text"
-              fontSize="3xl"
-              fontWeight="bold"
-              fontFamily="Kanit"
+              fontSize="1.7rem"
+              fontWeight="extrabold"
               p={1}
             >
               W298.dev
