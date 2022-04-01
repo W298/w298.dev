@@ -212,7 +212,6 @@ export default function App() {
           </Flex>
           <Flex flex="1" justifyContent="center">
             <Text
-              transform="scaleY(0.95)"
               letterSpacing="-1px"
               bgGradient="linear(to-r, #7474BF, #348AC7)"
               bgClip="text"
