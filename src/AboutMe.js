@@ -8,24 +8,12 @@ import { ReactComponent as Unity } from "./svgs/unity.svg";
 import { ReactComponent as Threejs } from "./svgs/threedotjs.svg";
 import { ReactComponent as Nodejs } from "./svgs/nodedotjs.svg";
 import { ReactComponent as Redux } from "./svgs/redux.svg";
+import { SiBlender } from "react-icons/si";
 
 import { Window } from "./Window.js";
 import { CircleIcon } from "./CircleIcon.js";
 
 export default function AboutMe() {
-  const txtShadow = {
-    color: "#7474BF",
-    repeat: 5,
-    get style() {
-      let str = "";
-      for (let i = 1; i <= this.repeat; i++) {
-        str += `0px ${i}px ${this.color}`;
-        str += i !== this.repeat ? ", " : "";
-      }
-      return str;
-    },
-  };
-
   return (
     <Flex p={[10, 10, 12]} width="100%" justifyContent="center">
       <Window w={["100%", "100%", "40rem"]} h={["100%", "100%", "16rem"]}>
@@ -42,8 +30,9 @@ export default function AboutMe() {
               fontSize="1.8rem"
               fontWeight="extrabold"
               color="white"
-              textShadow={txtShadow.style}
+              textShadow="3px 3px #7474BF"
               style={{ "-webkit-text-stroke": "1.2px black" }}
+              mr={{ base: "0.15rem", sm: "0.15rem", md: "0" }}
             >
               W298
             </Text>
@@ -102,6 +91,7 @@ export default function AboutMe() {
                 <CircleIcon bgColor="#0E1128" icon={Unreal} />
                 <CircleIcon bgColor="black" icon={Unity} />
                 <CircleIcon bgColor="black" icon={Threejs} />
+                <CircleIcon bgColor="#F5792A" icon={SiBlender} />
               </Flex>
             </Flex>
           </Flex>

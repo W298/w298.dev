@@ -212,10 +212,11 @@ export default function App() {
           </Flex>
           <Flex flex="1" justifyContent="center">
             <Text
+              transform="scaleY(0.95)"
               bgGradient="linear(to-r, #7474BF, #348AC7)"
               bgClip="text"
               fontSize="3xl"
-              fontWeight="extrabold"
+              fontWeight="bold"
               fontFamily="Kanit"
               p={1}
             >
@@ -324,17 +325,38 @@ export default function App() {
         <AboutMe />
         <Divider />
         <Box px={10} py={12} id="project-list-point">
-          <Text
-            textAlign="center"
-            pb="2rem"
-            fontWeight="extrabold"
-            fontSize="1.8rem"
-            color="white"
-            style={{ "-webkit-text-stroke": "1.3px black" }}
-            textShadow="0px 1px #7474bf, 0px 2px #7474bf, 0px 3px #7474bf, 0px 4px #7474bf, 0px 5px #7474bf"
+          <Flex
+            w="100%"
+            justifyContent="center"
+            gap="5rem"
+            mb="2rem"
+            alignItems="center"
           >
-            PROJECT LIST
-          </Text>
+            <Box
+              display={["none", "none", "block"]}
+              w="20%"
+              border="2px black solid"
+              height="0.5rem"
+              boxShadow="3px 3px #7474bf"
+            ></Box>
+            <Text
+              textAlign="center"
+              fontWeight="extrabold"
+              fontSize="1.8rem"
+              color="white"
+              style={{ "-webkit-text-stroke": "1.3px black" }}
+              textShadow="3px 3px #7474BF"
+            >
+              PROJECT LIST
+            </Text>
+            <Box
+              display={["none", "none", "block"]}
+              w="20%"
+              border="2px black solid"
+              height="0.5rem"
+              boxShadow="3px 3px #7474bf"
+            ></Box>
+          </Flex>
           <Box
             display="grid"
             gridTemplateColumns={[
