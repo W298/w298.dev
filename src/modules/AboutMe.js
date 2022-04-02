@@ -1,13 +1,13 @@
 import { Avatar, Flex, Text } from "@chakra-ui/react";
 
-import { ReactComponent as Vuejs } from "./svgs/vuejs.svg";
-import { ReactComponent as Svelte } from "./svgs/svelte.svg";
-import { ReactComponent as React } from "./svgs/react.svg";
-import { ReactComponent as Unreal } from "./svgs/unreal-engine.svg";
-import { ReactComponent as Unity } from "./svgs/unity.svg";
-import { ReactComponent as Threejs } from "./svgs/threedotjs.svg";
-import { ReactComponent as Nodejs } from "./svgs/nodedotjs.svg";
-import { ReactComponent as Redux } from "./svgs/redux.svg";
+import { ReactComponent as Vuejs } from "../svgs/vuejs.svg";
+import { ReactComponent as Svelte } from "../svgs/svelte.svg";
+import { ReactComponent as React } from "../svgs/react.svg";
+import { ReactComponent as Unreal } from "../svgs/unreal-engine.svg";
+import { ReactComponent as Unity } from "../svgs/unity.svg";
+import { ReactComponent as Threejs } from "../svgs/threedotjs.svg";
+import { ReactComponent as Nodejs } from "../svgs/nodedotjs.svg";
+import { ReactComponent as Redux } from "../svgs/redux.svg";
 import { SiBlender } from "react-icons/si";
 
 import { Window } from "./Window.js";

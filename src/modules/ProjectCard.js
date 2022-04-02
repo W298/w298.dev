@@ -3,11 +3,11 @@ import { GoRepo } from "react-icons/go";
 import { SiNotion } from "react-icons/si";
 import { FiPlay, FiExternalLink } from "react-icons/fi";
 
-import { ReactComponent as Unity } from "./svgs/unity.svg";
-import { ReactComponent as Unreal } from "./svgs/unreal-engine.svg";
-import { ReactComponent as React } from "./svgs/react.svg";
-import { ReactComponent as Python } from "./svgs/python.svg";
-import { ReactComponent as Material } from "./svgs/material.svg";
+import { ReactComponent as Unity } from "../svgs/unity.svg";
+import { ReactComponent as Unreal } from "../svgs/unreal-engine.svg";
+import { ReactComponent as React } from "../svgs/react.svg";
+import { ReactComponent as Python } from "../svgs/python.svg";
+import { ReactComponent as Material } from "../svgs/material.svg";
 import { SiBlender } from "react-icons/si";
 
 import { CircleIcon } from "./CircleIcon";

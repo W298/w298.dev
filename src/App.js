@@ -1,12 +1,11 @@
+// import style
 import "./App.css";
 
+// import react
 import { useState, useEffect } from "react";
+
+// import chakra-ui modules
 import { useColorMode, useColorModeValue } from "@chakra-ui/react";
-
-import bgImg_Intersection from "./imgs/bgImg_Intersection.png";
-
-import ProjectCard from "./ProjectCard";
-
 import { Text, IconButton, Box, Flex, Divider } from "@chakra-ui/react";
 import {
   Menu,
@@ -16,6 +15,16 @@ import {
   MenuGroup,
   MenuDivider,
 } from "@chakra-ui/react";
+
+// import custom modules
+import ProjectCard from "./modules/ProjectCard";
+import AboutMe from "./modules/AboutMe";
+import scroll from "./tools/Scroll";
+
+// import images
+import bgImg_Intersection from "./imgs/bgImg_Intersection.png";
+
+// import icons
 import {
   FiGithub,
   FiMoon,
@@ -25,9 +34,9 @@ import {
   FiFileText,
   FiGlobe,
 } from "react-icons/fi";
-import AboutMe from "./AboutMe";
 
 export default function App() {
+  // define scroll points
   const pointList = [
     {
       id: "about-me-code",
@@ -49,6 +58,9 @@ export default function App() {
       category: "Blog",
     },
   ];
+
+  // automatically generate category list
+  // for sidebar category
   const categoryList = [
     ...new Set(
       pointList.map((p) => {
@@ -57,6 +69,7 @@ export default function App() {
     ),
   ];
 
+  // toggle menu list
   const menuList = [
     {
       list: [
@@ -124,35 +137,101 @@ export default function App() {
     },
   ];
 
-  const getScrollPos = (id) => {
-    let element = document.getElementById(id);
-    if (!element) return null;
-    let headerOffset = 180;
-    let elementPosition = element.getBoundingClientRect().top;
-    return Math.floor(elementPosition + window.pageYOffset - headerOffset);
-  };
-
-  const scrollToTarget = (id) => {
-    window.scrollTo({
-      top: getScrollPos(id),
-      behavior: "smooth",
-    });
-  };
-
-  const getCurrnetPoint = () => {
-    for (let i = 0; i < pointList.length; i++) {
-      let l = getScrollPos(pointList[i].id);
-      let r =
-        i === pointList.length - 1
-          ? document.body.scrollHeight
-          : getScrollPos(pointList[i + 1].id);
-      if (l <= window.scrollY && window.scrollY < r) return pointList[i].id;
-    }
-  };
-
+  // current language
   let [language, setLanguage] = useState("kr");
+  // current scroll point
   let [focusedPoint, setFocusedPoint] = useState(pointList[0].id);
 
+  // project card list data
+  const cardList = [
+    {
+      title: "Intersection",
+      bgImg: bgImg_Intersection,
+      tagList: ["UNITY", "BLENDER"],
+      descList:
+        language === "kr"
+          ? [
+              "도로 배치해서 도시의 교통량 조절하는 게임 🚘",
+              "유니티 엔진을 이용해 Build 했습니다.",
+            ]
+          : ["Traffic Management Game 🚘", "Develop with Unity Engine"],
+      btnList: [
+        {
+          name: "Github repo",
+          href: "https://github.com/w298/Intersection",
+        },
+        {
+          name: "Notion",
+          href: "https://www.notion.so/rukasp/Project-Intersection-b17815fa8fb54fafb60bf39df80ccb74",
+        },
+      ],
+    },
+    {
+      title: language === "kr" ? "오늘의 원신" : "Today's Genshin",
+      tagList: ["REACT", "MATERIAL"],
+      descList:
+        language === "kr"
+          ? [
+              "원신에서 매일 할 일을 알려주는 웹앱 📝",
+              "리액트로 Build 했습니다.",
+            ]
+          : ["Genshin Impact Todo Web-app 📝", "Built with React.js"],
+      btnList: [
+        {
+          name: "Github repo",
+          href: "https://github.com/w298/todays-genshin",
+        },
+        {
+          name: "Link",
+          href: "https://todays-genshin.netlify.app",
+        },
+      ],
+    },
+    {
+      title: "Pixel Reversi",
+      tagList: ["UNITY"],
+      descList:
+        language === "kr"
+          ? [
+              "Pixel 그래픽으로 개발한 리버시 게임",
+              "Unity WebGL 로 Build 했습니다.",
+            ]
+          : [
+              "Reversi (Othello) game with pixel graphic",
+              "Develop with Unity Engine + WebGL",
+            ],
+      btnList: [
+        {
+          name: "Github repo",
+          href: "https://github.com/w298/Pixel-Reversi",
+        },
+        {
+          name: "Play Now",
+          href: "https://pixel-reversi.netlify.app",
+        },
+      ],
+    },
+    {
+      title: "Together",
+      tagList: ["UNREAL4"],
+      descList: [
+        "Unreal Engine 4로 개발한 1인칭 공포 게임",
+        "숲속에 있는 구 소련 건물을 탈출해야 합니다.",
+      ],
+      btnList: [{ name: "Github repo" }],
+    },
+    {
+      title: "Reflect",
+      tagList: ["PYTHON"],
+      descList: [
+        "거울과 레이저를 이용한 퍼즐 게임",
+        "Python Cocos 엔진을 이용해 개발했습니다.",
+      ],
+      btnList: [{ name: "Github repo" }],
+    },
+  ];
+
+  // chakra ui settings
   const { toggleColorMode } = useColorMode();
   const appBg = useColorModeValue("gray.50", "gray.900");
   const topnavBg = useColorModeValue(
@@ -161,11 +240,12 @@ export default function App() {
   );
   const sidebarBg = useColorModeValue("white", "gray.800");
 
+  // add scroll event for updating current scroll point
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      let curPoint = getCurrnetPoint();
+      let curPoint = scroll.getCurrnetPoint(pointList);
       if (curPoint && focusedPoint !== curPoint) {
-        setFocusedPoint(getCurrnetPoint());
+        setFocusedPoint(scroll.getCurrnetPoint(pointList));
       }
     });
   });
@@ -290,7 +370,7 @@ export default function App() {
                         bgColor: "gray.100",
                       }}
                       onClick={() => {
-                        scrollToTarget(id);
+                        scroll.scrollToTarget(id);
                       }}
                     >
                       <Box
@@ -366,94 +446,17 @@ export default function App() {
             gap="1.5rem"
             justifyContent="center"
           >
-            <ProjectCard
-              title="Intersection"
-              bgImg={bgImg_Intersection}
-              tagList={["UNITY", "BLENDER"]}
-              descList={
-                language === "kr"
-                  ? [
-                      "도로 배치해서 도시의 교통량 조절하는 게임 🚘",
-                      "유니티 엔진을 이용해 Build 했습니다.",
-                    ]
-                  : ["Traffic Management Game 🚘", "Develop with Unity Engine"]
-              }
-              btnList={[
-                {
-                  name: "Github repo",
-                  href: "https://github.com/w298/Intersection",
-                },
-                {
-                  name: "Notion",
-                  href: "https://www.notion.so/rukasp/Project-Intersection-b17815fa8fb54fafb60bf39df80ccb74",
-                },
-              ]}
-            />
-            <ProjectCard
-              title={language === "kr" ? "오늘의 원신" : "Today's Genshin"}
-              tagList={["REACT", "MATERIAL"]}
-              descList={
-                language === "kr"
-                  ? [
-                      "원신에서 매일 할 일을 알려주는 웹앱 📝",
-                      "리액트로 Build 했습니다.",
-                    ]
-                  : ["Genshin Impact Todo Web-app 📝", "Built with React.js"]
-              }
-              btnList={[
-                {
-                  name: "Github repo",
-                  href: "https://github.com/w298/todays-genshin",
-                },
-                {
-                  name: "Link",
-                  href: "https://todays-genshin.netlify.app",
-                },
-              ]}
-            />
-            <ProjectCard
-              title="Pixel Reversi"
-              tagList={["UNITY"]}
-              descList={
-                language === "kr"
-                  ? [
-                      "Pixel 그래픽으로 개발한 리버시 게임",
-                      "Unity WebGL 로 Build 했습니다.",
-                    ]
-                  : [
-                      "Reversi (Othello) game with pixel graphic",
-                      "Develop with Unity Engine + WebGL",
-                    ]
-              }
-              btnList={[
-                {
-                  name: "Github repo",
-                  href: "https://github.com/w298/Pixel-Reversi",
-                },
-                {
-                  name: "Play Now",
-                  href: "https://pixel-reversi.netlify.app",
-                },
-              ]}
-            />
-            <ProjectCard
-              title="Together"
-              tagList={["UNREAL4"]}
-              descList={[
-                "Unreal Engine 4로 개발한 1인칭 공포 게임",
-                "숲속에 있는 구 소련 건물을 탈출해야 합니다.",
-              ]}
-              btnList={[{ name: "Github repo" }]}
-            />
-            <ProjectCard
-              title="Reflect"
-              tagList={["PYTHON"]}
-              descList={[
-                "거울과 레이저를 이용한 퍼즐 게임",
-                "Python Cocos 엔진을 이용해 개발했습니다.",
-              ]}
-              btnList={[{ name: "Github repo" }]}
-            />
+            {cardList.map(({ title, bgImg, tagList, descList, btnList }) => {
+              return (
+                <ProjectCard
+                  title={title}
+                  bgImg={bgImg}
+                  tagList={tagList}
+                  descList={descList}
+                  btnList={btnList}
+                />
+              );
+            })}
           </Box>
         </Box>
         <Divider />
