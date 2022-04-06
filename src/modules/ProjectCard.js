@@ -84,7 +84,15 @@ export default function ProjectCard({
       }}
       transition="all 0.2s ease-in-out"
     >
-      <Image src={bgImg} borderTopRadius="0.5rem" height="6rem" fit="cover" />
+      <Box borderTopRadius="0.5rem" height="8rem" overflow="hidden">
+        <Image
+          src={bgImg?.src}
+          fit="cover"
+          width={bgImg?.w}
+          height={bgImg?.h}
+          transform={bgImg && `translate(${bgImg.x}, ${bgImg.y})`}
+        />
+      </Box>
       <Flex p={4} pb={2} flexDir="column" gap="0.4rem">
         <Flex gap="0.4rem">{tagList.map((tag) => tagData[tag])}</Flex>
         <Text fontWeight="900" fontSize="1.6rem" lineHeight="100%">

@@ -16,6 +16,9 @@ import {
   MenuDivider,
 } from "@chakra-ui/react";
 
+// import framer-motion modules
+import { motion, AnimatePresence } from "framer-motion";
+
 // import custom modules
 import ProjectCard from "./modules/ProjectCard";
 import AboutMe from "./modules/AboutMe";
@@ -23,6 +26,9 @@ import scroll from "./tools/Scroll";
 
 // import images
 import bgImg_Intersection from "./imgs/bgImg_Intersection.png";
+import bgImg_TodaysGenshin from "./imgs/bgImg_TodaysGenshin.png";
+import bgImg_PixelReversi from "./imgs/pixelreversi_intro.gif";
+import bgImg_Together from "./imgs/bgImg_Together.png";
 
 // import icons
 import {
@@ -146,7 +152,7 @@ export default function App() {
   const cardList = [
     {
       title: "Intersection",
-      bgImg: bgImg_Intersection,
+      bgImg: { src: bgImg_Intersection, h: "8rem" },
       tagList: ["UNITY", "BLENDER"],
       descList:
         language === "kr"
@@ -168,6 +174,7 @@ export default function App() {
     },
     {
       title: language === "kr" ? "오늘의 원신" : "Today's Genshin",
+      bgImg: { src: bgImg_TodaysGenshin },
       tagList: ["REACT", "MATERIAL"],
       descList:
         language === "kr"
@@ -189,6 +196,7 @@ export default function App() {
     },
     {
       title: "Pixel Reversi",
+      bgImg: { src: bgImg_PixelReversi, x: 0, y: "-2px" },
       tagList: ["UNITY"],
       descList:
         language === "kr"
@@ -214,6 +222,7 @@ export default function App() {
     {
       title: "Together",
       tagList: ["UNREAL4"],
+      bgImg: { src: bgImg_Together, h: "8rem" },
       descList: [
         "Unreal Engine 4로 개발한 1인칭 공포 게임",
         "숲속에 있는 구 소련 건물을 탈출해야 합니다.",
@@ -373,15 +382,24 @@ export default function App() {
                         scroll.scrollToTarget(id);
                       }}
                     >
-                      <Box
-                        display={focusedPoint === id ? "block" : "none"}
-                        width="0.6rem"
-                        height="0.6rem"
-                        transform="rotate(45deg)"
-                        border="1px black solid"
-                        boxShadow="1px 1px #7474bf, 2px 2px #7474bf"
-                        transition="0.1s ease-in-out"
-                      ></Box>
+                      <AnimatePresence>
+                        {focusedPoint === id && (
+                          <motion.div
+                            initial={{ x: -10, opacity: 0.5 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            exit={{ x: -10, opacity: 0.5 }}
+                            transition={{ duration: 0.2, ease: "easeInOut" }}
+                          >
+                            <Box
+                              width="0.6rem"
+                              height="0.6rem"
+                              transform="rotate(45deg)"
+                              border="1px black solid"
+                              boxShadow="1px 1px #7474bf, 2px 2px #7474bf"
+                            ></Box>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                       <Text
                         fontWeight="bold"
                         color={focusedPoint === id ? "#7474BF" : "gray.400"}
