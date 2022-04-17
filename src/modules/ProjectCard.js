@@ -99,7 +99,7 @@ export default function ProjectCard({
           {title}
         </Text>
       </Flex>
-      <hr borderColor="#d1d1d169" />
+      <hr bordercolor="#d1d1d169" />
       <Flex px={4} py={2} flexDir="column">
         {descList.map((desc) => (
           <Text fontWeight="bold" fontSize="0.9rem">

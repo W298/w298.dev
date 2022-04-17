@@ -60,7 +60,6 @@ export default function App() {
       category: "Project",
     },
     {
-      id: "blog-point",
       title: "Posts",
       category: "Blog",
     },
@@ -82,6 +81,9 @@ export default function App() {
       list: [
         {
           name: "About Me",
+          callback: () => {
+            scroll.scrollToTarget("about-me-code");
+          },
         },
       ],
     },
@@ -92,12 +94,15 @@ export default function App() {
           name: "Project List",
           icon: <FiList />,
           callback: () => {
-            console.log("asdf");
+            scroll.scrollToTarget("project-list-point");
           },
         },
         {
           name: "Screenshots",
           icon: <FiImage />,
+          callback: () => {
+            scroll.scrollToTarget("screenshot-point");
+          },
         },
       ],
     },
@@ -116,6 +121,9 @@ export default function App() {
         {
           name: "Github Profile",
           icon: <FiGithub />,
+          callback: () => {
+            window.open("https://github.com/w298", "_blank");
+          },
         },
       ],
     },
@@ -381,6 +389,7 @@ export default function App() {
                       p="0.5rem 1.5rem"
                       gap="0.8rem"
                       alignItems="center"
+                      cursor="pointer"
                       _hover={{
                         bgColor: "gray.100",
                       }}
@@ -409,7 +418,6 @@ export default function App() {
                       <Text
                         fontWeight="bold"
                         color={focusedPoint === id ? "#7474BF" : "gray.400"}
-                        cursor="pointer"
                         transition="0.1s ease-in-out"
                         fontSize="1.1rem"
                       >
@@ -438,7 +446,7 @@ export default function App() {
               display={["none", "none", "block"]}
               w="20%"
               border="2px black solid"
-              height="0.5rem"
+              height="0.4rem"
               boxShadow="3px 3px #7474bf"
             ></Box>
             <Text
@@ -455,7 +463,7 @@ export default function App() {
               display={["none", "none", "block"]}
               w="20%"
               border="2px black solid"
-              height="0.5rem"
+              height="0.4rem"
               boxShadow="3px 3px #7474bf"
             ></Box>
           </Flex>
@@ -483,9 +491,40 @@ export default function App() {
           </Box>
         </Box>
         <Divider />
-        <Box p={8} py={12} id="screenshot-point"></Box>
-        <Divider />
-        <Box p={8} py={12} id="blog-point"></Box>
+        <Box p={8} py={12} id="screenshot-point">
+          <Flex
+            w="100%"
+            justifyContent="center"
+            gap="5rem"
+            mb="2rem"
+            alignItems="center"
+          >
+            <Box
+              display={["none", "none", "block"]}
+              w="20%"
+              border="2px black solid"
+              height="0.4rem"
+              boxShadow="3px 3px #7474bf"
+            ></Box>
+            <Text
+              textAlign="center"
+              fontWeight="extrabold"
+              fontSize="1.8rem"
+              color="white"
+              style={{ "-webkit-text-stroke": "1.3px black" }}
+              textShadow="3px 3px #7474BF"
+            >
+              SCREENSHOTS
+            </Text>
+            <Box
+              display={["none", "none", "block"]}
+              w="20%"
+              border="2px black solid"
+              height="0.4rem"
+              boxShadow="3px 3px #7474bf"
+            ></Box>
+          </Flex>
+        </Box>
       </Box>
     </div>
   );

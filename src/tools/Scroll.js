@@ -1,7 +1,7 @@
 // manage scroll behavior
 const scroll = {
   /**
-   * get scroll height of element
+   * Get scroll height of element
    * @param {string} id
    * @returns {number}
    */
