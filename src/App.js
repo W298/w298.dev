@@ -27,8 +27,9 @@ import scroll from "./tools/Scroll";
 // import images
 import bgImg_Intersection from "./imgs/bgImg_Intersection.png";
 import bgImg_TodaysGenshin from "./imgs/bgImg_TodaysGenshin.png";
-import bgImg_PixelReversi from "./imgs/pixelreversi_intro.gif";
+import bgImg_PixelReversi from "./imgs/bgImg_PixelReversi.png";
 import bgImg_Together from "./imgs/bgImg_Together.png";
+import bgImg_Reflect from "./imgs/bgImg_Reflect.png";
 
 // import icons
 import {
@@ -196,7 +197,7 @@ export default function App() {
     },
     {
       title: "Pixel Reversi",
-      bgImg: { src: bgImg_PixelReversi, x: 0, y: "-2px" },
+      bgImg: { src: bgImg_PixelReversi, x: 0, y: "-2px", h: "12rem" },
       tagList: ["UNITY"],
       descList:
         language === "kr"
@@ -227,16 +228,21 @@ export default function App() {
         "Unreal Engine 4로 개발한 1인칭 공포 게임",
         "숲속에 있는 구 소련 건물을 탈출해야 합니다.",
       ],
-      btnList: [{ name: "Github repo" }],
+      btnList: [
+        { name: "Github repo", href: "https://github.com/W298/Together" },
+      ],
     },
     {
       title: "Reflect",
       tagList: ["PYTHON"],
+      bgImg: { src: bgImg_Reflect },
       descList: [
         "거울과 레이저를 이용한 퍼즐 게임",
         "Python Cocos 엔진을 이용해 개발했습니다.",
       ],
-      btnList: [{ name: "Github repo" }],
+      btnList: [
+        { name: "Github repo", href: "https://github.com/W298/Reflect" },
+      ],
     },
   ];
 
@@ -301,11 +307,11 @@ export default function App() {
           </Flex>
           <Flex flex="1" justifyContent="center">
             <Text
-              letterSpacing="-1px"
               bgGradient="linear(to-r, #7474BF, #348AC7)"
               bgClip="text"
-              fontSize="1.7rem"
-              fontWeight="extrabold"
+              fontSize={["1.5rem", "1.5rem", "1.6rem"]}
+              fontWeight="black"
+              fontFamily="Montserrat"
               p={1}
             >
               W298.dev
@@ -420,7 +426,6 @@ export default function App() {
       </Box>
       <Box ml={{ base: "0", sm: "0", md: "0", lg: "18rem" }} pb="50rem" pt={16}>
         <AboutMe />
-        <Divider />
         <Box px={10} py={12} id="project-list-point">
           <Flex
             w="100%"
