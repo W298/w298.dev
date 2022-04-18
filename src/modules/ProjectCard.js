@@ -19,18 +19,20 @@ export default function ProjectCard({
   descList,
   btnList,
 }) {
-  const BtnProp = ({ color = "", children }) => {
+  const BtnProp = ({ color = null, customColor = null, children }) => {
     return (
       <Button
         width="fit-content"
-        variant="outline"
-        colorScheme={color}
         size="xs"
+        variant="outline"
         display="flex"
         gap="0.25rem"
         fontWeight="bold"
         _hover={{ transform: "translateY(-2px)" }}
         transition="0.2s"
+        borderColor={customColor}
+        color={customColor}
+        colorScheme={color}
       >
         {children}
       </Button>
@@ -44,31 +46,29 @@ export default function ProjectCard({
       </BtnProp>
     ),
     Notion: (
-      <BtnProp>
+      <BtnProp customColor="gray.800">
         <SiNotion /> Notion
       </BtnProp>
     ),
     "Play Now": (
-      <BtnProp>
-        <FiPlay />
-        Play Now
+      <BtnProp customColor="purple.500">
+        <FiPlay /> Play Now
       </BtnProp>
     ),
     Link: (
-      <BtnProp>
-        <FiExternalLink />
-        Link
+      <BtnProp customColor="purple.500">
+        <FiExternalLink /> Link
       </BtnProp>
     ),
   };
 
   const tagData = {
-    UNITY: <CircleIcon icon={Unity} bgColor="black" />,
-    REACT: <CircleIcon icon={React} bgColor="#5ab7d1" />,
-    UNREAL4: <CircleIcon icon={Unreal} bgColor="black" />,
-    PYTHON: <CircleIcon icon={Python} bgColor="#3776AB" />,
-    MATERIAL: <CircleIcon icon={Material} bgColor="#2196F3" />,
-    BLENDER: <CircleIcon icon={SiBlender} bgColor="#F5792A" />,
+    UNITY: <CircleIcon key={0} icon={Unity} bgColor="black" />,
+    REACT: <CircleIcon key={1} icon={React} bgColor="#5ab7d1" />,
+    UNREAL4: <CircleIcon key={2} icon={Unreal} bgColor="black" />,
+    PYTHON: <CircleIcon key={3} icon={Python} bgColor="#3776AB" />,
+    MATERIAL: <CircleIcon key={4} icon={Material} bgColor="#2196F3" />,
+    BLENDER: <CircleIcon key={5} icon={SiBlender} bgColor="#F5792A" />,
   };
 
   return (
@@ -101,14 +101,14 @@ export default function ProjectCard({
       </Flex>
       <hr bordercolor="#d1d1d169" />
       <Flex px={4} py={2} flexDir="column">
-        {descList.map((desc) => (
-          <Text fontWeight="bold" fontSize="0.9rem">
+        {descList.map((desc, index) => (
+          <Text key={index} fontWeight="bold" fontSize="0.9rem">
             {desc}
           </Text>
         ))}
-        <Flex pt={3} pb={2} gap="0.5rem">
+        <Flex pt={4} pb={2} gap="0.5rem">
           {btnList.map(({ name, href }) => (
-            <a href={href} target="_blank" rel="noreferrer">
+            <a key={name} href={href} target="_blank" rel="noreferrer">
               {btnData[name]}
             </a>
           ))}

@@ -31,7 +31,7 @@ export default function AboutMe() {
               fontWeight="extrabold"
               color="white"
               textShadow="3px 3px #7474BF"
-              style={{ "-webkit-text-stroke": "1.2px black" }}
+              style={{ WebkitTextStroke: "1.3px black" }}
               mr={{ base: "0.15rem", sm: "0.15rem", md: "0" }}
             >
               W298
