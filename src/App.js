@@ -30,19 +30,31 @@ import bgImg_TodaysGenshin from "./imgs/bgImg_TodaysGenshin.png";
 import bgImg_PixelReversi from "./imgs/bgImg_PixelReversi.png";
 import bgImg_Together from "./imgs/bgImg_Together.png";
 import bgImg_Reflect from "./imgs/bgImg_Reflect.png";
+import bgImg_GenshinCubeSolver from "./imgs/bgImg_GenshinCubeSolver.png";
 
 // import icons
 import {
   FiGithub,
   FiMoon,
   FiMenu,
-  FiList,
-  FiImage,
+  FiCode,
   FiFileText,
   FiGlobe,
+  FiMoreHorizontal,
 } from "react-icons/fi";
 
+import { GrGamepad } from "react-icons/gr";
+
 export default function App() {
+  // Chakra ui settings
+  const { toggleColorMode } = useColorMode();
+  const appBg = useColorModeValue("gray.50", "gray.900");
+  const topnavBg = useColorModeValue(
+    "rgba(255, 255, 255, 0.8)",
+    "rgba(45, 55, 72, 0.8)"
+  );
+  const sidebarBg = useColorModeValue("white", "gray.800");
+
   /**
    * Scroll Points
    * for scroll module functions
@@ -50,21 +62,26 @@ export default function App() {
   const pointList = [
     {
       id: "about-me-point",
-      title: "About Me",
+      title: "ABOUT ME",
     },
     {
       id: "game-dev-point",
-      title: "Game Dev",
-      category: "Project",
+      title: "Game Dev.",
+      category: "DEV.",
     },
     {
       id: "web-dev-point",
-      title: "Web Dev",
-      category: "Project",
+      title: "Web Dev.",
+      category: "DEV.",
+    },
+    {
+      id: "etc-point",
+      title: "etc",
+      category: "DEV.",
     },
     {
       title: "Posts",
-      category: "Blog",
+      category: "BLOG",
       callback: () => {
         console.log("head to blog page");
       },
@@ -91,7 +108,7 @@ export default function App() {
     {
       list: [
         {
-          name: "About Me",
+          name: "ABOUT ME",
           callback: () => {
             scroll.scrollToTarget("about-me-point");
           },
@@ -99,26 +116,33 @@ export default function App() {
       ],
     },
     {
-      header: "Project",
+      header: "DEV.",
       list: [
         {
-          name: "Game Dev",
-          icon: <FiList />,
+          name: "Game Dev.",
+          icon: <GrGamepad />,
           callback: () => {
             scroll.scrollToTarget("game-dev-point");
           },
         },
         {
-          name: "Web Dev",
-          icon: <FiImage />,
+          name: "Web Dev.",
+          icon: <FiCode />,
           callback: () => {
             scroll.scrollToTarget("web-dev-point");
+          },
+        },
+        {
+          name: "etc",
+          icon: <FiMoreHorizontal />,
+          callback: () => {
+            scroll.scrollToTarget("etc-point");
           },
         },
       ],
     },
     {
-      header: "Blog",
+      header: "BLOG",
       list: [
         {
           name: "Posts",
@@ -127,7 +151,7 @@ export default function App() {
       ],
     },
     {
-      header: "Links",
+      header: "LINKS",
       list: [
         {
           name: "Github Profile",
@@ -139,11 +163,12 @@ export default function App() {
       ],
     },
     {
-      header: "Settings",
+      header: "SETTINGS",
       list: [
         {
           name: `Toggle Dark Mode`,
           icon: <FiMoon />,
+          callback: toggleColorMode,
         },
         {
           name: "Change Lang to KR",
@@ -177,15 +202,6 @@ export default function App() {
       }
     });
   });
-
-  // Chakra ui settings
-  const { toggleColorMode } = useColorMode();
-  const appBg = useColorModeValue("gray.50", "gray.900");
-  const topnavBg = useColorModeValue(
-    "rgba(255, 255, 255, 0.8)",
-    "rgba(45, 55, 72, 0.8)"
-  );
-  const sidebarBg = useColorModeValue("white", "gray.800");
 
   // Project card list data
   const cardList = {
@@ -282,6 +298,26 @@ export default function App() {
           {
             name: "Link",
             href: "https://todays-genshin.netlify.app",
+          },
+        ],
+      },
+    ],
+    ETC: [
+      {
+        title: language === "kr" ? "원신 큐브 Solver" : "Genshin Cube Solver",
+        bgImg: { src: bgImg_GenshinCubeSolver, h: "20rem" },
+        tagList: ["REACT"],
+        descList: [
+          "원신에서 나오는 황해 지하큐브의 솔루션을 자동으로 찾아주는 웹앱",
+        ],
+        btnList: [
+          {
+            name: "Github repo",
+            href: "https://github.com/W298/genshin-cube-solver-react",
+          },
+          {
+            name: "Link",
+            href: "https://genshin-cube-solver.herokuapp.com",
           },
         ],
       },
@@ -559,6 +595,66 @@ export default function App() {
             justifyContent="center"
           >
             {cardList["WEB DEV"].map(
+              ({ title, bgImg, tagList, descList, btnList }) => {
+                return (
+                  <ProjectCard
+                    key={title}
+                    title={title}
+                    bgImg={bgImg}
+                    tagList={tagList}
+                    descList={descList}
+                    btnList={btnList}
+                  />
+                );
+              }
+            )}
+          </Box>
+        </Box>
+        <Divider />
+        <Box p={8} py={12} id="etc-point">
+          <Flex
+            w="100%"
+            justifyContent="center"
+            gap="5rem"
+            mb="2rem"
+            alignItems="center"
+          >
+            <Box
+              display={["none", "none", "block"]}
+              w="20%"
+              border="2px black solid"
+              height="0.4rem"
+              boxShadow="3px 3px #7474bf"
+            ></Box>
+            <Text
+              textAlign="center"
+              fontWeight="extrabold"
+              fontSize="1.8rem"
+              color="white"
+              style={{ WebkitTextStroke: "1.3px black" }}
+              textShadow="3px 3px #7474BF"
+            >
+              ETC
+            </Text>
+            <Box
+              display={["none", "none", "block"]}
+              w="20%"
+              border="2px black solid"
+              height="0.4rem"
+              boxShadow="3px 3px #7474bf"
+            ></Box>
+          </Flex>
+          <Box
+            display="grid"
+            gridTemplateColumns={[
+              "repeat(auto-fill, minmax(19rem, 19rem))",
+              "repeat(auto-fill, minmax(19rem, 19rem))",
+              "repeat(auto-fill, minmax(20rem, 20rem))",
+            ]}
+            gap="1.5rem"
+            justifyContent="center"
+          >
+            {cardList["ETC"].map(
               ({ title, bgImg, tagList, descList, btnList }) => {
                 return (
                   <ProjectCard
