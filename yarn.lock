@@ -17,6 +17,11 @@
   dependencies:
     regenerator-runtime "^0.13.10"
 
+"@icons-pack/react-simple-icons@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@icons-pack/react-simple-icons/-/react-simple-icons-6.1.0.tgz#a6e3687b428bb169de5cb2c054315b032e022543"
+  integrity sha512-ibidZFMK6Iv2cbWy/B9cLx8gSdTB0bWsO2Drvi3LqIMELi09BFApUQ8T3sicByBP5xRpB7I9YPzabkJfHVdCZg==
+
 "@next/env@13.0.3":
   version "13.0.3"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-13.0.3.tgz#f2ecec9a6634aed28dca9e7b79bd65d9c516a1b4"

@@ -1,5 +1,6 @@
 import "../styles/globals.css";
-import Navbar from "./Navbar";
+import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar";
 
 export default function RootLayout({ children }) {
   return (
@@ -7,7 +8,12 @@ export default function RootLayout({ children }) {
       <head />
       <body>
         <Navbar />
-        <div className="max-w-[90rem] m-auto">{children}</div>
+        <div className="max-w-[90rem] m-auto flex flex-row gap-5">
+          <Sidebar />
+          <div className="ml-80">
+            <div className="m-5">{children}</div>
+          </div>
+        </div>
       </body>
     </html>
   );

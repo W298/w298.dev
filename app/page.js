@@ -1,3 +1,9 @@
+import ProjectCard from "../components/ProjectCard";
+
 export default function Page() {
-  return <h1 style={{ height: "2000px" }}>asdf</h1>;
+  return (
+    <div className="flex flex-row flex-wrap gap-8">
+      <ProjectCard />
+    </div>
+  );
 }
