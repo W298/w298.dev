@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
         <div className="max-w-[90rem] m-auto flex flex-row gap-5">
           <Sidebar />
           <div className="ml-80">
-            <div className="m-5">{children}</div>
+            <div className="m-8">{children}</div>
           </div>
         </div>
       </body>

@@ -3,10 +3,10 @@ import ProjectTag from "./ProjectTag";
 
 export default function ProjectCard() {
   return (
-    <div className="min-w-min rounded-md bg-primary border border-highlight">
+    <div className="min-w-min max-w-[20.65rem] rounded-md bg-primary border border-highlight">
       <img
         src="https://w298.me/static/media/bgImg.57b3dfc9.png"
-        className="object-cover max-w-sm h-28 rounded-t-md"
+        className="object-cover h-28 rounded-t-md"
       ></img>
       <div className="py-4 px-4 flex flex-col gap-2">
         <div className="flex flex-row gap-2">
