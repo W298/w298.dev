@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { Github } from "@icons-pack/react-simple-icons";
+import { MarkGithubIcon, AppsIcon } from "@primer/octicons-react";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -17,7 +17,7 @@ export default function Navbar() {
       <div className="max-w-[90rem] m-auto">
         <div className="flex flex-row justify-between items-center">
           <div className="flex flex-row items-center gap-8">
-            <div className="flex flex-row items-center gap-8 w-80 border-r border-layer-200">
+            <div className="flex flex-row items-center gap-8 min-[1000px]:w-80 border-r border-layer-200 max-[1000px]:border-transparent">
               <img
                 src="https://avatars.githubusercontent.com/u/25034289?v=4"
                 className="w-8 h-8"
@@ -26,7 +26,7 @@ export default function Navbar() {
                 W298.me
               </Link>
             </div>
-            <div className="flex flex-row items-center gap-3">
+            <div className="flex flex-row items-center gap-3 max-[1000px]:hidden">
               {pageList.map(({ title, path }) => {
                 return (
                   <Link
@@ -43,10 +43,17 @@ export default function Navbar() {
               })}
             </div>
           </div>
-          <div>
-            <a href="https://github.com/W298" target="_blank">
-              <Github color="#f4f4f4" width={20} height={20} />
+          <div className="flex flex-row gap-1 items-center">
+            <a
+              href="https://github.com/W298"
+              target="_blank"
+              className="leading-[0px] p-1"
+            >
+              <MarkGithubIcon fill="#f4f4f4" size={18} />
             </a>
+            <div className="p-1 cursor-pointer">
+              <AppsIcon fill="#f4f4f4" size={18} />
+            </div>
           </div>
         </div>
       </div>

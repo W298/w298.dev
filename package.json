@@ -8,12 +8,14 @@
   "dependencies": {
     "@icons-pack/react-simple-icons": "^6.1.0",
     "@next/font": "^13.0.3",
+    "@primer/octicons-react": "^17.9.0",
     "autoprefixer": "^10.4.13",
     "eslint-config-next": "^13.0.3",
     "next": "^13.0.3",
     "postcss": "^8.4.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-scroll": "^1.8.8",
     "tailwindcss": "^3.2.4"
   }
 }
