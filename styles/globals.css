@@ -6,9 +6,25 @@
 
 * {
   color-scheme: dark;
+  color: theme("colors.text.primary");
   font-family: "IBM Plex Sans", sans-serif;
 }
 
 body {
   background-color: theme("colors.background");
+}
+
+@layer components {
+  .border-l-custom,
+  .border-l-custom-active {
+    position: relative;
+  }
+
+  .border-l-custom {
+    @apply before:w-1 before:h-full before:absolute before:left-0 before:top-0 before:bg-transparent;
+  }
+
+  .border-l-custom-active {
+    @apply before:w-1 before:h-full before:absolute before:left-0 before:top-0 before:bg-text-primary;
+  }
 }

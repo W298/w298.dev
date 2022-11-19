@@ -3,7 +3,7 @@ import ProjectTag from "./ProjectTag";
 
 export default function ProjectCard() {
   return (
-    <div className="min-w-min max-w-[20.65rem] rounded-md bg-primary border border-highlight">
+    <div className="min-w-min max-w-[20.65rem] rounded-md bg-layer-350 border border-layer-200">
       <img
         src="https://w298.me/static/media/bgImg.57b3dfc9.png"
         className="object-cover h-28 rounded-t-md"
