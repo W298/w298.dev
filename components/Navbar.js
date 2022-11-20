@@ -47,11 +47,7 @@ export default function Navbar() {
             </div>
           </div>
           <div className="flex flex-row gap-1 items-center">
-            <a
-              href="https://github.com/W298"
-              target="_blank"
-              className="leading-[0px] p-1"
-            >
+            <a href="https://github.com/W298" target="_blank" className="p-1">
               <MarkGithubIcon fill="#f4f4f4" size={18} />
             </a>
             <div className="p-1 cursor-pointer">

@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { ChevronDownIcon } from "@primer/octicons-react";
 import { useEffect, useRef, useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
+import { projectData } from "../db/ProjectData";
 
 class NodeBase {
   constructor(title, children = []) {
@@ -18,8 +19,8 @@ class NodeBase {
 }
 
 class ProjectCategory extends NodeBase {
-  createDiv() {
-    const [expanded, setExpanded] = useState(false);
+  createDiv(isAlreadyExpanded) {
+    const [expanded, setExpanded] = useState(isAlreadyExpanded);
 
     return (
       <div>
@@ -68,15 +69,17 @@ export default function Sidebar() {
     { title: "About Me", path: "/aboutMe" },
   ];
 
-  const hierarchy = new NodeBase("root", [
-    new ProjectCategory("Game development", [
-      new Project("Intersection"),
-      new Project("Together"),
-      new Project("Pixel Reversi"),
-    ]),
-    new ProjectCategory("Web developement", [new Project("Today's Genshin")]),
-    new ProjectCategory("etc", []),
-  ]);
+  const hierarchy = new NodeBase(
+    "root",
+    projectData.map(({ category, projectCardList }) => {
+      return new ProjectCategory(
+        category,
+        projectCardList.map(({ title }) => {
+          return new Project(title);
+        })
+      );
+    })
+  );
 
   const refProjectContainer = useRef(null);
   const scrollHandler = () => {
@@ -103,8 +106,8 @@ export default function Sidebar() {
         {pageList.find(({ path }) => path == pathname).title}
       </div>
       <div ref={refProjectContainer}>
-        {hierarchy.children.map((projectCategory) => {
-          return projectCategory.createDiv();
+        {hierarchy.children.map((projectCategory, index) => {
+          return projectCategory.createDiv(index == 0);
         })}
       </div>
     </div>
