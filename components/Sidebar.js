@@ -1,85 +1,16 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { ChevronDownIcon } from "@primer/octicons-react";
-import { useEffect, useRef, useState } from "react";
-import { Link as ScrollLink } from "react-scroll";
-import { projectData } from "../db/ProjectData";
+import { useEffect, useRef } from "react";
+import ProjectCategory from "./ProjectCategory";
 
-class NodeBase {
-  constructor(title, children = []) {
-    this.title = title;
-    this.parent = null;
-    this.children = children;
-
-    children.forEach((child) => {
-      child.parent = this;
-    });
-  }
-}
-
-class ProjectCategory extends NodeBase {
-  createDiv(isAlreadyExpanded) {
-    const [expanded, setExpanded] = useState(isAlreadyExpanded);
-
-    return (
-      <div>
-        <div
-          className="flex flex-row items-center justify-between py-[0.4rem] px-8 cursor-pointer hover:bg-layer-300 transition"
-          onClick={() => {
-            setExpanded(!expanded);
-          }}
-        >
-          <div className="text-text-secondary font-bold">{this.title}</div>
-          <ChevronDownIcon
-            fill="#f4f4f4"
-            size={16}
-            className={`transition ${expanded ? "rotate-180" : ""}`}
-          />
-        </div>
-        {this.children.map((project) => {
-          return (
-            <ScrollLink
-              activeClass="border-l-custom-active bg-layer-300"
-              className={`block py-[0.4rem] px-12 cursor-pointer text-text-secondary border-l-custom hover:bg-layer-300 transition ${
-                expanded ? "block" : "hidden"
-              }`}
-              spy={true}
-              smooth={true}
-              offset={-150}
-              duration={400}
-              to={project.title}
-            >
-              {project.title}
-            </ScrollLink>
-          );
-        })}
-      </div>
-    );
-  }
-}
-
-class Project extends NodeBase {}
-
-export default function Sidebar() {
+export default function Sidebar({ projectData }) {
   const pathname = usePathname();
   const pageList = [
     { title: "Projects", path: "/" },
     { title: "Posts", path: "/posts" },
     { title: "About Me", path: "/aboutMe" },
   ];
-
-  const hierarchy = new NodeBase(
-    "root",
-    projectData.map(({ category, projectCardList }) => {
-      return new ProjectCategory(
-        category,
-        projectCardList.map(({ title }) => {
-          return new Project(title);
-        })
-      );
-    })
-  );
 
   const refProjectContainer = useRef(null);
   const scrollHandler = () => {
@@ -106,8 +37,14 @@ export default function Sidebar() {
         {pageList.find(({ path }) => path == pathname).title}
       </div>
       <div ref={refProjectContainer}>
-        {hierarchy.children.map((projectCategory, index) => {
-          return projectCategory.createDiv(index == 0);
+        {projectData.map(({ category, projectCardList }, index) => {
+          return (
+            <ProjectCategory
+              title={category}
+              projectCardList={projectCardList}
+              isAlreadyExpanded={index == 0}
+            />
+          );
         })}
       </div>
     </div>

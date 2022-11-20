@@ -1,6 +1,6 @@
 import { Notion } from "@icons-pack/react-simple-icons";
 import { RepoIcon, GitCommitIcon } from "@primer/octicons-react";
-import Tag from "./ProjectTag";
+import Tag from "./Tag";
 
 export default function ProjectCard({ data }) {
   return (
@@ -39,9 +39,7 @@ export default function ProjectCard({ data }) {
           <div className="flex flex-row gap-2 items-center">
             <GitCommitIcon size={16} />
             <div className="font-light text-xs text-text-secondary -mt-[3px]">
-              {`Last Commit - ${data.lastCommit.getFullYear()}.${
-                data.lastCommit.getMonth() + 1
-              }.${data.lastCommit.getDate()} `}
+              {`Last Commit - ${data.lastCommit} `}
             </div>
           </div>
           <div className="flex flex-row flex-wrap-reverse justify-end gap-2">

@@ -1,15 +1,15 @@
 import "../styles/globals.css";
 import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar";
+import SidebarContainer from "../components/SidebarContainer";
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
   return (
     <html>
       <head />
       <body>
         <Navbar />
         <div className="max-w-[90rem] m-auto flex flex-row gap-5">
-          <Sidebar />
+          <SidebarContainer />
           <div className="min-[700px]:ml-80">
             <div className="m-8">{children}</div>
           </div>
