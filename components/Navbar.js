@@ -22,7 +22,10 @@ export default function Navbar() {
                 src="https://avatars.githubusercontent.com/u/25034289?v=4"
                 className="w-8 h-8"
               ></img>
-              <Link className="font-bold text-[1.2rem] cursor-pointer" href="/">
+              <Link
+                className="font-bold text-[1.2rem] cursor-pointer scale-y-[0.95]"
+                href="/"
+              >
                 W298.me
               </Link>
             </div>

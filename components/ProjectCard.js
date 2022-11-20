@@ -12,7 +12,7 @@ export default function ProjectCard({ title }) {
         src="https://w298.me/static/media/bgImg.57b3dfc9.png"
         className="object-cover h-28 rounded-t-md"
       ></img>
-      <div className="h-44 p-6 flex flex-col">
+      <div className="h-[10.5rem] p-6 flex flex-col">
         <div className="flex-1 flex flex-row justify-between">
           <div className="flex flex-col gap-2">
             <div className="font-extrabold text-2xl">{title}</div>
