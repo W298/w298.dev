@@ -1,7 +1,22 @@
-import { Blender, Unity } from "@icons-pack/react-simple-icons";
+import { Blender, Unity, Github, Notion } from "@icons-pack/react-simple-icons";
+import { RepoIcon } from "@primer/octicons-react";
 
 export default function Tag({ title, color, thin = false }) {
-  const Icon = title == "Unity" ? Unity : "Blender" ? Blender : null;
+  let Icon = Github;
+  switch (title) {
+    case "Unity":
+      Icon = Unity;
+      break;
+    case "Blender":
+      Icon = Blender;
+      break;
+    case "Github":
+      Icon = RepoIcon;
+      break;
+    case "Notion":
+      Icon = Notion;
+      break;
+  }
 
   return (
     <div

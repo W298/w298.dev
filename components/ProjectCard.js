@@ -1,5 +1,4 @@
-import { Notion } from "@icons-pack/react-simple-icons";
-import { RepoIcon, GitCommitIcon } from "@primer/octicons-react";
+import { GitCommitIcon } from "@primer/octicons-react";
 import Tag from "./Tag";
 
 export default function ProjectCard({ data }) {
@@ -25,13 +24,7 @@ export default function ProjectCard({ data }) {
           </div>
           <div className="max-w-[40%] flex flex-row flex-wrap justify-end content-start mt-1 gap-2">
             {data.tags.map((tagData) => {
-              return (
-                <Tag
-                  Icon={tagData.icon}
-                  title={tagData.title}
-                  color={tagData.color}
-                />
-              );
+              return <Tag title={tagData.title} color={tagData.color} />;
             })}
           </div>
         </div>
@@ -45,12 +38,12 @@ export default function ProjectCard({ data }) {
           <div className="flex flex-row flex-wrap-reverse justify-end gap-2">
             {data.repo.active && (
               <a href={data.repo.href} target="_blank">
-                <Tag Icon={RepoIcon} title="Github" color="#393939" />
+                <Tag title="Github" color="#393939" />
               </a>
             )}
             {data.notion.active && (
               <a href={data.notion.href} target="_blank">
-                <Tag Icon={Notion} title="Notion" color="#393939" />
+                <Tag title="Notion" color="#393939" />
               </a>
             )}
           </div>
