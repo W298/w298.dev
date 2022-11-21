@@ -17,7 +17,7 @@ export default function Navbar() {
       <div className="max-w-[90rem] m-auto">
         <div className="flex flex-row justify-between items-center">
           <div className="flex flex-row items-center gap-8">
-            <div className="flex flex-row items-center gap-8 min-[1000px]:w-80 border-r border-layer-200 max-[1000px]:border-transparent">
+            <div className="flex flex-row items-center gap-8 min-[1440px]:w-80 max-[1440px]:w-[18rem] border-r border-layer-200 max-[1000px]:border-transparent">
               <img
                 src="https://avatars.githubusercontent.com/u/25034289?v=4"
                 className="w-8 h-8"
@@ -38,7 +38,7 @@ export default function Navbar() {
                       path == pathname
                         ? "bg-layer-200 font-bold"
                         : "bg-layer-300"
-                    } w-[5.5rem] py-0.5 flex justify-center rounded-sm border border-transparent hover:border-layer-100 cursor-pointer transition`}
+                    } w-[5.5rem] h-[1.7rem] flex justify-center items-center rounded-sm border border-transparent hover:border-layer-100 cursor-pointer transition`}
                     href={path}
                   >
                     {title}
@@ -48,11 +48,25 @@ export default function Navbar() {
             </div>
           </div>
           <div className="flex flex-row gap-1 items-center">
-            <a href="https://github.com/W298" target="_blank" className="p-1">
-              <MarkGithubIcon fill="#f4f4f4" size={18} />
+            <a
+              title="Github Profile"
+              href="https://github.com/W298"
+              target="_blank"
+              className="h-[1.7rem] px-3 rounded-sm flex flex-row gap-2 justify-center items-center hover:bg-layer-300 transition"
+            >
+              <MarkGithubIcon fill="#c6c6c6" size={17} />
+              <span className="font-bold text-sm text-text-secondary max-sm:hidden">
+                Github
+              </span>
             </a>
-            <div className="p-1 cursor-pointer">
-              <AppsIcon fill="#f4f4f4" size={18} />
+            <div
+              title="Menu"
+              className="h-[1.7rem] px-3 rounded-sm flex flex-row gap-2 justify-center items-center hover:bg-layer-300 transition cursor-pointer"
+            >
+              <AppsIcon fill="#c6c6c6" size={17} />
+              <span className="font-bold text-sm text-text-secondary max-sm:hidden">
+                Menu
+              </span>
             </div>
           </div>
         </div>
