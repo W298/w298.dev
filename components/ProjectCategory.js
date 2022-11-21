@@ -29,6 +29,7 @@ export default function ProjectCategory({
       {projectCardList.map((project) => {
         return (
           <ScrollLink
+            key={`ProjectCard-${project}`}
             activeClass="border-l-custom-active bg-layer-300"
             className={`block py-[0.4rem] px-12 cursor-pointer text-text-secondary border-l-custom hover:bg-layer-300 transition ${
               expanded ? "block" : "hidden"

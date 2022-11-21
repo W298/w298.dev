@@ -23,7 +23,7 @@ export default function Navbar() {
                 className="w-8 h-8"
               ></img>
               <Link
-                className="font-bold text-[1.2rem] cursor-pointer scale-y-[0.95]"
+                className="text-[1.2rem] cursor-pointer font-black"
                 href="/"
               >
                 W298.me
@@ -33,6 +33,7 @@ export default function Navbar() {
               {pageList.map(({ title, path }) => {
                 return (
                   <Link
+                    key={`Link-${title}`}
                     className={`text-sm ${
                       path == pathname
                         ? "bg-layer-200 font-bold"

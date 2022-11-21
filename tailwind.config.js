@@ -1,7 +1,14 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./app/*.{js,ts,jsx,tsx}", "./components/*.{js,ts,jsx,tsx}"],
   theme: {
+    extend: {
+      fontFamily: {
+        sans: ["IBM Plex Sans", ...defaultTheme.fontFamily.sans],
+      },
+    },
     colors: {
       background: "#161616",
       transparent: "#00000000",

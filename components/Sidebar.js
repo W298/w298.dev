@@ -40,6 +40,7 @@ export default function Sidebar({ projectData }) {
         {projectData.map(({ category, projectCardList }, index) => {
           return (
             <ProjectCategory
+              key={`Category-${category}`}
               title={category}
               projectCardList={projectCardList}
               isAlreadyExpanded={index == 0}
