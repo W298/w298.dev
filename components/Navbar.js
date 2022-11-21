@@ -38,7 +38,7 @@ export default function Navbar() {
                       path == pathname
                         ? "bg-layer-200 font-bold"
                         : "bg-layer-300"
-                    } px-4 py-0.5 border border-transparent rounded hover:border-layer-100 cursor-pointer transition`}
+                    } w-[5.5rem] py-0.5 flex justify-center rounded-sm border border-transparent hover:border-layer-100 cursor-pointer transition`}
                     href={path}
                   >
                     {title}
