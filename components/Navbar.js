@@ -13,7 +13,7 @@ export default function Navbar() {
   ];
 
   return (
-    <div className="sticky top-0 py-3 px-8 backdrop-blur-sm bg-layer-400/70 drop-shadow">
+    <div className="sticky top-0 py-3 px-8 backdrop-blur-sm bg-layer-400/70 drop-shadow z-10">
       <div className="max-w-[90rem] m-auto">
         <div className="flex flex-row justify-between items-center">
           <div className="flex flex-row items-center gap-8">

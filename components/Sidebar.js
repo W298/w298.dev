@@ -32,7 +32,7 @@ export default function Sidebar({ projectData }) {
   }, []);
 
   return (
-    <div className="fixed w-80 h-full bg-layer-350 drop-shadow max-[700px]:hidden -z-10">
+    <div className="fixed w-80 h-full bg-layer-350 drop-shadow max-[700px]:hidden">
       <div className="text-xl font-semibold pb-4 pt-8 px-8">
         {pageList.find(({ path }) => path == pathname).title}
       </div>
