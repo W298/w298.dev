@@ -2,10 +2,32 @@ import { GitCommitIcon, RepoIcon, LinkIcon } from "@primer/octicons-react";
 import { Notion } from "@icons-pack/react-simple-icons/dist";
 import { Tag, CustomTag } from "./Tag";
 
+function LinkTags({ data }) {
+  return (
+    <>
+      {data.repo && (
+        <a href={data.repo} target="_blank">
+          <CustomTag Icon={RepoIcon} title="Github" color="#393939" />
+        </a>
+      )}
+      {data.notion && (
+        <a href={data.notion} target="_blank">
+          <CustomTag Icon={Notion} title="Notion" color="#393939" />
+        </a>
+      )}
+      {data.link && (
+        <a href={data.link} target="_blank">
+          <CustomTag Icon={LinkIcon} title="Link" color="#393939" />
+        </a>
+      )}
+    </>
+  );
+}
+
 export default function ProjectCard({ data }) {
   return (
     <div
-      className="min-w-min rounded-md bg-layer-350 border border-layer-200 hover:scale-[1.015] transition"
+      className="@container min-w-min rounded-md bg-layer-350 border border-layer-200 hover:scale-[1.015] transition"
       id={data.title}
     >
       <div className="h-32 overflow-hidden">
@@ -15,7 +37,7 @@ export default function ProjectCard({ data }) {
           alt={data.title}
         />
       </div>
-      <div className="h-[11rem] p-6 flex flex-col max-sm:hidden">
+      <div className="@[450px]:flex h-[11rem] p-6 flex-col hidden">
         <div className="flex-1 flex flex-row justify-between">
           <div className="flex flex-col gap-2">
             <div className="font-extrabold text-2xl">{data.title}</div>
@@ -39,25 +61,11 @@ export default function ProjectCard({ data }) {
             </div>
           </div>
           <div className="flex flex-row flex-wrap-reverse justify-end gap-2">
-            {data.repo && (
-              <a href={data.repo} target="_blank">
-                <CustomTag Icon={RepoIcon} title="Github" color="#393939" />
-              </a>
-            )}
-            {data.notion && (
-              <a href={data.notion} target="_blank">
-                <CustomTag Icon={Notion} title="Notion" color="#393939" />
-              </a>
-            )}
-            {data.link && (
-              <a href={data.link} target="_blank">
-                <CustomTag Icon={LinkIcon} title="Link" color="#393939" />
-              </a>
-            )}
+            <LinkTags data={data} />
           </div>
         </div>
       </div>
-      <div className="p-5 flex flex-col gap-3 sm:hidden">
+      <div className="@[450px]:hidden p-5 flex flex-col gap-3">
         <div className="flex flex-row flex-wrap gap-2">
           {data.tags.map((title) => {
             return <Tag title={title} />;
@@ -78,21 +86,7 @@ export default function ProjectCard({ data }) {
           </div>
         </div>
         <div className="flex flex-row flex-wrap gap-2">
-          {data.repo && (
-            <a href={data.repo} target="_blank">
-              <CustomTag Icon={RepoIcon} title="Github" color="#393939" />
-            </a>
-          )}
-          {data.notion && (
-            <a href={data.notion} target="_blank">
-              <CustomTag Icon={Notion} title="Notion" color="#393939" />
-            </a>
-          )}
-          {data.link && (
-            <a href={data.link} target="_blank">
-              <CustomTag Icon={LinkIcon} title="Link" color="#393939" />
-            </a>
-          )}
+          <LinkTags data={data} />
         </div>
       </div>
     </div>

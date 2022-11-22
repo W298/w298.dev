@@ -21,15 +21,15 @@ export default async function RootLayout({ children }) {
       <body>
         <div
           style={{
-            borderWidth: "3px",
-            borderTopStyle: "solid",
-            borderImage: "linear-gradient(43deg, #4158D0, #C850C0, #FFCC70) 3",
+            background: "linear-gradient(43deg, #4158D0, #C850C0, #FFCC70)",
+            width: "100%",
+            height: "4px",
           }}
         ></div>
         <Navbar />
         <div className="max-w-[90rem] m-auto flex flex-row gap-5">
           <SidebarContainer />
-          <div className="min-[700px]:ml-80">
+          <div className="min-[700px]:ml-80 w-full">
             <div className="m-8">{children}</div>
           </div>
         </div>
