@@ -58,6 +58,11 @@ export default function ProjectCard({ data }) {
         </div>
       </div>
       <div className="p-5 flex flex-col gap-3 sm:hidden">
+        <div className="flex flex-row flex-wrap gap-2">
+          {data.tags.map((title) => {
+            return <Tag title={title} />;
+          })}
+        </div>
         <div className="flex flex-col gap-2">
           <div className="font-extrabold text-2xl">{data.title}</div>
           <div>
@@ -72,34 +77,22 @@ export default function ProjectCard({ data }) {
             {`Last Commit - ${data.lastCommit} `}
           </div>
         </div>
-        <div className="flex flex-row justify-between gap-x-5">
-          <div className="flex flex-row flex-wrap gap-2">
-            {data.tags.map((title) => {
-              return <Tag title={title} />;
-            })}
-          </div>
-          <div className="flex flex-row flex-wrap gap-2 min-w-[5rem] justify-end">
-            {data.repo && (
-              <a href={data.repo} target="_blank">
-                <CustomTag
-                  Icon={RepoIcon}
-                  title="Github"
-                  color="#393939"
-                  thin
-                />
-              </a>
-            )}
-            {data.notion && (
-              <a href={data.notion} target="_blank">
-                <CustomTag Icon={Notion} title="Notion" color="#393939" thin />
-              </a>
-            )}
-            {data.link && (
-              <a href={data.link} target="_blank">
-                <CustomTag Icon={LinkIcon} title="Link" color="#393939" thin />
-              </a>
-            )}
-          </div>
+        <div className="flex flex-row flex-wrap gap-2">
+          {data.repo && (
+            <a href={data.repo} target="_blank">
+              <CustomTag Icon={RepoIcon} title="Github" color="#393939" />
+            </a>
+          )}
+          {data.notion && (
+            <a href={data.notion} target="_blank">
+              <CustomTag Icon={Notion} title="Notion" color="#393939" />
+            </a>
+          )}
+          {data.link && (
+            <a href={data.link} target="_blank">
+              <CustomTag Icon={LinkIcon} title="Link" color="#393939" />
+            </a>
+          )}
         </div>
       </div>
     </div>
