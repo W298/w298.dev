@@ -1,17 +1,20 @@
-import { GitCommitIcon } from "@primer/octicons-react";
-import Tag from "./Tag";
+import { GitCommitIcon, RepoIcon, LinkIcon } from "@primer/octicons-react";
+import { Notion } from "@icons-pack/react-simple-icons/dist";
+import { Tag, CustomTag } from "./Tag";
 
 export default function ProjectCard({ data }) {
   return (
     <div
-      className="min-w-min rounded-md bg-layer-350 border border-layer-200"
+      className="min-w-min rounded-md bg-layer-350 border border-layer-200 hover:scale-[1.015] transition"
       id={data.title}
     >
-      <img
-        src={"/imgs/projectCardImage/intersection.png"}
-        className="object-cover h-28 rounded-t-md"
-        alt={data.title}
-      />
+      <div className="h-32 overflow-hidden">
+        <img
+          src={data.imgSrc}
+          className="object-cover min-h-full rounded-t-md"
+          alt={data.title}
+        />
+      </div>
       <div className="h-[11rem] p-6 flex flex-col max-sm:hidden">
         <div className="flex-1 flex flex-row justify-between">
           <div className="flex flex-col gap-2">
@@ -22,13 +25,13 @@ export default function ProjectCard({ data }) {
               })}
             </div>
           </div>
-          <div className="max-w-[40%] flex flex-row flex-wrap justify-end content-start mt-1 gap-2">
-            {data.tags.map((tagData) => {
-              return <Tag title={tagData.title} color={tagData.color} />;
+          <div className="max-w-[35%] flex flex-row flex-wrap justify-end content-start mt-1 gap-2">
+            {data.tags.map((title) => {
+              return <Tag title={title} />;
             })}
           </div>
         </div>
-        <div className="flex flex-row justify-between items-center">
+        <div className="flex flex-row justify-between items-end">
           <div className="flex flex-row gap-2 items-center">
             <GitCommitIcon size={16} />
             <div className="font-light text-xs text-text-secondary -mt-[3px]">
@@ -36,14 +39,19 @@ export default function ProjectCard({ data }) {
             </div>
           </div>
           <div className="flex flex-row flex-wrap-reverse justify-end gap-2">
-            {data.repo.active && (
-              <a href={data.repo.href} target="_blank">
-                <Tag title="Github" color="#393939" />
+            {data.repo && (
+              <a href={data.repo} target="_blank">
+                <CustomTag Icon={RepoIcon} title="Github" color="#393939" />
               </a>
             )}
-            {data.notion.active && (
-              <a href={data.notion.href} target="_blank">
-                <Tag title="Notion" color="#393939" />
+            {data.notion && (
+              <a href={data.notion} target="_blank">
+                <CustomTag Icon={Notion} title="Notion" color="#393939" />
+              </a>
+            )}
+            {data.link && (
+              <a href={data.link} target="_blank">
+                <CustomTag Icon={LinkIcon} title="Link" color="#393939" />
               </a>
             )}
           </div>
@@ -64,21 +72,31 @@ export default function ProjectCard({ data }) {
             {`Last Commit - ${data.lastCommit} `}
           </div>
         </div>
-        <div className="flex flex-row justify-between">
+        <div className="flex flex-row justify-between gap-x-5">
           <div className="flex flex-row flex-wrap gap-2">
-            {data.tags.map((tagData) => {
-              return <Tag title={tagData.title} color={tagData.color} thin />;
+            {data.tags.map((title) => {
+              return <Tag title={title} />;
             })}
           </div>
-          <div className="flex flex-row flex-wrap gap-2">
-            {data.repo.active && (
-              <a href={data.repo.href} target="_blank">
-                <Tag title="Github" color="#393939" thin />
+          <div className="flex flex-row flex-wrap gap-2 min-w-[5rem] justify-end">
+            {data.repo && (
+              <a href={data.repo} target="_blank">
+                <CustomTag
+                  Icon={RepoIcon}
+                  title="Github"
+                  color="#393939"
+                  thin
+                />
               </a>
             )}
-            {data.notion.active && (
-              <a href={data.notion.href} target="_blank">
-                <Tag title="Notion" color="#393939" thin />
+            {data.notion && (
+              <a href={data.notion} target="_blank">
+                <CustomTag Icon={Notion} title="Notion" color="#393939" thin />
+              </a>
+            )}
+            {data.link && (
+              <a href={data.link} target="_blank">
+                <CustomTag Icon={LinkIcon} title="Link" color="#393939" thin />
               </a>
             )}
           </div>

@@ -1,0 +1,54 @@
+{
+  "WebGL": {
+    "src": "https://cdn.simpleicons.org/webgl/white",
+    "color": "#841f1f"
+  },
+  "Unity": {
+    "src": "https://cdn.simpleicons.org/unity/white",
+    "color": "black"
+  },
+  "Blender": {
+    "src": "https://cdn.simpleicons.org/blender/white",
+    "color": "#C46D36"
+  },
+  "Notion": {
+    "src": "https://cdn.simpleicons.org/notion/white",
+    "color": "black"
+  },
+  "Unreal": {
+    "src": "https://cdn.simpleicons.org/unrealEngine/white",
+    "color": "black"
+  },
+  "Python": {
+    "src": "https://cdn.simpleicons.org/python/white",
+    "color": "#3776AB"
+  },
+  "Cocos": {
+    "src": "https://cdn.simpleicons.org/cocos/white",
+    "color": "#2C95B3"
+  },
+  "React": {
+    "src": "https://cdn.simpleicons.org/react/white",
+    "color": "#689EAD"
+  },
+  "Redux": {
+    "src": "https://cdn.simpleicons.org/redux/white",
+    "color": "#764ABC"
+  },
+  "Nextjs": {
+    "src": "https://cdn.simpleicons.org/nextdotjs/white",
+    "color": "black"
+  },
+  "Firebase": {
+    "src": "https://cdn.simpleicons.org/firebase/white",
+    "color": "#DFA853"
+  },
+  "MUI": {
+    "src": "https://cdn.simpleicons.org/MUI/white",
+    "color": "#3173B7"
+  },
+  "Nodejs": {
+    "src": "https://cdn.simpleicons.org/nodedotjs/white",
+    "color": "#419d41"
+  }
+}
