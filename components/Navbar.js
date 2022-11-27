@@ -2,15 +2,11 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { pageData } from "../data/pageData";
 import { MarkGithubIcon, AppsIcon } from "@primer/octicons-react";
 
 export default function Navbar() {
   const pathname = usePathname();
-  const pageList = [
-    { title: "Projects", path: "/" },
-    { title: "Posts", path: "/posts" },
-    { title: "About Me", path: "/aboutMe" },
-  ];
 
   return (
     <div className="sticky top-0 py-3 px-8 backdrop-blur-sm bg-layer-400/70 drop-shadow z-10">
@@ -30,7 +26,7 @@ export default function Navbar() {
               </Link>
             </div>
             <div className="flex flex-row items-center gap-3 max-[1000px]:hidden">
-              {pageList.map(({ title, path }) => {
+              {pageData.map(({ title, path }) => {
                 return (
                   <Link
                     key={`Link-${title}`}

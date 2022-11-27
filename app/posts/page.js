@@ -1,3 +1,3 @@
 export default function Page() {
-  return <h1>Hello, blog.js!</h1>;
+  return <div className="flex flex-col gap-20 pb-[200vh]">Hello blog</div>;
 }
