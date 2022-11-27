@@ -1,12 +1,9 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { usePathname } from "next/navigation";
 import ProjectCategory from "./ProjectCategory";
 
 export default function ProjectSidebar({ projectData }) {
-  const pathname = usePathname();
-
   const refProjectContainer = useRef(null);
   const scrollHandler = () => {
     [...refProjectContainer.current.children].forEach((category) => {
@@ -26,7 +23,6 @@ export default function ProjectSidebar({ projectData }) {
     };
   }, []);
 
-  if (pathname != "/") return null;
   return (
     <div ref={refProjectContainer}>
       {projectData.map(({ category, projectCardList }, index) => {

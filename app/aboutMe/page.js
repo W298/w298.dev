@@ -1,3 +1,3 @@
 export default function Page() {
-  return <h1>Hello, blog.js!</h1>;
+  return <h1>About me</h1>;
 }
