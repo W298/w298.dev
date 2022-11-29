@@ -1,9 +1,9 @@
-import SidebarContainer from "../../components/SidebarContainer";
+import Sidebar from "../../components/Sidebar";
 
-export default function AboutMeLayout({ children }) {
+export default function PostLayout({ children }) {
   return (
     <div className="max-w-[90rem] m-auto flex flex-row gap-5">
-      <SidebarContainer></SidebarContainer>
+      <Sidebar></Sidebar>
       <div className="min-[700px]:ml-80 w-full">
         <div className="m-8">{children}</div>
       </div>

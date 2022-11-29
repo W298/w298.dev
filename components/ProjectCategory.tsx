@@ -3,12 +3,17 @@
 import { ChevronDownIcon } from "@primer/octicons-react";
 import { Link as ScrollLink } from "react-scroll";
 import { useState } from "react";
+import { CategoryData } from "./interface/ProjectDataInterface";
+
+interface ProjectCategoryProp {
+  categoryData: CategoryData;
+  isAlreadyExpanded: boolean;
+}
 
 export default function ProjectCategory({
-  title,
-  projectCardList,
-  isAlreadyExpanded,
-}) {
+  categoryData: { categoryTitle, projectCardList },
+  isAlreadyExpanded = false,
+}: ProjectCategoryProp) {
   const [expanded, setExpanded] = useState(isAlreadyExpanded);
 
   return (
@@ -19,7 +24,7 @@ export default function ProjectCategory({
           setExpanded(!expanded);
         }}
       >
-        <div className="text-text-secondary font-bold">{title}</div>
+        <div className="text-text-secondary font-bold">{categoryTitle}</div>
         <ChevronDownIcon
           fill="#f4f4f4"
           size={16}

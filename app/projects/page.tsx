@@ -1,4 +1,5 @@
 import ProjectCard from "../../components/ProjectCard";
+import { CategoryData } from "../../components/interface/ProjectDataInterface";
 
 async function getProjectData() {
   const projectDataResponse = await fetch(
@@ -12,21 +13,21 @@ async function getProjectData() {
 }
 
 export default async function Page() {
-  const projectData = await getProjectData();
+  const projectData: CategoryData[] = await getProjectData();
 
   return (
     <div className="flex flex-col gap-16 pb-[85vh]">
-      {projectData.map(({ category, projectCardList }, index) => {
+      {projectData.map(({ categoryTitle, projectCardList }, index) => {
         return (
           <>
             {index != 0 && (
               <div className="my-4 bg-layer-200 w-full h-[1px]"></div>
             )}
             <div className="flex flex-col gap-5">
-              <div className="text-xl font-semibold">{category}</div>
+              <div className="text-xl font-semibold">{categoryTitle}</div>
               <div className="grid max-[1000px]:grid-cols-1 min-[1000px]:grid-cols-2 gap-8">
-                {projectCardList.map((data) => {
-                  return <ProjectCard data={data} />;
+                {projectCardList.map((projectCardData) => {
+                  return <ProjectCard data={projectCardData} />;
                 })}
               </div>
             </div>

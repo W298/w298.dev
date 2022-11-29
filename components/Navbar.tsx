@@ -2,11 +2,11 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { pageData } from "../data/pageData";
+import pageData from "../data/pageData.json";
 import { MarkGithubIcon, AppsIcon } from "@primer/octicons-react";
 
 export default function Navbar() {
-  const pathname = usePathname();
+  const pathname: string = usePathname() ?? "/";
 
   return (
     <div className="sticky top-0 py-3 px-8 backdrop-blur-sm bg-layer-400/70 drop-shadow z-10">

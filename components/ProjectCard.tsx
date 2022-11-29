@@ -1,30 +1,35 @@
+import { ProjectCardData } from "./interface/ProjectDataInterface";
 import { GitCommitIcon, RepoIcon, LinkIcon } from "@primer/octicons-react";
 import { Notion } from "@icons-pack/react-simple-icons/dist";
 import { Tag, CustomTag } from "./Tag";
 
-function LinkTags({ data }) {
-  return (
-    <>
-      {data.repo && (
-        <a href={data.repo} target="_blank">
-          <CustomTag Icon={RepoIcon} title="Github" color="#393939" />
-        </a>
-      )}
-      {data.notion && (
-        <a href={data.notion} target="_blank">
-          <CustomTag Icon={Notion} title="Notion" color="#393939" />
-        </a>
-      )}
-      {data.link && (
-        <a href={data.link} target="_blank">
-          <CustomTag Icon={LinkIcon} title="Link" color="#393939" />
-        </a>
-      )}
-    </>
-  );
+interface ProjectCardProp {
+  data: ProjectCardData;
 }
 
-export default function ProjectCard({ data }) {
+export default function ProjectCard({ data }: ProjectCardProp) {
+  const LinkTags = () => {
+    return (
+      <>
+        {data.repo && (
+          <a href={data.repo} target="_blank">
+            <CustomTag Icon={RepoIcon} title="Github" color="#393939" />
+          </a>
+        )}
+        {data.notion && (
+          <a href={data.notion} target="_blank">
+            <CustomTag Icon={Notion} title="Notion" color="#393939" />
+          </a>
+        )}
+        {data.link && (
+          <a href={data.link} target="_blank">
+            <CustomTag Icon={LinkIcon} title="Link" color="#393939" />
+          </a>
+        )}
+      </>
+    );
+  };
+
   return (
     <div
       className="@container min-w-min rounded-md bg-layer-350 border border-layer-200 hover:scale-[1.015] transition"
@@ -61,7 +66,7 @@ export default function ProjectCard({ data }) {
             </div>
           </div>
           <div className="flex flex-row flex-wrap-reverse justify-end gap-2">
-            <LinkTags data={data} />
+            <LinkTags />
           </div>
         </div>
       </div>
@@ -86,7 +91,7 @@ export default function ProjectCard({ data }) {
           </div>
         </div>
         <div className="flex flex-row flex-wrap gap-2">
-          <LinkTags data={data} />
+          <LinkTags />
         </div>
       </div>
     </div>

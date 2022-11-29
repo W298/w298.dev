@@ -1,10 +1,17 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { pageData } from "../data/pageData";
+import React from "react";
+import _pageData from "../data/pageData.json";
 
-export default function Sidebar({ children }) {
-  const pathname = usePathname();
+interface PageInfo {
+  title: string;
+  path: string;
+}
+
+export default function Sidebar({ children }: { children?: React.ReactNode }) {
+  const pathname: string = usePathname() ?? "/";
+  const pageData: PageInfo[] = _pageData;
 
   return (
     <div className="fixed top-[0.9rem] pt-12 w-80 h-full bg-layer-350 drop-shadow max-[700px]:hidden">

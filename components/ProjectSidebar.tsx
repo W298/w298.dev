@@ -2,8 +2,13 @@
 
 import { useEffect, useRef } from "react";
 import ProjectCategory from "./ProjectCategory";
+import { CategoryData } from "./interface/ProjectDataInterface";
 
-export default function ProjectSidebar({ projectData }) {
+interface ProjectSidebarProp {
+  projectData: CategoryData[];
+}
+
+export default function ProjectSidebar({ projectData }: ProjectSidebarProp) {
   const refProjectContainer = useRef(null);
   const scrollHandler = () => {
     [...refProjectContainer.current.children].forEach((category) => {
@@ -25,12 +30,11 @@ export default function ProjectSidebar({ projectData }) {
 
   return (
     <div ref={refProjectContainer}>
-      {projectData.map(({ category, projectCardList }, index) => {
+      {projectData.map((categoryData, index) => {
         return (
           <ProjectCategory
-            key={`Category-${category}`}
-            title={category}
-            projectCardList={projectCardList}
+            key={`Category-${categoryData.categoryTitle}`}
+            categoryData={categoryData}
             isAlreadyExpanded={index == 0}
           />
         );
