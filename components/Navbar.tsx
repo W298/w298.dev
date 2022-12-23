@@ -20,7 +20,7 @@ export default function Navbar() {
               ></img>
               <Link
                 className="text-[1.2rem] cursor-pointer font-black"
-                href="/"
+                href="/projects"
               >
                 W298.me
               </Link>
