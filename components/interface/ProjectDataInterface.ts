@@ -5,6 +5,7 @@ export interface CategoryData {
 
 export interface ProjectCardData {
   title: string;
+  released: boolean | null;
   imgSrc: string;
   description: string[];
   lastCommit: string;
@@ -12,4 +13,6 @@ export interface ProjectCardData {
   repo: string | null;
   notion: string | null;
   link: string | null;
+  youtube: string | null;
+  velog: string | null;
 }

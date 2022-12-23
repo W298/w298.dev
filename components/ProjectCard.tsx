@@ -1,6 +1,6 @@
 import { ProjectCardData } from "./interface/ProjectDataInterface";
 import { GitCommitIcon, RepoIcon, LinkIcon } from "@primer/octicons-react";
-import { Notion } from "@icons-pack/react-simple-icons/dist";
+import { Notion, Youtube, Velog } from "@icons-pack/react-simple-icons/dist";
 import { Tag, CustomTag } from "./Tag";
 
 interface ProjectCardProp {
@@ -24,6 +24,16 @@ export default function ProjectCard({ data }: ProjectCardProp) {
         {data.link && (
           <a href={data.link} target="_blank">
             <CustomTag Icon={LinkIcon} title="Link" color="#393939" />
+          </a>
+        )}
+        {data.youtube && (
+          <a href={data.youtube} target="_blank">
+            <CustomTag Icon={Youtube} title="Youtube" color="#393939" />
+          </a>
+        )}
+        {data.velog && (
+          <a href={data.velog} target="_blank">
+            <CustomTag Icon={Velog} title="Velog" color="#393939" />
           </a>
         )}
       </>
