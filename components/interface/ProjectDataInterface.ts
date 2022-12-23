@@ -10,6 +10,7 @@ export interface ProjectCardData {
   description: string[];
   lastCommit: string;
   tags: string[];
+  screenshots: string[];
   repo: string | null;
   notion: string | null;
   link: string | null;

@@ -1,7 +1,13 @@
 import { ProjectCardData } from "./interface/ProjectDataInterface";
-import { GitCommitIcon, RepoIcon, LinkIcon } from "@primer/octicons-react";
+import {
+  GitCommitIcon,
+  RepoIcon,
+  LinkIcon,
+  ImageIcon,
+} from "@primer/octicons-react";
 import { Notion, Youtube, Velog } from "@icons-pack/react-simple-icons/dist";
 import { Tag, CustomTag } from "./Tag";
+import Link from "next/link";
 
 interface ProjectCardProp {
   data: ProjectCardData;
@@ -45,12 +51,18 @@ export default function ProjectCard({ data }: ProjectCardProp) {
       className="@container min-w-min rounded-md bg-layer-350 border border-layer-200 hover:scale-[1.015] transition"
       id={data.title}
     >
-      <div className="h-32 overflow-hidden">
+      <div className="h-32 overflow-hidden relative">
         <img
           src={data.imgSrc}
           className="object-cover min-h-full rounded-t-md"
           alt={data.title}
         />
+        <Link
+          className="absolute bottom-2 right-2"
+          href={"/projects/" + data.title}
+        >
+          <CustomTag Icon={ImageIcon} title="Screenshots" color="#393939CC" />
+        </Link>
       </div>
       <div className="@[450px]:flex h-[11rem] p-6 flex-col hidden">
         <div className="flex-1 flex flex-row justify-between">

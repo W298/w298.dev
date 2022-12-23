@@ -10,7 +10,11 @@ interface PageInfo {
 }
 
 export default function Sidebar({ children }: { children?: React.ReactNode }) {
-  const pathname: string = usePathname() ?? "/";
+  const pathname: string =
+    "/" +
+      usePathname()
+        .split("/")
+        .filter((c) => c != "")[0] ?? "/";
   const pageData: PageInfo[] = _pageData;
 
   return (
