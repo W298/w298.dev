@@ -4,9 +4,13 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import pageData from "../data/pageData.json";
 import { MarkGithubIcon, AppsIcon } from "@primer/octicons-react";
+import { useRef, useState } from "react";
+import DropdownNav from "./DropdownNav";
 
 export default function Navbar() {
   const pathname: string = usePathname() ?? "/";
+  const [dropdownNavOpen, setDropdownNavOpen] = useState(false);
+  const menuBtnRef = useRef(null);
 
   return (
     <div className="sticky top-0 py-3 px-8 backdrop-blur-sm bg-layer-400/70 drop-shadow z-10">
@@ -48,21 +52,34 @@ export default function Navbar() {
               title="Github Profile"
               href="https://github.com/W298"
               target="_blank"
-              className="h-[1.7rem] px-3 rounded-sm flex flex-row gap-2 justify-center items-center hover:bg-layer-300 transition"
+              className="h-[2rem] px-3 rounded-sm flex flex-row gap-2 justify-center items-center hover:bg-layer-300 transition"
             >
               <MarkGithubIcon fill="#c6c6c6" size={17} />
               <span className="font-bold text-sm text-text-secondary max-sm:hidden">
                 Github
               </span>
             </a>
-            <div
-              title="Menu"
-              className="h-[1.7rem] px-3 rounded-sm flex flex-row gap-2 justify-center items-center hover:bg-layer-300 transition cursor-pointer"
-            >
-              <AppsIcon fill="#c6c6c6" size={17} />
-              <span className="font-bold text-sm text-text-secondary max-sm:hidden">
-                Menu
-              </span>
+            <div className="relative">
+              <div
+                title="Menu"
+                onClick={() => {
+                  setDropdownNavOpen(!dropdownNavOpen);
+                }}
+                ref={menuBtnRef}
+                className={`h-[2rem] px-3 rounded-sm flex flex-row gap-2 justify-center items-center hover:bg-layer-300 transition cursor-pointer ${
+                  dropdownNavOpen ? "bg-layer-300" : ""
+                }`}
+              >
+                <AppsIcon fill="#c6c6c6" size={17} />
+                <span className="font-bold text-sm text-text-secondary max-sm:hidden">
+                  Menu
+                </span>
+              </div>
+              <DropdownNav
+                open={dropdownNavOpen}
+                setOpen={setDropdownNavOpen}
+                menuBtnRef={menuBtnRef}
+              />
             </div>
           </div>
         </div>

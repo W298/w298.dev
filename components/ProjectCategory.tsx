@@ -19,7 +19,7 @@ export default function ProjectCategory({
   return (
     <div>
       <div
-        className="flex flex-row items-center justify-between py-[0.4rem] px-8 cursor-pointer hover:bg-layer-300 transition"
+        className="flex flex-row items-center justify-between py-[0.4rem] px-6 cursor-pointer hover:bg-layer-300 transition"
         onClick={() => {
           setExpanded(!expanded);
         }}
@@ -36,7 +36,7 @@ export default function ProjectCategory({
           <ScrollLink
             key={`ProjectCard-${project.title}`}
             activeClass="border-l-custom-active bg-layer-300"
-            className={`block py-[0.4rem] px-12 cursor-pointer text-text-secondary border-l-custom hover:bg-layer-300 transition ${
+            className={`block py-[0.4rem] px-10 cursor-pointer text-text-secondary border-l-custom hover:bg-layer-300 transition ${
               expanded ? "block" : "hidden"
             }`}
             spy={true}
