@@ -47,6 +47,9 @@ export default function DropdownNav({ open, setOpen, menuBtnRef }) {
             <Link
               key={`dropdown-${title}`}
               href={path}
+              onClick={() => {
+                setOpen(false);
+              }}
               className="block py-[0.4rem] px-5 cursor-pointer text-text-secondary font-semibold hover:bg-layer-300 hover:text-text-primary transition"
             >
               {title}
