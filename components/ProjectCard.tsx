@@ -18,29 +18,49 @@ export default function ProjectCard({ data }: ProjectCardProp) {
     return (
       <>
         {data.repo && (
-          <a href={data.repo} target="_blank">
+          <Link
+            href={data.repo}
+            target="_blank"
+            className="rounded-full border border-transparent hover:border-layer-100 transition"
+          >
             <CustomTag Icon={RepoIcon} title="Github" color="#393939" />
-          </a>
+          </Link>
         )}
         {data.notion && (
-          <a href={data.notion} target="_blank">
+          <Link
+            href={data.notion}
+            target="_blank"
+            className="rounded-full border border-transparent hover:border-layer-100 transition"
+          >
             <CustomTag Icon={Notion} title="Notion" color="#393939" />
-          </a>
+          </Link>
         )}
         {data.link && (
-          <a href={data.link} target="_blank">
+          <Link
+            href={data.link}
+            target="_blank"
+            className="rounded-full border border-transparent hover:border-layer-100 transition"
+          >
             <CustomTag Icon={LinkIcon} title="Link" color="#393939" />
-          </a>
+          </Link>
         )}
         {data.youtube && (
-          <a href={data.youtube} target="_blank">
+          <Link
+            href={data.youtube}
+            target="_blank"
+            className="rounded-full border border-transparent hover:border-layer-100 transition"
+          >
             <CustomTag Icon={Youtube} title="Youtube" color="#393939" />
-          </a>
+          </Link>
         )}
         {data.velog && (
-          <a href={data.velog} target="_blank">
+          <Link
+            href={data.velog}
+            target="_blank"
+            className="rounded-full border border-transparent hover:border-layer-100 transition"
+          >
             <CustomTag Icon={Velog} title="Velog" color="#393939" />
-          </a>
+          </Link>
         )}
       </>
     );
@@ -48,7 +68,7 @@ export default function ProjectCard({ data }: ProjectCardProp) {
 
   return (
     <div
-      className="@container min-w-min rounded-md bg-layer-350 border border-layer-200 hover:scale-[1.015] transition"
+      className="@container min-w-min rounded-md bg-layer-350 border border-layer-200"
       id={data.title}
     >
       <div className="h-32 overflow-hidden relative">
@@ -58,7 +78,7 @@ export default function ProjectCard({ data }: ProjectCardProp) {
           alt={data.title}
         />
         <Link
-          className="absolute bottom-2 right-2"
+          className="absolute bottom-2 right-2 rounded-full border border-transparent hover:border-layer-100 transition"
           href={"/projects/" + data.title}
         >
           <CustomTag Icon={ImageIcon} title="Screenshots" color="#393939CC" />
