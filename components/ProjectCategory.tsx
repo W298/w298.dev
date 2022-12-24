@@ -41,7 +41,7 @@ export default function ProjectCategory({
             }`}
             spy={true}
             smooth={true}
-            offset={-150}
+            offset={-200}
             duration={400}
             to={project.title}
           >
