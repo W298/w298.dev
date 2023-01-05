@@ -8,7 +8,6 @@ export interface ProjectCardData {
   released: boolean | null;
   imgSrc: string;
   description: string[];
-  lastCommit: string;
   tags: string[];
   screenshots: string[];
   repo: string | null;

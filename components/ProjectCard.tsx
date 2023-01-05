@@ -11,9 +11,10 @@ import Link from "next/link";
 
 interface ProjectCardProp {
   data: ProjectCardData;
+  lastCommit: Date;
 }
 
-export default function ProjectCard({ data }: ProjectCardProp) {
+export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
   const LinkTags = () => {
     return (
       <>
@@ -104,7 +105,11 @@ export default function ProjectCard({ data }: ProjectCardProp) {
           <div className="flex flex-row gap-2 items-center">
             <GitCommitIcon size={16} />
             <div className="font-light text-xs text-text-secondary -mt-[3px]">
-              {`Last Commit - ${data.lastCommit} `}
+              {`Last Commit - ${
+                lastCommit == null
+                  ? "No_Info"
+                  : lastCommit.toString().substring(0, 10)
+              } `}
             </div>
           </div>
           <div className="flex flex-row flex-wrap-reverse justify-end gap-2">
@@ -129,7 +134,11 @@ export default function ProjectCard({ data }: ProjectCardProp) {
         <div className="flex flex-row gap-2 items-center">
           <GitCommitIcon size={16} />
           <div className="font-light text-xs text-text-secondary -mt-[3px]">
-            {`Last Commit - ${data.lastCommit} `}
+            {`Last Commit - ${
+              lastCommit == null
+                ? "No_Info"
+                : lastCommit.toString().substring(0, 10)
+            } `}
           </div>
         </div>
         <div className="flex flex-row flex-wrap gap-2">
