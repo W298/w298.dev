@@ -11,6 +11,12 @@ body {
   background-color: theme("colors.background");
 }
 
+ol,
+ul,
+menu {
+  list-style: inherit;
+}
+
 @layer components {
   .border-l-custom,
   .border-l-custom-active {

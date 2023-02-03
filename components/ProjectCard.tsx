@@ -102,7 +102,7 @@ export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
           </div>
         </div>
         <div className="flex flex-row justify-between items-end">
-          <div className="flex flex-row gap-2 items-center">
+          <div className="flex flex-row gap-2 items-center -mb-[1px]">
             <GitCommitIcon size={16} />
             <div className="font-light text-xs text-text-secondary -mt-[3px]">
               {`Last Commit - ${
@@ -131,7 +131,7 @@ export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
             })}
           </div>
         </div>
-        <div className="flex flex-row gap-2 items-center">
+        <div className="flex flex-row gap-2 items-center -mb-[1px]">
           <GitCommitIcon size={16} />
           <div className="font-light text-xs text-text-secondary -mt-[3px]">
             {`Last Commit - ${
