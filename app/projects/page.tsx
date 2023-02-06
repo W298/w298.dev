@@ -86,6 +86,7 @@ export default async function Page() {
                   .map((projectCardData) => {
                     return (
                       <ProjectCard
+                        key={projectCardData.title}
                         data={projectCardData}
                         lastCommit={lastCommitData[projectCardData.title]}
                       />

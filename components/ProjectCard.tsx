@@ -15,58 +15,6 @@ interface ProjectCardProp {
 }
 
 export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
-  const LinkTags = () => {
-    return (
-      <>
-        {data.repo && (
-          <Link
-            href={data.repo}
-            target="_blank"
-            className="rounded-full border border-transparent hover:border-layer-100 transition"
-          >
-            <CustomTag Icon={RepoIcon} title="Github" color="#393939" />
-          </Link>
-        )}
-        {data.notion && (
-          <Link
-            href={data.notion}
-            target="_blank"
-            className="rounded-full border border-transparent hover:border-layer-100 transition"
-          >
-            <CustomTag Icon={Notion} title="Notion" color="#393939" />
-          </Link>
-        )}
-        {data.link && (
-          <Link
-            href={data.link}
-            target="_blank"
-            className="rounded-full border border-transparent hover:border-layer-100 transition"
-          >
-            <CustomTag Icon={LinkIcon} title="Link" color="#393939" />
-          </Link>
-        )}
-        {data.youtube && (
-          <Link
-            href={data.youtube}
-            target="_blank"
-            className="rounded-full border border-transparent hover:border-layer-100 transition"
-          >
-            <CustomTag Icon={Youtube} title="Youtube" color="#393939" />
-          </Link>
-        )}
-        {data.velog && (
-          <Link
-            href={data.velog}
-            target="_blank"
-            className="rounded-full border border-transparent hover:border-layer-100 transition"
-          >
-            <CustomTag Icon={Velog} title="Velog" color="#393939" />
-          </Link>
-        )}
-      </>
-    );
-  };
-
   return (
     <div
       className="@container min-w-min rounded-md bg-layer-350 border border-layer-200"
@@ -113,7 +61,53 @@ export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
             </div>
           </div>
           <div className="flex flex-row flex-wrap-reverse justify-end gap-2">
-            <LinkTags />
+            <>
+              {data.repo && (
+                <Link
+                  href={data.repo}
+                  target="_blank"
+                  className="rounded-full border border-transparent hover:border-layer-100 transition"
+                >
+                  <CustomTag Icon={RepoIcon} title="Github" color="#393939" />
+                </Link>
+              )}
+              {data.notion && (
+                <Link
+                  href={data.notion}
+                  target="_blank"
+                  className="rounded-full border border-transparent hover:border-layer-100 transition"
+                >
+                  <CustomTag Icon={Notion} title="Notion" color="#393939" />
+                </Link>
+              )}
+              {data.link && (
+                <Link
+                  href={data.link}
+                  target="_blank"
+                  className="rounded-full border border-transparent hover:border-layer-100 transition"
+                >
+                  <CustomTag Icon={LinkIcon} title="Link" color="#393939" />
+                </Link>
+              )}
+              {data.youtube && (
+                <Link
+                  href={data.youtube}
+                  target="_blank"
+                  className="rounded-full border border-transparent hover:border-layer-100 transition"
+                >
+                  <CustomTag Icon={Youtube} title="Youtube" color="#393939" />
+                </Link>
+              )}
+              {data.velog && (
+                <Link
+                  href={data.velog}
+                  target="_blank"
+                  className="rounded-full border border-transparent hover:border-layer-100 transition"
+                >
+                  <CustomTag Icon={Velog} title="Velog" color="#393939" />
+                </Link>
+              )}
+            </>
           </div>
         </div>
       </div>
@@ -142,7 +136,53 @@ export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
           </div>
         </div>
         <div className="flex flex-row flex-wrap gap-2">
-          <LinkTags />
+          <>
+            {data.repo && (
+              <Link
+                href={data.repo}
+                target="_blank"
+                className="rounded-full border border-transparent hover:border-layer-100 transition"
+              >
+                <CustomTag Icon={RepoIcon} title="Github" color="#393939" />
+              </Link>
+            )}
+            {data.notion && (
+              <Link
+                href={data.notion}
+                target="_blank"
+                className="rounded-full border border-transparent hover:border-layer-100 transition"
+              >
+                <CustomTag Icon={Notion} title="Notion" color="#393939" />
+              </Link>
+            )}
+            {data.link && (
+              <Link
+                href={data.link}
+                target="_blank"
+                className="rounded-full border border-transparent hover:border-layer-100 transition"
+              >
+                <CustomTag Icon={LinkIcon} title="Link" color="#393939" />
+              </Link>
+            )}
+            {data.youtube && (
+              <Link
+                href={data.youtube}
+                target="_blank"
+                className="rounded-full border border-transparent hover:border-layer-100 transition"
+              >
+                <CustomTag Icon={Youtube} title="Youtube" color="#393939" />
+              </Link>
+            )}
+            {data.velog && (
+              <Link
+                href={data.velog}
+                target="_blank"
+                className="rounded-full border border-transparent hover:border-layer-100 transition"
+              >
+                <CustomTag Icon={Velog} title="Velog" color="#393939" />
+              </Link>
+            )}
+          </>
         </div>
       </div>
     </div>
