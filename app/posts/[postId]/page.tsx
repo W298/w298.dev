@@ -1,8 +1,13 @@
 import { PostComponent } from "../../../components/PostComponent";
 import fs from "fs";
+import path from "path";
 
 async function getPostData(postId) {
-  return fs.readFileSync(`public/post_md/${postId}.md`, "utf8");
+  const folder = "post_md";
+  const dir = path.resolve("./public", folder, postId + ".md");
+  const res = fs.readFileSync(dir, "utf8");
+
+  return res;
 }
 
 export default async function Page({ params }) {
