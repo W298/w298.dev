@@ -1,6 +1,5 @@
 import { PostComponent } from "../../../components/PostComponent";
-
-var fs = require("fs");
+import fs from "fs";
 
 async function getPostData(postId) {
   return fs.readFileSync(`public/post_md/${postId}.md`, "utf8");
