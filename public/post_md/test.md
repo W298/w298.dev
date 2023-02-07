@@ -3,9 +3,10 @@ HEADER START
 OpenGL - VBO
 OpenGL VBO Indexing
 2023-02-06
+OpenGL
 
 HEADER END
 
-# Body text
+# OpenGL VBO
 
-asdf
+opengl tutorial
