@@ -1,0 +1,166 @@
+[
+  {
+    "categoryTitle": "Game Development",
+    "projectCardList": [
+      {
+        "title": "Robot! Escape!",
+        "released": true,
+        "imgSrc": "/imgs/projectCardImage/robotEscape.png",
+        "description": ["Top-Down Shooter", "Develop with Unity Engine"],
+        "tags": ["Unity"],
+        "screenshots": [
+          "/imgs/robotEscape/Combat.png",
+          "/imgs/robotEscape/Interact.png",
+          "/imgs/robotEscape/Hide.png",
+          "/imgs/robotEscape/Deactivate.png",
+          "/imgs/robotEscape/Cracking.png",
+          "/imgs/robotEscape/Exit.png"
+        ],
+        "repo": "https://github.com/W298/RobotEscape",
+        "youtube": "https://www.youtube.com/watch?v=1OnYDUsy9KU",
+        "velog": "https://velog.io/@lutca1320/series/DEVLOG-Robot-Escape"
+      },
+      {
+        "title": "REVERS:ER",
+        "released": true,
+        "imgSrc": "/imgs/projectCardImage/reverser.png",
+        "description": [
+          "TPS Action Game with Time Control Ability",
+          "Develop with Unreal Engine"
+        ],
+        "tags": ["Unreal", "Blender"],
+        "screenshots": [
+          "/imgs/reverser/Hall.png",
+          "/imgs/reverser/Hall 2.png",
+          "/imgs/reverser/Hall 3.png",
+          "/imgs/reverser/Entrance.png",
+          "/imgs/reverser/Middle Boss Stage.png",
+          "/imgs/reverser/Boss Stage.png",
+          "/imgs/reverser/Full Shot.png",
+          "/imgs/reverser/Gameplay.png",
+          "/imgs/reverser/Ability.png",
+          "/imgs/reverser/Time Reverse Ability.png",
+          "/imgs/reverser/Puzzle.png"
+        ],
+        "repo": "https://gitlab.com/lutca1320/project_reverser",
+        "youtube": "https://www.youtube.com/playlist?list=PLdycbYds1b96VPbRI6ptZ8Er79tXRvZ02"
+      },
+      {
+        "title": "Pixel Reversi",
+        "released": true,
+        "imgSrc": "/imgs/projectCardImage/pixelReversi.png",
+        "description": [
+          "Reversi (Othello) Game with Pixel Graphic",
+          "Develop with Unity Engine + WebGL"
+        ],
+        "tags": ["Unity", "WebGL"],
+        "screenshots": [],
+        "repo": "https://github.com/w298/Pixel-Reversi",
+        "link": "https://pixel-reversi.netlify.app"
+      },
+      {
+        "title": "Reflect",
+        "released": true,
+        "imgSrc": "/imgs/projectCardImage/reflect.png",
+        "description": [
+          "Game with mirror & raser",
+          "Develop with Python Cocos Engine"
+        ],
+        "tags": ["Python", "Cocos"],
+        "screenshots": [],
+        "repo": "https://github.com/W298/Reflect"
+      },
+      {
+        "title": "Together",
+        "released": false,
+        "imgSrc": "/imgs/projectCardImage/together.png",
+        "description": [
+          "First Person Horror Game with UE4",
+          "You have to escape from soviet building"
+        ],
+        "tags": ["Unreal", "Blender"],
+        "screenshots": [
+          "/imgs/together/Full Shot.png",
+          "/imgs/together/Side Door.png",
+          "/imgs/together/Interior.png",
+          "/imgs/together/Hall.png",
+          "/imgs/together/Running.png"
+        ],
+        "repo": "https://github.com/W298/Together",
+        "notion": "https://www.notion.so/rukasp/Project-Together-ecc53d8874ed4d47948afb8b53c7d10e",
+        "youtube": "https://youtu.be/ICpmHzlpMfs"
+      },
+      {
+        "title": "roadPipe",
+        "released": false,
+        "imgSrc": "/imgs/projectCardImage/roadPipe.png",
+        "description": [
+          "Connect roads to get car to destination",
+          "Develop with Unity Engine"
+        ],
+        "tags": ["Unity"],
+        "screenshots": [],
+        "repo": "https://github.com/W298/roadPipe"
+      },
+      {
+        "title": "Intersection",
+        "released": false,
+        "imgSrc": "/imgs/projectCardImage/intersection.png",
+        "description": [
+          "Traffic Management Simulation Game",
+          "Develop with Unity Engine"
+        ],
+        "tags": ["Unity", "Blender"],
+        "screenshots": [],
+        "repo": "https://github.com/W298/Intersection",
+        "notion": "https://www.notion.so/rukasp/Project-Intersection-b17815fa8fb54fafb60bf39df80ccb74",
+        "youtube": "https://www.youtube.com/playlist?list=PLdycbYds1b97ynOJr9K5cDC47CYg07Jee"
+      }
+    ]
+  },
+  {
+    "categoryTitle": "Web Developement",
+    "projectCardList": [
+      {
+        "title": "Uma-Friend",
+        "imgSrc": "/imgs/projectCardImage/umaFriend.png",
+        "description": [
+          "Uma-musume (KR) Friend serach app",
+          "Deploy with NextJS, Firebase Database"
+        ],
+        "tags": ["React", "Redux", "Nextjs", "Firebase", "Nodejs"],
+        "screenshots": [],
+        "repo": "https://github.com/W298/uma-friend-nextjs",
+        "link": "https://umafriend.vercel.app"
+      },
+      {
+        "title": "Today's Genshin",
+        "imgSrc": "/imgs/projectCardImage/todaysGenshin.png",
+        "description": [
+          "Genshin Impact Todo Web-app",
+          "Deploy with React.js & MUI"
+        ],
+        "tags": ["React", "MUI", "Nodejs"],
+        "screenshots": [],
+        "repo": "https://github.com/w298/todays-genshin",
+        "link": "https://todays-genshin.netlify.app"
+      },
+      {
+        "title": "Genshin Cube Solver",
+        "imgSrc": "/imgs/projectCardImage/genshinCubeSolver.png",
+        "description": [
+          "Genshin Impact Araumi Cube puzzle Solver",
+          "Deploy with React"
+        ],
+        "tags": ["React", "Nodejs"],
+        "screenshots": [],
+        "repo": "https://github.com/W298/genshin-cube-solver-react",
+        "link": "https://genshin-cube-solver.herokuapp.com"
+      }
+    ]
+  },
+  {
+    "categoryTitle": "etc",
+    "projectCardList": []
+  }
+]

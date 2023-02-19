@@ -1,16 +1,6 @@
-import ProjectCard from "../../components/ProjectCard";
 import { CategoryData } from "../../components/interface/ProjectDataInterface";
-
-async function getProjectData() {
-  const projectDataResponse = await fetch(
-    "https://gist.githubusercontent.com/W298/356810e641769c5be81a1b8f3e394936/raw/projectData.json",
-    {
-      cache: "force-cache",
-    }
-  );
-
-  return projectDataResponse.json();
-}
+import projectDataRaw from "../../data/projectData.json";
+import ProjectCard from "../../components/ProjectCard";
 
 async function getLastCommit(mapped) {
   const routine = async (repoName) => {
@@ -36,7 +26,7 @@ async function getLastCommit(mapped) {
 }
 
 export default async function Page() {
-  const projectData: CategoryData[] = await getProjectData();
+  const projectData = projectDataRaw as CategoryData[];
   const lastCommitData = await getLastCommit(
     projectData
       .map(({ projectCardList }) => {
