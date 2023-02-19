@@ -9,6 +9,7 @@
 
 body {
   background-color: theme("colors.background");
+  overflow: scroll;
 }
 
 ol,
