@@ -56,7 +56,7 @@
         "tags": ["Unity", "WebGL"],
         "screenshots": [],
         "repo": "https://github.com/w298/Pixel-Reversi",
-        "link": "https://pixel-reversi.netlify.app"
+        "link": "https://pixel-reversi.vercel.app/"
       },
       {
         "title": "Reflect",
