@@ -38,7 +38,7 @@ Unity 에서 asmdef 파일을 원하는 폴더 안에 생성하면 된다.
 
 위는 Universal 폴더에 있는 스크립트를 이용하는 스크립트들인데, 미리 `ASM-DrivingScene` 으로 asmdef 파일을 생성해 두었다.
 
-아래는 이 asmdef 파일의 속성인데, 종속성 설정은 Assembly Definintion References 에서 설정하면 된다.  
+아래는 이 asmdef 파일의 속성인데, 종속성 설정은 Assembly Definition References 에서 설정하면 된다.  
 여러가지 설정들이 있는데 이는 [Unity Docs](https://docs.unity3d.com/kr/current/Manual/ScriptCompilationAssemblyDefinitionFiles.html) 에 잘 설명되어 있다.
 
 아래와 같이 종속성 설정을 해주면 그 Assembly 의 스크립트를 사용할 수 있다.
@@ -50,6 +50,6 @@ Unity 에서 asmdef 파일을 원하는 폴더 안에 생성하면 된다.
 다만 종속성 설정에서 주의해야 할 점이 있는데, Assembly Definition 에서 순환 참조는 허용되지 않는다.  
 아래 그림에서 2, 4번째 예시는 순환 참조로 에러가 발생한다.
 
-순환 참조가 발생했다면 이번 기회에 코드를 리팩토링하는 것을 추천한다.
+순환 참조가 발생했다면 이번 기회에 코드를 Refactor 하는 것을 추천한다.
 
 ![4](/imgs/post_imgs/unity_asm_def/4.png)
