@@ -70,7 +70,11 @@ export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
   return (
     <div
       className="@container min-w-min rounded-md bg-layer-350 border border-layer-200"
-      id={data.title}
+      id={`projectCard-${data.title
+        .replaceAll(" ", "")
+        .replaceAll("!", "")
+        .replaceAll(":", "")
+        .replaceAll("'", "")}`}
     >
       <div className="h-32 overflow-hidden relative">
         <img

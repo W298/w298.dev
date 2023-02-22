@@ -1,9 +1,9 @@
 "use client";
 
 import { ChevronDownIcon } from "@primer/octicons-react";
-import { Link as ScrollLink } from "react-scroll";
 import { useState } from "react";
 import { CategoryData } from "./interface/ProjectDataInterface";
+import { ScrollSpy, BaseLinePositionType } from "./ScrollSpy";
 
 interface ProjectCategoryProp {
   categoryData: CategoryData;
@@ -15,6 +15,12 @@ export default function ProjectCategory({
   isAlreadyExpanded = false,
 }: ProjectCategoryProp) {
   const [expanded, setExpanded] = useState(isAlreadyExpanded);
+
+  const releaseList = projectCardList.filter(({ released }) => released);
+  const firstRow = 0;
+  const releaseLastRow = Math.ceil(releaseList.length / 2) - 1;
+  const devFirstRow = releaseLastRow + 1;
+  const lastRow = Math.ceil(projectCardList.length / 2) - 1;
 
   return (
     <div>
@@ -31,22 +37,31 @@ export default function ProjectCategory({
           className={`transition ${expanded ? "rotate-180" : ""}`}
         />
       </div>
-      {projectCardList.map((project) => {
+      {projectCardList.map((project, index) => {
+        const currentRow = Math.floor(index / 2);
+
+        const topOffset =
+          currentRow == firstRow ? -120 : currentRow == devFirstRow ? -60 : -10;
+        const bottomOffset =
+          currentRow == lastRow ? 90 : currentRow == releaseLastRow ? 40 : 10;
         return (
-          <ScrollLink
-            key={`ProjectCard-${project.title}`}
-            activeClass="border-l-custom-active bg-layer-300"
+          <ScrollSpy
+            key={`scroll-receiver-${index}`}
+            targetID={`projectCard-${project.title
+              .replaceAll(" ", "")
+              .replaceAll("!", "")
+              .replaceAll(":", "")
+              .replaceAll("'", "")}`}
+            baseLineOption={{ position: BaseLinePositionType.TOP, offset: 300 }}
+            elementOption={{ topOffset, bottomOffset }}
+            execOnStart
+            activeClassName="border-l-custom-active bg-layer-300"
             className={`block py-[0.4rem] px-10 cursor-pointer text-text-secondary border-l-custom hover:bg-layer-300 transition ${
               expanded ? "block" : "hidden"
             }`}
-            spy={true}
-            smooth={true}
-            offset={-200}
-            duration={400}
-            to={project.title}
           >
             {project.title}
-          </ScrollLink>
+          </ScrollSpy>
         );
       })}
     </div>
