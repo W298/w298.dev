@@ -3,7 +3,7 @@
 import { ChevronDownIcon } from "@primer/octicons-react";
 import { useState } from "react";
 import { CategoryData } from "./interface/ProjectDataInterface";
-import { ScrollSpy, BaseLinePositionType } from "./ScrollSpy";
+import { ScrollSpy } from "./ScrollSpy";
 
 interface ProjectCategoryProp {
   categoryData: CategoryData;
@@ -52,9 +52,8 @@ export default function ProjectCategory({
               .replaceAll("!", "")
               .replaceAll(":", "")
               .replaceAll("'", "")}`}
-            baseLineOption={{ position: BaseLinePositionType.TOP, offset: 300 }}
+            baseLineOption={{ offset: 300 }}
             elementOption={{ topOffset, bottomOffset }}
-            execOnStart
             activeClassName="border-l-custom-active bg-layer-300"
             className={`block py-[0.4rem] px-10 cursor-pointer text-text-secondary border-l-custom hover:bg-layer-300 transition ${
               expanded ? "block" : "hidden"

@@ -2,9 +2,9 @@ import { ReactNode, useEffect, useState } from "react";
 
 interface ScrollSpyProp {
   targetID: string;
-  baseLineOption: BaseLineOption;
-  elementOption: ElementOption;
-  execOnStart: boolean;
+  baseLineOption?: BaseLineOption;
+  elementOption?: ElementOption;
+  execOnStart?: boolean;
   activeClassName?: string;
   className?: string;
   children?: ReactNode;
@@ -17,29 +17,38 @@ export enum BaseLinePositionType {
 }
 
 interface BaseLineOption {
-  position: BaseLinePositionType;
-  offset: number;
+  position?: BaseLinePositionType;
+  offset?: number;
 }
 
 interface ElementOption {
-  topOffset: number;
-  bottomOffset: number;
+  topOffset?: number;
+  bottomOffset?: number;
 }
 
-export function ScrollSpy({
-  targetID,
-  baseLineOption,
-  elementOption,
-  execOnStart,
-  activeClassName,
-  className,
-  children,
-}: ScrollSpyProp) {
+export function ScrollSpy(prop: ScrollSpyProp) {
   const [active, setActive] = useState(false);
+
+  const targetID = prop.targetID;
+  const baseLineOption = {
+    position: BaseLinePositionType.TOP,
+    offset: 0,
+    ...prop.baseLineOption,
+  };
+
+  const elementOption = {
+    topOffset: 0,
+    bottomOffset: 0,
+    ...prop.elementOption,
+  };
+
+  const execOnStart = prop.execOnStart ?? true;
+  const activeClassName = prop.activeClassName ?? "";
+  const className = prop.className ?? "";
 
   const onScrollEvent = () => {
     const elementRect: DOMRect = document
-      .querySelector("#" + targetID)
+      .querySelector("#" + prop.targetID)
       ?.getBoundingClientRect();
     const topScroll =
       elementRect.top + window.scrollY + elementOption.topOffset;
@@ -80,7 +89,7 @@ export function ScrollSpy({
       className={className + " " + (active ? activeClassName : "")}
       onClick={onClickEvent}
     >
-      {children}
+      {prop.children}
     </div>
   );
 }
