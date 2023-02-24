@@ -1893,6 +1893,14 @@ react-markdown@^8.0.5:
     unist-util-visit "^4.0.0"
     vfile "^5.0.0"
 
+react-scroll-ts@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-scroll-ts/-/react-scroll-ts-1.0.2.tgz#a5165ba9e1f227079f40bc4ceddeaa88c59156d3"
+  integrity sha512-108mdwqwsoxg/aqoCgR9UGC7peOB/cynOtAMzZ815Fy8krkDPGD6mN4mulTY9u4Jjl+T35B0DyjjxrjS+FeNLA==
+  dependencies:
+    react "^18.2.0"
+    react-dom "^18.2.0"
+
 react-scroll@^1.8.8:
   version "1.8.8"
   resolved "https://registry.yarnpkg.com/react-scroll/-/react-scroll-1.8.8.tgz#445c6137174d6f2ed02352af408a48d160959e22"

@@ -50,5 +50,13 @@
   "Nodejs": {
     "src": "https://cdn.simpleicons.org/nodedotjs/white",
     "color": "#419d41"
+  },
+  "Typescript": {
+    "src": "https://cdn.simpleicons.org/typescript/white",
+    "color": "#3178c6"
+  },
+  "NPM": {
+    "src": "https://cdn.simpleicons.org/npm/white",
+    "color": "#cb3837"
   }
 }

@@ -3,7 +3,7 @@
 import { ChevronDownIcon } from "@primer/octicons-react";
 import { useState } from "react";
 import { CategoryData } from "./interface/ProjectDataInterface";
-import { ScrollSpy } from "./ScrollSpy";
+import { ReactScroll } from "react-scroll-ts";
 
 interface ProjectCategoryProp {
   categoryData: CategoryData;
@@ -45,7 +45,7 @@ export default function ProjectCategory({
         const bottomOffset =
           currentRow == lastRow ? 90 : currentRow == releaseLastRow ? 40 : 10;
         return (
-          <ScrollSpy
+          <ReactScroll
             key={`scroll-receiver-${index}`}
             targetID={`projectCard-${project.title
               .replaceAll(" ", "")
@@ -60,7 +60,7 @@ export default function ProjectCategory({
             }`}
           >
             {project.title}
-          </ScrollSpy>
+          </ReactScroll>
         );
       })}
     </div>

@@ -122,6 +122,18 @@
     "categoryTitle": "Web Developement",
     "projectCardList": [
       {
+        "title": "react-scroll-ts",
+        "imgSrc": "/imgs/projectCardImage/reactscrollts.png",
+        "description": [
+          "React scroll component with typescript",
+          "Published at NPM package"
+        ],
+        "tags": ["React", "Typescript", "NPM"],
+        "screenshots": [],
+        "repo": "https://github.com/W298/react-scroll-ts",
+        "link": "https://www.npmjs.com/package/react-scroll-ts"
+      },
+      {
         "title": "Uma-Friend",
         "imgSrc": "/imgs/projectCardImage/umaFriend.png",
         "description": [
