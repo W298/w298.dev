@@ -3,6 +3,19 @@
     "categoryTitle": "Game Development",
     "projectCardList": [
       {
+        "title": "RoadPipe",
+        "released": true,
+        "imgSrc": "/imgs/projectCardImage/RoadPipe.png",
+        "description": [
+          "Connect roads to get car to destination",
+          "Develop with Unity Engine"
+        ],
+        "tags": ["Unity"],
+        "screenshots": [],
+        "repo": "https://github.com/W298/roadPipe",
+        "youtube": "https://www.youtube.com/watch?v=83Qui5M17mQ"
+      },
+      {
         "title": "Robot! Escape!",
         "released": true,
         "imgSrc": "/imgs/projectCardImage/robotEscape.png",
@@ -71,6 +84,20 @@
         "repo": "https://github.com/W298/Reflect"
       },
       {
+        "title": "Intersection",
+        "released": false,
+        "imgSrc": "/imgs/projectCardImage/intersection.png",
+        "description": [
+          "Traffic Management Simulation Game",
+          "Develop with Unity Engine"
+        ],
+        "tags": ["Unity", "Blender"],
+        "screenshots": [],
+        "repo": "https://github.com/W298/Intersection",
+        "notion": "https://www.notion.so/rukasp/Project-Intersection-b17815fa8fb54fafb60bf39df80ccb74",
+        "youtube": "https://www.youtube.com/playlist?list=PLdycbYds1b97ynOJr9K5cDC47CYg07Jee"
+      },
+      {
         "title": "Together",
         "released": false,
         "imgSrc": "/imgs/projectCardImage/together.png",
@@ -89,33 +116,6 @@
         "repo": "https://github.com/W298/Together",
         "notion": "https://www.notion.so/rukasp/Project-Together-ecc53d8874ed4d47948afb8b53c7d10e",
         "youtube": "https://youtu.be/ICpmHzlpMfs"
-      },
-      {
-        "title": "roadPipe",
-        "released": false,
-        "imgSrc": "/imgs/projectCardImage/roadPipe.png",
-        "description": [
-          "Connect roads to get car to destination",
-          "Develop with Unity Engine"
-        ],
-        "tags": ["Unity"],
-        "screenshots": [],
-        "repo": "https://github.com/W298/roadPipe",
-        "youtube": "https://www.youtube.com/watch?v=83Qui5M17mQ"
-      },
-      {
-        "title": "Intersection",
-        "released": false,
-        "imgSrc": "/imgs/projectCardImage/intersection.png",
-        "description": [
-          "Traffic Management Simulation Game",
-          "Develop with Unity Engine"
-        ],
-        "tags": ["Unity", "Blender"],
-        "screenshots": [],
-        "repo": "https://github.com/W298/Intersection",
-        "notion": "https://www.notion.so/rukasp/Project-Intersection-b17815fa8fb54fafb60bf39df80ccb74",
-        "youtube": "https://www.youtube.com/playlist?list=PLdycbYds1b97ynOJr9K5cDC47CYg07Jee"
       }
     ]
   },

@@ -38,12 +38,14 @@ export default function ProjectCategory({
         />
       </div>
       {projectCardList.map((project, index) => {
-        const currentRow = Math.floor(index / 2);
+        const currentRow = project.released
+          ? Math.floor(index / 2)
+          : releaseLastRow + 1 + Math.floor((index - releaseList.length) / 2);
 
         const topOffset =
-          currentRow == firstRow ? -120 : currentRow == devFirstRow ? -60 : -10;
+          currentRow == firstRow ? -120 : currentRow == devFirstRow ? -60 : -15;
         const bottomOffset =
-          currentRow == lastRow ? 90 : currentRow == releaseLastRow ? 40 : 10;
+          currentRow == lastRow ? 90 : currentRow == releaseLastRow ? 40 : 15;
         return (
           <ReactScroll
             key={`scroll-receiver-${index}`}
