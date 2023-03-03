@@ -1,9 +1,33 @@
 import { ChevronDownIcon } from "@primer/octicons-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import PostStructureLink from "./PostStructureLink";
+import path from "path";
 
-export default function PostStructureRow({ tag, list }) {
+interface PostData {
+  title: string;
+  postId: string;
+}
+
+interface PostStructureRowProp {
+  tag: string;
+  list: PostData[];
+}
+
+export default function PostStructureRow({ tag, list }: PostStructureRowProp) {
+  const pathname = usePathname();
   const [expanded, setExpanded] = useState(false);
+
+  useEffect(() => {
+    var exist =
+      list.filter(({ postId }) => {
+        var { dir, name } = path.parse(pathname);
+        return dir == "/posts" && postId == name;
+      }).length != 0;
+
+    if (!expanded && tag != "All" && exist) setExpanded(true);
+  }, [pathname]);
+
   return (
     <div>
       <div
@@ -26,6 +50,10 @@ export default function PostStructureRow({ tag, list }) {
             title={title}
             postId={postId}
             expanded={expanded}
+            active={
+              path.parse(pathname).dir == "/posts" &&
+              path.parse(pathname).name == postId
+            }
           />
         );
       })}

@@ -6,6 +6,7 @@ import pageData from "../data/pageData.json";
 import { MarkGithubIcon, AppsIcon } from "@primer/octicons-react";
 import { useRef, useState } from "react";
 import DropdownNav from "./DropdownNav";
+import path from "path";
 
 export default function Navbar() {
   const pathname: string = usePathname() ?? "/";
@@ -30,16 +31,17 @@ export default function Navbar() {
               </Link>
             </div>
             <div className="flex flex-row items-center gap-3 max-[1000px]:hidden">
-              {pageData.map(({ title, path }) => {
+              {pageData.map(({ title, dir }) => {
                 return (
                   <Link
                     key={`Link-${title}`}
                     className={`text-sm ${
-                      path == pathname
+                      dir == path.parse(pathname).dir ||
+                      dir == "/" + path.parse(pathname).name
                         ? "bg-layer-200 font-bold"
                         : "bg-layer-300"
                     } w-[5.5rem] h-[1.7rem] flex justify-center items-center rounded-sm border border-transparent hover:border-layer-100 cursor-pointer transition`}
-                    href={path}
+                    href={dir}
                   >
                     {title}
                   </Link>

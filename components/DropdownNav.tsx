@@ -42,11 +42,11 @@ export default function DropdownNav({ open, setOpen, menuBtnRef }) {
           <div className="my-2 bg-layer-200 w-full h-[1px]"></div>
         </div>
 
-        {pageData.map(({ title, path }) => {
+        {pageData.map(({ title, dir }) => {
           return (
             <Link
               key={`dropdown-${title}`}
-              href={path}
+              href={dir}
               onClick={() => {
                 setOpen(false);
               }}
