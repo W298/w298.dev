@@ -25,7 +25,7 @@ Unity Editor 에서 Assembly Definition (\*.asmdef) 파일을 원하는 폴더 �
 
 ![1](/imgs/post_imgs/unity_asm_def/1.png)
 
-위의 경우 Universal 폴더에 있는 스크립트들을 지정하기 위해서 폴더 안에 `ASM-Universal.asmdef` 파일을 생성했다.
+위의 경우 Universal 폴더에 있는 스크립트들을 지정하기 위해서 폴더 안에 ASM-Universal.asmdef 파일을 생성했다.
 
 ![4](/imgs/post_imgs/unity_asm_def/4.png)
 
@@ -41,7 +41,7 @@ Universal 폴더에 있는 스크립트를 참조하는 스크립트는 Assembly
 ![2](/imgs/post_imgs/unity_asm_def/2.png)
 
 위는 Universal 폴더에 있는 스크립트를 참조하는 스크립트들이다.  
-미리 `ASM-DrivingScene.asmdef` 으로 Assembly Definition 파일을 생성해 두었다.
+미리 ASM-DrivingScene.asmdef 으로 Assembly Definition 파일을 생성해 두었다.
 
 아래는 이 asmdef 파일의 속성인데, 종속성 설정은 Assembly Definition References 에서 설정하면 된다.  
 여러가지 설정들이 있는데 이는 [Unity Docs](https://docs.unity3d.com/kr/current/Manual/ScriptCompilationAssemblyDefinitionFiles.html) 에 잘 설명되어 있다.

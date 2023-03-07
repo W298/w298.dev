@@ -15,7 +15,7 @@ export default function PostStructureLink({
 }: PostStructureLinkProp) {
   return (
     <Link
-      className={`block py-[0.4rem] px-10 cursor-pointer text-text-secondary border-l-custom hover:bg-layer-300 transition ${
+      className={`block py-[0.4rem] px-10 cursor-pointer truncate text-text-secondary border-l-custom hover:bg-layer-300 transition ${
         expanded ? "block" : "hidden"
       } ${active ? "border-l-custom-active bg-layer-300" : ""}`}
       href={`/posts/${postId}`}

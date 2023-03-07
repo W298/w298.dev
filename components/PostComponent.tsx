@@ -1,13 +1,39 @@
+"use client";
+
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import remarkGfm from "remark-gfm";
 import remarkToc from "remark-toc";
 
 import "../styles/github-markdown.css";
+import "../styles/custom-syntax.css";
+
+function CodeBlock({ language, children }) {
+  return (
+    <SyntaxHighlighter
+      language={language?.split("-")[1] ?? ""}
+      style={atomOneDark}
+      customStyle={{
+        backgroundColor: "transparent",
+        fontSize: "16px",
+      }}
+      showLineNumbers
+    >
+      {children}
+    </SyntaxHighlighter>
+  );
+}
 
 export function PostComponent({ children }) {
   return (
     <div className="markdown-body">
       <ReactMarkdown
+        components={{
+          code: ({ className, children }) => (
+            <CodeBlock language={className}>{children}</CodeBlock>
+          ),
+        }}
         remarkPlugins={[remarkGfm, remarkToc]}
         children={children}
       />

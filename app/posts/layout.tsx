@@ -25,10 +25,18 @@ async function getPostStructure() {
 
     tagList.forEach((tag) => {
       if (tag in structure) {
-        structure[tag].push({ title: header[0], postId });
+        structure[tag].push({
+          title: header[0],
+          date: header[2],
+          postId,
+        });
       } else {
         structure[tag] = [];
-        structure[tag].push({ title: header[0], postId });
+        structure[tag].push({
+          title: header[0],
+          date: header[2],
+          postId,
+        });
       }
     });
   });

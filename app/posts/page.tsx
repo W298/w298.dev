@@ -29,7 +29,13 @@ async function getPostList() {
     return { header, postId };
   });
 
-  return postList;
+  let sortedPostList = postList.sort((a, b) => {
+    let aDate = new Date(a.header[2]);
+    let bDate = new Date(b.header[2]);
+    return aDate > bDate ? -1 : aDate == bDate ? 0 : 1;
+  });
+
+  return sortedPostList;
 }
 
 function PostRow({ postRowData }: PostRowProp) {

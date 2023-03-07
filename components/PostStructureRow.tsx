@@ -6,6 +6,7 @@ import path from "path";
 
 interface PostData {
   title: string;
+  date: string;
   postId: string;
 }
 
@@ -43,20 +44,26 @@ export default function PostStructureRow({ tag, list }: PostStructureRowProp) {
           className={`transition ${expanded ? "rotate-180" : ""}`}
         />
       </div>
-      {list.map(({ title, postId }) => {
-        return (
-          <PostStructureLink
-            key={`post-sidebar-${title}`}
-            title={title}
-            postId={postId}
-            expanded={expanded}
-            active={
-              path.parse(pathname).dir == "/posts" &&
-              path.parse(pathname).name == postId
-            }
-          />
-        );
-      })}
+      {list
+        .sort(({ date: aDateStr }, { date: bDateStr }) => {
+          let a = new Date(aDateStr);
+          let b = new Date(bDateStr);
+          return a > b ? -1 : a == b ? 0 : 1;
+        })
+        .map(({ title, postId }) => {
+          return (
+            <PostStructureLink
+              key={`post-sidebar-${title}`}
+              title={title}
+              postId={postId}
+              expanded={expanded}
+              active={
+                path.parse(pathname).dir == "/posts" &&
+                path.parse(pathname).name == postId
+              }
+            />
+          );
+        })}
     </div>
   );
 }

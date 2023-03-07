@@ -39,3 +39,6 @@ jspm_packages
 
 # Secret Keys
 .env.local
+
+# DS Store
+.DS_Store
