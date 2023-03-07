@@ -67,7 +67,10 @@ export default async function Page() {
   return (
     <div className="flex flex-col gap-[2rem] pb-[50vh]">
       {postList.map((postRowData) => (
-        <PostRow postRowData={postRowData} />
+        <PostRow
+          key={`post-row-${postRowData.postId}`}
+          postRowData={postRowData}
+        />
       ))}
     </div>
   );

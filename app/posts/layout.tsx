@@ -28,6 +28,7 @@ async function getPostStructure() {
         structure[tag].push({
           title: header[0],
           date: header[2],
+          tags: header[3],
           postId,
         });
       } else {
@@ -35,6 +36,7 @@ async function getPostStructure() {
         structure[tag].push({
           title: header[0],
           date: header[2],
+          tags: header[3],
           postId,
         });
       }

@@ -7,6 +7,7 @@ import path from "path";
 interface PostData {
   title: string;
   date: string;
+  tags: string;
   postId: string;
 }
 
@@ -20,10 +21,11 @@ export default function PostStructureRow({ tag, list }: PostStructureRowProp) {
   const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
-    var exist =
-      list.filter(({ postId }) => {
-        var { dir, name } = path.parse(pathname);
-        return dir == "/posts" && postId == name;
+    let exist =
+      list.filter(({ postId, tags }) => {
+        let { dir, name } = path.parse(pathname);
+        let isFirst = tags.split(",").indexOf(tag) == 0;
+        return dir == "/posts" && postId == name && isFirst;
       }).length != 0;
 
     if (!expanded && tag != "All" && exist) setExpanded(true);
