@@ -9,14 +9,18 @@ import remarkToc from "remark-toc";
 import "../styles/github-markdown.css";
 import "../styles/custom-syntax.css";
 
-function CodeBlock({ language, children }) {
-  return (
+function CodeBlock({ language, inline, children }) {
+  return inline ? (
+    <span className="bg-layer-300 px-2 mx-0.5 rounded font-mono">
+      {children}
+    </span>
+  ) : (
     <SyntaxHighlighter
       language={language?.split("-")[1] ?? ""}
       style={atomOneDark}
       customStyle={{
         backgroundColor: "transparent",
-        fontSize: "16px",
+        fontSize: "15px",
       }}
       showLineNumbers
     >
@@ -30,8 +34,10 @@ export function PostComponent({ children }) {
     <div className="markdown-body">
       <ReactMarkdown
         components={{
-          code: ({ className, children }) => (
-            <CodeBlock language={className}>{children}</CodeBlock>
+          code: ({ className, inline, children }) => (
+            <CodeBlock language={className} inline={inline}>
+              {children}
+            </CodeBlock>
           ),
         }}
         remarkPlugins={[remarkGfm, remarkToc]}

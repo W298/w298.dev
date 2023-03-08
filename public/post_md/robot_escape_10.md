@@ -1,13 +1,13 @@
 HEADER START
 
-Robot! Escape! - AI Behavior Tree (1)
-AI Behavior Tree (1)
+#10. AI Behavior Tree (1)
+Robot! Escape! DEVLOG Chapter 10
 2022-10-30
 Robot-Escape-DEVLOG,Unity
 
 HEADER END
 
-# Robot! Escape! - AI Behavior Tree (1)
+# AI Behavior Tree (1)
 
 AI 프로그래밍은 Behavior Tree 를 사용할 것이다.
 

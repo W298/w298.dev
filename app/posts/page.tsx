@@ -46,7 +46,7 @@ function PostRow({ postRowData }: PostRowProp) {
     >
       <div className="px-6 pt-6 pb-2">
         <div className="font-light text-sm text-text-secondary">
-          {postRowData.header[3]}
+          {postRowData.header[3].split(",").join(" / ")}
         </div>
         <div className="font-extrabold text-2xl pt-1 pb-3">
           {postRowData.header[0]}

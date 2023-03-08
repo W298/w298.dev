@@ -21,11 +21,11 @@ Assembly Definition 을 이용하면,
 
 ## Setup
 
-Unity Editor 에서 Assembly Definition (\*.asmdef) 파일을 원하는 폴더 안에 생성한다.
+Unity Editor 에서 `Assembly Definition (*.asmdef)` 파일을 원하는 폴더 안에 생성한다.
 
 ![1](/imgs/post_imgs/unity_asm_def/1.png)
 
-위의 경우 Universal 폴더에 있는 스크립트들을 지정하기 위해서 폴더 안에 ASM-Universal.asmdef 파일을 생성했다.
+위의 경우 Universal 폴더에 있는 스크립트들을 지정하기 위해서 폴더 안에 `ASM-Universal.asmdef` 파일을 생성했다.
 
 ![4](/imgs/post_imgs/unity_asm_def/4.png)
 
@@ -41,7 +41,7 @@ Universal 폴더에 있는 스크립트를 참조하는 스크립트는 Assembly
 ![2](/imgs/post_imgs/unity_asm_def/2.png)
 
 위는 Universal 폴더에 있는 스크립트를 참조하는 스크립트들이다.  
-미리 ASM-DrivingScene.asmdef 으로 Assembly Definition 파일을 생성해 두었다.
+미리 `ASM-DrivingScene.asmdef` 으로 Assembly Definition 파일을 생성해 두었다.
 
 아래는 이 asmdef 파일의 속성인데, 종속성 설정은 Assembly Definition References 에서 설정하면 된다.  
 여러가지 설정들이 있는데 이는 [Unity Docs](https://docs.unity3d.com/kr/current/Manual/ScriptCompilationAssemblyDefinitionFiles.html) 에 잘 설명되어 있다.
@@ -57,10 +57,10 @@ GUID 옵션을 켜주면 파일명이 변경되어도 사용할 수 있다.
 
 순환 참조가 아닌 경우
 
-1. A -> B (A가 B를 참조)
-2. A -> B -> C / A -> C
+1. `A -> B` (A가 B를 참조)
+2. `A -> B -> C / A -> C`
 
 순환 참조인 경우
 
-1. A <-> B (A와 B가 서로 참조)
-2. A -> B -> C -> A (꼬리에 꼬리를 무는 형태)
+1. `A <-> B` (A와 B가 서로 참조)
+2. `A -> B -> C -> A` (꼬리에 꼬리를 무는 형태)
