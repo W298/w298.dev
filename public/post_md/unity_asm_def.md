@@ -23,11 +23,11 @@ Assembly Definition 을 이용하면,
 
 Unity Editor 에서 `Assembly Definition (*.asmdef)` 파일을 원하는 폴더 안에 생성한다.
 
-![1](/imgs/post_imgs/unity_asm_def/1.png)
+![](/imgs/post_imgs/unity_asm_def/1.png)
 
 위의 경우 Universal 폴더에 있는 스크립트들을 지정하기 위해서 폴더 안에 `ASM-Universal.asmdef` 파일을 생성했다.
 
-![4](/imgs/post_imgs/unity_asm_def/4.png)
+![](/imgs/post_imgs/unity_asm_def/4.png)
 
 Universal 폴더에 있는 스크립트들은 위와 같이 하나의 Assembly 로 묶여있는 것을 확인할 수 있다.
 
@@ -38,7 +38,7 @@ Universal 폴더에 있는 스크립트를 참조하는 스크립트는 Assembly
 
 ## Reference 설정
 
-![2](/imgs/post_imgs/unity_asm_def/2.png)
+![](/imgs/post_imgs/unity_asm_def/2.png)
 
 위는 Universal 폴더에 있는 스크립트를 참조하는 스크립트들이다.  
 미리 `ASM-DrivingScene.asmdef` 으로 Assembly Definition 파일을 생성해 두었다.
@@ -49,7 +49,7 @@ Universal 폴더에 있는 스크립트를 참조하는 스크립트는 Assembly
 아래와 같이 종속성 설정을 해주면 그 Assembly 의 스크립트를 참조할 수 있다.  
 GUID 옵션을 켜주면 파일명이 변경되어도 사용할 수 있다.
 
-![3](/imgs/post_imgs/unity_asm_def/3.png)
+![](/imgs/post_imgs/unity_asm_def/3.png)
 
 ## Cyclic Reference
 
