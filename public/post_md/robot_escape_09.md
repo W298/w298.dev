@@ -114,7 +114,7 @@ public class AIVisionSensor : MonoBehaviour
 
 아래와 같이 파라미터를 조절해 해상도와 각도를 조절할 수 있다.
 
-![](https://velog.velcdn.com/images/lutca1320/post/6c0af228-454f-47c9-9639-3467f8b6e567/image.gif)
+![800px](https://velog.velcdn.com/images/lutca1320/post/6c0af228-454f-47c9-9639-3467f8b6e567/image.gif)
 
 ### Scan 함수
 
@@ -123,11 +123,11 @@ public class AIVisionSensor : MonoBehaviour
 
 플레이어가 장애물 뒤에 있었다면 Detect 되지 않았을 것이다.
 
-![](https://velog.velcdn.com/images/lutca1320/post/aaae64db-34ce-4aea-8701-ffdec032fc91/image.png)
+![800px](https://velog.velcdn.com/images/lutca1320/post/aaae64db-34ce-4aea-8701-ffdec032fc91/image.png)
 
 ### RedZone / YellowZone
 
-![](https://velog.velcdn.com/images/lutca1320/post/da432e51-2169-4691-9782-714baa8fcc1c/image.png)
+![800px](https://velog.velcdn.com/images/lutca1320/post/da432e51-2169-4691-9782-714baa8fcc1c/image.png)
 
 redZoneDistance 까지가 redZone,
 redZoneDistance ~ yellowZoneDistance 까지가 yellowZone 이다.

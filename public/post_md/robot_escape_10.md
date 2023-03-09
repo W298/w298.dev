@@ -16,7 +16,7 @@ Behavior Tree 로 갈아타기로 했다.
 
 앞으로 더 추가될 예정이지만 일단 간단하게 FlowChart 를 그려 보았다.
 
-![1](/imgs/post_imgs/robot_escape_10/1.png)
+![](/imgs/post_imgs/robot_escape_10/1.png)
 
 ## Base 구현
 

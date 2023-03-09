@@ -39,6 +39,9 @@ export function PostComponent({ children }) {
               {children}
             </CodeBlock>
           ),
+          img: ({ alt = "100%", src }) => (
+            <img src={src} width={alt} className="my-2 rounded" />
+          ),
         }}
         remarkPlugins={[remarkGfm, remarkToc]}
         children={children}

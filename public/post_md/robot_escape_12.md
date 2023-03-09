@@ -9,7 +9,7 @@ HEADER END
 
 # AI Behavior Tree (2)
 
-![](https://velog.velcdn.com/images/lutca1320/post/a81dac09-2b44-44d9-a040-a951a0fb03cf/image.png)
+![600px](https://velog.velcdn.com/images/lutca1320/post/a81dac09-2b44-44d9-a040-a951a0fb03cf/image.png)
 
 이번에는 다음 부분을 구현할 것이다.
 
@@ -109,10 +109,10 @@ public class IsDetectEnemy : Node
 }
 ```
 
-![](https://velog.velcdn.com/images/lutca1320/post/309438f5-ec92-42a7-8ce5-4aa584081945/image.gif)
+![900px](https://velog.velcdn.com/images/lutca1320/post/309438f5-ec92-42a7-8ce5-4aa584081945/image.gif)
 
 바깥이 YelloZone, 안쪽이 RedZone 이다.
-YelloZone 에 오래 머물거나 RedZone 에 진입화면 발포한다.
+YelloZone 에 오래 머물거나 RedZone 에 진입하면 발포한다.
 
 ### `TakeDistance`, `Aim`
 
@@ -173,7 +173,7 @@ public class Aim : Node
 }
 ```
 
-![](https://velog.velcdn.com/images/lutca1320/post/92fc5d00-27e8-45b8-8b20-32945145d706/image.gif)
+![900px](https://velog.velcdn.com/images/lutca1320/post/92fc5d00-27e8-45b8-8b20-32945145d706/image.gif)
 
 앞으로 돌격하면 뒤로 물러나고, 도망가면 쫒아온다.
 
