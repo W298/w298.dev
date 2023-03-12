@@ -1,5 +1,7 @@
 import "../styles/globals.css";
+
 import Navbar from "../components/Navbar";
+import ScrollToTop from "../components/ScrollToTop";
 
 export default async function RootLayout({ children }) {
   return (
@@ -34,6 +36,7 @@ export default async function RootLayout({ children }) {
           }}
         ></div>
         <Navbar />
+        <ScrollToTop />
         {children}
       </body>
     </html>
