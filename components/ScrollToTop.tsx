@@ -18,16 +18,16 @@ export default function ScrollToTop() {
   }, []);
 
   return (
-    active && (
-      <div
-        className="fixed bottom-7 right-7 z-10 w-12 h-12 flex justify-center items-center rounded-full cursor-pointer transition bg-layer-300 hover:bg-layer-200"
-        title="Move to top"
-        onClick={() => {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }}
-      >
-        <ChevronUpIcon size={24} className="w-7 h-7" />
-      </div>
-    )
+    <div
+      className={`fixed bottom-7 right-7 z-10 w-12 h-12 flex justify-center items-center rounded-full transition duration-200 bg-layer-300 hover:bg-layer-200 ${
+        active ? "opacity-100 cursor-pointer" : "opacity-0 cursor-default"
+      }`}
+      onClick={() => {
+        if (!active) return;
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }}
+    >
+      <ChevronUpIcon size={24} className="w-7 h-7" />
+    </div>
   );
 }
