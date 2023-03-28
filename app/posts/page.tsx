@@ -65,7 +65,7 @@ export default async function Page() {
   const postList = await getPostList();
 
   return (
-    <div className="flex flex-col gap-[2rem] pb-[50vh]">
+    <div className="pb-[50vh] grid max-[1000px]:grid-cols-1 min-[1000px]:grid-cols-2 gap-8">
       {postList.map((postRowData) => (
         <PostRow
           key={`post-row-${postRowData.postId}`}
