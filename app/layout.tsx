@@ -1,5 +1,8 @@
 import "../styles/globals.css";
 
+import type { AppProps } from "next/app";
+import { Analytics } from "@vercel/analytics/react";
+
 import Navbar from "../components/Navbar";
 import ScrollToTop from "../components/ScrollToTop";
 
@@ -37,6 +40,7 @@ export default async function RootLayout({ children }) {
         ></div>
         <Navbar />
         <ScrollToTop />
+        <Analytics />
         {children}
       </body>
     </html>
