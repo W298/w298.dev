@@ -1,7 +1,7 @@
 HEADER START
 
+Robot! Escape! DEVLOG #10
 #10. AI Behavior Tree (1)
-Robot! Escape! DEVLOG Chapter 10
 2022-10-30
 Robot-Escape-DEVLOG,Unity
 

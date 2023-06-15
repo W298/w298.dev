@@ -1,7 +1,7 @@
 HEADER START
 
+Robot! Escape! DEVLOG #06
 #06. Camera Shake
-Robot! Escape! DEVLOG Chapter 06
 2022-10-22
 Robot-Escape-DEVLOG,Unity
 

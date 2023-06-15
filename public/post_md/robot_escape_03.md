@@ -1,7 +1,7 @@
 HEADER START
 
+Robot! Escape! DEVLOG #03
 #03. Animation
-Robot! Escape! DEVLOG Chapter 03
 2022-10-18
 Robot-Escape-DEVLOG,Unity
 
@@ -12,10 +12,10 @@ HEADER END
 ## Demonstration
 
 - 조준한 상태에서 움직이기
-![500px](https://velog.velcdn.com/images/lutca1320/post/fce16d45-ba2a-42da-b557-8eb1beca591e/image.gif)
+  ![500px](https://velog.velcdn.com/images/lutca1320/post/fce16d45-ba2a-42da-b557-8eb1beca591e/image.gif)
 
 - 조준하고 있지 않은 상태에서 움직이기
-![500px](https://velog.velcdn.com/images/lutca1320/post/536d1260-3af0-4242-8669-4b12d8d39b30/image.gif)
+  ![500px](https://velog.velcdn.com/images/lutca1320/post/536d1260-3af0-4242-8669-4b12d8d39b30/image.gif)
 
 ## AimController
 
@@ -117,11 +117,11 @@ public class RobotAnimationController : MonoBehaviour
     {
         float animationDirectionX = inputHandler.movementVector.x;
         float animationDirectionZ = inputHandler.movementVector.y;
-        
+
         if (inputHandler.isAim)
         {
             Vector2 forwardV2 = new(transform.forward.x, transform.forward.z);
-            
+
             float deg = Vector2.SignedAngle(forwardV2, new Vector2(0, 1));
             float rad = deg * Mathf.Deg2Rad;
 
@@ -151,12 +151,15 @@ public class RobotAnimationController : MonoBehaviour
 ## Animation Behavior 설정
 
 ### root
+
 ![](https://velog.velcdn.com/images/lutca1320/post/56b5b546-026e-4ad8-bf8a-cc272ed54314/image.png)
 
 ### Idle
+
 ![](https://velog.velcdn.com/images/lutca1320/post/0491a886-d179-410e-bfb0-46432aa52891/image.png)
 
 ### Movement
+
 ![](https://velog.velcdn.com/images/lutca1320/post/57977cf0-596d-4b23-be0e-cf6ac010e475/image.png)
 
 Crouch 상태에서 Movement->Idle 이면 Idle_Crouching 으로 가고,
@@ -164,6 +167,7 @@ Aiming 상태에서 Movement->Idle 이면 Idle_Aiming 으로 간다.
 그 반대도 똑같이 설정했다.
 
 ### Aiming 블랜드 트리
+
 ![800px](https://velog.velcdn.com/images/lutca1320/post/d23a4b29-80ed-45c7-adfa-3e8045ffa2e9/image.png)
 
 Crouch 블랜드 트리도 위와 유사하다.

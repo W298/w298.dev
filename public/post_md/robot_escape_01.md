@@ -1,7 +1,7 @@
 HEADER START
 
+Robot! Escape! DEVLOG #01
 #01. Planning
-Robot! Escape! DEVLOG Chapter 01
 2022-10-16
 Robot-Escape-DEVLOG,Unity
 

@@ -1,7 +1,7 @@
 HEADER START
 
+Robot! Escape! DEVLOG #08
 #08. Enemy AI Setup
-Robot! Escape! DEVLOG Chapter 08
 2022-10-25
 Robot-Escape-DEVLOG,Unity
 

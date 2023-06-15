@@ -1,7 +1,7 @@
 HEADER START
 
+Robot! Escape! DEVLOG #02
 #02. Input Handle & Follow Cam
-Robot! Escape! DEVLOG Chapter 02
 2022-10-17
 Robot-Escape-DEVLOG,Unity
 
@@ -76,6 +76,7 @@ Aim 이나 Crouch 하면 속도가 느려져야 하므로 `isCrouch || isAim ? 3
 ![800px](https://velog.velcdn.com/images/lutca1320/post/803410f8-55e9-4520-8714-53de8af89548/image.png)
 
 Player 가 가지고 있는 컴포넌트이다.
+
 - Attached Cam - 부착할 카메라
 - Offset - 카메라와 플레이어 간의 Position Offset
 

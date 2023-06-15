@@ -1,7 +1,7 @@
 HEADER START
 
+Robot! Escape! DEVLOG #09
 #09. AI Vision & Sound Sensor
-Robot! Escape! DEVLOG Chapter 09
 2022-10-26
 Robot-Escape-DEVLOG,Unity
 

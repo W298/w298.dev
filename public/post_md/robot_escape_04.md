@@ -1,7 +1,7 @@
 HEADER START
 
+Robot! Escape! DEVLOG #04
 #04. Laser Pointer
-Robot! Escape! DEVLOG Chapter 04
 2022-10-19
 Robot-Escape-DEVLOG,Unity
 
@@ -25,18 +25,18 @@ Laser Prefab 을 따로 만들어서 `Line Renderer` 와 `LaserRenderer` 스크�
 - `OnEnable` `OnDisable` 을 통해 자신이 Enable / Disable 되었을 때 `LineRenderer` 도 같이 적용되게 하였다.
 
 ```csharp
-public class LaserRenderer : MonoBehaviour 
+public class LaserRenderer : MonoBehaviour
 {
 	public Vector3 start;
 	public Vector3 end;
-	
+
 	private LineRenderer laserLine;
 
-	void Start() 
+	void Start()
 	{
 		laserLine = GetComponent<LineRenderer>();
 	}
-	
+
 	void Update()
 	{
 		laserLine.SetPosition(0, start);
@@ -95,6 +95,6 @@ public class RobotAimController : MonoBehaviour
 - start 값은 총기 모델의 `laserStart` Transform 값을 사용했다.
 - `laserStartPoint.forward` 을 Direction 으로 사용해 총기의 Rotation 에 따라 바뀐 Direction 으로 직진하게 만들었다.
 
-*(↓ 총기 Rotation 이 바뀌어도 총기 방향이랑 평행하게 직진한다. )*
+_(↓ 총기 Rotation 이 바뀌어도 총기 방향이랑 평행하게 직진한다. )_
 
 ![600px](https://velog.velcdn.com/images/lutca1320/post/a922c8cf-410e-442d-ae86-41d8cf91c20c/image.png)
