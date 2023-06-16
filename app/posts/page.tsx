@@ -7,6 +7,11 @@ interface PostRowData {
   postId: string;
 }
 
+interface DatePost {
+  date?: string;
+  postRowData?: PostRowData;
+}
+
 interface PostRowProp {
   postRowData: PostRowData;
 }
@@ -64,14 +69,36 @@ function PostRow({ postRowData }: PostRowProp) {
 export default async function Page() {
   const postList = await getPostList();
 
+  const dateMap: DatePost = {};
+  postList.forEach(({ postId, header }) => {
+    const key = header[2].substring(0, 7);
+    if (key in dateMap) dateMap[key].push({ postId, header });
+    else dateMap[key] = [{ postId, header }];
+  });
+
   return (
-    <div className="pb-[50vh] grid max-[1000px]:grid-cols-1 min-[1000px]:grid-cols-2 gap-8">
-      {postList.map((postRowData) => (
-        <PostRow
-          key={`post-row-${postRowData.postId}`}
-          postRowData={postRowData}
-        />
-      ))}
+    <div className="pb-[40vh]">
+      {Object.entries(dateMap)
+        .sort(([ad, al], [bd, bl]) => (new Date(ad) < new Date(bd) ? 1 : -1))
+        .map(([date, list]) => {
+          return (
+            <div className="pb-20 flex flex-col gap-4">
+              <div className="text-text-secondary">{date}</div>
+              <div className="grid max-[1000px]:grid-cols-1 min-[1000px]:grid-cols-2 gap-8">
+                {list
+                  .sort((a, b) =>
+                    new Date(a.header[2]) < new Date(b.header[2]) ? 1 : -1
+                  )
+                  .map((postRowData) => (
+                    <PostRow
+                      key={`post-row-${postRowData.postId}`}
+                      postRowData={postRowData}
+                    />
+                  ))}
+              </div>
+            </div>
+          );
+        })}
     </div>
   );
 }
