@@ -3,6 +3,19 @@
     "categoryTitle": "Game Development",
     "projectCardList": [
       {
+        "title": "ZeroCity",
+        "released": true,
+        "imgSrc": "/imgs/projectCardImage/ZeroCity.png",
+        "description": [
+          "Procedural city generation project",
+          "Develop with Unity Engine"
+        ],
+        "tags": ["Unity"],
+        "screenshots": [],
+        "repo": "https://github.com/W298/FindingYounghee",
+        "youtube": "https://youtu.be/cWrT1XXu0JM"
+      },
+      {
         "title": "RoadPipe",
         "released": true,
         "imgSrc": "/imgs/projectCardImage/RoadPipe.png",
