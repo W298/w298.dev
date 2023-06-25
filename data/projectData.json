@@ -1,10 +1,9 @@
 [
   {
-    "categoryTitle": "Game Development",
+    "categoryTitle": "Recent Project",
     "projectCardList": [
       {
         "title": "ZeroCity",
-        "released": true,
         "imgSrc": "/imgs/projectCardImage/ZeroCity.png",
         "description": [
           "Procedural city generation project",
@@ -15,6 +14,23 @@
         "repo": "https://github.com/W298/FindingYounghee",
         "youtube": "https://youtu.be/cWrT1XXu0JM"
       },
+      {
+        "title": "GVDB-Fluid-Unreal",
+        "imgSrc": "/imgs/projectCardImage/GVDB_Fluid_Unreal.png",
+        "description": [
+          "NVDIA GVDB Library + Fluid Simulation",
+          "Implemented to Unreal Engine 5"
+        ],
+        "tags": ["Unreal"],
+        "screenshots": [],
+        "repo": "https://github.com/W298/gvdb-fluid-unreal",
+        "youtube": "https://www.youtube.com/watch?v=b3hXHdFV3zE"
+      }
+    ]
+  },
+  {
+    "categoryTitle": "Game Development",
+    "projectCardList": [
       {
         "title": "RoadPipe",
         "released": true,
@@ -184,9 +200,5 @@
         "link": "https://genshin-cube-solver.herokuapp.com"
       }
     ]
-  },
-  {
-    "categoryTitle": "etc",
-    "projectCardList": []
   }
 ]

@@ -86,7 +86,9 @@ export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
           className="absolute bottom-2 right-2 rounded-full border border-transparent hover:border-layer-100 transition"
           href={"/projects/" + data.title}
         >
-          <CustomTag Icon={ImageIcon} title="Screenshots" color="#393939CC" />
+          {data.screenshots.length != 0 && (
+            <CustomTag Icon={ImageIcon} title="Screenshots" color="#393939CC" />
+          )}
         </Link>
       </div>
       <div className="@[450px]:flex h-[11rem] p-6 flex-col hidden">
