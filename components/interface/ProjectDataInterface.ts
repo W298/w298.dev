@@ -5,6 +5,7 @@ export interface CategoryData {
 
 export interface ProjectCardData {
   title: string;
+  pinned: boolean | null;
   released: boolean | null;
   imgSrc: string;
   description: string[];

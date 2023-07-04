@@ -1,34 +1,5 @@
 [
   {
-    "categoryTitle": "Recent Project",
-    "projectCardList": [
-      {
-        "title": "ZeroCity",
-        "imgSrc": "/imgs/projectCardImage/ZeroCity.png",
-        "description": [
-          "Procedural city generation project",
-          "Develop with Unity Engine"
-        ],
-        "tags": ["Unity"],
-        "screenshots": [],
-        "repo": "https://github.com/W298/FindingYounghee",
-        "youtube": "https://youtu.be/cWrT1XXu0JM"
-      },
-      {
-        "title": "GVDB-Fluid-Unreal",
-        "imgSrc": "/imgs/projectCardImage/GVDB_Fluid_Unreal.png",
-        "description": [
-          "NVDIA GVDB Library + Fluid Simulation",
-          "Implemented to Unreal Engine 5"
-        ],
-        "tags": ["Unreal"],
-        "screenshots": [],
-        "repo": "https://github.com/W298/gvdb-fluid-unreal",
-        "youtube": "https://www.youtube.com/watch?v=b3hXHdFV3zE"
-      }
-    ]
-  },
-  {
     "categoryTitle": "Game Development",
     "projectCardList": [
       {
@@ -101,18 +72,6 @@
         "link": "https://pixel-reversi.vercel.app/"
       },
       {
-        "title": "Reflect",
-        "released": true,
-        "imgSrc": "/imgs/projectCardImage/reflect.png",
-        "description": [
-          "Game with mirror & raser",
-          "Develop with Python Cocos Engine"
-        ],
-        "tags": ["Python", "Cocos"],
-        "screenshots": [],
-        "repo": "https://github.com/W298/Reflect"
-      },
-      {
         "title": "Intersection",
         "released": false,
         "imgSrc": "/imgs/projectCardImage/intersection.png",
@@ -149,6 +108,37 @@
     ]
   },
   {
+    "categoryTitle": "Game Dev Related",
+    "projectCardList": [
+      {
+        "title": "ZeroCity",
+        "pinned": true,
+        "imgSrc": "/imgs/projectCardImage/ZeroCity.png",
+        "description": [
+          "Procedural city generation project",
+          "Develop with Unity Engine"
+        ],
+        "tags": ["Unity"],
+        "screenshots": [],
+        "repo": "https://github.com/W298/FindingYounghee",
+        "youtube": "https://youtu.be/cWrT1XXu0JM"
+      },
+      {
+        "title": "GVDB-Fluid-Unreal",
+        "pinned": true,
+        "imgSrc": "/imgs/projectCardImage/GVDB_Fluid_Unreal.png",
+        "description": [
+          "NVDIA GVDB Library + Fluid Simulation",
+          "Implemented to Unreal Engine 5"
+        ],
+        "tags": ["Unreal"],
+        "screenshots": [],
+        "repo": "https://github.com/W298/gvdb-fluid-unreal",
+        "youtube": "https://www.youtube.com/watch?v=b3hXHdFV3zE"
+      }
+    ]
+  },
+  {
     "categoryTitle": "Web Developement",
     "projectCardList": [
       {
@@ -174,30 +164,23 @@
         "screenshots": [],
         "repo": "https://github.com/W298/uma-friend-nextjs",
         "link": "https://umafriend.vercel.app"
-      },
+      }
+    ]
+  },
+  {
+    "categoryTitle": "ETC",
+    "projectCardList": [
       {
-        "title": "Today's Genshin",
-        "imgSrc": "/imgs/projectCardImage/todaysGenshin.png",
+        "title": "image-compression",
+        "pinned": true,
+        "imgSrc": "/imgs/projectCardImage/ImageCompression.png",
         "description": [
-          "Genshin Impact Todo Web-app",
-          "Deploy with React.js & MUI"
+          "Image compression & encode / decode",
+          "Develop with Win32"
         ],
-        "tags": ["React", "MUI", "Nodejs"],
+        "tags": ["Win"],
         "screenshots": [],
-        "repo": "https://github.com/w298/todays-genshin",
-        "link": "https://todays-genshin.netlify.app"
-      },
-      {
-        "title": "Genshin Cube Solver",
-        "imgSrc": "/imgs/projectCardImage/genshinCubeSolver.png",
-        "description": [
-          "Genshin Impact Araumi Cube puzzle Solver",
-          "Deploy with React"
-        ],
-        "tags": ["React", "Nodejs"],
-        "screenshots": [],
-        "repo": "https://github.com/W298/genshin-cube-solver-react",
-        "link": "https://genshin-cube-solver.herokuapp.com"
+        "repo": "https://github.com/W298/image-compression"
       }
     ]
   }

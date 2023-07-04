@@ -1,6 +1,7 @@
 import { CategoryData } from "../../components/interface/ProjectDataInterface";
 import projectDataRaw from "../../data/projectData.json";
 import ProjectCard from "../../components/ProjectCard";
+import SimpleProjectCard from "../../components/SimpleProjectCard";
 
 async function getLastCommit(mapped) {
   const routine = async (repoName) => {
@@ -40,30 +41,47 @@ export default async function Page() {
 
   return (
     <div className="flex flex-col gap-16 pb-[85vh]">
-      {projectData.map(({ categoryTitle, projectCardList }, index) => {
+      <div className="@container flex flex-col gap-5">
+        <div className="text-xl font-bold">Pinned</div>
+        <div className="grid @[800px]:grid-cols-3 @[500px]:grid-cols-2 @[350px]:grid-cols-1 gap-4">
+          {projectData.map(({ projectCardList }) => {
+            return projectCardList
+              .filter((c) => c.pinned)
+              .map((c) => {
+                return (
+                  <SimpleProjectCard
+                    data={c}
+                    lastCommit={lastCommitData[c.title]}
+                  ></SimpleProjectCard>
+                );
+              });
+          })}
+        </div>
+      </div>
+      {projectData.map(({ categoryTitle, projectCardList }) => {
         return (
           <>
-            {index != 0 && (
-              <div className="my-4 bg-layer-200 w-full h-[1px]"></div>
-            )}
+            <div className="my-4 bg-layer-200 w-full h-[1px]"></div>
             <div className="flex flex-col gap-5">
               <div className="text-xl font-bold">{categoryTitle}</div>
               {projectCardList.every(({ released }) => released != null) &&
                 projectCardList.some(({ released }) => released) && (
-                  <div className="font-semibold">Released</div>
+                  <>
+                    <div className="font-semibold">Released</div>
+                    <div className="grid max-[1000px]:grid-cols-1 min-[1000px]:grid-cols-2 gap-8">
+                      {projectCardList
+                        .filter(({ released }) => released)
+                        .map((projectCardData) => {
+                          return (
+                            <ProjectCard
+                              data={projectCardData}
+                              lastCommit={lastCommitData[projectCardData.title]}
+                            />
+                          );
+                        })}
+                    </div>
+                  </>
                 )}
-              <div className="grid max-[1000px]:grid-cols-1 min-[1000px]:grid-cols-2 gap-8">
-                {projectCardList
-                  .filter(({ released }) => released)
-                  .map((projectCardData) => {
-                    return (
-                      <ProjectCard
-                        data={projectCardData}
-                        lastCommit={lastCommitData[projectCardData.title]}
-                      />
-                    );
-                  })}
-              </div>
               {projectCardList.every(({ released }) => released != null) &&
                 projectCardList.some(({ released }) => !released) && (
                   <div className="font-semibold pt-8">
