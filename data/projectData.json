@@ -4,6 +4,7 @@
     "projectCardList": [
       {
         "title": "RoadPipe",
+        "pinned": true,
         "released": true,
         "imgSrc": "/imgs/projectCardImage/RoadPipe.png",
         "description": [

@@ -1,27 +1,33 @@
+"use client";
+
+import { ReactScroll } from "react-scroll-ts";
 import { ProjectCardData } from "./interface/ProjectDataInterface";
 import { Tag } from "./Tag";
 
-interface ProjectCardProp {
+interface SimpleProjectCardProp {
   data: ProjectCardData;
-  lastCommit: Date;
 }
 
-export default function SimpleProjectCard({ data }: ProjectCardProp) {
+export default function SimpleProjectCard({ data }: SimpleProjectCardProp) {
+  const targetName = `projectCard-${data.title
+    .replaceAll(" ", "")
+    .replaceAll("!", "")
+    .replaceAll(":", "")
+    .replaceAll("'", "")}`;
+
   return (
-    <div
+    <ReactScroll
+      key={`${targetName}-pinned`}
+      targetID={targetName}
+      baseLineOption={{ offset: 200 }}
       className="min-w-min rounded-md bg-layer-350 border border-layer-200 hover:border-layer-100 flex flex-row cursor-pointer transition"
-      id={`projectCard-${data.title
-        .replaceAll(" ", "")
-        .replaceAll("!", "")
-        .replaceAll(":", "")
-        .replaceAll("'", "")}-pinned`}
     >
-      <div className="flex-1 flex flex-row px-3 py-2 justify-between align-middle">
+      <div className="flex-1 flex flex-row px-4 py-[0.3rem] justify-between align-middle">
         <div className="font-bold text-md">{data.title}</div>
         <div className="flex flex-row flex-wrap gap-2">
           <Tag title={data.tags[0]} />
         </div>
       </div>
-    </div>
+    </ReactScroll>
   );
 }
