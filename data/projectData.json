@@ -24,6 +24,7 @@
         "title": "Robot! Escape!",
         "released": true,
         "imgSrc": "/imgs/projectCardImage/robotEscape.png",
+        "previewSrc": "/imgs/projectCardPreviewImage/RobotEscape.webp",
         "description": [
           "Top-Down Shooter Action Game",
           "Develop with Unity Engine"
@@ -73,6 +74,7 @@
         "title": "Pixel Reversi",
         "released": true,
         "imgSrc": "/imgs/projectCardImage/pixelReversi.png",
+        "previewSrc": "/imgs/projectCardPreviewImage/Reversi.webp",
         "description": [
           "Reversi (Othello) Game with Pixel Graphic",
           "Develop with Unity Engine + WebGL"
@@ -129,6 +131,7 @@
         "title": "ZeroCity",
         "pinned": true,
         "imgSrc": "/imgs/projectCardImage/ZeroCity.png",
+        "previewSrc": "/imgs/projectCardPreviewImage/ZeroCity.webp",
         "description": [
           "Procedural city generation project",
           "Develop with Unity Engine"

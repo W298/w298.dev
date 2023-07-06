@@ -96,6 +96,11 @@ export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
     enterEvent.flush();
   }, 300);
 
+  useEffect(() => {
+    const image = new Image();
+    image.src = data.previewSrc;
+  }, []);
+
   return (
     <div
       className="@container min-w-min rounded-md bg-layer-350 border border-layer-200 hover:border-layer-100 hover:scale-[103%] transition"
@@ -115,16 +120,7 @@ export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
     >
       <div className="h-32 overflow-hidden relative">
         <img
-          src={data.imgSrc}
-          className={`object-cover min-h-full rounded-t-md transition duration-150 ${
-            isMouseRealHover != isMouseHover && data.previewSrc
-              ? "blur-[2px]"
-              : ""
-          } ${isMouseHover && data.previewSrc ? "hidden" : ""}`}
-          alt={data.title}
-        />
-        <img
-          src={data.previewSrc}
+          src={isMouseHover && data.previewSrc ? data.previewSrc : data.imgSrc}
           className={`object-cover min-h-full rounded-t-md transition duration-150 ${
             isMouseRealHover != isMouseHover && data.previewSrc
               ? "blur-[2px]"
