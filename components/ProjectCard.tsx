@@ -11,7 +11,7 @@ import {
 } from "@icons-pack/react-simple-icons/dist";
 import { Tag, CustomTag } from "./Tag";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { debounce } from "debounce";
 
 interface ProjectCardProp {
@@ -21,6 +21,13 @@ interface ProjectCardProp {
 
 interface LinkTagsProp {
   data: ProjectCardData;
+}
+
+function imagePreload(urls: string[]) {
+  urls.forEach((url) => {
+    const img = new Image();
+    img.src = `${process.env.NEXT_PUBLIC_CDN_URL}${url}`;
+  });
 }
 
 function LinkTags({ data }: LinkTagsProp) {
@@ -95,6 +102,10 @@ export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
     setMouseHover(false);
     enterEvent.flush();
   }, 300);
+
+  useEffect(() => {
+    imagePreload(["/imgs/projectCardPreviewImage/GVDB_Fluid_Unreal.webp"]);
+  }, []);
 
   return (
     <div
