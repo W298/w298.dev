@@ -1,7 +1,6 @@
-import {
-  ProjectCardData,
-  ProjectCardLinkData,
-} from "./interface/ProjectDataInterface";
+"use client";
+
+import { ProjectCardData } from "./interface/ProjectDataInterface";
 import { GitCommitIcon, LinkIcon, ImageIcon } from "@primer/octicons-react";
 import {
   Notion,
@@ -12,6 +11,8 @@ import {
 } from "@icons-pack/react-simple-icons/dist";
 import { Tag, CustomTag } from "./Tag";
 import Link from "next/link";
+import { useState } from "react";
+import { debounce } from "debounce";
 
 interface ProjectCardProp {
   data: ProjectCardData;
@@ -84,19 +85,42 @@ function LinkTags({ data }: LinkTagsProp) {
 }
 
 export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
+  const [isMouseHover, setMouseHover] = useState(false);
+  const [isMouseRealHover, setMouseRealHover] = useState(false);
+  const enterEvent = debounce(() => {
+    setMouseHover(true);
+    leaveEvent.flush();
+  }, 300);
+  const leaveEvent = debounce(() => {
+    setMouseHover(false);
+    enterEvent.flush();
+  }, 300);
+
   return (
     <div
-      className="@container min-w-min rounded-md bg-layer-350 border border-layer-200"
+      className="@container min-w-min rounded-md bg-layer-350 border border-layer-200 hover:border-layer-100 hover:scale-[103%] transition"
       id={`projectCard-${data.title
         .replaceAll(" ", "")
         .replaceAll("!", "")
         .replaceAll(":", "")
         .replaceAll("'", "")}`}
+      onMouseEnter={() => {
+        setMouseRealHover(true);
+        enterEvent();
+      }}
+      onMouseLeave={() => {
+        setMouseRealHover(false);
+        leaveEvent();
+      }}
     >
       <div className="h-32 overflow-hidden relative">
         <img
-          src={data.imgSrc}
-          className="object-cover min-h-full rounded-t-md"
+          src={isMouseHover && data.previewSrc ? data.previewSrc : data.imgSrc}
+          className={`object-cover min-h-full rounded-t-md transition duration-150 ${
+            isMouseRealHover != isMouseHover && data.previewSrc
+              ? "blur-[2px]"
+              : ""
+          }`}
           alt={data.title}
         />
         <Link

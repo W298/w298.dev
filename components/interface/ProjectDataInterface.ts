@@ -18,6 +18,7 @@ export interface ProjectCardData {
   pinned: boolean | null;
   released: boolean | null;
   imgSrc: string;
+  previewSrc: string | null;
   description: string[];
   tags: string[];
   screenshots: string[];
