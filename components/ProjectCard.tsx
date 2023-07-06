@@ -23,13 +23,6 @@ interface LinkTagsProp {
   data: ProjectCardData;
 }
 
-function imagePreload(urls: string[]) {
-  urls.forEach((url) => {
-    const img = new Image();
-    img.src = `${url}`;
-  });
-}
-
 function LinkTags({ data }: LinkTagsProp) {
   return (
     <>
@@ -102,10 +95,6 @@ export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
     setMouseHover(false);
     enterEvent.flush();
   }, 300);
-
-  useEffect(() => {
-    imagePreload(["/imgs/projectCardPreviewImage/GVDB_Fluid_Unreal.webp"]);
-  }, []);
 
   return (
     <div
