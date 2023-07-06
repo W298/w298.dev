@@ -113,7 +113,15 @@ export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
         setMouseRealHover(true);
         enterEvent();
       }}
+      onTouchStart={() => {
+        setMouseRealHover(true);
+        enterEvent();
+      }}
       onMouseLeave={() => {
+        setMouseRealHover(false);
+        leaveEvent();
+      }}
+      onTouchEnd={() => {
         setMouseRealHover(false);
         leaveEvent();
       }}
