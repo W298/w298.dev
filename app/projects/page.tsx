@@ -32,9 +32,9 @@ export default async function Page() {
   const lastCommitData = await getLastCommit(
     projectData
       .map(({ projectCardList }) => {
-        return projectCardList.map(({ title, repo }) => {
-          let last = repo.lastIndexOf("/");
-          return { title: title, repoName: repo.substring(last + 1) };
+        return projectCardList.map(({ title, link }) => {
+          let last = link.repo.lastIndexOf("/");
+          return { title: title, repoName: link.repo.substring(last + 1) };
         });
       })
       .flat()

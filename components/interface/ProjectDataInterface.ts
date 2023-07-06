@@ -3,6 +3,16 @@ export interface CategoryData {
   projectCardList: ProjectCardData[];
 }
 
+export interface ProjectCardLinkData {
+  repo: string | null;
+  notion: string | null;
+  link: string | null;
+  youtube: string | null;
+  velog: string | null;
+  itchio: string | null;
+  npm: string | null;
+}
+
 export interface ProjectCardData {
   title: string;
   pinned: boolean | null;
@@ -11,9 +21,5 @@ export interface ProjectCardData {
   description: string[];
   tags: string[];
   screenshots: string[];
-  repo: string | null;
-  notion: string | null;
-  link: string | null;
-  youtube: string | null;
-  velog: string | null;
+  link: ProjectCardLinkData;
 }

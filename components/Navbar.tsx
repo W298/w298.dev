@@ -7,6 +7,7 @@ import { MarkGithubIcon, AppsIcon } from "@primer/octicons-react";
 import { useRef, useState } from "react";
 import DropdownNav from "./DropdownNav";
 import path from "path";
+import { Youtube } from "@icons-pack/react-simple-icons";
 
 export default function Navbar() {
   const pathname: string = usePathname() ?? "/";
@@ -59,6 +60,17 @@ export default function Navbar() {
               <MarkGithubIcon fill="#c6c6c6" size={17} />
               <span className="font-bold text-sm text-text-secondary max-sm:hidden">
                 Github
+              </span>
+            </a>
+            <a
+              title="Youtube Channel"
+              href="https://www.youtube.com/@W298-dev"
+              target="_blank"
+              className="h-[2rem] px-3 rounded-sm flex flex-row gap-2 justify-center items-center hover:bg-layer-300 transition"
+            >
+              <Youtube fill="#c6c6c6" size={17} />
+              <span className="font-bold text-sm text-text-secondary max-sm:hidden">
+                Youtube
               </span>
             </a>
             <div className="relative">

@@ -1,11 +1,15 @@
-import { ProjectCardData } from "./interface/ProjectDataInterface";
 import {
-  GitCommitIcon,
-  RepoIcon,
-  LinkIcon,
-  ImageIcon,
-} from "@primer/octicons-react";
-import { Notion, Youtube, Velog } from "@icons-pack/react-simple-icons/dist";
+  ProjectCardData,
+  ProjectCardLinkData,
+} from "./interface/ProjectDataInterface";
+import { GitCommitIcon, LinkIcon, ImageIcon } from "@primer/octicons-react";
+import {
+  Notion,
+  Youtube,
+  Itchdotio,
+  Github,
+  Npm,
+} from "@icons-pack/react-simple-icons/dist";
 import { Tag, CustomTag } from "./Tag";
 import Link from "next/link";
 
@@ -14,52 +18,65 @@ interface ProjectCardProp {
   lastCommit: Date;
 }
 
-function LinkTags({ data }) {
+interface LinkTagsProp {
+  data: ProjectCardData;
+}
+
+function LinkTags({ data }: LinkTagsProp) {
   return (
     <>
-      {data.repo && (
+      {data.link.repo && (
         <Link
-          href={data.repo}
+          href={data.link.repo}
           target="_blank"
           className="rounded-full border border-transparent hover:border-layer-100 transition"
         >
-          <CustomTag Icon={RepoIcon} title="Github" color="#393939" />
+          <CustomTag Icon={Github} title="Github" color="#393939" />
         </Link>
       )}
-      {data.notion && (
+      {data.link.notion && (
         <Link
-          href={data.notion}
+          href={data.link.notion}
           target="_blank"
           className="rounded-full border border-transparent hover:border-layer-100 transition"
         >
           <CustomTag Icon={Notion} title="Notion" color="#393939" />
         </Link>
       )}
-      {data.link && (
+      {data.link.link && (
         <Link
-          href={data.link}
+          href={data.link.link}
           target="_blank"
           className="rounded-full border border-transparent hover:border-layer-100 transition"
         >
           <CustomTag Icon={LinkIcon} title="Link" color="#393939" />
         </Link>
       )}
-      {data.youtube && (
+      {data.link.youtube && (
         <Link
-          href={data.youtube}
+          href={data.link.youtube}
           target="_blank"
           className="rounded-full border border-transparent hover:border-layer-100 transition"
         >
           <CustomTag Icon={Youtube} title="Youtube" color="#393939" />
         </Link>
       )}
-      {data.velog && (
+      {data.link.itchio && (
         <Link
-          href={data.velog}
+          href={data.link.itchio}
           target="_blank"
           className="rounded-full border border-transparent hover:border-layer-100 transition"
         >
-          <CustomTag Icon={Velog} title="Velog" color="#393939" />
+          <CustomTag Icon={Itchdotio} title="itch.io" color="#393939" />
+        </Link>
+      )}
+      {data.link.npm && (
+        <Link
+          href={data.link.npm}
+          target="_blank"
+          className="rounded-full border border-transparent hover:border-layer-100 transition"
+        >
+          <CustomTag Icon={Npm} title="npm" color="#393939" />
         </Link>
       )}
     </>

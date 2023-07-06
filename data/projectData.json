@@ -9,18 +9,24 @@
         "imgSrc": "/imgs/projectCardImage/RoadPipe.png",
         "description": [
           "Connect roads to get car to destination",
-          "Develop with Unity Engine"
+          "Develop with Unity Engine, Released at itch.io"
         ],
         "tags": ["Unity"],
         "screenshots": [],
-        "repo": "https://github.com/W298/roadPipe",
-        "youtube": "https://www.youtube.com/watch?v=83Qui5M17mQ"
+        "link": {
+          "repo": "https://github.com/W298/roadPipe",
+          "youtube": "https://www.youtube.com/watch?v=83Qui5M17mQ",
+          "itchio": "https://w298.itch.io/roadpipe"
+        }
       },
       {
         "title": "Robot! Escape!",
         "released": true,
         "imgSrc": "/imgs/projectCardImage/robotEscape.png",
-        "description": ["Top-Down Shooter", "Develop with Unity Engine"],
+        "description": [
+          "Top-Down Shooter Action Game",
+          "Develop with Unity Engine"
+        ],
         "tags": ["Unity"],
         "screenshots": [
           "/imgs/robotEscape/Combat.png",
@@ -30,9 +36,10 @@
           "/imgs/robotEscape/Cracking.png",
           "/imgs/robotEscape/Exit.png"
         ],
-        "repo": "https://github.com/W298/RobotEscape",
-        "youtube": "https://www.youtube.com/watch?v=1OnYDUsy9KU",
-        "velog": "https://velog.io/@lutca1320/series/DEVLOG-Robot-Escape"
+        "link": {
+          "repo": "https://github.com/W298/RobotEscape",
+          "youtube": "https://www.youtube.com/watch?v=1OnYDUsy9KU"
+        }
       },
       {
         "title": "REVERS:ER",
@@ -56,8 +63,10 @@
           "/imgs/reverser/Time Reverse Ability.png",
           "/imgs/reverser/Puzzle.png"
         ],
-        "repo": "https://gitlab.com/lutca1320/project_reverser",
-        "youtube": "https://www.youtube.com/playlist?list=PLdycbYds1b96VPbRI6ptZ8Er79tXRvZ02"
+        "link": {
+          "repo": "https://gitlab.com/lutca1320/project_reverser",
+          "youtube": "https://www.youtube.com/playlist?list=PLdycbYds1b96VPbRI6ptZ8Er79tXRvZ02"
+        }
       },
       {
         "title": "Pixel Reversi",
@@ -69,8 +78,10 @@
         ],
         "tags": ["Unity", "WebGL"],
         "screenshots": [],
-        "repo": "https://github.com/w298/Pixel-Reversi",
-        "link": "https://pixel-reversi.vercel.app/"
+        "link": {
+          "repo": "https://github.com/w298/Pixel-Reversi",
+          "link": "https://pixel-reversi.vercel.app/"
+        }
       },
       {
         "title": "Intersection",
@@ -82,9 +93,10 @@
         ],
         "tags": ["Unity", "Blender"],
         "screenshots": [],
-        "repo": "https://github.com/W298/Intersection",
-        "notion": "https://www.notion.so/rukasp/Project-Intersection-b17815fa8fb54fafb60bf39df80ccb74",
-        "youtube": "https://www.youtube.com/playlist?list=PLdycbYds1b97ynOJr9K5cDC47CYg07Jee"
+        "link": {
+          "repo": "https://github.com/W298/Intersection",
+          "youtube": "https://www.youtube.com/playlist?list=PLdycbYds1b97ynOJr9K5cDC47CYg07Jee"
+        }
       },
       {
         "title": "Together",
@@ -102,9 +114,10 @@
           "/imgs/together/Hall.png",
           "/imgs/together/Running.png"
         ],
-        "repo": "https://github.com/W298/Together",
-        "notion": "https://www.notion.so/rukasp/Project-Together-ecc53d8874ed4d47948afb8b53c7d10e",
-        "youtube": "https://youtu.be/ICpmHzlpMfs"
+        "link": {
+          "repo": "https://github.com/W298/Together",
+          "youtube": "https://youtu.be/ICpmHzlpMfs"
+        }
       }
     ]
   },
@@ -121,8 +134,10 @@
         ],
         "tags": ["Unity"],
         "screenshots": [],
-        "repo": "https://github.com/W298/FindingYounghee",
-        "youtube": "https://youtu.be/cWrT1XXu0JM"
+        "link": {
+          "repo": "https://github.com/W298/FindingYounghee",
+          "youtube": "https://youtu.be/cWrT1XXu0JM"
+        }
       },
       {
         "title": "GVDB-Fluid-Unreal",
@@ -134,8 +149,10 @@
         ],
         "tags": ["Unreal"],
         "screenshots": [],
-        "repo": "https://github.com/W298/gvdb-fluid-unreal",
-        "youtube": "https://www.youtube.com/watch?v=b3hXHdFV3zE"
+        "link": {
+          "repo": "https://github.com/W298/gvdb-fluid-unreal",
+          "youtube": "https://www.youtube.com/watch?v=b3hXHdFV3zE"
+        }
       }
     ]
   },
@@ -151,8 +168,10 @@
         ],
         "tags": ["React", "Typescript", "NPM"],
         "screenshots": [],
-        "repo": "https://github.com/W298/react-scroll-ts",
-        "link": "https://www.npmjs.com/package/react-scroll-ts"
+        "link": {
+          "repo": "https://github.com/W298/react-scroll-ts",
+          "npm": "https://www.npmjs.com/package/react-scroll-ts"
+        }
       },
       {
         "title": "Uma-Friend",
@@ -163,8 +182,10 @@
         ],
         "tags": ["React", "Redux", "Nextjs", "Firebase", "Nodejs"],
         "screenshots": [],
-        "repo": "https://github.com/W298/uma-friend-nextjs",
-        "link": "https://umafriend.vercel.app"
+        "link": {
+          "repo": "https://github.com/W298/uma-friend-nextjs",
+          "link": "https://umafriend.vercel.app"
+        }
       }
     ]
   },
@@ -181,7 +202,9 @@
         ],
         "tags": ["Win"],
         "screenshots": [],
-        "repo": "https://github.com/W298/image-compression"
+        "link": {
+          "repo": "https://github.com/W298/image-compression"
+        }
       }
     ]
   }
