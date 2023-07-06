@@ -144,6 +144,7 @@
         "title": "GVDB-Fluid-Unreal",
         "pinned": true,
         "imgSrc": "/imgs/projectCardImage/GVDB_Fluid_Unreal.png",
+        "previewSrc": "/imgs/projectCardPreviewImage/GVDB_Fluid_Unreal.webp",
         "description": [
           "NVDIA GVDB Library + Fluid Simulation",
           "Implemented to Unreal Engine 5"
