@@ -115,7 +115,16 @@ export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
     >
       <div className="h-32 overflow-hidden relative">
         <img
-          src={isMouseHover && data.previewSrc ? data.previewSrc : data.imgSrc}
+          src={data.imgSrc}
+          className={`object-cover min-h-full rounded-t-md transition duration-150 ${
+            isMouseRealHover != isMouseHover && data.previewSrc
+              ? "blur-[2px]"
+              : ""
+          } ${isMouseHover && data.previewSrc ? "hidden" : ""}`}
+          alt={data.title}
+        />
+        <img
+          src={data.previewSrc}
           className={`object-cover min-h-full rounded-t-md transition duration-150 ${
             isMouseRealHover != isMouseHover && data.previewSrc
               ? "blur-[2px]"
