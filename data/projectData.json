@@ -90,6 +90,7 @@
         "title": "Intersection",
         "released": false,
         "imgSrc": "/imgs/projectCardImage/intersection.png",
+        "previewSrc": "/imgs/projectCardPreviewImage/Intersection.webp",
         "description": [
           "Traffic Management Simulation Game",
           "Develop with Unity Engine"
