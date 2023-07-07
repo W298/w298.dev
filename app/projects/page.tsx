@@ -66,7 +66,17 @@ export default async function Page() {
               <div className="my-4 bg-layer-200 w-full h-[1px]"></div>
             )}
             <div className="flex flex-col gap-5">
-              <div className="text-xl font-bold">{categoryTitle}</div>
+              <div className="flex flex-row justify-between align-middle">
+                <div className="text-xl font-bold">{categoryTitle}</div>
+                <div
+                  id="tooltip-default"
+                  role="tooltip"
+                  className="px-3 py-1 text-xs text-text-secondary rounded-lg tooltip bg-layer-300"
+                >
+                  Hover to Preview
+                  <div className="tooltip-arrow bg-layer-100"></div>
+                </div>
+              </div>
               {projectCardList.every(({ released }) => released != null) &&
                 projectCardList.some(({ released }) => released) && (
                   <>
@@ -74,9 +84,10 @@ export default async function Page() {
                     <div className="grid max-[1000px]:grid-cols-1 min-[1000px]:grid-cols-2 gap-8">
                       {projectCardList
                         .filter(({ released }) => released)
-                        .map((projectCardData) => {
+                        .map((projectCardData, i) => {
                           return (
                             <ProjectCard
+                              key={projectCardData.title}
                               data={projectCardData}
                               lastCommit={lastCommitData[projectCardData.title]}
                             />
