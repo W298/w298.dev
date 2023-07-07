@@ -106,6 +106,7 @@
         "title": "Together",
         "released": false,
         "imgSrc": "/imgs/projectCardImage/together.png",
+        "previewSrc": "/imgs/projectCardPreviewImage/Together.webp",
         "description": [
           "First Person Horror Game with UE4",
           "You have to escape from soviet building"
