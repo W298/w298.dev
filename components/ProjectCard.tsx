@@ -8,6 +8,7 @@ import {
   Itchdotio,
   Github,
   Npm,
+  Steam,
 } from "@icons-pack/react-simple-icons/dist";
 import { Tag, CustomTag } from "./Tag";
 import Link from "next/link";
@@ -26,6 +27,15 @@ interface LinkTagsProp {
 function LinkTags({ data }: LinkTagsProp) {
   return (
     <>
+      {data.link.steam && (
+        <Link
+          href={data.link.steam}
+          target="_blank"
+          className="rounded-full border border-transparent hover:border-layer-100 transition"
+        >
+          <CustomTag Icon={Steam} title="Steam" color="#393939" />
+        </Link>
+      )}
       {data.link.repo && (
         <Link
           href={data.link.repo}

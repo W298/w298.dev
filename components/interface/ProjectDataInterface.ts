@@ -11,6 +11,7 @@ export interface ProjectCardLinkData {
   velog: string | null;
   itchio: string | null;
   npm: string | null;
+  steam: string | null;
 }
 
 export interface ProjectCardData {
