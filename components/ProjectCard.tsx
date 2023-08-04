@@ -15,6 +15,7 @@ import { Tag, CustomTag } from "./Tag";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { debounce } from "debounce";
+import Image from "next/image";
 
 interface ProjectCardProp {
   data: ProjectCardData;
@@ -116,11 +117,6 @@ export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
     enterEvent.flush();
   }, 300);
 
-  useEffect(() => {
-    const image = new Image();
-    image.src = data.previewSrc;
-  }, []);
-
   return (
     <div
       className="@container min-w-min rounded-md bg-layer-350 border border-layer-200 hover:border-layer-100 hover:scale-[103%] transition"
@@ -139,9 +135,28 @@ export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
       }}
     >
       <div className="h-32 overflow-hidden relative">
-        <img
-          src={isMouseHover && data.previewSrc ? data.previewSrc : data.imgSrc}
-          className={`object-cover min-h-full rounded-t-md transition duration-150 ${
+        <Image
+          src={data.previewSrc ? data.previewSrc : data.imgSrc}
+          loading="lazy"
+          width={510}
+          height={227}
+          className={`${
+            isMouseHover ? "" : "hidden"
+          } object-cover min-h-full rounded-t-md transition duration-150 ${
+            isMouseRealHover != isMouseHover && data.previewSrc
+              ? "blur-[2px]"
+              : ""
+          }`}
+          alt={data.title}
+        />
+        <Image
+          src={data.imgSrc}
+          loading="lazy"
+          width={510}
+          height={227}
+          className={`${
+            isMouseHover ? "hidden" : ""
+          } object-cover min-h-full rounded-t-md transition duration-150 ${
             isMouseRealHover != isMouseHover && data.previewSrc
               ? "blur-[2px]"
               : ""
@@ -162,14 +177,21 @@ export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
           <div className="flex flex-col gap-2">
             <div className="font-extrabold text-2xl">{data.title}</div>
             <div>
-              {data.description.map((d) => {
-                return <div className="font-light text-sm">{d}</div>;
+              {data.description.map((d, idx) => {
+                return (
+                  <div
+                    key={`${data.title}-description-${idx}`}
+                    className="font-light text-sm"
+                  >
+                    {d}
+                  </div>
+                );
               })}
             </div>
           </div>
           <div className="max-w-[35%] flex flex-row flex-wrap justify-end content-start mt-1 gap-2">
-            {data.tags.map((title) => {
-              return <Tag title={title} />;
+            {data.tags.map((title, idx) => {
+              return <Tag key={`${data.title}-tag-${idx}`} title={title} />;
             })}
           </div>
         </div>
@@ -191,8 +213,8 @@ export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
       </div>
       <div className="@[450px]:hidden p-5 flex flex-col gap-3">
         <div className="flex flex-row flex-wrap gap-2">
-          {data.tags.map((title) => {
-            return <Tag title={title} />;
+          {data.tags.map((title, idx) => {
+            return <Tag key={`${data.title}-tag-${idx}`} title={title} />;
           })}
         </div>
         <div className="flex flex-col gap-2">

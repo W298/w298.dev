@@ -27,7 +27,7 @@ export default function SimpleProjectCard({ data }: SimpleProjectCardProp) {
         <div className="flex flex-row flex-wrap gap-2">
           {data.tags.map((tag, idx) => {
             if (idx > 1) return;
-            return <Tag title={tag} />;
+            return <Tag key={`${targetName}-pinned-${idx}`} title={tag} />;
           })}
         </div>
       </div>
