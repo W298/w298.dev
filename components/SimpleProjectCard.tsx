@@ -25,7 +25,10 @@ export default function SimpleProjectCard({ data }: SimpleProjectCardProp) {
       <div className="flex-1 flex flex-row px-4 py-[0.3rem] justify-between align-middle">
         <div className="font-bold text-md">{data.title}</div>
         <div className="flex flex-row flex-wrap gap-2">
-          <Tag title={data.tags[0]} />
+          {data.tags.map((tag, idx) => {
+            if (idx > 1) return;
+            return <Tag title={tag} />;
+          })}
         </div>
       </div>
     </ReactScroll>

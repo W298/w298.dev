@@ -9,13 +9,12 @@
         "imgSrc": "/imgs/projectCardImage/RoadPipe.png",
         "previewSrc": "/imgs/projectCardPreviewImage/RoadPipe.webp",
         "description": [
-          "Connect roads to get car to destination",
-          "Develop with Unity Engine, Released at itch.io"
+          "Connect roads to get car to destination!",
+          "Develop with Unity Engine, Released at Steam"
         ],
-        "tags": ["Unity"],
+        "tags": ["Unity", "Steam"],
         "screenshots": [],
         "link": {
-          "repo": "https://github.com/W298/roadPipe",
           "youtube": "https://www.youtube.com/watch?v=83Qui5M17mQ",
           "steam": "https://store.steampowered.com/app/2519260/RoadPipe"
         }
@@ -66,7 +65,7 @@
           "/imgs/reverser/Puzzle.png"
         ],
         "link": {
-          "repo": "https://gitlab.com/lutca1320/project_reverser",
+          "lab": "https://gitlab.com/lutca1320/project_reverser",
           "youtube": "https://www.youtube.com/playlist?list=PLdycbYds1b96VPbRI6ptZ8Er79tXRvZ02"
         }
       },

@@ -32,10 +32,12 @@ export default async function Page() {
   const lastCommitData = await getLastCommit(
     projectData
       .map(({ projectCardList }) => {
-        return projectCardList.map(({ title, link }) => {
-          let last = link.repo.lastIndexOf("/");
-          return { title: title, repoName: link.repo.substring(last + 1) };
-        });
+        return projectCardList
+          .filter(({ link }) => link.repo)
+          .map(({ title, link }) => {
+            let last = link.repo.lastIndexOf("/");
+            return { title: title, repoName: link.repo.substring(last + 1) };
+          });
       })
       .flat()
   );
@@ -68,14 +70,6 @@ export default async function Page() {
             <div className="flex flex-col gap-5">
               <div className="flex flex-row justify-between align-middle">
                 <div className="text-xl font-bold">{categoryTitle}</div>
-                <div
-                  id="tooltip-default"
-                  role="tooltip"
-                  className="px-3 py-1 text-xs text-text-secondary rounded-lg tooltip bg-layer-300"
-                >
-                  Hover to Preview
-                  <div className="tooltip-arrow bg-layer-100"></div>
-                </div>
               </div>
               {projectCardList.every(({ released }) => released != null) &&
                 projectCardList.some(({ released }) => released) && (

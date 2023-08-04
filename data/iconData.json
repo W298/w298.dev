@@ -62,5 +62,9 @@
   "Win": {
     "src": "https://cdn.simpleicons.org/windowsterminal/white",
     "color": "#4D4D4D"
+  },
+  "Steam": {
+    "src": "https://cdn.simpleicons.org/steam/white",
+    "color": "#1e3053"
   }
 }

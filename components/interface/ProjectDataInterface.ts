@@ -5,13 +5,14 @@ export interface CategoryData {
 
 export interface ProjectCardLinkData {
   repo: string | null;
+  lab: string | null;
+  steam: string | null;
   notion: string | null;
   link: string | null;
   youtube: string | null;
   velog: string | null;
   itchio: string | null;
   npm: string | null;
-  steam: string | null;
 }
 
 export interface ProjectCardData {
