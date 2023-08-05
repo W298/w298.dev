@@ -137,7 +137,7 @@ export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
       <div className="h-32 overflow-hidden relative">
         <Image
           src={data.previewSrc ? data.previewSrc : data.imgSrc}
-          loading="lazy"
+          loading="eager"
           width={510}
           height={227}
           className={`${
@@ -151,7 +151,7 @@ export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
         />
         <Image
           src={data.imgSrc}
-          loading="lazy"
+          loading="eager"
           width={510}
           height={227}
           className={`${

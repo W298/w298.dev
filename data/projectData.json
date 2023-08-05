@@ -15,7 +15,7 @@
         "tags": ["Unity", "Steam"],
         "screenshots": [],
         "link": {
-          "youtube": "https://www.youtube.com/watch?v=83Qui5M17mQ",
+          "youtube": "https://youtu.be/q3bGJlLjbdQ",
           "steam": "https://store.steampowered.com/app/2519260/RoadPipe"
         }
       },
@@ -163,7 +163,7 @@
     ]
   },
   {
-    "categoryTitle": "Web Developement",
+    "categoryTitle": "Web Development",
     "projectCardList": [
       {
         "title": "react-scroll-ts",

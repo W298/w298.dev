@@ -44,7 +44,7 @@ export default async function Page() {
 
   return (
     <div className="flex flex-col gap-14 pb-[85vh]">
-      <div className="@container flex flex-col gap-5">
+      <div className="@container flex flex-col gap-5 bg-layer-400 p-5 rounded-md">
         <div className="flex flex-row gap-2">
           <div className="">
             <PinIcon />
