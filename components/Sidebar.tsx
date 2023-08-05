@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import _pageData from "../data/pageData.json";
@@ -20,7 +21,9 @@ export default function Sidebar({ children }: { children?: React.ReactNode }) {
   return (
     <div className="fixed top-[0.9rem] pt-12 w-80 h-full bg-layer-350 drop-shadow max-[700px]:hidden">
       <div className="text-xl font-semibold pb-4 pt-8 px-6">
-        {pageData.find(({ dir }) => dir == pathname).title}
+        <Link href={pathname} className="flex flex-1">
+          {pageData.find(({ dir }) => dir == pathname).title}
+        </Link>
       </div>
       {children}
     </div>
