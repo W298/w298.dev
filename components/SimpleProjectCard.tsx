@@ -35,8 +35,9 @@ export default function SimpleProjectCard({ data }: SimpleProjectCardProp) {
       <Image
         src={data.imgSrc}
         loading="lazy"
-        width={510}
-        height={227}
+        priority={false}
+        width={326}
+        height={32}
         className="object-cover h-8 rounded-b-md top-5 object-[center_8%]"
         alt={data.title}
       />

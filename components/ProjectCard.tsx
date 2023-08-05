@@ -138,6 +138,7 @@ export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
         <Image
           src={data.previewSrc ? data.previewSrc : data.imgSrc}
           loading="eager"
+          priority={true}
           width={510}
           height={227}
           className={`${
@@ -152,6 +153,7 @@ export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
         <Image
           src={data.imgSrc}
           loading="eager"
+          priority={true}
           width={510}
           height={227}
           className={`${
@@ -214,14 +216,21 @@ export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
       <div className="@[450px]:hidden p-5 flex flex-col gap-3">
         <div className="flex flex-row flex-wrap gap-2">
           {data.tags.map((title, idx) => {
-            return <Tag key={`${data.title}-tag-${idx}`} title={title} />;
+            return <Tag key={`${data.title}-tag-small-${idx}`} title={title} />;
           })}
         </div>
         <div className="flex flex-col gap-2">
           <div className="font-extrabold text-2xl">{data.title}</div>
           <div>
-            {data.description.map((d) => {
-              return <div className="font-light text-sm">{d}</div>;
+            {data.description.map((d, idx) => {
+              return (
+                <div
+                  key={`${data.title}-description-small-${idx}`}
+                  className="font-light text-sm"
+                >
+                  {d}
+                </div>
+              );
             })}
           </div>
         </div>
