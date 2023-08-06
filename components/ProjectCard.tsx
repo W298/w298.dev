@@ -20,6 +20,7 @@ import Image from "next/image";
 interface ProjectCardProp {
   data: ProjectCardData;
   lastCommit: Date;
+  blurImg: string;
 }
 
 interface LinkTagsProp {
@@ -105,7 +106,11 @@ function LinkTags({ data }: LinkTagsProp) {
   );
 }
 
-export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
+export default function ProjectCard({
+  data,
+  lastCommit,
+  blurImg,
+}: ProjectCardProp) {
   const [isMouseHover, setMouseHover] = useState(false);
   const [isMouseRealHover, setMouseRealHover] = useState(false);
   const enterEvent = debounce(() => {
@@ -138,6 +143,8 @@ export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
         <Image
           src={data.previewSrc ? data.previewSrc : data.imgSrc}
           loading="eager"
+          placeholder="blur"
+          blurDataURL={blurImg}
           priority={true}
           width={510}
           height={227}
@@ -153,6 +160,8 @@ export default function ProjectCard({ data, lastCommit }: ProjectCardProp) {
         <Image
           src={data.imgSrc}
           loading="eager"
+          placeholder="blur"
+          blurDataURL={blurImg}
           priority={true}
           width={510}
           height={227}

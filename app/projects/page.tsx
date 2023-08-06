@@ -1,8 +1,13 @@
-import { CategoryData } from "../../components/interface/ProjectDataInterface";
+import {
+  CategoryData,
+  ProjectCardData,
+} from "../../components/interface/ProjectDataInterface";
 import projectDataRaw from "../../data/projectData.json";
 import ProjectCard from "../../components/ProjectCard";
 import SimpleProjectCard from "../../components/SimpleProjectCard";
 import { PinIcon } from "@primer/octicons-react";
+import { getPlaiceholder } from "plaiceholder";
+import fs from "node:fs/promises";
 
 async function getLastCommit(mapped) {
   const routine = async (repoName) => {
@@ -27,6 +32,22 @@ async function getLastCommit(mapped) {
   return result;
 }
 
+async function getProjectCardBlurImg(projectCardDataList: ProjectCardData[]) {
+  const routine = async (imgSrc) => {
+    const file = await fs.readFile("public" + imgSrc);
+    const { base64 } = await getPlaiceholder(file);
+    return base64;
+  };
+
+  const result = {};
+  for await (const data of projectCardDataList) {
+    const blur = await routine(data.imgSrc);
+    result[data.title] = blur;
+  }
+
+  return result;
+}
+
 export default async function Page() {
   const projectData = projectDataRaw as CategoryData[];
   const lastCommitData = await getLastCommit(
@@ -38,6 +59,13 @@ export default async function Page() {
             let last = link.repo.lastIndexOf("/");
             return { title: title, repoName: link.repo.substring(last + 1) };
           });
+      })
+      .flat()
+  );
+  const projectCardBlurImg = await getProjectCardBlurImg(
+    projectData
+      .map(({ projectCardList }) => {
+        return projectCardList;
       })
       .flat()
   );
@@ -56,7 +84,12 @@ export default async function Page() {
             return projectCardList
               .filter((c) => c.pinned)
               .map((c) => {
-                return <SimpleProjectCard data={c} />;
+                return (
+                  <SimpleProjectCard
+                    data={c}
+                    blurImg={projectCardBlurImg[c.title]}
+                  />
+                );
               });
           })}
         </div>
@@ -84,6 +117,9 @@ export default async function Page() {
                               key={projectCardData.title}
                               data={projectCardData}
                               lastCommit={lastCommitData[projectCardData.title]}
+                              blurImg={
+                                projectCardBlurImg[projectCardData.title]
+                              }
                             />
                           );
                         })}
@@ -105,6 +141,7 @@ export default async function Page() {
                         key={projectCardData.title}
                         data={projectCardData}
                         lastCommit={lastCommitData[projectCardData.title]}
+                        blurImg={projectCardBlurImg[projectCardData.title]}
                       />
                     );
                   })}

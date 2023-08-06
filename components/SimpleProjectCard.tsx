@@ -7,9 +7,13 @@ import { Tag } from "./Tag";
 
 interface SimpleProjectCardProp {
   data: ProjectCardData;
+  blurImg: string;
 }
 
-export default function SimpleProjectCard({ data }: SimpleProjectCardProp) {
+export default function SimpleProjectCard({
+  data,
+  blurImg,
+}: SimpleProjectCardProp) {
   const targetName = `projectCard-${data.title
     .replaceAll(" ", "")
     .replaceAll("!", "")
@@ -35,6 +39,8 @@ export default function SimpleProjectCard({ data }: SimpleProjectCardProp) {
       <Image
         src={data.imgSrc}
         loading="lazy"
+        placeholder="blur"
+        blurDataURL={blurImg}
         priority={false}
         width={326}
         height={32}
