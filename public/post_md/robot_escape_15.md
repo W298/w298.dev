@@ -1,9 +1,10 @@
 HEADER START
 
-Robot! Escape! DEVLOG #15
+#15. Aim Accuracy
 #15. Aim Accuracy
 2022-11-11
-Robot-Escape-DEVLOG,Unity
+Unity
+Robot-Escape
 
 HEADER END
 

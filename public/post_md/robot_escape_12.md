@@ -1,9 +1,10 @@
 HEADER START
 
-Robot! Escape! DEVLOG #12
+#12. AI Behavior Tree (2)
 #12. AI Behavior Tree (2)
 2022-11-08
-Robot-Escape-DEVLOG,Unity
+Unity
+Robot-Escape
 
 HEADER END
 

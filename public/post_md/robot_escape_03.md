@@ -1,9 +1,10 @@
 HEADER START
 
-Robot! Escape! DEVLOG #03
+#03. Animation
 #03. Animation
 2022-10-18
-Robot-Escape-DEVLOG,Unity
+Unity
+Robot-Escape
 
 HEADER END
 

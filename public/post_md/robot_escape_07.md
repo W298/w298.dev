@@ -1,9 +1,10 @@
 HEADER START
 
-Robot! Escape! DEVLOG #07
+#07. Ammo & Reload
 #07. Ammo & Reload
 2022-10-24
-Robot-Escape-DEVLOG,Unity
+Unity
+Robot-Escape
 
 HEADER END
 

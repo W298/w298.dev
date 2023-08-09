@@ -29,6 +29,7 @@ async function getPostStructure() {
           title: header[0],
           date: header[2],
           tags: header[3],
+          series: header[4] ?? null,
           postId,
         });
       } else {
@@ -37,6 +38,7 @@ async function getPostStructure() {
           title: header[0],
           date: header[2],
           tags: header[3],
+          series: header[4] ?? null,
           postId,
         });
       }

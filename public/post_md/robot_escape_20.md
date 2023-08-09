@@ -1,9 +1,10 @@
 HEADER START
 
-Robot! Escape! DEVLOG #20
+#20. Outline
 #20. Outline
 2022-11-17
-Robot-Escape-DEVLOG,Unity
+Unity
+Robot-Escape
 
 HEADER END
 

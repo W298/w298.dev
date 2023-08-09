@@ -1,9 +1,10 @@
 HEADER START
 
-Robot! Escape! DEVLOG #16
+#16. Player UI
 #16. Player UI
 2022-11-12
-Robot-Escape-DEVLOG,Unity
+Unity
+Robot-Escape
 
 HEADER END
 

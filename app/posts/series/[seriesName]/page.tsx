@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import { PostRow, DatePost } from "../../../../components/PostRow";
 
-async function getPostList(searchTagName) {
+async function getPostList(searchSeriesName) {
   const folder = "post_md";
   const dir = path.resolve("./public", folder);
   let postList = fs.readdirSync(dir).map((fileName) => {
@@ -18,12 +18,7 @@ async function getPostList(searchTagName) {
     const header = rawData.slice(startRow + 1, endRow);
     const postId = fileName.split(".")[0];
 
-    if (
-      !header[3]
-        .split(",")
-        .map((tag) => tag.toLowerCase())
-        .includes(searchTagName)
-    )
+    if (header[4] == null || header[4].toLowerCase() != searchSeriesName)
       return {};
     return { header, postId };
   });
@@ -40,7 +35,7 @@ async function getPostList(searchTagName) {
 }
 
 export default async function Page({ params }) {
-  const postList = await getPostList(params.tagName);
+  const postList = await getPostList(params.seriesName);
 
   const dateMap: DatePost = {};
   postList.forEach(({ postId, header }) => {

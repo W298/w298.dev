@@ -1,9 +1,10 @@
 HEADER START
 
-Robot! Escape! DEVLOG #05
+#05. Gun System
 #05. Gun System
 2022-10-20
-Robot-Escape-DEVLOG,Unity
+Unity
+Robot-Escape
 
 HEADER END
 

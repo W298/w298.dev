@@ -37,8 +37,7 @@ export default function Navbar() {
                   <Link
                     key={`Link-${title}`}
                     className={`text-sm ${
-                      dir == path.parse(pathname).dir ||
-                      dir == "/" + path.parse(pathname).name
+                      pathname.includes(dir)
                         ? "bg-layer-200 font-bold"
                         : "bg-layer-300"
                     } w-[5.5rem] h-[1.7rem] flex justify-center items-center rounded-sm border border-transparent hover:border-layer-100 cursor-pointer transition`}

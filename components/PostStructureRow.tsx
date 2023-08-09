@@ -1,12 +1,14 @@
 import { ChevronDownIcon } from "@primer/octicons-react";
 import { usePathname } from "next/navigation";
 import PostStructureLink from "./PostStructureLink";
-import path from "path";
+import path, { posix } from "path";
+import PostStructureSeries from "./PostStructureSeries";
 
 interface PostData {
   title: string;
   date: string;
   tags: string;
+  series: string | null;
   postId: string;
 }
 
@@ -24,10 +26,25 @@ export default function PostStructureRow({
   setExpandedTag,
 }: PostStructureRowProp) {
   const pathname = usePathname();
+
+  const seriesWrap = { "no-series": [] };
+  list.forEach((data) => {
+    if (data.series == null) {
+      seriesWrap["no-series"].push(data);
+    } else {
+      if (data.series in seriesWrap) {
+        seriesWrap[data.series].push(data);
+      } else {
+        seriesWrap[data.series] = [];
+        seriesWrap[data.series].push(data);
+      }
+    }
+  });
+
   return (
     <div>
       <div
-        className="flex flex-row items-center justify-between py-[0.4rem] px-6 cursor-pointer hover:bg-layer-300 transition"
+        className="flex flex-row items-center justify-between py-[0.4rem] px-6 pl-10 cursor-pointer hover:bg-layer-300 transition"
         onClick={() => {
           setExpandedTag(expandedTag == tag ? "" : tag);
         }}
@@ -39,7 +56,24 @@ export default function PostStructureRow({
           className={`transition ${expandedTag == tag ? "rotate-180" : ""}`}
         />
       </div>
-      {list
+      {Object.entries(seriesWrap)
+        .filter(([series]) => series != "no-series")
+        .map(([series, data]) => {
+          return (
+            <PostStructureSeries
+              key={`post-sidebar-series-${series}`}
+              seriesName={series}
+              expanded={expandedTag == tag}
+              active={
+                (path.parse(pathname).dir == "/posts/series" &&
+                  path.parse(pathname).name == series.toLowerCase()) ||
+                (path.parse(pathname).dir == "/posts" &&
+                  data.map((d) => d.postId).includes(path.parse(pathname).name))
+              }
+            />
+          );
+        })}
+      {seriesWrap["no-series"]
         .sort(({ date: aDateStr }, { date: bDateStr }) => {
           let a = new Date(aDateStr);
           let b = new Date(bDateStr);

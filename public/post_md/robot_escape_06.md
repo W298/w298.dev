@@ -1,9 +1,10 @@
 HEADER START
 
-Robot! Escape! DEVLOG #06
+#06. Camera Shake
 #06. Camera Shake
 2022-10-22
-Robot-Escape-DEVLOG,Unity
+Unity
+Robot-Escape
 
 HEADER END
 

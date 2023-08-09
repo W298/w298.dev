@@ -1,9 +1,10 @@
 HEADER START
 
-Robot! Escape! DEVLOG #02
+#02. Input Handle & Follow Cam
 #02. Input Handle & Follow Cam
 2022-10-17
-Robot-Escape-DEVLOG,Unity
+Unity
+Robot-Escape
 
 HEADER END
 

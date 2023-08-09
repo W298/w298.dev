@@ -1,9 +1,10 @@
 HEADER START
 
-Robot! Escape! DEVLOG #08
+#08. Enemy AI Setup
 #08. Enemy AI Setup
 2022-10-25
-Robot-Escape-DEVLOG,Unity
+Unity
+Robot-Escape
 
 HEADER END
 

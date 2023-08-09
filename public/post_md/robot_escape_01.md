@@ -1,9 +1,10 @@
 HEADER START
 
-Robot! Escape! DEVLOG #01
+#01. Planning
 #01. Planning
 2022-10-16
-Robot-Escape-DEVLOG,Unity
+Unity
+Robot-Escape
 
 HEADER END
 
