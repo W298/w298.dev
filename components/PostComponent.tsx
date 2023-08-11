@@ -31,7 +31,7 @@ function CodeBlock({ language, inline, children }) {
 
 export function PostComponent({ children }) {
   return (
-    <div className="markdown-body">
+    <div className="markdown-body pb-[20vh]">
       <ReactMarkdown
         components={{
           code: ({ className, inline, children }) => (
