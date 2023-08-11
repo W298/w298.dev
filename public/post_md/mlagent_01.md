@@ -1,6 +1,6 @@
 HEADER START
 
-#01. With Obstacle Without Sensor (1)
+#01. Obstacle Avoid (1)
 Sensor 없이 Axis-Align 장애물을 피해 Goal Seeking 학습
 2023-08-09
 ML-Agent,Unity
@@ -8,7 +8,7 @@ RL-Goal-Seek
 
 HEADER END
 
-# With Obstacle Without Sensor (1)
+# Obstacle Avoid (1)
 
 먼저 `RayPerceptionSensor` 없이 아래 정보들을 제공하여 학습을 진행시켰다.
 
@@ -26,11 +26,11 @@ HEADER END
 
 ### First Try
 
-| Situation                       | Reward           |
-| ------------------------------- | ---------------- |
-| 밖으로 떨어지거나 장애물에 닿음 | -1, `EndEpisode` |
-| 타깃에 도달                     | +1               |
-| Living                          | 틱당 -0.001      |
+| Situation                       | Reward      | EndEpisode |
+| ------------------------------- | ----------- | ---------- |
+| 밖으로 떨어지거나 장애물에 닿음 | -1          | O          |
+| 타깃에 도달                     | +1          | O          |
+| Living                          | 틱당 -0.001 |            |
 
 ![600px](/imgs/post_imgs/mlagent_01/1.webp)
 
@@ -39,12 +39,12 @@ HEADER END
 
 ### Second Try
 
-| Situation              | Reward           |
-| ---------------------- | ---------------- |
-| 밖으로 떨어짐          | -5, `EndEpisode` |
-| 장애물에 닿아있는 동안 | 틱당 -0.005      |
-| 타깃에 도달            | +5               |
-| Living                 | 틱당 -0.001      |
+| Situation              | Reward      | EndEpisode |
+| ---------------------- | ----------- | ---------- |
+| 밖으로 떨어짐          | -5          | O          |
+| 타깃에 도달            | +5          | O          |
+| 장애물에 닿아있는 동안 | 틱당 -0.005 |            |
+| Living                 | 틱당 -0.001 |            |
 
 그래서 장애물에 닿아도 에피소드를 끝내지 않고, 닿아 있는 동안 (`OnCollisionStay`) 패널티를 주는 방식으로 변경했다.  
 또한 떨어질 때와, 타깃에 도달했을 때의 리워드를 각각 -5, +5 로 설정하여 떨어지지 않고 타깃에 도달할 더 강력한 의지를 부여했다.

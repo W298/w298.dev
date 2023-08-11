@@ -1,14 +1,14 @@
 HEADER START
 
-#02. With Obstacle Without Sensor (2)
+#02. Obstacle Avoid (2)
 Sensor 없이 약간 회전한 장애물을 피해 Goal Seeking 학습
-2023-08-09
+2023-08-10
 ML-Agent,Unity
 RL-Goal-Seek
 
 HEADER END
 
-# With Obstacle Without Sensor (2)
+# Obstacle Avoid (2)
 
 | `sensor.AddObservation`                        |
 | ---------------------------------------------- |
@@ -26,12 +26,12 @@ HEADER END
 
 ### First Try
 
-| Situation              | Reward           |
-| ---------------------- | ---------------- |
-| 밖으로 떨어짐          | -5, `EndEpisode` |
-| 장애물에 닿아있는 동안 | 틱당 -0.005      |
-| 타깃에 도달            | +5               |
-| Living                 | 틱당 -0.001      |
+| Situation              | Reward      | EndEpisode |
+| ---------------------- | ----------- | ---------- |
+| 밖으로 떨어짐          | -5          | O          |
+| 타깃에 도달            | +5          | O          |
+| 장애물에 닿아있는 동안 | 틱당 -0.005 |            |
+| Living                 | 틱당 -0.001 |            |
 
 일단 위와 동일한 Policy 로 진행하였다.
 
@@ -46,14 +46,27 @@ HEADER END
 ### Second Try
 
 ![400px](/imgs/post_imgs/mlagent_02/3.webp)
-![400px](/imgs/post_imgs/mlagent_02/4.png)
+
+```
+    reward_signals:
+      extrinsic:
+        gamma: 0.99
+        strength: 1.0
+      gail:
+          strength: 0.5
+          demo_path: Demos/RollerDemo.demo
+    behavioral_cloning:
+            strength: 0.5
+            demo_path: Demos/RollerDemo.demo
+```
 
 그래서 Imitiation Learning 을 적용해 보기로 했다.  
-유니티의 `Demonstration Recorder` 를 이용해 직접 조정하여 이상적인 Behavior 를 담은 데모를 위와 같이 찍었고, 이를 Hyperparameter 에 지정해 주었다.
+유니티의 `Demonstration Recorder` 를 이용해 직접 조정하여 이상적인 Behavior 를 담은 데모를 위와 같이 찍었고, 이를 Hyperparameter 에 지정했다.
 
 `gail` 과 `behavioral_cloning` 을 각각 strength 0.5 씩 지정하여 진행하였다.
 
 ![600px](/imgs/post_imgs/mlagent_02/5.webp)
+![600px](/imgs/post_imgs/mlagent_02/6.png)
 
 결과는 위처럼 실패다.
 
