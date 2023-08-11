@@ -12,7 +12,7 @@ export default function ProjectLayout({ children }) {
         <ProjectSidebar projectData={projectData} />
       </Sidebar>
       <div className="min-[700px]:ml-80 w-full">
-        <div className="m-10">{children}</div>
+        <div className="min-[1440px]:m-10 min-[700px]:m-8 m-5">{children}</div>
       </div>
     </div>
   );

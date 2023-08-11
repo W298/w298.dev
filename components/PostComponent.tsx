@@ -8,6 +8,7 @@ import remarkToc from "remark-toc";
 
 import "../styles/github-markdown.css";
 import "../styles/custom-syntax.css";
+import "../styles/github-markdown-mobile.css";
 
 function CodeBlock({ language, inline, children }) {
   return inline ? (
