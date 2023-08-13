@@ -10,6 +10,10 @@ HEADER END
 
 # Obstacle Avoid (1)
 
+## Axis-Align 장애물
+
+### Observation (First Try, Second Try)
+
 먼저 `RayPerceptionSensor` 없이 아래 정보들을 제공하여 학습을 진행시켰다.
 
 | `sensor.AddObservation`                        |
@@ -21,8 +25,6 @@ HEADER END
 | `obstacle.transform.localPosition`             |
 | `obstacle.transform.localScale`                |
 | `obstacle.transform.localRotation.eulerAngles` |
-
-## Axis-Align 장애물
 
 ### First Try
 

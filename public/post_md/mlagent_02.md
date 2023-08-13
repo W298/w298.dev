@@ -10,6 +10,10 @@ HEADER END
 
 # Obstacle Avoid (2)
 
+## 약간 회전한 장애물
+
+### Observation (First Try, Second Try)
+
 | `sensor.AddObservation`                        |
 | ---------------------------------------------- |
 | `target.localPosition`                         |
@@ -21,8 +25,6 @@ HEADER END
 | `obstacle.transform.localRotation.eulerAngles` |
 
 이전 포스트와 동일
-
-## 약간 회전한 장애물
 
 ### First Try
 

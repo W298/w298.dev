@@ -10,16 +10,22 @@ HEADER END
 
 # Obstacle Avoid with Sensor (1)
 
+## 간단한 장애물
+
+이전 Enviroment 와는 다르게 벽을 세워 떨어지지는 않으나, 타깃의 생성 위치를 전체 Area 로 넓혔다.
+
+![400px](/imgs/post_imgs/mlagent_03/5.png)
+
+또한 이번에는 `RayPerceptionSensor` 를 이용할 것이다. Roller 는 바라보는 방향이 없기 때문에 위처럼 각도를 180 으로 설정했다.
+
+### Observation (First Try, Second Try)
+
 | `sensor.AddObservation` |
 | ----------------------- |
 | `rigidbody.velocity.x`  |
 | `rigidbody.velocity.z`  |
 
 위 2개의 값과 센서에서 받은 정보를 바탕으로 간단한 장애물을 피하는 학습을 진행하였다.
-
-## 간단한 장애물
-
-이전 Enviroment 와는 다르게 벽을 세워 떨어지지는 않으나, 타깃의 생성 위치를 전체 Area 로 넓혔다.
 
 ### First Try
 
