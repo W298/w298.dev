@@ -46,7 +46,7 @@ export function PostComponent({ children }) {
             <Image
               src={src}
               alt={src}
-              loading="lazy"
+              loading="eager"
               quality={100}
               width={parseInt(alt)}
               height={parseInt(alt)}
