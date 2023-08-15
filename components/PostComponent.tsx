@@ -5,10 +5,12 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import remarkGfm from "remark-gfm";
 import remarkToc from "remark-toc";
+import rehypeRaw from "rehype-raw";
 
 import "../styles/github-markdown.css";
 import "../styles/custom-syntax.css";
 import "../styles/github-markdown-mobile.css";
+import Image from "next/image";
 
 function CodeBlock({ language, inline, children }) {
   return inline ? (
@@ -40,11 +42,20 @@ export function PostComponent({ children }) {
               {children}
             </CodeBlock>
           ),
-          img: ({ alt = "100%", src }) => (
-            <img src={src} width={alt} className="my-2 rounded" />
+          img: ({ alt = "600", src }) => (
+            <Image
+              src={src}
+              alt={src}
+              loading="lazy"
+              quality={100}
+              width={parseInt(alt)}
+              height={parseInt(alt)}
+              className="my-2 rounded"
+            />
           ),
         }}
         remarkPlugins={[remarkGfm, remarkToc]}
+        rehypePlugins={[rehypeRaw]}
         children={children}
       />
     </div>

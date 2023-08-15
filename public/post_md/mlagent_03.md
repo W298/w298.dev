@@ -1,24 +1,19 @@
 HEADER START
 
-#03. Obstacle Avoid with Sensor (1)
-Sensor 를 이용하여 간단한 장애물 피해 Goal Seeking 학습
+#03. Obstacle Avoid (Axis-Align, Sensor)
+Sensor 를 이용하여 Axis-Align 장애물 피해 Goal Seeking 학습
 2023-08-11
 ML-Agent,Unity
 RL-Goal-Seek
 
 HEADER END
 
-# Obstacle Avoid with Sensor (1)
+# Obstacle Avoid (Axis-Align, Sensor)
 
-## 간단한 장애물
+이전 Enviroment 와는 다르게 벽을 세워 떨어지지는 않으나, 타깃의 생성 위치를 전체 Area 로 넓혔다.  
+또한 이번에는 `RayPerceptionSensor` 를 이용할 것이다. Roller 는 바라보는 방향이 없기 때문에 센서 각도를 180 으로 설정했다.
 
-이전 Enviroment 와는 다르게 벽을 세워 떨어지지는 않으나, 타깃의 생성 위치를 전체 Area 로 넓혔다.
-
-![400px](/imgs/post_imgs/mlagent_03/5.png)
-
-또한 이번에는 `RayPerceptionSensor` 를 이용할 것이다. Roller 는 바라보는 방향이 없기 때문에 위처럼 각도를 180 으로 설정했다.
-
-### Observation (First Try, Second Try)
+## Observation (First Try, Second Try)
 
 | `sensor.AddObservation` |
 | ----------------------- |
@@ -27,9 +22,9 @@ HEADER END
 
 위 2개의 값과 센서에서 받은 정보를 바탕으로 간단한 장애물을 피하는 학습을 진행하였다.
 
-### First Try
+## First Try
 
-#### Policy
+### Policy
 
 | Situation              | Reward               | EndEpisode |
 | ---------------------- | -------------------- | ---------- |
@@ -37,7 +32,10 @@ HEADER END
 | 타깃에 도달            | +5                   | O          |
 | Living                 | 틱당 (-2 / MaxStep)  |            |
 
-#### Hyperparameter
+### Hyperparameter
+
+<details>
+<summary>접기/펼치기</summary>
 
 ```
 behaviors:
@@ -67,21 +65,26 @@ behaviors:
     summary_freq: 10000
 ```
 
-#### Result
+</details>
+
+### Result
 
 ![600px](/imgs/post_imgs/mlagent_03/2.webp)
-![600px](/imgs/post_imgs/mlagent_03/1.png)
+![800px](/imgs/post_imgs/mlagent_03/1.png)
 
 학습이 되긴 되었는데... 일단 Reward 가 특정 값에 수렴하지 않았고, 위에서 보는 것처럼 약간 돌아가는 느낌이 있었다.  
 그래서 Hyperparameter 를 조금 바꾸어 학습을 다시 진행해 보았다.
 
-### Second Try
+## Second Try
 
-#### Policy
+### Policy
 
 First Try 와 동일
 
-#### Hyperparameter
+### Hyperparameter
+
+<details>
+<summary>접기/펼치기</summary>
 
 ```
 behaviors:
@@ -111,11 +114,13 @@ behaviors:
     summary_freq: 10000
 ```
 
-조금씩 변경하긴 했으나, 핵심은 `batch_size` 와 `buffer_size` 값을 상당히 증가시켰다는 점이다.
+</details>
 
-#### Result
+조금씩 변경하긴 했으나, `batch_size` 와 `buffer_size` 값을 크게 증가시켰다.
+
+### Result
 
 ![600px](/imgs/post_imgs/mlagent_03/4.webp)
-![600px](/imgs/post_imgs/mlagent_03/3.png)
+![800px](/imgs/post_imgs/mlagent_03/3.png)
 
-벽에 부딪히면서 가긴 하지만, 그래도 확실히 전보다 좋아진 것을 확인할 수 있고, Reward 도 거의 5에 수렴한다.
+벽에 부딪히면서 가긴 하지만, 그래도 확실히 전보다 좋아진 것을 확인할 수 있고, Reward 도 거의 5에 수렴하는 것을 볼 수 있다.

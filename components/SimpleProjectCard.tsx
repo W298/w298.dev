@@ -41,7 +41,7 @@ export default function SimpleProjectCard({
         loading="lazy"
         placeholder="blur"
         blurDataURL={blurImg}
-        priority={false}
+        quality={100}
         width={326}
         height={32}
         className="object-cover h-8 rounded-b-md top-5 object-[center_8%]"

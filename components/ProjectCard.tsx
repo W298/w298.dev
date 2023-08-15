@@ -145,7 +145,7 @@ export default function ProjectCard({
           loading="eager"
           placeholder="blur"
           blurDataURL={blurImg}
-          priority={true}
+          quality={100}
           width={510}
           height={227}
           className={`${
@@ -162,7 +162,7 @@ export default function ProjectCard({
           loading="eager"
           placeholder="blur"
           blurDataURL={blurImg}
-          priority={true}
+          quality={100}
           width={510}
           height={227}
           className={`${
