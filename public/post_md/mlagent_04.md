@@ -70,13 +70,18 @@ behaviors:
 
 ### Result
 
-![600px](/imgs/post_imgs/mlagent_04/2.webp)
+<video width="600" class="rounded" muted controls>
+  <source src="/videos/post_videos/mlagent_04/4.mp4" type="video/mp4">
+</video>
+
 ![800px](/imgs/post_imgs/mlagent_04/5.png)
 
 꽤 잘 되는 것 같으나...
 
 - 아래와 같이 특정 구간에 타깃이 있을 시 센서에 잡혔음에도 잘 안되는것을 확인할 수 있다.
-  ![600px](/imgs/post_imgs/mlagent_04/3.webp)
+<video width="600" class="rounded" muted controls>
+  <source src="/videos/post_videos/mlagent_04/3.mp4" type="video/mp4">
+</video>
 
 ## Second Try (추가 학습)
 
@@ -141,7 +146,11 @@ behaviors:
 `mlagents-learn` 의 `--resume` 옵션을 이용해 추가 학습을 진행시켰고, 1M 이후가 추가 학습된 그래프이다.
 
 - 잘 안되는 구간에서 잘 되는 것을 확인할 수 있고,
-  ![600px](/imgs/post_imgs/mlagent_04/7.webp)
+<video width="600" class="rounded" muted controls>
+  <source src="/videos/post_videos/mlagent_04/1.mp4" type="video/mp4">
+</video>
 
 - 전체 구간에서도 문제없이 잘 되는 것을 확인할 수 있다.
-  ![600px](/imgs/post_imgs/mlagent_04/8.webp)
+<video width="600" class="rounded" muted controls>
+  <source src="/videos/post_videos/mlagent_04/2.mp4" type="video/mp4">
+</video>
