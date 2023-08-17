@@ -43,13 +43,13 @@ behaviors:
   RollerBall:
     trainer_type: ppo
     hyperparameters:
-      batch_size: 10
-      buffer_size: 100
+      batch_size: 512
+      buffer_size: 2048
       learning_rate: 3.0e-4
-      beta: 5.0e-4
-      epsilon: 0.2
-      lambd: 0.99
-      num_epoch: 3
+      beta: 1e-3
+      epsilon: 0.15
+      lambd: 0.95
+      num_epoch: 4
       learning_rate_schedule: linear
       beta_schedule: constant
       epsilon_schedule: linear
@@ -62,7 +62,7 @@ behaviors:
         gamma: 0.99
         strength: 1.0
     max_steps: 1000000
-    time_horizon: 64
+    time_horizon: 256
     summary_freq: 10000
 ```
 
@@ -70,7 +70,7 @@ behaviors:
 
 ### Result
 
-<video width="600" class="rounded" muted controls playsinline>
+<video width="600" muted controls playsinline>
   <source src="/videos/post_videos/mlagent_04/4.mp4" type="video/mp4">
 </video>
 
@@ -79,7 +79,7 @@ behaviors:
 꽤 잘 되는 것 같으나...
 
 - 아래와 같이 특정 구간에 타깃이 있을 시 센서에 잡혔음에도 잘 안되는것을 확인할 수 있다.
-<video width="600" class="rounded" muted controls playsinline>
+<video width="600" muted controls playsinline>
   <source src="/videos/post_videos/mlagent_04/3.mp4" type="video/mp4">
 </video>
 
@@ -110,13 +110,13 @@ behaviors:
   RollerBall:
     trainer_type: ppo
     hyperparameters:
-      batch_size: 10
-      buffer_size: 100
+      batch_size: 512
+      buffer_size: 2048
       learning_rate: 3.0e-4
-      beta: 5.0e-4
-      epsilon: 0.2
-      lambd: 0.99
-      num_epoch: 3
+      beta: 1e-3
+      epsilon: 0.15
+      lambd: 0.95
+      num_epoch: 4
       learning_rate_schedule: linear
       beta_schedule: constant
       epsilon_schedule: linear
@@ -129,7 +129,7 @@ behaviors:
         gamma: 0.99
         strength: 1.0
     max_steps: 1000000
-    time_horizon: 64
+    time_horizon: 256
     summary_freq: 10000
 ```
 
@@ -146,11 +146,11 @@ behaviors:
 `mlagents-learn` 의 `--resume` 옵션을 이용해 추가 학습을 진행시켰고, 1M 이후가 추가 학습된 그래프이다.
 
 - 잘 안되는 구간에서 잘 되는 것을 확인할 수 있고,
-<video width="600" class="rounded" muted controls playsinline>
+<video width="600" muted controls playsinline>
   <source src="/videos/post_videos/mlagent_04/1.mp4" type="video/mp4">
 </video>
 
 - 전체 구간에서도 문제없이 잘 되는 것을 확인할 수 있다.
-<video width="600" class="rounded" muted controls playsinline>
+<video width="600" muted controls playsinline>
   <source src="/videos/post_videos/mlagent_04/2.mp4" type="video/mp4">
 </video>

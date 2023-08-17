@@ -6,3 +6,8 @@ pre {
   background-color: rgb(30, 30, 30) !important;
   padding: 0.75rem !important;
 }
+
+video {
+  margin: 0.5rem 0 0.5rem 0 !important;
+  border-radius: 0.25rem !important;
+}

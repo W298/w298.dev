@@ -1,7 +1,7 @@
 HEADER START
 
 #03. Obstacle Avoid (Axis-Align, Sensor)
-Sensor 를 이용하여 Axis-Align 장애물 피해 Goal Seeking 학습
+Sensor 를 이용하여 Axis-Align 장애물 피하기
 2023-08-11
 ML-Agent,Unity
 RL-Goal-Seek

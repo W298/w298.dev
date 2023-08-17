@@ -1,7 +1,7 @@
 HEADER START
 
 #01. Obstacle Avoid (Axis-Align, No Sensor)
-Sensor 없이 Axis-Align 장애물을 피해 Goal Seeking 학습
+Sensor 없이 Axis-Align 장애물을 피하기
 2023-08-09
 ML-Agent,Unity
 RL-Goal-Seek
