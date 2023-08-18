@@ -142,7 +142,7 @@ export default function ProjectCard({
       <div className="h-32 overflow-hidden relative">
         <Image
           src={data.previewSrc ? data.previewSrc : data.imgSrc}
-          loading="eager"
+          loading="lazy"
           placeholder="blur"
           blurDataURL={blurImg}
           quality={100}
@@ -159,7 +159,7 @@ export default function ProjectCard({
         />
         <Image
           src={data.imgSrc}
-          loading="eager"
+          loading="lazy"
           placeholder="blur"
           blurDataURL={blurImg}
           quality={100}
