@@ -50,7 +50,7 @@ export function PostComponent({ children }) {
               quality={100}
               unoptimized={true}
               placeholder="blur"
-              blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+              blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
               width={parseInt(alt)}
               height={parseInt(alt)}
               className="my-2 rounded"

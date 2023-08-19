@@ -13,7 +13,7 @@ import {
 } from "@icons-pack/react-simple-icons/dist";
 import { Tag, CustomTag } from "./Tag";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { debounce } from "debounce";
 import Image from "next/image";
 
@@ -115,12 +115,15 @@ export default function ProjectCard({
   const [isMouseRealHover, setMouseRealHover] = useState(false);
   const enterEvent = debounce(() => {
     setMouseHover(true);
+    if (previewVideo.current) previewVideo.current.currentTime = 0;
     leaveEvent.flush();
   }, 300);
   const leaveEvent = debounce(() => {
     setMouseHover(false);
     enterEvent.flush();
   }, 300);
+
+  const previewVideo = useRef(null);
 
   return (
     <div
@@ -140,23 +143,43 @@ export default function ProjectCard({
       }}
     >
       <div className="h-32 overflow-hidden relative">
-        <Image
-          src={data.previewSrc ? data.previewSrc : data.imgSrc}
-          loading="lazy"
-          placeholder="blur"
-          blurDataURL={blurImg}
-          quality={100}
-          width={510}
-          height={227}
-          className={`${
-            isMouseHover ? "" : "hidden"
-          } object-cover min-h-full rounded-t-md transition duration-150 ${
-            isMouseRealHover != isMouseHover && data.previewSrc
-              ? "blur-[2px]"
-              : ""
-          }`}
-          alt={data.title}
-        />
+        {data.previewSrc ? (
+          <video
+            autoPlay
+            muted
+            loop
+            width="510px"
+            poster={data.imgSrc}
+            className={`${
+              isMouseHover ? "" : "hidden"
+            } rounded-t-md transition duration-150 ${
+              isMouseRealHover != isMouseHover && data.previewSrc
+                ? "blur-[2px]"
+                : ""
+            }`}
+            ref={previewVideo}
+          >
+            <source src={data.previewSrc} type="video/mp4" />
+          </video>
+        ) : (
+          <Image
+            src={data.imgSrc}
+            loading="lazy"
+            placeholder="blur"
+            blurDataURL={blurImg}
+            quality={100}
+            width={510}
+            height={227}
+            className={`${
+              isMouseHover ? "" : "hidden"
+            } object-cover min-h-full rounded-t-md transition duration-150 ${
+              isMouseRealHover != isMouseHover && data.previewSrc
+                ? "blur-[2px]"
+                : ""
+            }`}
+            alt={data.title}
+          />
+        )}
         <Image
           src={data.imgSrc}
           loading="lazy"

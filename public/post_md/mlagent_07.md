@@ -1,10 +1,10 @@
 HEADER START
 
-#07. Predator & Prey
+#01. Predator & Prey
 MA-POCA 의 Self-Play 를 이용한 경쟁 Multi-Agent 학습
 2023-08-18
 ML-Agent,Unity
-RL-Goal-Seek
+RL-Competitive
 
 HEADER END
 

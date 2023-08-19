@@ -7,7 +7,7 @@
         "pinned": true,
         "released": true,
         "imgSrc": "/imgs/projectCardImage/RoadPipe.png",
-        "previewSrc": "/imgs/projectCardPreviewImage/RoadPipe.webp",
+        "previewSrc": "/videos/projectCardPreview/RoadPipe.mp4",
         "description": [
           "Connect roads to get car to destination!",
           "Develop with Unity Engine, Released at Steam"
@@ -23,7 +23,7 @@
         "title": "Robot! Escape!",
         "released": true,
         "imgSrc": "/imgs/projectCardImage/robotEscape.png",
-        "previewSrc": "/imgs/projectCardPreviewImage/RobotEscape.webp",
+        "previewSrc": "/videos/projectCardPreview/RobotEscape.mp4",
         "description": [
           "Top-Down Shooter Action Game",
           "Develop with Unity Engine"
@@ -73,7 +73,7 @@
         "title": "Pixel Reversi",
         "released": true,
         "imgSrc": "/imgs/projectCardImage/pixelReversi.png",
-        "previewSrc": "/imgs/projectCardPreviewImage/Reversi.webp",
+        "previewSrc": "/videos/projectCardPreview/Reversi.mp4",
         "description": [
           "Reversi (Othello) Game with Pixel Graphic",
           "Develop with Unity Engine + WebGL"
@@ -89,7 +89,7 @@
         "title": "Intersection",
         "released": false,
         "imgSrc": "/imgs/projectCardImage/intersection.png",
-        "previewSrc": "/imgs/projectCardPreviewImage/Intersection.webp",
+        "previewSrc": "/videos/projectCardPreview/Intersection.mp4",
         "description": [
           "Traffic Management Simulation Game",
           "Develop with Unity Engine"
@@ -105,7 +105,7 @@
         "title": "Together",
         "released": false,
         "imgSrc": "/imgs/projectCardImage/together.png",
-        "previewSrc": "/imgs/projectCardPreviewImage/Together.webp",
+        "previewSrc": "/videos/projectCardPreview/Together.mp4",
         "description": [
           "First Person Horror Game with UE4",
           "You have to escape from soviet building"
@@ -132,7 +132,7 @@
         "title": "ZeroCity",
         "pinned": true,
         "imgSrc": "/imgs/projectCardImage/ZeroCity.png",
-        "previewSrc": "/imgs/projectCardPreviewImage/ZeroCity.webp",
+        "previewSrc": "/videos/projectCardPreview/ZeroCity.mp4",
         "description": [
           "Procedural city generation project",
           "Develop with Unity Engine"
@@ -148,7 +148,7 @@
         "title": "GVDB-Fluid-Unreal",
         "pinned": true,
         "imgSrc": "/imgs/projectCardImage/GVDB_Fluid_Unreal.png",
-        "previewSrc": "/imgs/projectCardPreviewImage/GVDB_Fluid_Unreal.webp",
+        "previewSrc": "/videos/projectCardPreview/GVDB_Fluid_Unreal.mp4",
         "description": [
           "NVDIA GVDB Library + Fluid Simulation",
           "Implemented to Unreal Engine 5"
