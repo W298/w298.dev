@@ -148,6 +148,7 @@ export default function ProjectCard({
             autoPlay
             muted
             loop
+            playsInline
             width="510px"
             poster={data.imgSrc}
             className={`${
