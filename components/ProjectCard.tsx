@@ -153,7 +153,7 @@ export default function ProjectCard({
             poster={data.imgSrc}
             className={`${
               isMouseHover ? "" : "hidden"
-            } rounded-t-md transition duration-150 ${
+            } object-cover min-h-full rounded-t-md transition duration-150 ${
               isMouseRealHover != isMouseHover && data.previewSrc
                 ? "blur-[2px]"
                 : ""
