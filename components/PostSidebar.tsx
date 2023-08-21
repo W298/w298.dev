@@ -30,6 +30,7 @@ export default function PostSidebar({ structure }) {
 
     const compatiableExpanded =
       expandedTag != "" &&
+      structure[expandedTag] &&
       structure[expandedTag].filter(({ postId }) => {
         return dir == "/posts" && postId == name;
       });
