@@ -1,14 +1,14 @@
 HEADER START
 
-#06. Obstacle Avoid (Laser, Sensor)
+#06. 레이저 장애물 피하기
 Sensor 를 이용하여 레이저 장애물 피하기 (부분 목표 달성 시 Reward)
 2023-08-14
 ML-Agent,Unity
-RL-Goal-Seek
+RL-Obstacle-Avoid
 
 HEADER END
 
-# Obstacle Avoid (Laser, Sensor)
+# 레이저 장애물 피하기
 
 ![600px](/imgs/post_imgs/mlagent_06/1.png)
 

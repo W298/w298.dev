@@ -25,7 +25,7 @@ export function PostRow({ postRowData }: PostRowProp) {
         <div className="font-light text-sm text-text-secondary flex flex-row gap-4">
           <div>{postRowData.header[3].split(",").join(" / ")}</div>
         </div>
-        <div className="font-extrabold min-[700px]:text-[1.35rem] text-xl pt-1 pb-3">
+        <div className="font-bold text-xl pt-1 pb-3">
           {postRowData.header[0]}
         </div>
         <div className="font-light text-sm">{postRowData.header[1]}</div>

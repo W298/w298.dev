@@ -1,18 +1,19 @@
 HEADER START
 
-#05. Obstacle Avoid (Rotating, Sensor)
+#05. 회전하는 장애물 피하기
 Sensor 를 이용하여 회전 장애물 피하기 및 checkpoint 로드로 학습
 2023-08-13
 ML-Agent,Unity
-RL-Goal-Seek
+RL-Obstacle-Avoid
 
 HEADER END
 
-# Obstacle Avoid (Rotating, Sensor)
+# 회전하는 장애물 피하기
 
 ![500px](/imgs/post_imgs/mlagent_05/1.png)
 
-이번에는 위와 같이 회전하는 장애물 (빨간색 블록) 이 있는 Env 에서 학습을 진행해 보았다.
+이번에는 위와 같이 회전하는 장애물 (빨간색 블록) 이 있는 Env 에서 학습을 진행해 보았다.  
+이번에도 센서를 이용하였고, 장애물의 `Rigidbody` 에 `AddTorque` 로 일정 속도로 회전하게 만들었다.
 
 ## Observation (First Try, Second Try, Third Try)
 
@@ -150,14 +151,14 @@ behaviors:
 ![800px](/imgs/post_imgs/mlagent_05/2.png)
 
 250K 스탭 이후가 추가 학습을 진행한 그래프이다.  
-없던 장애물이 갑자기 생긴 것이기 때문에 초반에는 Reward 가 급격하게 떨어지는 것을 확인할 수 있다.
+없던 장애물이 갑자기 생긴 것이기 때문에 <u>초반에는 Reward 가 급격하게 떨어지는 것</u>을 확인할 수 있다.
 
-왼쪽으로 가는 것이 Reward 를 더 많이 받을 수 있다는 것을 파악하고 왼쪽으로만 가고 있으며,  
-장애물에 최대한 닿지 않게 상황에 따라서 속도를 늦추거나 빠르게 하는 모습을 확인할 수 있다.
+**왼쪽으로 가는 것이 Reward 를 더 많이 받을 수 있다**는 것을 파악하고 왼쪽으로만 가고 있으며,  
+장애물에 최대한 닿지 않게 상황에 따라서 **속도를 늦추거나 빠르게** 하는 모습을 확인할 수 있다.
 
 결과는 꽤 성공적이나, 그래도 장애물에 가끔씩 닿는다.
 
-learning_rate, epsilon 이 학습이 진행될수록 linear 하게 감소하기 때문에,  
+<u>learning_rate, epsilon 이 학습이 진행될수록 linear 하게 감소</u>하기 때문에,  
 250K 스탭부터 학습시킨 현재 학습이 드라마틱하게 더 이루어지지는 않는 것 같다.
 
 그래서 이번에는 `--resume` 옵션으로 추가 학습을 하는 것이 아니라, 현재까지 학습한 모델의 **checkpoint 를 기반으로 하여 새로 학습**해 보았다.
