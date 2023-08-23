@@ -45,12 +45,12 @@ HEADER END
 
 - 블록의 오른쪽 부분에 가까우면 꽤 잘 작동했으나...
 <video width="600" muted controls playsinline>
-  <source src="/videos/post_videos/mlagent_02/1.mp4" type="video/mp4">
+  <source src="/videos/post_videos/mlagent_02/1.mp4#t=0.001" type="video/mp4">
 </video>
 
 - 타깃이 안쪽으로 들어갈수록 어려워하는 것을 확인할 수 있다. 제대로 장애물의 크기를 고려해 인식하고 피할 수는 없는 것 같다.
 <video width="600" muted controls playsinline>
-  <source src="/videos/post_videos/mlagent_02/2.mp4" type="video/mp4">
+  <source src="/videos/post_videos/mlagent_02/2.mp4#t=0.001" type="video/mp4">
 </video>
 
 ## Second Try (Imitation Learning)
@@ -69,7 +69,7 @@ First Try 와 동일한 Policy 로 진행하였다.
 ### Settings
 
 <video width="400" muted controls playsinline>
-  <source src="/videos/post_videos/mlagent_02/3.mp4" type="video/mp4">
+  <source src="/videos/post_videos/mlagent_02/3.mp4#t=0.001" type="video/mp4">
 </video>
 
 ```
@@ -93,7 +93,7 @@ Hyperparameter 의 `gail` 과 `behavioral_cloning` 값을 각각 strength 0.5 �
 ### Result
 
 <video width="600" muted controls playsinline>
-  <source src="/videos/post_videos/mlagent_02/5.mp4" type="video/mp4">
+  <source src="/videos/post_videos/mlagent_02/5.mp4#t=0.001" type="video/mp4">
 </video>
 
 ![600px](/imgs/post_imgs/mlagent_02/6.png)

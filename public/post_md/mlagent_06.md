@@ -94,7 +94,7 @@ behaviors:
 ### Result
 
 <video width="700" muted controls playsinline>
-  <source src="/videos/post_videos/mlagent_06/1.mp4" type="video/mp4">
+  <source src="/videos/post_videos/mlagent_06/1.mp4#t=0.001" type="video/mp4">
 </video>
 
 ![800px](/imgs/post_imgs/mlagent_06/3.png)

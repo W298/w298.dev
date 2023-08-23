@@ -73,7 +73,7 @@ behaviors:
 ### Result
 
 <video width="600" muted controls playsinline>
-  <source src="/videos/post_videos/mlagent_05/1.mp4" type="video/mp4">
+  <source src="/videos/post_videos/mlagent_05/1.mp4#t=0.001" type="video/mp4">
 </video>
 
 타깃에 도달하기까지가 너무 힘들기 때문에 학습이 제대로 안되는 모습을 보였다.
@@ -88,7 +88,7 @@ behaviors:
 ### Goal-Seek Train
 
 <video width="600" muted controls playsinline>
-  <source src="/videos/post_videos/mlagent_05/2.mp4" type="video/mp4">
+  <source src="/videos/post_videos/mlagent_05/2.mp4#t=0.001" type="video/mp4">
 </video>
 
 일단 간단하게 타깃까지 가는 Goal Seeking 학습을 250K 스탭까지 진행했다.  
@@ -145,7 +145,7 @@ behaviors:
 ### Result
 
 <video width="600" muted controls playsinline>
-  <source src="/videos/post_videos/mlagent_05/3.mp4" type="video/mp4">
+  <source src="/videos/post_videos/mlagent_05/3.mp4#t=0.001" type="video/mp4">
 </video>
 
 ![800px](/imgs/post_imgs/mlagent_05/2.png)
@@ -222,7 +222,7 @@ behaviors:
 ### Result
 
 <video width="700" muted controls playsinline>
-  <source src="/videos/post_videos/mlagent_05/4.mp4" type="video/mp4">
+  <source src="/videos/post_videos/mlagent_05/4.mp4#t=0.001" type="video/mp4">
 </video>
 
 ![800px](/imgs/post_imgs/mlagent_05/3.png)

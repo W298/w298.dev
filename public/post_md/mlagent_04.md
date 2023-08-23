@@ -72,7 +72,7 @@ behaviors:
 ### Result
 
 <video width="600" muted controls playsinline>
-  <source src="/videos/post_videos/mlagent_04/4.mp4" type="video/mp4">
+  <source src="/videos/post_videos/mlagent_04/4.mp4#t=0.001" type="video/mp4">
 </video>
 
 ![800px](/imgs/post_imgs/mlagent_04/5.png)
@@ -82,7 +82,7 @@ behaviors:
 
 - 특정 구간
 <video width="600" muted controls playsinline>
-  <source src="/videos/post_videos/mlagent_04/3.mp4" type="video/mp4">
+  <source src="/videos/post_videos/mlagent_04/3.mp4#t=0.001" type="video/mp4">
 </video>
 
 ## Second Try (추가 학습)
@@ -150,10 +150,10 @@ ML-Agents 의 `--resume` 옵션을 이용해 기존에 학습된 결과에 추�
 
 - 잘 안되는 구간에서 잘 되는 것을 확인할 수 있고,
 <video width="600" muted controls playsinline>
-  <source src="/videos/post_videos/mlagent_04/1.mp4" type="video/mp4">
+  <source src="/videos/post_videos/mlagent_04/1.mp4#t=0.001" type="video/mp4">
 </video>
 
 - 전체 구간에서도 문제없이 잘 되는 것을 확인할 수 있다.
 <video width="600" muted controls playsinline>
-  <source src="/videos/post_videos/mlagent_04/2.mp4" type="video/mp4">
+  <source src="/videos/post_videos/mlagent_04/2.mp4#t=0.001" type="video/mp4">
 </video>

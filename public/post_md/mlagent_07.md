@@ -147,7 +147,7 @@ MA-POCA 를 사용할 것이기 때문에 trainer_type 를 POCA 로 설정해 �
 1.2M 까지 학습을 진행시켰는데, 점점 차이가 벌어지는 것을 볼 수 있다.
 
 <video width="700" muted controls playsinline>
-  <source src="/videos/post_videos/mlagent_07/1.mp4" type="video/mp4">
+  <source src="/videos/post_videos/mlagent_07/1.mp4#t=0.001" type="video/mp4">
 </video>
 
 Prey 가 시점은 최대한 Predator 를 주시한 채로 원을 그리면서 피하는 모습을 볼 수 있다.
