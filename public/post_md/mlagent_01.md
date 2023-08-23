@@ -42,7 +42,7 @@ HEADER END
 ### Result
 
 <video width="600" muted controls playsinline>
-  <source src="/videos/post_videos/mlagent_01/1.mp4" type="video/mp4">
+  <source src="/videos/post_videos/mlagent_01/1.mp4#t=0.001" type="video/mp4">
 </video>
 
 그랬더니 장애물에 닿지 않으려고 코너에서 우물쭈물하는 모습을 보였다.  
@@ -65,7 +65,7 @@ HEADER END
 ### Result
 
 <video width="600" muted controls playsinline>
-  <source src="/videos/post_videos/mlagent_01/2.mp4" type="video/mp4">
+  <source src="/videos/post_videos/mlagent_01/2.mp4#t=0.001" type="video/mp4">
 </video>
 
 ![600px](/imgs/post_imgs/mlagent_01/3.png)
