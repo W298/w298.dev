@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { FileDirectoryIcon } from "@primer/octicons-react";
 import Image from "next/image";
-import ImageLoading from "./ImageLoading";
 
 interface PostRowData {
   header: string[];
@@ -25,11 +24,10 @@ export function PostRow({ postRowData }: PostRowProp) {
     >
       <div className="flex flex-col gap-3">
         <div className="h-32 overflow-hidden relative">
-          <ImageLoading
+          <Image
             src={`/imgs/post_imgs/${postRowData.postId}/thumnail.png`}
             loading="lazy"
             quality={100}
-            unoptimized={false}
             width={510}
             height={227}
             className="object-cover min-h-full rounded-t-md"
