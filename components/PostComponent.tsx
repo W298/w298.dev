@@ -10,7 +10,8 @@ import rehypeRaw from "rehype-raw";
 import "../styles/github-markdown.css";
 import "../styles/custom-syntax.css";
 import "../styles/github-markdown-mobile.css";
-import Image from "next/image";
+import ImageLoading from "./ImageLoading";
+import React from "react";
 
 function CodeBlock({ language, inline, children }) {
   return inline ? (
@@ -37,22 +38,21 @@ export function PostComponent({ children }) {
     <div className="markdown-body pb-[20vh]">
       <ReactMarkdown
         components={{
+          p: ({ children }) => <div className="mb-[16px]">{children}</div>,
           code: ({ className, inline, children }) => (
             <CodeBlock language={className} inline={inline}>
               {children}
             </CodeBlock>
           ),
-          img: ({ alt = "600", src }) => (
-            <Image
+          img: ({ alt = "600px", src }) => (
+            <ImageLoading
               src={src}
               alt={src}
               loading="lazy"
               quality={100}
               unoptimized={true}
-              placeholder="blur"
-              blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-              width={parseInt(alt)}
-              height={parseInt(alt)}
+              width={alt}
+              height={alt}
               className="my-2 rounded"
             />
           ),
