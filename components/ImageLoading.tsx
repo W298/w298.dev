@@ -33,10 +33,9 @@ export default function ImageLoading({
         className={`${className} ${isLoaded ? "opacity-100" : "opacity-0"}`}
       />
       <div
-        className={`absolute flex justify-center top-[50%] ${
+        className={`w-full absolute flex justify-center top-[50%] ${
           isLoaded ? "hidden" : ""
         }`}
-        style={{ width }}
       >
         <div className="dot-bricks"></div>
       </div>
