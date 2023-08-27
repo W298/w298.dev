@@ -3,6 +3,7 @@
 import { ProjectCardData } from "./interface/ProjectDataInterface";
 import { ReplyIcon, ImageIcon } from "@primer/octicons-react";
 import Link from "next/link";
+import ImageLoading from "./ImageLoading";
 
 interface ScreenshotExplorerProp {
   data: ProjectCardData | undefined;
@@ -29,10 +30,16 @@ export default function ScreenshotExplorer({ data }: ScreenshotExplorerProp) {
       <div className="flex flex-col gap-8">
         {data?.screenshots.map((src, index) => {
           return (
-            <img
+            <ImageLoading
               key={`img-${data.title}-${index}`}
               className="w-[800px] rounded"
               src={src}
+              alt={`img-${data.title}-${index}`}
+              loading="lazy"
+              quality={100}
+              width={800}
+              height={800}
+              unoptimized={true}
             />
           );
         })}

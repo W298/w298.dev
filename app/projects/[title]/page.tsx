@@ -8,9 +8,14 @@ export default function Page({ params }) {
     <ScreenshotExplorer
       data={projectData
         .find(({ projectCardList }) =>
-          projectCardList.some(({ title }) => title == params.title)
+          projectCardList.some(
+            ({ title }) =>
+              title == decodeURI(params.title).replaceAll("%3A", ":")
+          )
         )
-        ?.projectCardList.find(({ title }) => title == params.title)}
+        ?.projectCardList.find(
+          ({ title }) => title == decodeURI(params.title).replaceAll("%3A", ":")
+        )}
     />
   );
 }
