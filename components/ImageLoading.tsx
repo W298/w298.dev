@@ -14,6 +14,8 @@ export default function ImageLoading({
   width,
   height,
   className,
+  top = "50%",
+  type = "dot-bricks",
 }) {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -30,14 +32,17 @@ export default function ImageLoading({
         onLoadingComplete={() => {
           setIsLoaded(true);
         }}
-        className={`${className} ${isLoaded ? "opacity-100" : "opacity-0"}`}
+        className={`${className} ${
+          isLoaded ? "opacity-100" : "opacity-0"
+        } transition duration-150`}
       />
       <div
-        className={`w-full absolute flex justify-center top-[50%] ${
+        className={`w-full absolute flex justify-center transition duration-150 ${
           isLoaded ? "hidden" : ""
         }`}
+        style={{ top }}
       >
-        <div className="dot-bricks"></div>
+        <div className={type}></div>
       </div>
     </div>
   );

@@ -1,19 +1,15 @@
 "use client";
 
-import Image from "next/image";
 import { ReactScroll } from "react-scroll-ts";
 import { ProjectCardData } from "./interface/ProjectDataInterface";
 import { Tag } from "./Tag";
+import ImageLoading from "./ImageLoading";
 
 interface SimpleProjectCardProp {
   data: ProjectCardData;
-  blurImg: string;
 }
 
-export default function SimpleProjectCard({
-  data,
-  blurImg,
-}: SimpleProjectCardProp) {
+export default function SimpleProjectCard({ data }: SimpleProjectCardProp) {
   const targetName = `projectCard-${data.title
     .replaceAll(" ", "")
     .replaceAll("!", "")
@@ -36,15 +32,16 @@ export default function SimpleProjectCard({
           })}
         </div>
       </div>
-      <Image
+      <ImageLoading
         src={data.imgSrc}
         loading="lazy"
-        placeholder="blur"
-        blurDataURL={blurImg}
         quality={100}
         width={326}
         height={32}
         className="object-cover h-8 rounded-b-md top-5 object-[center_8%]"
+        unoptimized={true}
+        type="dot-flashing"
+        top="11px"
         alt={data.title}
       />
     </ReactScroll>

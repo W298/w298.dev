@@ -1,74 +1,11 @@
-import {
-  CategoryData,
-  ProjectCardData,
-} from "../../components/interface/ProjectDataInterface";
+import { CategoryData } from "../../components/interface/ProjectDataInterface";
 import projectDataRaw from "../../data/projectData.json";
-import ProjectCard from "../../components/ProjectCard";
 import SimpleProjectCard from "../../components/SimpleProjectCard";
 import { PinIcon } from "@primer/octicons-react";
-import { getPlaiceholder } from "plaiceholder";
-import fs from "node:fs/promises";
+import ProjectCardServer from "../../components/ProjectCardServer";
 
-async function getLastCommit(mapped) {
-  const routine = async (repoName) => {
-    const res = await fetch("https://api.github.com/repos/w298/" + repoName, {
-      next: {
-        revalidate: 10,
-      },
-      headers: {
-        Authorization: "token " + process.env.GITHUB_API_TOKEN,
-      },
-    });
-
-    return res.json();
-  };
-
-  const result = {};
-  for await (const data of mapped) {
-    const raw = await routine(data.repoName);
-    result[data.title] = raw["pushed_at"];
-  }
-
-  return result;
-}
-
-async function getProjectCardBlurImg(projectCardDataList: ProjectCardData[]) {
-  const routine = async (imgSrc) => {
-    const file = await fs.readFile("public" + imgSrc);
-    const { base64 } = await getPlaiceholder(file);
-    return base64;
-  };
-
-  const result = {};
-  for await (const data of projectCardDataList) {
-    const blur = await routine(data.imgSrc);
-    result[data.title] = blur;
-  }
-
-  return result;
-}
-
-export default async function Page() {
+export default function Page() {
   const projectData = projectDataRaw as CategoryData[];
-  const lastCommitData = await getLastCommit(
-    projectData
-      .map(({ projectCardList }) => {
-        return projectCardList
-          .filter(({ link }) => link.repo)
-          .map(({ title, link }) => {
-            let last = link.repo.lastIndexOf("/");
-            return { title: title, repoName: link.repo.substring(last + 1) };
-          });
-      })
-      .flat()
-  );
-  const projectCardBlurImg = await getProjectCardBlurImg(
-    projectData
-      .map(({ projectCardList }) => {
-        return projectCardList;
-      })
-      .flat()
-  );
 
   return (
     <div className="flex flex-col gap-14 pb-[85vh]">
@@ -84,12 +21,7 @@ export default async function Page() {
             return projectCardList
               .filter((c) => c.pinned)
               .map((c) => {
-                return (
-                  <SimpleProjectCard
-                    data={c}
-                    blurImg={projectCardBlurImg[c.title]}
-                  />
-                );
+                return <SimpleProjectCard data={c} />;
               });
           })}
         </div>
@@ -113,13 +45,9 @@ export default async function Page() {
                         .filter(({ released }) => released)
                         .map((projectCardData, i) => {
                           return (
-                            <ProjectCard
+                            <ProjectCardServer
                               key={projectCardData.title}
                               data={projectCardData}
-                              lastCommit={lastCommitData[projectCardData.title]}
-                              blurImg={
-                                projectCardBlurImg[projectCardData.title]
-                              }
                             />
                           );
                         })}
@@ -137,11 +65,9 @@ export default async function Page() {
                   .filter(({ released }) => !released)
                   .map((projectCardData) => {
                     return (
-                      <ProjectCard
+                      <ProjectCardServer
                         key={projectCardData.title}
                         data={projectCardData}
-                        lastCommit={lastCommitData[projectCardData.title]}
-                        blurImg={projectCardBlurImg[projectCardData.title]}
                       />
                     );
                   })}

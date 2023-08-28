@@ -1,7 +1,7 @@
 "use client";
 
 import { ProjectCardData } from "./interface/ProjectDataInterface";
-import { GitCommitIcon, LinkIcon, ImageIcon } from "@primer/octicons-react";
+import { LinkIcon, ImageIcon } from "@primer/octicons-react";
 import {
   Notion,
   Youtube,
@@ -13,14 +13,14 @@ import {
 } from "@icons-pack/react-simple-icons/dist";
 import { Tag, CustomTag } from "./Tag";
 import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef, ReactNode } from "react";
 import { debounce } from "debounce";
 import Image from "next/image";
+import ImageLoading from "./ImageLoading";
 
 interface ProjectCardProp {
   data: ProjectCardData;
-  lastCommit: Date;
-  blurImg: string;
+  lastCommitNode: ReactNode;
 }
 
 interface LinkTagsProp {
@@ -106,11 +106,7 @@ function LinkTags({ data }: LinkTagsProp) {
   );
 }
 
-export default function ProjectCard({
-  data,
-  lastCommit,
-  blurImg,
-}: ProjectCardProp) {
+export default function ProjectCard({ data, lastCommitNode }: ProjectCardProp) {
   const [isMouseHover, setMouseHover] = useState(false);
   const [isMouseRealHover, setMouseRealHover] = useState(false);
   const enterEvent = debounce(() => {
@@ -166,8 +162,6 @@ export default function ProjectCard({
           <Image
             src={data.imgSrc}
             loading="lazy"
-            placeholder="blur"
-            blurDataURL={blurImg}
             quality={100}
             width={510}
             height={227}
@@ -181,14 +175,13 @@ export default function ProjectCard({
             alt={data.title}
           />
         )}
-        <Image
+        <ImageLoading
           src={data.imgSrc}
           loading="lazy"
-          placeholder="blur"
-          blurDataURL={blurImg}
           quality={100}
           width={510}
           height={227}
+          unoptimized={true}
           className={`${
             isMouseHover ? "hidden" : ""
           } object-cover min-h-full rounded-t-md transition duration-150 ${
@@ -196,6 +189,7 @@ export default function ProjectCard({
               ? "blur-[2px]"
               : ""
           }`}
+          top="4rem"
           alt={data.title}
         />
         <Link
@@ -231,16 +225,7 @@ export default function ProjectCard({
           </div>
         </div>
         <div className="flex flex-row justify-between items-end">
-          <div className="flex flex-row gap-2 items-center -mb-[1px]">
-            <GitCommitIcon size={16} />
-            <div className="font-light text-xs text-text-secondary -mt-[5px]">
-              {`Last Commit - ${
-                lastCommit == null
-                  ? "No_Info"
-                  : lastCommit.toString().substring(0, 10)
-              } `}
-            </div>
-          </div>
+          {lastCommitNode}
           <div className="flex flex-row flex-wrap-reverse justify-end gap-2">
             <LinkTags data={data} />
           </div>
@@ -267,16 +252,7 @@ export default function ProjectCard({
             })}
           </div>
         </div>
-        <div className="flex flex-row gap-2 items-center -mb-[1px]">
-          <GitCommitIcon size={16} />
-          <div className="font-light text-xs text-text-secondary -mt-[3px]">
-            {`Last Commit - ${
-              lastCommit == null
-                ? "No_Info"
-                : lastCommit.toString().substring(0, 10)
-            } `}
-          </div>
-        </div>
+        {lastCommitNode}
         <div className="flex flex-row flex-wrap gap-2">
           <LinkTags data={data} />
         </div>
