@@ -24,7 +24,7 @@ export function PostRow({ postRowData }: PostRowProp) {
       href={`/posts/${postRowData.postId}`}
     >
       <div className="flex flex-col gap-3">
-        <div className="h-32 overflow-hidden relative">
+        <div className="h-32 overflow-hidden relative rounded-t-md">
           <ImageLoading
             src={`/imgs/post_imgs/${postRowData.postId}/thumnail.png`}
             loading="lazy"
@@ -32,7 +32,7 @@ export function PostRow({ postRowData }: PostRowProp) {
             width={510}
             height={227}
             unoptimized={true}
-            className="object-cover min-h-full rounded-t-md"
+            className="object-cover min-h-full max-w-fit"
             top="4rem"
             alt={postRowData.postId + "-thumnail"}
           />
