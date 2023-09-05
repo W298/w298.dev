@@ -28,7 +28,7 @@ export default function Navbar() {
                 className="text-[1.2rem] cursor-pointer font-black"
                 href="/projects"
               >
-                W298.me
+                W298.dev
               </Link>
             </div>
             <div className="flex flex-row items-center gap-3 max-[1000px]:hidden">
