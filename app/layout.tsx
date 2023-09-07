@@ -29,13 +29,6 @@ export default async function RootLayout({ children }) {
       </head>
       <head />
       <body>
-        <div
-          style={{
-            background: "linear-gradient(43deg, #4158D0, #C850C0, #FFCC70)",
-            width: "100%",
-            height: "4px",
-          }}
-        ></div>
         <Navbar />
         <ScrollToTop />
         {children}

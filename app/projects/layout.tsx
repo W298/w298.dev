@@ -7,7 +7,7 @@ export default function ProjectLayout({ children }) {
   const projectData = projectDataRaw as CategoryData[];
 
   return (
-    <div className="max-w-[90rem] m-auto flex flex-row gap-5">
+    <div className="max-w-[90rem] mt-[60px] m-auto flex flex-row gap-5">
       <Sidebar>
         <ProjectSidebar projectData={projectData} />
       </Sidebar>
