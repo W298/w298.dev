@@ -126,24 +126,8 @@
     ]
   },
   {
-    "categoryTitle": "Game Dev Related",
+    "categoryTitle": "Game Dev Related Project",
     "projectCardList": [
-      {
-        "title": "ZeroCity",
-        "pinned": true,
-        "imgSrc": "/imgs/projectCardImage/ZeroCity.png",
-        "previewSrc": "/videos/projectCardPreview/ZeroCity.mp4",
-        "description": [
-          "Procedural city generation project",
-          "Develop with Unity Engine"
-        ],
-        "tags": ["Unity"],
-        "screenshots": [],
-        "link": {
-          "repo": "https://github.com/W298/FindingYounghee",
-          "youtube": "https://youtu.be/cWrT1XXu0JM"
-        }
-      },
       {
         "title": "GVDB-Fluid-Unreal",
         "pinned": true,
@@ -158,6 +142,22 @@
         "link": {
           "repo": "https://github.com/W298/gvdb-fluid-unreal",
           "youtube": "https://www.youtube.com/watch?v=b3hXHdFV3zE"
+        }
+      },
+      {
+        "title": "ZeroCity",
+        "pinned": true,
+        "imgSrc": "/imgs/projectCardImage/ZeroCity.png",
+        "previewSrc": "/videos/projectCardPreview/ZeroCity.mp4",
+        "description": [
+          "Procedural city generation project",
+          "Develop with Unity Engine"
+        ],
+        "tags": ["Unity"],
+        "screenshots": [],
+        "link": {
+          "repo": "https://github.com/W298/FindingYounghee",
+          "youtube": "https://youtu.be/cWrT1XXu0JM"
         }
       }
     ]
