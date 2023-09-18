@@ -138,7 +138,7 @@ export default function ProjectCard({ data, lastCommitNode }: ProjectCardProp) {
         leaveEvent();
       }}
     >
-      <div className="h-32 overflow-hidden relative">
+      <div className="h-[7.5rem] overflow-hidden relative">
         {data.previewSrc ? (
           <video
             autoPlay
@@ -201,16 +201,16 @@ export default function ProjectCard({ data, lastCommitNode }: ProjectCardProp) {
           )}
         </Link>
       </div>
-      <div className="@[450px]:flex h-[11rem] p-6 flex-col hidden">
+      <div className="@[450px]:flex h-[9rem] py-5 px-[1.375rem] pt-3.5 flex-col hidden">
         <div className="flex-1 flex flex-row justify-between">
-          <div className="flex flex-col gap-2">
-            <div className="font-extrabold text-2xl">{data.title}</div>
+          <div className="flex flex-col gap-1.5">
+            <div className="font-extrabold text-[22px]">{data.title}</div>
             <div>
               {data.description.map((d, idx) => {
                 return (
                   <div
                     key={`${data.title}-description-${idx}`}
-                    className="font-light text-sm"
+                    className="font-light text-[13px]"
                   >
                     {d}
                   </div>
