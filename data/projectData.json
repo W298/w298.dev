@@ -33,6 +33,21 @@
           "repo": "https://github.com/W298/zeroCity",
           "youtube": "https://youtu.be/cWrT1XXu0JM"
         }
+      },
+      {
+        "title": "ml-playground",
+        "pinned": true,
+        "imgSrc": "/imgs/projectCardImage/ml-playground.png",
+        "previewSrc": "/videos/projectCardPreview/ml-playground.mp4",
+        "description": [
+          "Train Agents in various environment",
+          "Implemented with Unity ML-Agents"
+        ],
+        "tags": ["Unity"],
+        "screenshots": [],
+        "link": {
+          "repo": "https://github.com/W298/ml-playground"
+        }
       }
     ]
   },
