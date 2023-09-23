@@ -28,10 +28,7 @@ export default function Navbar() {
           <div className="flex flex-row justify-between items-center">
             <div className="flex flex-row items-center gap-8">
               <div className="flex flex-row items-center gap-8 min-[1440px]:w-80 max-[1440px]:w-[18rem] max-sm:w-fit border-r border-layer-200 max-[1000px]:border-transparent">
-                <img
-                  src="https://avatars.githubusercontent.com/u/25034289?v=4"
-                  className="w-8 h-8"
-                ></img>
+                <img src="/imgs/avatar.png" className="w-8 h-8"></img>
                 <Link
                   className="text-[1.2rem] cursor-pointer font-black"
                   href="/projects"
