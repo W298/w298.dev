@@ -130,6 +130,7 @@ export default function ProjectCard({ data, lastCommitNode }: ProjectCardProp) {
         .replaceAll(":", "")
         .replaceAll("'", "")}`}
       onMouseEnter={() => {
+        if (data.previewSrc == null) return;
         setMouseRealHover(true);
         enterEvent();
       }}
@@ -139,42 +140,24 @@ export default function ProjectCard({ data, lastCommitNode }: ProjectCardProp) {
       }}
     >
       <div className="h-[7.5rem] overflow-hidden relative">
-        {data.previewSrc ? (
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            width="510px"
-            poster={data.imgSrc}
-            className={`${
-              isMouseHover ? "" : "hidden"
-            } object-cover min-h-full rounded-t-md transition duration-150 ${
-              isMouseRealHover != isMouseHover && data.previewSrc
-                ? "blur-[2px]"
-                : ""
-            }`}
-            ref={previewVideo}
-          >
-            <source src={data.previewSrc} type="video/mp4" />
-          </video>
-        ) : (
-          <Image
-            src={data.imgSrc}
-            loading="lazy"
-            quality={100}
-            width={510}
-            height={227}
-            className={`${
-              isMouseHover ? "" : "hidden"
-            } object-cover min-h-full rounded-t-md transition duration-150 ${
-              isMouseRealHover != isMouseHover && data.previewSrc
-                ? "blur-[2px]"
-                : ""
-            }`}
-            alt={data.title}
-          />
-        )}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          width="510px"
+          poster={data.imgSrc}
+          className={`${
+            isMouseHover ? "" : "hidden"
+          } object-cover min-h-full rounded-t-md transition duration-150 ${
+            isMouseRealHover != isMouseHover && data.previewSrc
+              ? "blur-[2px]"
+              : ""
+          }`}
+          ref={previewVideo}
+        >
+          <source src={data.previewSrc} type="video/mp4" />
+        </video>
         <ImageLoading
           src={data.imgSrc}
           loading="lazy"
