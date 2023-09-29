@@ -15,7 +15,6 @@ import { Tag, CustomTag } from "./Tag";
 import Link from "next/link";
 import { useState, useRef, ReactNode } from "react";
 import { debounce } from "debounce";
-import Image from "next/image";
 import ImageLoading from "./ImageLoading";
 
 interface ProjectCardProp {
