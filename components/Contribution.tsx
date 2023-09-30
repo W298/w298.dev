@@ -56,13 +56,19 @@ async function getContribution() {
 
 export default async function Contribution() {
   const contributionData = await getContribution();
-  const wd = [...Array(7).keys()];
-  const rd = [...Array(52).keys()];
+  const wd = Array.from({ length: 7 }, (_, i) => i);
+  const rd = Array.from({ length: 52 }, (_, i) => i);
 
   return (
-    <table>
+    <table className="absolute right-[1rem] top-[55px]">
       <thead></thead>
-      <tbody style={{ display: "flex", flexDirection: "column", gap: "3px" }}>
+      <tbody
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "3px",
+        }}
+      >
         {wd.map((weekDay) => {
           return (
             <tr style={{ display: "flex", gap: "3px" }}>
@@ -71,19 +77,24 @@ export default async function Contribution() {
                 return (
                   <td
                     style={{
-                      flex: 1,
-                      fontSize: "8px",
-                      color: "transparent",
+                      width: "16.44px",
+                      height: "16.44px",
                       background:
                         dayData["contributionCount"] == 0
                           ? "#212121"
-                          : dayData["color"],
-                      textAlign: "center",
-                      borderRadius: "3px",
+                          : 1 <= dayData["contributionCount"] &&
+                            dayData["contributionCount"] <= 2
+                          ? "#0e4429"
+                          : 3 <= dayData["contributionCount"] &&
+                            dayData["contributionCount"] <= 5
+                          ? "#006d32"
+                          : 6 <= dayData["contributionCount"] &&
+                            dayData["contributionCount"] <= 8
+                          ? "#26a641"
+                          : "#39d353",
+                      borderRadius: "4.5px",
                     }}
-                  >
-                    {dayData["contributionCount"]}
-                  </td>
+                  ></td>
                 );
               })}
             </tr>

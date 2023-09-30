@@ -9,7 +9,7 @@ export default function Page() {
 
   return (
     <div className="flex flex-col gap-12 pb-[85vh]">
-      <div className="@container flex flex-col gap-3 bg-layer-400 p-4 rounded-md">
+      <div className="@container flex flex-col gap-3 bg-layer-400 p-4 rounded-md overflow-hidden relative h-[205px]">
         <div className="flex flex-row gap-3">
           <div className="flex items-center">
             <Github width={20} />
