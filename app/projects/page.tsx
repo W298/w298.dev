@@ -1,8 +1,8 @@
 import { CategoryData } from "../../components/interface/ProjectDataInterface";
 import projectDataRaw from "../../data/projectData.json";
-import SimpleProjectCard from "../../components/SimpleProjectCard";
-import { PinIcon } from "@primer/octicons-react";
 import ProjectCardServer from "../../components/ProjectCardServer";
+import Contribution from "../../components/Contribution";
+import { Github } from "@icons-pack/react-simple-icons";
 
 export default function Page() {
   const projectData = projectDataRaw as CategoryData[];
@@ -10,21 +10,13 @@ export default function Page() {
   return (
     <div className="flex flex-col gap-12 pb-[85vh]">
       <div className="@container flex flex-col gap-3 bg-layer-400 p-4 rounded-md">
-        <div className="flex flex-row gap-2">
-          <div className="">
-            <PinIcon />
+        <div className="flex flex-row gap-3">
+          <div className="flex items-center">
+            <Github width={20} />
           </div>
-          <div className="text-lg font-bold">Pinned</div>
+          <div className="text-lg font-bold">Contributions</div>
         </div>
-        <div className="grid @[800px]:grid-cols-3 @[500px]:grid-cols-2 @[350px]:grid-cols-1 gap-x-4 gap-y-3">
-          {projectData.map(({ projectCardList }) => {
-            return projectCardList
-              .filter((c) => c.pinned)
-              .map((c) => {
-                return <SimpleProjectCard data={c} />;
-              });
-          })}
-        </div>
+        <Contribution />
       </div>
       {projectData.map(({ categoryTitle, projectCardList }, index) => {
         return (
