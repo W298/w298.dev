@@ -7,7 +7,7 @@ async function getContribution() {
   const startDay = new Date(
     today.getFullYear(),
     today.getMonth(),
-    today.getDate() - 364
+    today.getDate() - 357
   );
 
   const body = {
@@ -42,6 +42,9 @@ async function getContribution() {
     method: "POST",
     body: JSON.stringify(body),
     headers: headers,
+    next: {
+      revalidate: 10,
+    },
   });
   const data = await res.json();
 
@@ -80,7 +83,9 @@ export default async function Contribution() {
                       width: "16.44px",
                       height: "16.44px",
                       background:
-                        dayData["contributionCount"] == 0
+                        (dayData == null) 
+                          ? "transparent" 
+                          : dayData["contributionCount"] == 0
                           ? "#212121"
                           : 1 <= dayData["contributionCount"] &&
                             dayData["contributionCount"] <= 2
