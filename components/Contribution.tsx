@@ -4,10 +4,16 @@ async function getContribution() {
   };
 
   const today = new Date();
-  const startDay = new Date(
+  const paddedToday = new Date(
     today.getFullYear(),
     today.getMonth(),
-    today.getDate() - 357
+    today.getDate() + 8 - today.getDay()
+  )
+
+  const startDay = new Date(
+    paddedToday.getFullYear(),
+    paddedToday.getMonth(),
+    paddedToday.getDate() - 53*7
   );
 
   const body = {
@@ -60,7 +66,7 @@ async function getContribution() {
 export default async function Contribution() {
   const contributionData = await getContribution();
   const wd = Array.from({ length: 7 }, (_, i) => i);
-  const rd = Array.from({ length: 52 }, (_, i) => i);
+  const rd = Array.from({ length: 53 }, (_, i) => i);
 
   return (
     <table className="absolute right-[1rem] top-[55px]">
