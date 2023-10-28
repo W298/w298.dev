@@ -20,6 +20,7 @@ import ImageLoading from "./ImageLoading";
 interface ProjectCardProp {
   data: ProjectCardData;
   lastCommitNode: ReactNode;
+  hoverTooltip: Boolean;
 }
 
 interface LinkTagsProp {
@@ -105,7 +106,11 @@ function LinkTags({ data }: LinkTagsProp) {
   );
 }
 
-export default function ProjectCard({ data, lastCommitNode }: ProjectCardProp) {
+export default function ProjectCard({
+  data,
+  lastCommitNode,
+  hoverTooltip,
+}: ProjectCardProp) {
   const [isMouseHover, setMouseHover] = useState(false);
   const [isMouseRealHover, setMouseRealHover] = useState(false);
   const enterEvent = debounce(() => {
@@ -138,6 +143,11 @@ export default function ProjectCard({ data, lastCommitNode }: ProjectCardProp) {
         leaveEvent();
       }}
     >
+      {hoverTooltip && (
+        <div className="absolute z-10 top-[8px] right-[8px] py-1 px-3 bg-[#262626de] rounded-[1rem] text-xs text-text-secondary">
+          Hover to Preview
+        </div>
+      )}
       <div className="h-[7.5rem] overflow-hidden relative">
         <video
           autoPlay

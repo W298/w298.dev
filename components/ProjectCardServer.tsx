@@ -6,10 +6,12 @@ import ProjectCardLastCommitDummy from "./ProjectCardLastCommitDummy";
 
 interface ProjectCardServerProp {
   data: ProjectCardData;
+  hoverTooltip: Boolean;
 }
 
 export default async function ProjectCardServer({
   data,
+  hoverTooltip,
 }: ProjectCardServerProp) {
   return (
     <ProjectCard
@@ -19,6 +21,7 @@ export default async function ProjectCardServer({
           <ProjectCardLastCommit repoLink={data.link.repo} />
         </Suspense>
       }
+      hoverTooltip={hoverTooltip}
     />
   );
 }

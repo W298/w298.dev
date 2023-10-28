@@ -10,7 +10,13 @@ export default function Page() {
   return (
     <div className="flex flex-col gap-12 pb-[85vh]">
       <div className="@container flex flex-col gap-3 bg-layer-400 p-4 rounded-md overflow-hidden relative h-[205px]">
-      <div className="absolute w-[30px] h-full top-0 left-0 z-10" style={{ backgroundImage: "linear-gradient(90deg, #1a1a1a 0%, #1a1a1a 50%, #1a1a1a00 100%)" }}></div>
+        <div
+          className="absolute w-[30px] h-full top-0 left-0 z-10"
+          style={{
+            backgroundImage:
+              "linear-gradient(90deg, #1a1a1a 0%, #1a1a1a 50%, #1a1a1a00 100%)",
+          }}
+        ></div>
         <div className="flex flex-row gap-3 z-20">
           <div className="flex items-center">
             <Github width={20} />
@@ -36,11 +42,12 @@ export default function Page() {
                     <div className="grid max-[1000px]:grid-cols-1 min-[1000px]:grid-cols-2 gap-5">
                       {projectCardList
                         .filter(({ released }) => released)
-                        .map((projectCardData, i) => {
+                        .map((projectCardData) => {
                           return (
                             <ProjectCardServer
                               key={projectCardData.title}
                               data={projectCardData}
+                              hoverTooltip={false}
                             />
                           );
                         })}
@@ -56,11 +63,12 @@ export default function Page() {
               <div className="grid max-[1000px]:grid-cols-1 min-[1000px]:grid-cols-2 gap-5">
                 {projectCardList
                   .filter(({ released }) => !released)
-                  .map((projectCardData) => {
+                  .map((projectCardData, i) => {
                     return (
                       <ProjectCardServer
                         key={projectCardData.title}
                         data={projectCardData}
+                        hoverTooltip={index == 0 && i == 0}
                       />
                     );
                   })}
