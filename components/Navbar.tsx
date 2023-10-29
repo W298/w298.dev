@@ -6,8 +6,13 @@ import pageData from "../data/pageData.json";
 import { MarkGithubIcon, AppsIcon } from "@primer/octicons-react";
 import { useRef, useState } from "react";
 import DropdownNav from "./DropdownNav";
-import path from "path";
 import { Youtube } from "@icons-pack/react-simple-icons";
+import localFont from "next/font/local";
+
+const IBM = localFont({
+  src: "../fonts/Web437_IBM_BIOS.woff",
+  display: "swap",
+});
 
 export default function Navbar() {
   const pathname: string = usePathname() ?? "/";
@@ -28,12 +33,11 @@ export default function Navbar() {
           <div className="flex flex-row justify-between items-center">
             <div className="flex flex-row items-center gap-8">
               <div className="flex flex-row items-center gap-8 min-[1440px]:w-80 max-[1440px]:w-[18rem] max-sm:w-fit border-r border-layer-200 max-[1000px]:border-transparent">
-                <img src="/imgs/avatar.png" className="w-8 h-8"></img>
                 <Link
-                  className="text-[1.2rem] cursor-pointer font-black"
+                  className={`text-[17px] cursor-pointer ${IBM.className}`}
                   href="/projects"
                 >
-                  W298.dev
+                  ./W298_dev
                 </Link>
               </div>
               <div className="flex flex-row items-center gap-3 max-[1000px]:hidden">
