@@ -34,7 +34,7 @@ export default function Navbar() {
             <div className="flex flex-row items-center gap-8">
               <div className="flex flex-row items-center gap-8 min-[1440px]:w-80 max-[1440px]:w-[18rem] max-sm:w-fit border-r border-layer-200 max-[1000px]:border-transparent">
                 <Link
-                  className={`text-[17px] cursor-pointer ${IBM.className}`}
+                  className={`text-[14px] cursor-pointer ${IBM.className}`}
                   href="/projects"
                 >
                   ./W298_dev
