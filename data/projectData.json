@@ -1,7 +1,21 @@
 [
   {
-    "categoryTitle": "Game Dev Research",
+    "categoryTitle": "Game Dev Tech",
     "projectCardList": [
+      {
+        "title": "apollo",
+        "pinned": true,
+        "imgSrc": "/imgs/projectCardImage/apollo.png",
+        "description": [
+          "A large-scale lunar terrain renderer with DirectX 12",
+          "using terrain information from NASA"
+        ],
+        "tags": ["DX12"],
+        "screenshots": [],
+        "link": {
+          "repo": "https://github.com/W298/apollo"
+        }
+      },
       {
         "title": "gvdb-fluid-unreal",
         "pinned": true,
@@ -24,8 +38,8 @@
         "imgSrc": "/imgs/projectCardImage/ZeroCity.png",
         "previewSrc": "/videos/projectCardPreview/ZeroCity.mp4",
         "description": [
-          "Procedural city generation project",
-          "Develop with Unity Engine"
+          "Procedural City-Generation Project",
+          "Sub-project of the FindingYonghee project"
         ],
         "tags": ["Unity"],
         "screenshots": [],
@@ -41,7 +55,7 @@
         "previewSrc": "/videos/projectCardPreview/ml-playground.mp4",
         "description": [
           "Train Agents in various environment",
-          "Implemented with Unity ML-Agents"
+          "using Unity ml-agents"
         ],
         "tags": ["Unity"],
         "screenshots": [],

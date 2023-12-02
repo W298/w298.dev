@@ -66,5 +66,9 @@
   "Steam": {
     "src": "https://cdn.simpleicons.org/steam/white",
     "color": "#1e3053"
+  },
+  "DX12": {
+    "src": "/imgs/icons/DX12.webp",
+    "color": "black"
   }
 }
