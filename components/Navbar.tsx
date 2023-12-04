@@ -37,7 +37,7 @@ export default function Navbar() {
                   className={`text-[14px] cursor-pointer ${IBM.className}`}
                   href="/projects"
                 >
-                  ./W298_dev
+                  {"> W298.dev"}
                 </Link>
               </div>
               <div className="flex flex-row items-center gap-3 max-[1000px]:hidden">

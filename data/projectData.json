@@ -192,7 +192,7 @@
     ]
   },
   {
-    "categoryTitle": "Web Development",
+    "categoryTitle": "ETC",
     "projectCardList": [
       {
         "title": "react-scroll-ts",
@@ -208,25 +208,6 @@
           "npm": "https://www.npmjs.com/package/react-scroll-ts"
         }
       },
-      {
-        "title": "Uma-Friend",
-        "imgSrc": "/imgs/projectCardImage/umaFriend.png",
-        "description": [
-          "Uma-musume (KR) Friend serach app",
-          "Deploy with NextJS, Firebase Database"
-        ],
-        "tags": ["React", "Redux", "Nextjs", "Firebase", "Nodejs"],
-        "screenshots": [],
-        "link": {
-          "repo": "https://github.com/W298/uma-friend-nextjs",
-          "link": "https://umafriend.vercel.app"
-        }
-      }
-    ]
-  },
-  {
-    "categoryTitle": "ETC",
-    "projectCardList": [
       {
         "title": "image-compression",
         "pinned": true,

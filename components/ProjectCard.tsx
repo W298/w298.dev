@@ -117,11 +117,11 @@ export default function ProjectCard({
     setMouseHover(true);
     if (previewVideo.current) previewVideo.current.currentTime = 0;
     leaveEvent.flush();
-  }, 300);
+  }, 500);
   const leaveEvent = debounce(() => {
     setMouseHover(false);
     enterEvent.flush();
-  }, 300);
+  }, 500);
 
   const previewVideo = useRef(null);
 
