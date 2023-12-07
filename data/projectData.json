@@ -6,6 +6,7 @@
         "title": "apollo",
         "pinned": true,
         "imgSrc": "/imgs/projectCardImage/apollo.png",
+        "previewSrc": "/videos/projectCardPreview/apollo.mp4",
         "description": [
           "A large-scale lunar terrain renderer with DirectX 12",
           "using terrain information from NASA"
