@@ -148,7 +148,7 @@ export default function ProjectCard({
           Hover to Preview
         </div>
       )}
-      <div className="h-[7.5rem] overflow-hidden relative">
+      <div className="h-[7rem] overflow-hidden relative">
         <video
           autoPlay
           muted
@@ -193,10 +193,10 @@ export default function ProjectCard({
           )}
         </Link>
       </div>
-      <div className="@[450px]:flex h-[9rem] py-5 px-[1.375rem] pt-3.5 flex-col hidden">
+      <div className="@[450px]:flex h-[8rem] py-3 px-5 pt-3 flex-col hidden">
         <div className="flex-1 flex flex-row justify-between">
           <div className="flex flex-col gap-1.5">
-            <div className="font-extrabold text-[22px]">{data.title}</div>
+            <div className="font-extrabold text-[20px]">{data.title}</div>
             <div>
               {data.description.map((d, idx) => {
                 return (
