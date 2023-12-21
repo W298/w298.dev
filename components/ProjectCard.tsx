@@ -127,7 +127,7 @@ export default function ProjectCard({
 
   return (
     <div
-      className="@container min-w-min rounded-md bg-layer-350 border border-layer-200 hover:border-layer-100 hover:scale-[103%] transition"
+      className="bg-layer-350 border border-transparent hover:border-layer-100 hover:scale-[102%] transition flex flex-col justify-between"
       id={`projectCard-${data.title
         .replaceAll(" ", "")
         .replaceAll("!", "")
@@ -143,111 +143,82 @@ export default function ProjectCard({
         leaveEvent();
       }}
     >
-      {hoverTooltip && (
-        <div className="absolute z-10 top-[8px] right-[8px] py-1 px-3 bg-[#262626de] rounded-[1rem] text-xs text-text-secondary">
-          Hover to Preview
+      <div className="flex flex-col">
+        <div className="h-[7rem] overflow-hidden relative">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster={data.imgSrc}
+            className={`${
+              isMouseHover ? "" : "hidden"
+            } object-cover min-h-full transition duration-150 ${
+              isMouseRealHover != isMouseHover && data.previewSrc
+                ? "blur-[2px]"
+                : ""
+            }`}
+            ref={previewVideo}
+          >
+            <source src={data.previewSrc} type="video/mp4" />
+          </video>
+          <ImageLoading
+            src={data.imgSrc}
+            loading="lazy"
+            quality={100}
+            width={510}
+            height={227}
+            unoptimized={true}
+            className={`${
+              isMouseHover ? "hidden" : ""
+            } object-cover min-h-full transition duration-150 ${
+              isMouseRealHover != isMouseHover && data.previewSrc
+                ? "blur-[2px]"
+                : ""
+            }`}
+            top="4rem"
+            isFull
+            alt={data.title}
+          />
+          <Link
+            className="absolute bottom-2 right-2 rounded-full border border-transparent hover:border-layer-100 transition"
+            href={"/projects/" + data.title}
+          >
+            {data.screenshots.length != 0 && (
+              <CustomTag Icon={ImageIcon} title="Screenshots" color="#393939CC" />
+            )}
+          </Link>
         </div>
-      )}
-      <div className="h-[7rem] overflow-hidden relative">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          width="510px"
-          poster={data.imgSrc}
-          className={`${
-            isMouseHover ? "" : "hidden"
-          } object-cover min-h-full rounded-t-md transition duration-150 ${
-            isMouseRealHover != isMouseHover && data.previewSrc
-              ? "blur-[2px]"
-              : ""
-          }`}
-          ref={previewVideo}
-        >
-          <source src={data.previewSrc} type="video/mp4" />
-        </video>
-        <ImageLoading
-          src={data.imgSrc}
-          loading="lazy"
-          quality={100}
-          width={510}
-          height={227}
-          unoptimized={true}
-          className={`${
-            isMouseHover ? "hidden" : ""
-          } object-cover min-h-full rounded-t-md transition duration-150 ${
-            isMouseRealHover != isMouseHover && data.previewSrc
-              ? "blur-[2px]"
-              : ""
-          }`}
-          top="4rem"
-          alt={data.title}
-        />
-        <Link
-          className="absolute bottom-2 right-2 rounded-full border border-transparent hover:border-layer-100 transition"
-          href={"/projects/" + data.title}
-        >
-          {data.screenshots.length != 0 && (
-            <CustomTag Icon={ImageIcon} title="Screenshots" color="#393939CC" />
-          )}
-        </Link>
-      </div>
-      <div className="@[450px]:flex h-[8rem] py-3 px-5 pt-3 flex-col hidden">
-        <div className="flex-1 flex flex-row justify-between">
-          <div className="flex flex-col gap-1.5">
-            <div className="font-extrabold text-[20px]">{data.title}</div>
-            <div>
-              {data.description.map((d, idx) => {
-                return (
-                  <div
-                    key={`${data.title}-description-${idx}`}
-                    className="font-light text-[13px]"
-                  >
-                    {d}
-                  </div>
-                );
+        <div className="flex py-3 px-4 pt-3">
+          <div className="flex-1 flex flex-row justify-between">
+            <div className="flex flex-col gap-1.5">
+              <div className="font-extrabold text-[20px]">{data.title}</div>
+              <div>
+                {data.description.map((d, idx) => {
+                  return (
+                    <div
+                      key={`${data.title}-description-${idx}`}
+                      className="font-light text-[13px]"
+                    >
+                      {d}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            <div className="max-w-[35%] flex flex-row flex-wrap justify-end content-start mt-1 gap-2">
+              {data.tags.map((title, idx) => {
+                return <Tag key={`${data.title}-tag-${idx}`} title={title} />;
               })}
             </div>
           </div>
-          <div className="max-w-[35%] flex flex-row flex-wrap justify-end content-start mt-1 gap-2">
-            {data.tags.map((title, idx) => {
-              return <Tag key={`${data.title}-tag-${idx}`} title={title} />;
-            })}
-          </div>
-        </div>
-        <div className="flex flex-row justify-between items-end">
-          {lastCommitNode}
-          <div className="flex flex-row flex-wrap-reverse justify-end gap-2">
-            <LinkTags data={data} />
-          </div>
         </div>
       </div>
-      <div className="@[450px]:hidden p-5 flex flex-col gap-3">
-        <div className="flex flex-row flex-wrap gap-2">
-          {data.tags.map((title, idx) => {
-            return <Tag key={`${data.title}-tag-small-${idx}`} title={title} />;
-          })}
-        </div>
-        <div className="flex flex-col gap-2">
-          <div className="font-extrabold text-2xl">{data.title}</div>
-          <div>
-            {data.description.map((d, idx) => {
-              return (
-                <div
-                  key={`${data.title}-description-small-${idx}`}
-                  className="font-light text-sm"
-                >
-                  {d}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-        {lastCommitNode}
-        <div className="flex flex-row flex-wrap gap-2">
+      <div className="flex flex-row justify-between items-center py-2 px-4 border-t-[1px] border-[#393939]">
+        <div className="flex flex-row gap-2">
           <LinkTags data={data} />
         </div>
+        {lastCommitNode}
       </div>
     </div>
   );

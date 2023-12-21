@@ -20,11 +20,11 @@ export interface DatePost {
 export function PostRow({ postRowData }: PostRowProp) {
   return (
     <Link
-      className="flex flex-col justify-between bg-layer-350 rounded-md border border-transparent hover:border-layer-100 transition"
+      className="flex flex-col justify-between bg-layer-350 border border-transparent hover:border-layer-100 transition"
       href={`/posts/${postRowData.postId}`}
     >
       <div className="flex flex-col gap-3">
-        <div className="h-32 overflow-hidden relative rounded-t-md">
+        <div className="h-32 overflow-hidden relative">
           <ImageLoading
             src={`/imgs/post_imgs/${postRowData.postId}/thumnail.png`}
             loading="lazy"
@@ -35,6 +35,7 @@ export function PostRow({ postRowData }: PostRowProp) {
             className="object-cover min-h-full max-w-fit"
             top="4rem"
             alt={postRowData.postId + "-thumnail"}
+            isFull
           />
         </div>
         <div className="px-6 py-2">

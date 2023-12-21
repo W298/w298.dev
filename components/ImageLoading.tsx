@@ -16,6 +16,7 @@ export default function ImageLoading({
   className,
   top = "50%",
   type = "dot-bricks",
+  isFull = false
 }) {
   const [isLoaded, setIsLoaded] = useState(0);
 
@@ -42,7 +43,7 @@ export default function ImageLoading({
           }}
           className={`${className} ${
             isLoaded == 1 ? "opacity-100" : "opacity-0"
-          } transition duration-150`}
+          } transition duration-150 ${isFull ? "w-full" : ""}`}
         />
       )}
       <div

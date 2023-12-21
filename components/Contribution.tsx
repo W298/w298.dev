@@ -13,13 +13,47 @@ async function getContribution() {
   const startDay = new Date(
     paddedToday.getFullYear(),
     paddedToday.getMonth(),
-    paddedToday.getDate() - 53*7
+    paddedToday.getDate() - 52*7
+  );
+
+  const farStartDay = new Date(
+    startDay.getFullYear(),
+    startDay.getMonth(),
+    startDay.getDate() - 20*7
   );
 
   const body = {
     query: `query { 
       user(login: "w298") {
         contributionsCollection(from: "${startDay.toISOString()}", to: "${today.toISOString()}") {
+          contributionCalendar {
+            totalContributions
+            weeks {
+              contributionDays {
+                weekday
+                date 
+                contributionCount 
+                color
+              }
+            }
+            months  {
+              name
+                year
+                firstDay 
+              totalWeeks 
+              
+            }
+          }
+        }
+      }
+      
+    }`,
+  };
+
+  const body2 = {
+    query: `query { 
+      user(login: "w298") {
+        contributionsCollection(from: "${farStartDay.toISOString()}", to: "${startDay.toISOString()}") {
           contributionCalendar {
             totalContributions
             weeks {
@@ -53,9 +87,24 @@ async function getContribution() {
     },
   });
   const data = await res.json();
-
   const d = data["data"]["user"]["contributionsCollection"];
+
+  const res2 = await fetch("https://api.github.com/graphql", {
+    method: "POST",
+    body: JSON.stringify(body2),
+    headers: headers,
+    next: {
+      revalidate: 10,
+    },
+  });
+  const data2 = await res2.json();
+  const d2 = data2["data"]["user"]["contributionsCollection"];
+  
   const flatted = [];
+  
+  d2["contributionCalendar"]["weeks"].forEach((element) => {
+    flatted.push(...element["contributionDays"]);
+  });
   d["contributionCalendar"]["weeks"].forEach((element) => {
     flatted.push(...element["contributionDays"]);
   });
@@ -66,7 +115,7 @@ async function getContribution() {
 export default async function Contribution() {
   const contributionData = await getContribution();
   const wd = Array.from({ length: 7 }, (_, i) => i);
-  const rd = Array.from({ length: 53 }, (_, i) => i);
+  const rd = Array.from({ length: 72 }, (_, i) => i);
 
   return (
     <table className="absolute right-[1rem] top-[55px]">

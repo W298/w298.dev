@@ -15,10 +15,10 @@ export function Tag({ title }: TagProp) {
   const { src, color } = iconData[title] ?? { src: "", color: "black" };
   return (
     <div
-      className={`flex flex-row h-min items-center px-1 py-0.25 rounded-full select-none`}
+      className={`flex flex-row h-min items-center p-[0.025rem] rounded-full select-none`}
       style={{ backgroundColor: color }}
     >
-      <img height="24" width="24" className="p-1 w-6 h-6" src={src} />
+      <img height="24" width="24" className="p-[0.3rem] w-6 h-6" src={src} />
     </div>
   );
 }

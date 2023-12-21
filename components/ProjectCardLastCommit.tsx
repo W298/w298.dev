@@ -20,14 +20,13 @@ export default async function ProjectCardLastCommit({ repoLink }) {
     : null;
 
   return (
-    <div className="flex flex-row gap-2 items-center -mb-[1px]">
+    <div className="flex flex-row gap-2 items-center" title="Last commit date">
       <GitCommitIcon size={16} />
-      <div className="font-light text-xs text-text-secondary -mt-[5px]">
-        {`Last Commit - ${
-          repoInfo == null
-            ? "No_Info"
-            : repoInfo["pushed_at"].toString().substring(0, 10)
-        } `}
+      <div className="font-light text-xs text-text-secondary -mt-[1px]">
+        {repoInfo == null
+          ? "No_Info"
+          : repoInfo["pushed_at"].toString().substring(0, 10)
+        }
       </div>
     </div>
   );

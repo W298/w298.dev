@@ -7,12 +7,6 @@ import { MarkGithubIcon, AppsIcon } from "@primer/octicons-react";
 import { useRef, useState } from "react";
 import DropdownNav from "./DropdownNav";
 import { Youtube } from "@icons-pack/react-simple-icons";
-import localFont from "next/font/local";
-
-const IBM = localFont({
-  src: "../fonts/Web437_IBM_BIOS.woff",
-  display: "swap",
-});
 
 export default function Navbar() {
   const pathname: string = usePathname() ?? "/";
@@ -25,31 +19,33 @@ export default function Navbar() {
         style={{
           background: "linear-gradient(43deg, #4158D0, #C850C0, #FFCC70)",
           width: "100%",
-          height: "4px",
+          height: "3px",
         }}
       ></div>
-      <div className="py-3 px-8 backdrop-blur-sm bg-layer-400/70 drop-shadow">
-        <div className="max-w-[90rem] m-auto">
-          <div className="flex flex-row justify-between items-center">
-            <div className="flex flex-row items-center gap-8">
-              <div className="flex flex-row items-center gap-8 min-[1440px]:w-80 max-[1440px]:w-[18rem] max-sm:w-fit border-r border-layer-200 max-[1000px]:border-transparent">
+      <div className="backdrop-blur-sm bg-layer-400/70 drop-shadow h-[48px]">
+        <div className="max-w-[110rem] h-full m-auto">
+          <div className="flex flex-row justify-between items-center h-full">
+            <div className="flex flex-row items-center gap-8 h-full">
+              <div className="flex flex-row items-center gap-8 h-full min-w-[790px]:w-full w-[18rem]">
                 <Link
-                  className={`text-[14px] cursor-pointer ${IBM.className}`}
+                  className={`text-[1.25rem] cursor-pointer font-bold tracking-wide scale-y-90 pl-6 flex flex-row gap-5 items-center`}
                   href="/projects"
                 >
-                  {"> W298.dev"}
+                  <img src="/imgs/avatar.png" className="w-[26px] h-[26px]" />
+                  {"W298.dev"}
                 </Link>
               </div>
-              <div className="flex flex-row items-center gap-3 max-[1000px]:hidden">
+              <div className="h-[60%] w-[1px] border-r border-layer-200 max-[1000px]:border-transparent"></div>
+              <div className="flex flex-row items-center max-[1000px]:hidden h-full">
                 {pageData.map(({ title, dir }) => {
                   return (
                     <Link
                       key={`Link-${title}`}
-                      className={`text-sm ${
+                      className={`text-[15px] border-b-[3px] font-semibold ${
                         pathname.includes(dir)
-                          ? "bg-layer-200 font-bold"
-                          : "bg-layer-300"
-                      } w-[5.5rem] h-[1.7rem] flex justify-center items-center rounded-sm border border-transparent hover:border-layer-100 cursor-pointer transition`}
+                          ? "border-b-white"
+                          : "border-b-[transparent] transparent"
+                      } w-[6.25rem] h-full flex justify-center items-center cursor-pointer transition hover:bg-layer-300`}
                       href={dir}
                     >
                       {title}
@@ -58,44 +54,35 @@ export default function Navbar() {
                 })}
               </div>
             </div>
-            <div className="flex flex-row gap-1 items-center">
+            <div className="flex flex-row items-center h-full pr-6">
               <a
                 title="Github Profile"
                 href="https://github.com/W298"
                 target="_blank"
-                className="h-[2rem] px-3 rounded-sm flex flex-row gap-2 justify-center items-center hover:bg-layer-300 transition"
+                className="h-full w-[48px] flex flex-row gap-2 justify-center items-center hover:bg-layer-300 transition"
               >
                 <MarkGithubIcon fill="#c6c6c6" size={17} />
-                <span className="font-bold text-sm text-text-secondary max-sm:hidden">
-                  Github
-                </span>
               </a>
               <a
                 title="Youtube Channel"
                 href="https://www.youtube.com/@W298-dev"
                 target="_blank"
-                className="h-[2rem] px-3 rounded-sm flex flex-row gap-2 justify-center items-center hover:bg-layer-300 transition"
+                className="h-full w-[48px] flex flex-row gap-2 justify-center items-center hover:bg-layer-300 transition"
               >
                 <Youtube fill="#c6c6c6" size={17} />
-                <span className="font-bold text-sm text-text-secondary max-sm:hidden">
-                  Youtube
-                </span>
               </a>
-              <div className="relative">
+              <div className="relative h-full">
                 <div
                   title="Menu"
                   onClick={() => {
                     setDropdownNavOpen(!dropdownNavOpen);
                   }}
                   ref={menuBtnRef}
-                  className={`h-[2rem] px-3 rounded-sm flex flex-row gap-2 justify-center items-center hover:bg-layer-300 transition cursor-pointer ${
+                  className={`h-full w-[48px] flex flex-row gap-2 justify-center items-center hover:bg-layer-300 transition cursor-pointer ${
                     dropdownNavOpen ? "bg-layer-300" : ""
                   }`}
                 >
                   <AppsIcon fill="#c6c6c6" size={17} />
-                  <span className="font-bold text-sm text-text-secondary max-sm:hidden">
-                    Menu
-                  </span>
                 </div>
                 <DropdownNav
                   open={dropdownNavOpen}

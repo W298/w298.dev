@@ -8,6 +8,7 @@ export default async function RootLayout({ children }) {
   return (
     <html>
       <head>
+        <title>W298.dev</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -31,7 +32,9 @@ export default async function RootLayout({ children }) {
       <body>
         <Navbar />
         <ScrollToTop />
-        {children}
+        <div className="max-w-[110rem] mt-[50px] m-auto flex flex-row gap-5">
+          {children}
+        </div>
         <Analytics />
       </body>
     </html>
