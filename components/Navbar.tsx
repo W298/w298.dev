@@ -26,7 +26,7 @@ export default function Navbar() {
         <div className="max-w-[110rem] h-full m-auto">
           <div className="flex flex-row justify-between items-center h-full">
             <div className="flex flex-row items-center gap-8 h-full">
-              <div className="flex flex-row items-center gap-8 h-full min-w-[790px]:w-full w-[18rem]">
+              <div className="flex flex-row items-center gap-8 h-full min-[790px]:w-[18rem]">
                 <Link
                   className={`text-[1.25rem] cursor-pointer font-bold tracking-wide scale-y-90 pl-6 flex flex-row gap-5 items-center`}
                   href="/projects"
