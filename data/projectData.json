@@ -1,7 +1,35 @@
 [
   {
-    "categoryTitle": "Game Dev Project",
+    "categoryTitle": "Computer Graphics",
     "projectCardList": [
+      {
+        "title": "Surfel Global Illumination",
+        "pinned": true,
+        "imgSrc": "",
+        "description": [
+          "Real-Time dynamic global illumination based on surfel.",
+          "This project is based on GIBS presented at SIGGRAPH 2021."
+        ],
+        "tags": [],
+        "screenshots": [],
+        "link": {
+          "repo": "https://github.com/W298/SurfelGI"
+        }
+      },
+      {
+        "title": "Surtr",
+        "pinned": true,
+        "imgSrc": "",
+        "description": [
+          "Surtr is a project that simulates dynamic object fracturing",
+          "in real time with volumetric convex decomposition."
+        ],
+        "tags": ["DX12"],
+        "screenshots": [],
+        "link": {
+          "repo": "https://github.com/W298/Surtr"
+        }
+      },
       {
         "title": "apollo",
         "pinned": true,
@@ -32,7 +60,12 @@
           "repo": "https://github.com/W298/gvdb-fluid-unreal",
           "youtube": "https://www.youtube.com/watch?v=b3hXHdFV3zE"
         }
-      },
+      }
+    ]
+  },
+  {
+    "categoryTitle": "PCG/ML",
+    "projectCardList": [
       {
         "title": "zeroCity",
         "pinned": true,

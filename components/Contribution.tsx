@@ -7,19 +7,19 @@ async function getContribution() {
   const paddedToday = new Date(
     today.getFullYear(),
     today.getMonth(),
-    today.getDate() + 8 - today.getDay()
+    today.getDate() + 7 - today.getDay()
   )
 
   const startDay = new Date(
     paddedToday.getFullYear(),
     paddedToday.getMonth(),
-    paddedToday.getDate() - 52*7
+    paddedToday.getDate() - 51*7 - 6
   );
 
   const farStartDay = new Date(
     startDay.getFullYear(),
     startDay.getMonth(),
-    startDay.getDate() - 20*7
+    startDay.getDate() - 19*7 - 6
   );
 
   const body = {
