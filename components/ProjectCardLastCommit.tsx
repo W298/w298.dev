@@ -25,8 +25,7 @@ export default async function ProjectCardLastCommit({ repoLink }) {
       <div className="font-light text-xs text-text-secondary -mt-[1px]">
         {repoInfo == null
           ? "No_Info"
-          : repoInfo["pushed_at"].toString().substring(0, 10)
-        }
+          : repoInfo["pushed_at"].toString().substring(2, 10)}
       </div>
     </div>
   );

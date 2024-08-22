@@ -4,6 +4,7 @@ export interface CategoryData {
 }
 
 export interface ProjectCardLinkData {
+  docs: string | null;
   repo: string | null;
   lab: string | null;
   steam: string | null;

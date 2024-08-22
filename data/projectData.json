@@ -13,7 +13,9 @@
         "tags": [],
         "screenshots": [],
         "link": {
-          "repo": "https://github.com/W298/SurfelGI"
+          "docs": "https://w298.github.io/SurfelGI",
+          "repo": "https://github.com/W298/SurfelGI",
+          "youtube": "https://youtu.be/tZLKHJ8g12s?si=e4RBebrHUdfJMBm4"
         }
       },
       {
@@ -250,7 +252,7 @@
           "Image compression & encode / decode",
           "Develop with Win32"
         ],
-        "tags": ["Win"],
+        "tags": [],
         "screenshots": [],
         "link": {
           "repo": "https://github.com/W298/image-compression"

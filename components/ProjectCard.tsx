@@ -1,7 +1,7 @@
 "use client";
 
 import { ProjectCardData } from "./interface/ProjectDataInterface";
-import { LinkIcon, ImageIcon } from "@primer/octicons-react";
+import { LinkIcon, ProjectRoadmapIcon } from "@primer/octicons-react";
 import {
   Notion,
   Youtube,
@@ -30,13 +30,22 @@ interface LinkTagsProp {
 function LinkTags({ data }: LinkTagsProp) {
   return (
     <>
+      {data.link.docs && (
+        <Link
+          href={data.link.docs}
+          target="_blank"
+          className="rounded-full border border-transparent hover:border-layer-100 transition"
+        >
+          <CustomTag Icon={ProjectRoadmapIcon} title="Docs" color="#393939" />
+        </Link>
+      )}
       {data.link.repo && (
         <Link
           href={data.link.repo}
           target="_blank"
           className="rounded-full border border-transparent hover:border-layer-100 transition"
         >
-          <CustomTag Icon={Github} title="Github" color="#393939" />
+          <CustomTag Icon={Github} title="Repo" color="#393939" />
         </Link>
       )}
       {data.link.lab && (
@@ -117,17 +126,17 @@ export default function ProjectCard({
     setMouseHover(true);
     if (previewVideo.current) previewVideo.current.currentTime = 0;
     leaveEvent.flush();
-  }, 500);
+  }, 250);
   const leaveEvent = debounce(() => {
     setMouseHover(false);
     enterEvent.flush();
-  }, 500);
+  }, 250);
 
   const previewVideo = useRef(null);
 
   return (
     <div
-      className="bg-layer-350 border border-transparent hover:border-layer-100 hover:scale-[102%] transition flex flex-col justify-between"
+      className="bg-layer-350 border border-transparent hover:border-layer-100 transition flex flex-col justify-between"
       id={`projectCard-${data.title
         .replaceAll(" ", "")
         .replaceAll("!", "")
@@ -180,14 +189,6 @@ export default function ProjectCard({
             isFull
             alt={data.title}
           />
-          <Link
-            className="absolute bottom-2 right-2 rounded-full border border-transparent hover:border-layer-100 transition"
-            href={"/projects/" + data.title}
-          >
-            {data.screenshots.length != 0 && (
-              <CustomTag Icon={ImageIcon} title="Screenshots" color="#393939CC" />
-            )}
-          </Link>
         </div>
         <div className="flex py-3 px-4 pt-3">
           <div className="flex-1 flex flex-row justify-between">
