@@ -8,18 +8,18 @@ async function getContribution() {
     today.getFullYear(),
     today.getMonth(),
     today.getDate() + 7 - today.getDay()
-  )
+  );
 
   const startDay = new Date(
     paddedToday.getFullYear(),
     paddedToday.getMonth(),
-    paddedToday.getDate() - 51*7 - 6
+    paddedToday.getDate() - 51 * 7 - 6
   );
 
   const farStartDay = new Date(
     startDay.getFullYear(),
     startDay.getMonth(),
-    startDay.getDate() - 19*7 - 6
+    startDay.getDate() - 39 * 7 - 6
   );
 
   const body = {
@@ -99,9 +99,9 @@ async function getContribution() {
   });
   const data2 = await res2.json();
   const d2 = data2["data"]["user"]["contributionsCollection"];
-  
+
   const flatted = [];
-  
+
   d2["contributionCalendar"]["weeks"].forEach((element) => {
     flatted.push(...element["contributionDays"]);
   });
@@ -115,7 +115,7 @@ async function getContribution() {
 export default async function Contribution() {
   const contributionData = await getContribution();
   const wd = Array.from({ length: 7 }, (_, i) => i);
-  const rd = Array.from({ length: 72 }, (_, i) => i);
+  const rd = Array.from({ length: 92 }, (_, i) => i);
 
   return (
     <table className="absolute right-[1rem] top-[55px]">
@@ -135,11 +135,11 @@ export default async function Contribution() {
                 return (
                   <td
                     style={{
-                      width: "16.44px",
-                      height: "16.44px",
+                      width: "13px",
+                      height: "13px",
                       background:
-                        (dayData == null) 
-                          ? "transparent" 
+                        dayData == null
+                          ? "transparent"
                           : dayData["contributionCount"] == 0
                           ? "#212121"
                           : 1 <= dayData["contributionCount"] &&
@@ -152,7 +152,7 @@ export default async function Contribution() {
                             dayData["contributionCount"] <= 8
                           ? "#26a641"
                           : "#39d353",
-                      borderRadius: "4.5px",
+                      borderRadius: "3px",
                     }}
                   ></td>
                 );
