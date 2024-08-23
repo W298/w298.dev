@@ -21,7 +21,8 @@
       {
         "title": "Surtr",
         "pinned": true,
-        "imgSrc": "",
+        "imgSrc": "/imgs/projectCardImage/Surtr.png",
+        "previewSrc": "/videos/projectCardPreview/Surtr.mp4",
         "description": [
           "Surtr is a project that simulates dynamic object fracturing",
           "in real time with volumetric convex decomposition."
