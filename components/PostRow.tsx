@@ -23,7 +23,7 @@ export function PostRow({ postRowData }: PostRowProp) {
       className="flex flex-col justify-between bg-layer-350 border border-transparent hover:border-layer-100 transition"
       href={`/posts/${postRowData.postId}`}
     >
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-1">
         <div className="h-32 overflow-hidden relative">
           <ImageLoading
             src={`/imgs/post_imgs/${postRowData.postId}/thumnail.png`}
@@ -38,25 +38,25 @@ export function PostRow({ postRowData }: PostRowProp) {
             isFull
           />
         </div>
-        <div className="px-6 py-2">
-          <div className="font-light text-sm text-text-secondary flex flex-row gap-4">
+        <div className="px-4 py-3">
+          <div className="font-light text-[12px] text-text-secondary flex flex-row gap-4">
             <div>{postRowData.header[3].split(",").join(" / ")}</div>
           </div>
-          <div className="font-bold text-xl pt-1 pb-3">
+          <div className="font-bold text-[20px] pt-1 pb-1.5">
             {postRowData.header[0]}
           </div>
-          <div className="font-light text-sm">{postRowData.header[1]}</div>
+          <div className="font-light text-[13px]">{postRowData.header[1]}</div>
         </div>
       </div>
-      <div className="py-2 flex flex-col gap-3">
+      <div className="flex flex-col">
         <hr style={{ color: "#393939" }}></hr>
-        <div className="font-light text-sm text-text-secondary px-6 flex justify-between">
+        <div className="font-light text-[13px] text-text-secondary px-4 py-2 flex justify-between">
           <div>{postRowData.header[2]}</div>
           <div>
             {postRowData.header[4] && (
               <div className="flex flex-row gap-2.5">
                 <FileDirectoryIcon size={13} className="mt-[3px]" />
-                <div className="font-light text-sm">
+                <div className="font-light text-[13px]">
                   {postRowData.header[4]}
                 </div>
               </div>
