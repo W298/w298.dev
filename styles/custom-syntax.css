@@ -11,3 +11,10 @@ video {
   margin: 0.5rem 0 0.5rem 0 !important;
   border-radius: 0.25rem !important;
 }
+
+.markdown-body h2 {
+  margin-top: 48px !important;
+}
+.markdown-body h3 {
+  margin-top: 32px !important;
+}
