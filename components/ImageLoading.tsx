@@ -16,12 +16,13 @@ export default function ImageLoading({
   className,
   top = "50%",
   type = "dot-bricks",
-  isFull = false
+  isFull = false,
+  isCenter = false,
 }) {
   const [isLoaded, setIsLoaded] = useState(0);
 
   return (
-    <div className="relative h-full">
+    <div className={`relative h-full ${isCenter ? "flex justify-center" : ""}`}>
       {isLoaded == -1 ? (
         <div className="w-full h-full flex justify-center items-center">
           <div className="text-[12rem] font-black text-[#161616] pt-2">404</div>

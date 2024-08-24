@@ -25,6 +25,7 @@ function CodeBlock({ language, inline, children }) {
       customStyle={{
         backgroundColor: "transparent",
         fontSize: "15px",
+        margin: "-0.5rem 0 -0.5rem 0",
       }}
       showLineNumbers
     >
@@ -35,7 +36,7 @@ function CodeBlock({ language, inline, children }) {
 
 export function PostComponent({ children }) {
   return (
-    <div className="markdown-body pb-[20vh] max-w-[70rem]">
+    <div className="markdown-body pb-[20vh] min-[1350px]:w-[60rem]">
       <ReactMarkdown
         components={{
           p: ({ children }) => <div className="mb-[16px]">{children}</div>,
@@ -54,7 +55,26 @@ export function PostComponent({ children }) {
               width={alt}
               height={alt}
               className="my-2 rounded"
+              isCenter={true}
             />
+          ),
+          video: ({ width, muted, controls, playsInline, children }) => (
+            <div className="w-full flex justify-center">
+              <video
+                width={width}
+                muted={muted}
+                controls={controls}
+                playsInline={playsInline}
+                className="my-2"
+              >
+                {children}
+              </video>
+            </div>
+          ),
+          table: ({ children }) => (
+            <div className="w-full flex justify-center">
+              <table>{children}</table>
+            </div>
           ),
         }}
         remarkPlugins={[remarkGfm, remarkToc]}
