@@ -19,8 +19,8 @@ export default function Sidebar({ children }: { children?: React.ReactNode }) {
   const pageData: PageInfo[] = _pageData;
 
   return (
-    <div className="fixed w-80 h-full bg-layer-400 drop-shadow max-[790px]:hidden">
-      <div className="text-xl font-semibold pb-4 pt-8 px-6">
+    <div className="fixed w-[19rem] h-full max-[900px]:hidden ml-2">
+      <div className="text-md font-semibold py-5 px-6">
         <Link href={pathname} className="flex flex-1">
           {pageData.find(({ dir }) => dir == pathname).title}
         </Link>

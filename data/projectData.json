@@ -1,11 +1,11 @@
 [
   {
-    "categoryTitle": "Computer Graphics",
+    "categoryTitle": "GRAPHICS",
     "projectCardList": [
       {
         "title": "Surfel Global Illumination",
         "pinned": true,
-        "imgSrc": "",
+        "imgSrc": "/imgs/projectCardImage/surfelGI.png",
         "description": [
           "Real-Time dynamic global illumination based on surfel.",
           "This project is based on GIBS presented at SIGGRAPH 2021."
@@ -13,7 +13,6 @@
         "tags": [],
         "screenshots": [],
         "link": {
-          "docs": "https://w298.github.io/SurfelGI",
           "repo": "https://github.com/W298/SurfelGI",
           "youtube": "https://youtu.be/tZLKHJ8g12s?si=e4RBebrHUdfJMBm4"
         }
@@ -103,7 +102,7 @@
     ]
   },
   {
-    "categoryTitle": "Game Development",
+    "categoryTitle": "GAME DEV",
     "projectCardList": [
       {
         "title": "RoadPipe",

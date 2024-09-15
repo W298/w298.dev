@@ -23,14 +23,16 @@ export default function ProjectCategory({
   const lastRow = Math.ceil(projectCardList.length / 2) - 1;
 
   return (
-    <div>
+    <div className="mb-2">
       <div
         className="flex flex-row items-center justify-between py-[0.4rem] px-6 cursor-pointer hover:bg-layer-300 transition"
         onClick={() => {
           setExpanded(!expanded);
         }}
       >
-        <div className="text-text-secondary font-bold">{categoryTitle}</div>
+        <div className="text-text-primary font-semibold text-[14px]">
+          {categoryTitle}
+        </div>
         <ChevronDownIcon
           fill="#f4f4f4"
           size={16}
@@ -57,7 +59,7 @@ export default function ProjectCategory({
             baseLineOption={{ offset: 300 }}
             elementOption={{ topOffset, bottomOffset }}
             activeClassName="border-l-custom-active bg-layer-300"
-            className={`block py-[0.4rem] px-10 cursor-pointer text-text-secondary border-l-custom hover:bg-layer-300 transition ${
+            className={`block py-[0.4rem] px-10 cursor-pointer text-text-secondary text-[15px] border-l-custom hover:bg-layer-300 transition ${
               expanded ? "block" : "hidden"
             }`}
           >

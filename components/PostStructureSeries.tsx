@@ -20,7 +20,9 @@ export default function PostStructureSeries({
       href={`/posts/series/${seriesName.toLowerCase()}`}
     >
       <FileDirectoryIcon fill="#c6c6c6" className="mt-[4px]" />
-      <div className="truncate text-text-secondary">{seriesName}</div>
+      <div className="truncate text-text-secondary text-[15px]">
+        {seriesName}
+      </div>
     </Link>
   );
 }

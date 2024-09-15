@@ -32,7 +32,7 @@ export default async function RootLayout({ children }) {
       <body className="max-w-[100%] overflow-x-hidden">
         <Navbar />
         <ScrollToTop />
-        <div className="max-w-[110rem] mt-[50px] m-auto flex flex-row gap-5">
+        <div className="max-w-[90rem] mt-[50px] m-auto flex flex-row gap-5">
           {children}
         </div>
         <Analytics />

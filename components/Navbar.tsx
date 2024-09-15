@@ -19,16 +19,16 @@ export default function Navbar() {
         style={{
           background: "linear-gradient(43deg, #4158D0, #C850C0, #FFCC70)",
           width: "100%",
-          height: "3px",
+          height: "2px",
         }}
       ></div>
       <div className="backdrop-blur-sm bg-layer-400/70 drop-shadow h-[48px]">
-        <div className="max-w-[110rem] h-full m-auto">
+        <div className="max-w-[90rem] h-full m-auto">
           <div className="flex flex-row justify-between items-center h-full">
             <div className="flex flex-row items-center gap-8 h-full">
-              <div className="flex flex-row items-center gap-8 h-full min-[790px]:w-[18rem]">
+              <div className="flex flex-row items-center gap-8 h-full min-[900px]:w-[20.5rem]">
                 <Link
-                  className={`text-[1.25rem] cursor-pointer font-bold tracking-wide scale-y-90 pl-6 flex flex-row gap-5 items-center`}
+                  className={`text-[1.25rem] cursor-pointer font-bold tracking-wide scale-y-90 pl-7 flex flex-row gap-5 items-center`}
                   href="/projects"
                 >
                   <img src="/imgs/avatar.png" className="w-[26px] h-[26px]" />
@@ -36,7 +36,7 @@ export default function Navbar() {
                 </Link>
               </div>
               <div className="h-[60%] w-[1px] border-r border-layer-200 max-[1000px]:border-transparent"></div>
-              <div className="flex flex-row items-center max-[1000px]:hidden h-full">
+              <div className="flex flex-row items-center max-[900px]:hidden h-full">
                 {pageData.map(({ title, dir }) => {
                   return (
                     <Link
@@ -54,7 +54,7 @@ export default function Navbar() {
                 })}
               </div>
             </div>
-            <div className="flex flex-row items-center h-full pr-6">
+            <div className="flex flex-row items-center h-full pr-[3.5rem]">
               <a
                 title="Github Profile"
                 href="https://github.com/W298"

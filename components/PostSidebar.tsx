@@ -50,7 +50,7 @@ export default function PostSidebar({ structure }) {
   return (
     <div className="flex flex-col gap-5">
       <div>
-        <div className="text-lg font-semibold py-[0.4rem] px-6">Tags</div>
+        <div className="text-[14px] font-semibold py-[0.4rem] px-6">TAGS</div>
         {Object.keys(structure).map((tag) => (
           <PostStructureRow
             key={`post-sidebar-tag-${tag}`}
@@ -62,7 +62,7 @@ export default function PostSidebar({ structure }) {
         ))}
       </div>
       <div>
-        <div className="text-lg font-semibold py-[0.4rem] px-6">Series</div>
+        <div className="text-[14px] font-semibold py-[0.4rem] px-6">SERIES</div>
         {seriesList.map((seriesName) => {
           return (
             <Link
@@ -71,7 +71,9 @@ export default function PostSidebar({ structure }) {
               className="flex flex-row items-center py-[0.4rem] px-6 pl-10 cursor-pointer hover:bg-layer-300 transition gap-3"
             >
               <FileDirectoryIcon fill="#c6c6c6" />
-              <div className="text-text-secondary font-bold">{seriesName}</div>
+              <div className="text-text-secondary font-semibold text-[14px]">
+                {seriesName}
+              </div>
             </Link>
           );
         })}

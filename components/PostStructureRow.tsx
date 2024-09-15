@@ -49,7 +49,9 @@ export default function PostStructureRow({
           setExpandedTag(expandedTag == tag ? "" : tag);
         }}
       >
-        <div className="text-text-secondary font-bold">{tag}</div>
+        <div className="text-text-secondary text-[14px] font-semibold">
+          {tag}
+        </div>
         <ChevronDownIcon
           fill="#f4f4f4"
           size={16}

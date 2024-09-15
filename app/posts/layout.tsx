@@ -56,8 +56,8 @@ export default async function PostLayout({ children }) {
       <Sidebar>
         <PostSidebar structure={structure} />
       </Sidebar>
-      <div className="min-[790px]:ml-80 w-full">
-        <div className="min-[790px]:m-8 m-5 flex justify-center">
+      <div className="min-[900px]:ml-[19rem] w-full">
+        <div className="min-[900px]:mx-14 min-[900px]:my-12 m-5 flex justify-center">
           {children}
         </div>
       </div>

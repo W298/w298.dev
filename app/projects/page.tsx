@@ -9,7 +9,7 @@ export default function Page() {
 
   return (
     <div className="flex flex-col gap-12 pb-[85vh]">
-      <div className="@container flex flex-col gap-3 bg-layer-400 p-4 overflow-hidden relative h-[181px]">
+      <div className="@container flex flex-col gap-3 bg-layer-400 p-4 overflow-hidden relative h-[181px] rounded-md">
         <div
           className="absolute w-[30px] h-full top-0 left-0 z-10"
           style={{
@@ -33,13 +33,13 @@ export default function Page() {
             )}
             <div className="flex flex-col gap-5">
               <div className="flex flex-row justify-between align-middle">
-                <div className="text-xl font-bold">{categoryTitle}</div>
+                <div className="text-md font-bold">{categoryTitle}</div>
               </div>
               {projectCardList.every(({ released }) => released != null) &&
                 projectCardList.some(({ released }) => released) && (
                   <>
                     <div className="font-semibold">Released</div>
-                    <div className="grid max-[1180px]:grid-cols-1 max-[1580px]:grid-cols-2 grid-cols-3 gap-5">
+                    <div className="grid max-[1180px]:grid-cols-1 grid-cols-2 gap-5">
                       {projectCardList
                         .filter(({ released }) => released)
                         .map((projectCardData) => {
@@ -60,7 +60,7 @@ export default function Page() {
                     Currently Developing 🛠️
                   </div>
                 )}
-              <div className="grid max-[1180px]:grid-cols-1 max-[1580px]:grid-cols-2 grid-cols-3 gap-5">
+              <div className="grid max-[1180px]:grid-cols-1 grid-cols-2 gap-5">
                 {projectCardList
                   .filter(({ released }) => !released)
                   .map((projectCardData, i) => {

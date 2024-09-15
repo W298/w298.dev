@@ -25,7 +25,9 @@ export default function ImageLoading({
     <div className={`relative h-full ${isCenter ? "flex justify-center" : ""}`}>
       {isLoaded == -1 ? (
         <div className="w-full h-full flex justify-center items-center">
-          <div className="text-[12rem] font-black text-[#161616] pt-2">404</div>
+          <div className="text-[12rem] font-black tracking-[0.05em] text-[#161616] pt-2">
+            404
+          </div>
         </div>
       ) : (
         <Image

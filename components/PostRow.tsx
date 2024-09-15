@@ -20,7 +20,7 @@ export interface DatePost {
 export function PostRow({ postRowData }: PostRowProp) {
   return (
     <Link
-      className="flex flex-col justify-between bg-layer-350 border border-transparent hover:border-layer-100 transition"
+      className="flex flex-col justify-between bg-layer-350 border border-transparent w-[502px] hover:border-layer-100 transition rounded-md"
       href={`/posts/${postRowData.postId}`}
     >
       <div className="flex flex-col gap-1">
@@ -32,7 +32,7 @@ export function PostRow({ postRowData }: PostRowProp) {
             width={510}
             height={227}
             unoptimized={true}
-            className="object-cover min-h-full max-w-fit"
+            className="object-cover min-h-full max-w-fit rounded-t-md"
             top="4rem"
             alt={postRowData.postId + "-thumnail"}
             isFull
@@ -42,7 +42,7 @@ export function PostRow({ postRowData }: PostRowProp) {
           <div className="font-light text-[12px] text-text-secondary flex flex-row gap-4">
             <div>{postRowData.header[3].split(",").join(" / ")}</div>
           </div>
-          <div className="font-bold text-[20px] pt-1 pb-1.5">
+          <div className="font-bold text-[18px] pt-1 pb-1.5">
             {postRowData.header[0]}
           </div>
           <div className="font-light text-[13px]">{postRowData.header[1]}</div>

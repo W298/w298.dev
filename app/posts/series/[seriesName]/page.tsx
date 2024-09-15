@@ -52,7 +52,7 @@ export default async function Page({ params }) {
           return (
             <div className="pb-20 flex flex-col gap-4">
               <div className="text-text-secondary">{date}</div>
-              <div className="grid max-[1180px]:grid-cols-1 max-[1580px]:grid-cols-2 grid-cols-3 gap-5">
+              <div className="grid max-[1180px]:grid-cols-1 grid-cols-2 gap-5">
                 {list
                   .sort((a, b) =>
                     new Date(a.header[2]) < new Date(b.header[2]) ? 1 : -1

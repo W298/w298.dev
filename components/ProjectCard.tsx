@@ -136,7 +136,7 @@ export default function ProjectCard({
 
   return (
     <div
-      className="bg-layer-350 border border-transparent hover:border-layer-100 transition flex flex-col justify-between"
+      className="bg-layer-350 border border-transparent hover:border-layer-100 transition flex flex-col justify-between rounded-md"
       id={`projectCard-${data.title
         .replaceAll(" ", "")
         .replaceAll("!", "")
@@ -153,7 +153,7 @@ export default function ProjectCard({
       }}
     >
       <div className="flex flex-col">
-        <div className="h-[7rem] overflow-hidden relative">
+        <div className="h-36 overflow-hidden relative">
           <video
             autoPlay
             muted
@@ -162,7 +162,7 @@ export default function ProjectCard({
             poster={data.imgSrc}
             className={`${
               isMouseHover ? "" : "hidden"
-            } object-cover min-h-full transition duration-150 ${
+            } rounded-t-md object-cover min-h-full transition duration-150 ${
               isMouseRealHover != isMouseHover && data.previewSrc
                 ? "blur-[2px]"
                 : ""
@@ -180,7 +180,7 @@ export default function ProjectCard({
             unoptimized={true}
             className={`${
               isMouseHover ? "hidden" : ""
-            } object-cover min-h-full transition duration-150 ${
+            } rounded-t-md object-cover min-h-full transition duration-150 ${
               isMouseRealHover != isMouseHover && data.previewSrc
                 ? "blur-[2px]"
                 : ""
@@ -193,7 +193,7 @@ export default function ProjectCard({
         <div className="flex py-3 px-4 pt-3">
           <div className="flex-1 flex flex-row justify-between">
             <div className="flex flex-col gap-1.5">
-              <div className="font-extrabold text-[20px]">{data.title}</div>
+              <div className="font-extrabold text-[18px]">{data.title}</div>
               <div>
                 {data.description.map((d, idx) => {
                   return (
