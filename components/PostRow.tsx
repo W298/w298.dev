@@ -20,7 +20,7 @@ export interface DatePost {
 export function PostRow({ postRowData }: PostRowProp) {
   return (
     <Link
-      className="flex flex-col justify-between bg-layer-350 border border-transparent w-[502px] hover:border-layer-100 transition rounded-md"
+      className="flex flex-col justify-between bg-layer-350 border border-transparent hover:border-layer-100 transition rounded-md"
       href={`/posts/${postRowData.postId}`}
     >
       <div className="flex flex-col gap-1">
